@@ -12,7 +12,7 @@ The first set is a simple starting point for users who are unfamiliar with CellM
     :maxdepth: 2
     :titlesonly:
        
-    tutorial1/tutorial1
+    tutorial1/index
     tutorial2/tutorial2
     tutorial3/tutorial3
     tutorial4/tutorial4
