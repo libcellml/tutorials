@@ -639,7 +639,7 @@ Now you regret nuking our friends and make plans to return tomorrow and annotate
 
     **6.e** Try to retrieve duplicated ids from the annotator as in step 4.b, and check that it returns an empty list.
     
-.. code-block:: container
+.. code-block:: text
 
     There are 0 duplicated ids in the model.
 

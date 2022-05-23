@@ -230,7 +230,7 @@ Create a :code:`Validator` item and use it to validate the model you've just rea
 
     **2.b** Retrieve any issues from the validator and print them to the terminal.
 
-.. code-block:: container
+.. code-block:: text
 
     The validator found 10 issues.
     Issue 0: CellML identifiers must not contain any characters other than [a-zA-Z0-9_].
