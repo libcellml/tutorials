@@ -24,33 +24,26 @@ You'll be taking a CellML2.0 file which has some mistakes in it, using the valid
 
 Requirements
 ------------
-Either :download:`download the whole folder<tutorial2.zip>`, or:
 
-.. container:: shortlist
+.. container:: directorylist
 
-    **C++**
+    **C++ resources**
 
     - :download:`CMakeLists.txt<CMakeLists.txt>` The CMake file for building;
     - :download:`tutorial2.cpp<tutorial2.cpp>` The skeleton code or
     - :download:`tutorial2_complete.cpp<tutorial2_complete.cpp>` the completed code; and
     - :download:`utilities.cpp<../utilities/utilities.cpp>` and :download:`utilities.h<../utilities/utilities.h>` Utility functions for use in the tutorials.
 
-.. container:: shortlist
-
-    **Python**
+    **Python resources**
 
     - :download:`tutorial2.py` The skeleton code or
     - :download:`tutorial2_complete.py` or the completed code; and
     - :download:`utilities.py<../utilities/utilities.py>` Utility functions for use in the tutorials.
 
-.. container:: shortlist
-
-    **Resources**
+    **CellML resources**
 
     - :download:`tutorial2.cellml<tutorial2.cellml>` the input CellML file.
 
-.. contents:: Contents
-    :local:
 
 Step 0: Set-up
 --------------
@@ -63,20 +56,20 @@ If you'd rather not work through the tutorial yourself and want to skip to the c
 
         Navigate into the directory and check that you can build the template against the libCellML library successfully:
 
-        .. code-block:: console
+        .. code-block:: text
 
             cmake -DINSTALL_PREFIX=../../install
             make -j
 
         Running the template:
 
-        .. code-block:: console
+        .. code-block:: text
 
             ./tutorial2
 
         ... should give the output:
 
-        .. code-block:: console
+        .. code-block:: text
 
             -----------------------------------------------
             TUTORIAL 2: ERROR CHECKING AND VALIDATION
@@ -86,13 +79,13 @@ If you'd rather not work through the tutorial yourself and want to skip to the c
 
         Confirm that you're able to run the :code:`tutorial2.py` template against the libCellML library.
 
-        .. code-block:: console
+        .. code-block:: text
 
             python3 tutorial2.py
 
         This should give the output:
 
-        .. code-block:: console
+        .. code-block:: text
 
             ------------------------------------------------------------
                 TUTORIAL 2: ERROR CHECKING AND VALIDATION
@@ -103,10 +96,10 @@ Step 1: Parse a CellML file into a model
 
 .. container:: useful
 
-    :api:`Parser class<Parser>`
+    :api:`Parser class <Parser>`
 
-    - create
-    - parseModel
+    - :api:`create <Parser?fName=create>`
+    - :api:`parseModel <Parser?fName=parseModel>`
 
     Utility functions (C++)
 
@@ -126,7 +119,7 @@ Instead of duplicating the work you did throughout the middle steps of :ref:`Tut
 
     **1.b** Use the utility function :code:`printModel(yourModelHere)` (in C++) or :code:`print_model(your_model_here)` to output the contents of the model you just created to the terminal so that you can see it all properly.
 
-.. code-block:: console
+.. code-block:: text
 
     MODEL: 'tutorial_2_model', id: 'tutorial 2 id has spaces'
     UNITS: 1 custom units
@@ -162,10 +155,10 @@ It doesn't judge the meaning of *what* you've written, just the nitty-gritty of 
 
 .. container:: useful
 
-    :api:`Validator class<Validator>`
+    :api:`Validator class <Validator>`
 
-    - create
-    - validateModel
+    - :api:`create <Validator?fName=create>`
+    - :api:`validateModel <Validator?fName=validateModel>`
 
 The validator can also help you as you create and edit models by pointing out what's missing or incorrect as you go.
 This is really easy:
@@ -193,18 +186,18 @@ To figure out what's going on, you need to retrieve the pointers to these :code:
 
 .. container:: useful
 
-    :api:`Validator class<Validator>`
+    :api:`Validator class <Validator>`
 
-    - issueCount
-    - issue
-    - errorCount
-    - error
-    - warningCount
-    - warning
-    - hintCount
-    - hint
-    - messageCount
-    - message
+    - :api:`issueCount <Validator?fName=issueCount>`
+    - :api:`issue <Validator?fName=issue>`
+    - :api:`errorCount <Validator?fName=errorCount>`
+    - :api:`error <Validator?fName=error>`
+    - :api:`warningCount <Validator?fName=warningCount>`
+    - :api:`warning <Validator?fName=warning>`
+    - :api:`hintCount <Validator?fName=hintCount>`
+    - :api:`hint <Validator?fName=hint>`
+    - :api:`messageCount <Validator?fName=messageCount>`
+    - :api:`message <Validator?fName=message>`
 
 As in :ref:`Tutorial 1<tutorial1>`, we can call a :code:`count` function (in the case of a validator, this is the :code:`issueCount()` function to determine whether any issues have been raised.
 Note that an issue a can have different levels: errors, warnings, hints, and messages.
@@ -236,7 +229,7 @@ In the :code:`Validator`, only those issues which are errors indicate validation
         :start-at: #  2.a
         :end-before: #  2.c
 
-.. code-block:: terminal
+.. code-block:: text
 
     The validator has found 5 issues!
 
@@ -245,7 +238,7 @@ Again following the same retrieval idiom as in Tutorial 1 for items in sets, we 
 
 .. tabs::
 
-  .. code-block:: c++
+  .. code-tab:: cpp
 
       auto theFifteenthIssue = validator->issue(14);
 
@@ -255,13 +248,13 @@ Again following the same retrieval idiom as in Tutorial 1 for items in sets, we 
 
 .. container:: useful
 
-    :api:`Issue class<Issue>`
+    :api:`Issue class <Issue>`
 
-    - description
-    - url
-    - referenceHeading
-    - cellmlElementType
-    - cellmlElement
+    - :api:`description <Issue?fName=description>`
+    - :api:`url <Issue?fName=url>`
+    - :api:`referenceHeading <Issue?fName=referenceHeading>`
+    - :api:`cellmlElementType <Issue?fName=cellmlElementType>`
+    - :api:`cellmlElement <Issue?fName=cellmlElement>`
 
     Utility functions (C++)
 
@@ -278,30 +271,34 @@ These are the :code:`description` (which does what you'd think) and the :code:`r
 
 Each issue also has a level indicator, one of:
 
-  - ERROR,
-  - WARNING,
-  - HINT, and
-  - MESSAGE.
+.. container:: shortlist 
+
+    - :code:`ERROR`,
+    - :code:`WARNING`,
+    - :code:`HINT`, and
+    - :code:`MESSAGE`.
 
 As well as storing text-based information, the issue also keeps track of which item has the problem.  
 This can be accessed using the :code:`item` function, and has a type given by the enumeration in :code:`cellmlElementType` function.
 The :code:`CellmlElementType` enumeration contains:
 
-    - COMPONENT,
-    - COMPONENT_REF,
-    - CONNECTION,
-    - ENCAPSULATION,
-    - IMPORT,
-    - MAP_VARIABLES,
-    - MATH,
-    - MODEL,
-    - RESET,
-    - RESET_VALUE,
-    - TEST_VALUE,
-    - UNDEFINED,
-    - UNIT,
-    - UNITS, and
-    - VARIABLE.
+.. container:: shortlist 
+
+    - :code:`COMPONENT` ,
+    - :code:`COMPONENT_REF` ,
+    - :code:`CONNECTION` ,
+    - :code:`ENCAPSULATION` ,
+    - :code:`IMPORT` ,
+    - :code:`MAP_VARIABLES` ,
+    - :code:`MATH` ,
+    - :code:`MODEL` ,
+    - :code:`RESET` ,
+    - :code:`RESET_VALUE` ,
+    - :code:`TEST_VALUE` ,
+    - :code:`UNDEFINED` ,
+    - :code:`UNIT` ,
+    - :code:`UNITS` , and
+    - :code:`VARIABLE` .
 
 Two utility functions have been provided which will convert the enums for error level or element type into a string for printing.
 
@@ -332,7 +329,7 @@ Two utility functions have been provided which will convert the enums for error 
         :start-at: #  2.c
         :end-before: #  end 2
 
-.. code-block:: terminal
+.. code-block:: text
 
     Validator issue[0]:
         Description: Variable '1st' in component 'i_am_a_component' does not have a valid name attribute. CellML identifiers must not begin with a European numeric character [0-9].
@@ -372,21 +369,21 @@ This section will work through the issues reported by the validator, and demonst
 
 .. container:: useful
 
-    :api:`Issue class<Issue>`
+    :api:`Issue class <Issue>`
 
-    - item
-    - variable
-    - math
+    - :api:`item <Issue?fName=item>`
+    - :api:`variable <Issue?fName=variable>`
+    - :api:`math <Issue?fName=math>`
 
-    :api:`Variable class<Variable>`
+    :api:`Variable class <Variable>`
 
-    - setName
-    - setUnits
-    - setInitialValue
+    - :api:`setName <Variable?fName=setName>`
+    - :api:`setUnits <Variable?fName=setUnits>`
+    - :api:`setInitialValue <Variable?fName=setInitialValue>`
 
-    :api:`Model class<Model>`
+    :api:`Model class <Model>`
 
-    - component(name, True) Retrieving a component by its name with the optional second argument true will search the entire   component tree for the component name.
+    - :api:`component(name, True) <Model?fName=component>` Retrieving a component by its name with the optional second argument true will search the entire component tree for the component name.
 
 The first issue raised involves the name of a variable.
 Note that even though the name is invalid (as per CellML specification), it can still be used to access the item.
@@ -395,7 +392,7 @@ You'll notice that the name of the component is given too.
 Because component names are unique in the model, this means that we can use the combination of component name and variable name to retrieve the variable.
 The :code:`component` function of the :code:`Model` class takes an optional second argument: this is a boolean indicating whether to search for the given component name in the model's top level components (:code:`false`, the default), or the entirety of the component tree (:code:`true`).
 
-.. code-block:: terminal
+.. code-block:: text
 
     Validator issue[0]:
         Description: Variable '1st' in component 'i_am_a_component' does not have a valid name attribute. CellML identifiers must not begin with a European numeric character [0-9].
@@ -429,7 +426,7 @@ The :code:`component` function of the :code:`Model` class takes an optional seco
         :start-at: #  3.a
         :end-before: #  end 3.a
 
-.. code-block:: terminal
+.. code-block:: text
 
     Validator issue[1]:
         Description: Variable 'b' in component 'i_am_a_component' does not have any units specified.
@@ -444,8 +441,8 @@ For example, calling the :code:`math()` function on an issue which reports stori
 The functions and the types they return are shown below.
 
 +-------------------+------------------+------------------------------------------------------------------------------------------------------+
-| enumeration value | function to call | type returned from function                                                                          |
-+-------------------+------------------+------------------------------------------------------------------------------------------------------+
+| Enumeration value | Function to call | Type returned from function                                                                          |
++===================+==================+======================================================================================================+
 | COMPONENT         | component()      | :code:`ComponentPtr` a pointer to a component.                                                       |
 +-------------------+------------------+------------------------------------------------------------------------------------------------------+
 | COMPONENT_REF     | componentRef()   | :code:`ComponentPtr` a pointer to the component referenced via a :code:`component_ref`.              |
@@ -501,7 +498,7 @@ The functions and the types they return are shown below.
         :start-at: #  3.b
         :end-before: #  end 3.b
 
-.. code-block:: terminal
+.. code-block:: text
 
     Validator issue[2]:
         Description: Variable 'c' in component 'i_am_a_component' has an invalid initial value 'this_variable_doesnt_exist'. Initial values must be a real number string or a variable reference.
@@ -586,7 +583,7 @@ This differs between C++ and Python so please refer to the appropriate tab for i
         :start-at: #  3.c
         :end-before: #  end 3.c
 
-.. code-block:: terminal
+.. code-block:: text
 
     Validator issue[3]:
         Description: Variable 'd' in component 'i_am_a_component' has a units reference 'i_dont_exist' which is neither standard nor defined in the parent model.
@@ -627,7 +624,7 @@ This issue was actually also caught by the parser, which, like the validator, is
 This means that it will keep track of anything it encounters when parsing a model.
 You can try calling the :code:`issueCount` and :code:`issue` functions on the parser and iterating through them (just like in 2.c) to see what you find.
 
-.. code-block:: terminal
+.. code-block:: text
 
     Validator issue[4]:
         Description: MathML ci element has the child text 'a' which does not correspond with any variable names present in component 'i_am_a_component'.

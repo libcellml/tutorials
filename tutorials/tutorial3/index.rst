@@ -24,28 +24,23 @@ Tutorial 3: Create a model and generate code using the API
 
 Requirements
 ------------
-Either :download:`download the whole folder<tutorial3.zip>`, or:
 
-.. container:: shortlist
+.. container:: directorylist
 
-    **C++**
+    **C++ resources**
 
     - :download:`CMakeLists.txt` The CMake file for building this tutorial;
     - :download:`tutorial3.cpp` The skeleton code; or
     - :download:`tutorial3_complete.cpp` the completed tutorial code; and
     - :download:`utilities.h<../utilities/utilities.h>` and :download:`utilities.cpp<../utilities/utilities.cpp>` Utility functions for use in the tutorials.
 
-.. container:: shortlist
-
-    **Python**
+    **Python resources**
     
     - :download:`tutorial3.py` Either the skeleton code; or
     - :download:`tutorial3_complete.py` the completed tutorial code; and
     - :download:`utilities.py<../utilities/utilities.py>`  Utility functions for use in the tutorials.
 
-.. contents:: Contents
-    :local:
-    
+
 Overview
 --------
 During this tutorial you will create a simple model representing the population dynamics of two species - one a predator (sharks), and the other their prey (fish).
@@ -66,7 +61,7 @@ In order to model these unusual populations you'll need to create your own custo
 
 Step 1: Set up the governing equations
 --------------------------------------
-Just as you did in :ref:`Tutorial 2<tutorial2_cpp>`, we need to start by setting up a :code:`Model` instance, and creating a :code:`Component` inside it.
+Just as you did in :ref:`Tutorial 2<tutorial2>`, we need to start by setting up a :code:`Model` instance, and creating a :code:`Component` inside it.
 
 .. container:: dothis
 
@@ -102,9 +97,9 @@ Just as you did in :ref:`Tutorial 2<tutorial2_cpp>`, we need to start by setting
 
 Now for the real bit.
 In order to actually model anything, we need to include the mathematical equations which represent the physical situation of interest.
-As you saw in :ref:`Tutorial 2<tutorial2_cpp>`, the maths and the :code:`Variable` items which it references live inside a parent :code:`Component` item.
+As you saw in :ref:`Tutorial 2<tutorial2>`, the maths and the :code:`Variable` items which it references live inside a parent :code:`Component` item.
 
-.. container:: gotcha
+.. container:: nb
 
     At this point it should be noted that the *order* in which you add your components, or models, or variables (or anything) is not important to the final product, but it *can* affect how quickly you're able to find and fix bugs along the way.
     In these tutorials, we have suggested that you add the mathematics first and use a :code:`Validator` to notify you of the
@@ -130,7 +125,7 @@ The basic structure for these is described in the :mathml2help:`W3 resource page
 
 It's highly unlikely that you - the user - will actually be required to write MathML2 code directly, so this part of the tutorial is more about understanding what's going on under the hood than practising fundamentally necessary skills.
 
-.. container:: gotcha
+.. container:: nb
 
     **Note** that libCellML will **only** accept MathML2 markup, even though later versions (3 and 4) are now available.
 
@@ -301,20 +296,20 @@ It's simple to do this once in your code using a string to represent the opening
 
 .. container:: useful
 
-    :api:`Component class<Component>`
+    :api:`Component class <Component>`
 
-    - setMath
-    - appendMath
+    - :api:`setMath <Component?fName=setMath>`
+    - :api:`appendMath <Component?fName=appendMath>`
 
     Utility functions (C++)
 
-    - printIssues will write information on any issues from a given Logger to the terminal.  
-      Logger classes include the :code:`Validator`, :code:`Analyser`, and :code:`Parser`.
+    - :code:`printIssues` will write information on any issues from a given :code:`Logger` to the terminal.  
+      :code:`Logger` classes include the :code:`Validator`, :code:`Analyser`, and :code:`Parser`.
 
     Utility functions (Python)
 
-    - print_issues will write information on any issues from a given Logger to the terminal.  
-      Logger classes include the :code:`Validator`, :code:`Analyser`, and :code:`Parser`.
+    - :code:`print_issues` will write information on any issues from a given :code:`Logger` to the terminal.  
+      :code:`Logger` classes include the :code:`Validator`, :code:`Analyser`, and :code:`Parser`.
 
 Our last step in defining the mathematics is to link it into the component.
 The functions available to manipulate maths are:
@@ -349,7 +344,7 @@ The functions available to manipulate maths are:
         :start-at: #  1.g
         :end-before: #  1.h
 
-.. container:: gotcha
+.. container:: nb
 
     Note that the order in which strings are added might be important, as they are stored as a single concatenated string.
     However, the order in which complete MathML equations occur in the overall MathML string is not important.
@@ -383,7 +378,7 @@ The functions available to manipulate maths are:
 
 You should see an output similar to that shown below:
 
-.. code-block:: console
+.. code-block:: text
 
     Recorded 17 issues:
 
@@ -415,14 +410,14 @@ Step 2: Create the variables
 
 .. container:: useful
 
-    :api:`Variable class<Variable>`
+    :api:`Variable class <Variable>`
 
-    - create
-    - setName
+    - :api:`create <Variable?fName=create>`
+    - :api:`setName <Variable?fName=setName>`
 
-    :api:`Component class<Component>`
+    :api:`Component class <Component>`
 
-    - addVariable
+    - :api:`addVariable <Component?fName=addVariable>`
 
 .. container:: dothis
 
@@ -485,7 +480,7 @@ Step 2: Create the variables
         :start-at: #  2.b
         :end-before: #  end 2
 
-.. code-block:: console
+.. code-block:: text
 
     Recorded 8 issues:
 
@@ -501,33 +496,24 @@ Step 3: Built-in and customised units
 -------------------------------------
 Linking variables to the *name* of their units is straightforward, but in order to be able to use them we need to also define what the name actually *means* by creating the units themselves.
 Some common units have been defined and built into libCellML, others you can define by combining the built-in ones using scaling factors and exponents, or you can define your own from scratch if need be.
-
-.. container:: toggle
-
-    .. container:: header
-
-        Read more about units
-
-    .. container:: infospec
-
-        .. include:: ../../asides/aside_units.rst
+You can read more about units on the :ref:`Understanding units<understanding_units>` page.
 
 .. container:: useful
 
-    :api:`Units class<Units>`
+    :api:`Units class <Units>`
 
-    - create
-    - setName
-    - addUnit (note singular)
+    - :api:`create <Units?fName=create>`
+    - :api:`setName <Units?fName=setName>`
+    - :api:`addUnit <Units?fName=addUnit>` (note singular)
 
-    :api:`Model class<Model>`
+    :api:`Model class <Model>`
 
-    - addUnits (note plural)
-    - linkUnits
+    - :api:`addUnits <Model?fName=addUnits>` (note plural)
+    - :api:`linkUnits <Model?fName=linkUnits>`
 
-    :api:`Variable class<Variable>`
+    :api:`Variable class <Variable>`
 
-    - setUnits (note plural)
+    - :api:`setUnits <Variable?fName=setUnits>` (note plural)
 
 To create a :code:`Units` item you need will follow the same basic steps as other entities: declare it, name it, define it, and then add it in.
 For example:
@@ -679,7 +665,7 @@ These will be combinations of those which we've already created, as defined by t
 
 The final two steps are to associate each variable with its appropriate units, and to include the units in the model.
 
-.. container:: gotcha
+.. container:: nb
 
     - When you add different sub-unit parts into a :code:`Units` item, the function is :code:`addUnit` (singular), and it takes as argument the *name* of the sub-unit as a string (eg: :code:`"second"` used above).
     - When you add the final created combination into the :code:`Model` item, the function is :code:`addUnits` (plural), and it takes as argument the *reference* of the combined units (eg: :code:`ms`).
@@ -711,7 +697,7 @@ The final two steps are to associate each variable with its appropriate units, a
         :start-at: #  3.e
         :end-before: #  3.f
 
-.. container:: gotcha
+.. container:: nb
 
     **Gotcha!** When you specify the :code:`Units` for a :code:`Variable` using its name then you may need to call the model's :code:`linkUnits` function before validating the model.
     If you see errors related to missing units which do in fact exist, this indicates that a call to the :code:`linkUnits` function is needed.
@@ -743,7 +729,7 @@ The final two steps are to associate each variable with its appropriate units, a
         :start-at: #  3.f
         :end-before: #  3.g
 
-.. code-block:: console
+.. code-block:: text
 
     Recorded 1 issues:
 
@@ -803,11 +789,11 @@ The :code:`Validator` checks your "spelling" and syntax, and the :code:`Analyser
 
 .. container:: useful
 
-    :api:`Analyser class<Analyser>`
+    :api:`Analyser class <Analyser>`
 
-    - create
-    - analyseModel
-    - model
+    - :api:`create <Analyser?fName=create>`
+    - :api:`analyseModel <Analyser?fName=analyseModel>`
+    - :api:`model <Analyser?fName=model>`
 
 .. container:: dothis
 
@@ -897,18 +883,18 @@ These are:
 
 .. container:: useful
 
-    :api:`Generator class<Generator>`
+    :api:`Generator class <Generator>`
 
-    - create
-    - profile
-    - setModel
-    - interfaceCode
-    - implementationCode
+    - :api:`create <Generator?fName=create>`
+    - :api:`profile <Generator?fName=profile>`
+    - :api:`setModel <Generator?fName=setModel>`
+    - :api:`interfaceCode <Generator?fName=interfaceCode>`
+    - :api:`implementationCode <Generator?fName=implementationCode>`
 
-    :api:`GeneratorProfile class<GeneratorProfile>`
+    :api:`GeneratorProfile class <GeneratorProfile>`
 
-    - create
-    - setInterfaceFileNameString
+    - :api:`create <GeneratorProfile?fName=create>`
+    - :api:`setInterfaceFileNameString <GeneratorProfile?fName=setInterfaceFileNameString>`
     
     The GeneratorProfile class contains an enum indicating the language of profile to set.
     In C++ this is :code:`GeneratorProfile::Profile`.

@@ -23,15 +23,11 @@
 
 #include "utilities.h"
 
-int main(int argc, char* argv[])
+int main()
 {
     std::cout << "-----------------------------------------------" << std::endl;
     std::cout << "   TUTORIAL 2: ERROR CHECKING AND VALIDATION   " << std::endl;
     std::cout << "-----------------------------------------------" << std::endl;
-
-    if (argc < 2) {
-        return 1;
-    }
 
     // ---------------------------------------------------------------------------
     //  STEP 1:   Create a CellML Model from the contents of a CellML file
@@ -42,7 +38,7 @@ int main(int argc, char* argv[])
 
     //  1.a
     //      Read the contents of the tutorial2.cellml file into a string.
-    std::string inFileName = argv[1];
+    std::string inFileName = "tutorial2.cellml";
     std::ifstream inFile(inFileName);
     std::stringstream inFileContents;
     inFileContents << inFile.rdbuf();
@@ -72,7 +68,7 @@ int main(int argc, char* argv[])
 
     //  2.b   
     //      Check the number of issues returned from the validator.
-    size_t numberOfValidationIssues = validator->issueCount();
+    int numberOfValidationIssues = validator->issueCount();
     if (numberOfValidationIssues != 0) {
         std::cout << "The validator has found " << numberOfValidationIssues
                   << " issues!" << std::endl;

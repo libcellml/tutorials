@@ -14,25 +14,21 @@ Hodgkin-Huxley 3: Debugging a model
     - Use the diagnostic :code:`Analyser` class to identify issues in the model's mathematical formulation.
 
 
-.. container:: shortlist
+.. container:: directorylist
 
-    **Code (C++)**
+    **C++ resources**
 
     - :download:`CMakeLists.txt<CMakeLists.txt>` The CMake file for building this tutorial;
     - :download:`debugSodiumChannelModel.cpp<debugSodiumChannelModel.cpp>` Either the skeleton code, or ..
     - :download:`debugSodiumChannelModel_completed.cpp<debugSodiumChannelModel_completed.cpp>` the completed tutorial code; and
     - :download:`utilities.cpp<../code/utilities.cpp>` and :download:`utilities.h<../code/utilities.h>` Helper functions.
 
-.. container:: shortlist
-
-    **Code (Python)**
+    **Python resources**
 
     - :download:`debugSodiumChannelModel.py<debugSodiumChannelModel.py>` Either the skeleton code, or ..
     - :download:`debugSodiumChannelModel_completed.py<debugSodiumChannelModel_completed.py>` the completed tutorial code; and
 
-.. container:: shortlist
-
-    **Resources**
+    **CellML resources**
 
     - :download:`GateModel.cellml<GateModel.cellml>` the generic gate model created in Tutorial 1;
     - :download:`SodiumChannelModel_broken.cellml<SodiumChannelModel_broken.cellml>` a sodium channel model that needs debugging;
@@ -40,8 +36,6 @@ Hodgkin-Huxley 3: Debugging a model
     - :download:`CircularControllerReference2.cellml<CircularControllerReference2.cellml>` import file; and
     - :download:`SodiumChannelController.cellml<SodiumChannelController.cellml>` import file.
 
-.. contents:: Contents
-    :local:
 
 Overview
 --------
@@ -91,7 +85,7 @@ The parser will then read that string and return a model.
         :start-at: #  1.a
         :end-before: #  end 1
 
-.. code-block:: terminal
+.. code-block:: text
 
     MODEL: 'SodiumChannelModel'
         UNITS: 5 custom units
@@ -285,7 +279,7 @@ In the case of the validator class, the URL listed contains additional resources
 
 In some situations more than one :code:`Issue` will be generated from a single cause: this is the case with issues 0 and 1 here:
 
-.. code-block:: terminal
+.. code-block:: text
 
     Issue 0: CellML identifiers must not contain any characters other than [a-zA-Z0-9_].
         reference: 1.3.1.1
@@ -322,7 +316,7 @@ In some situations more than one :code:`Issue` will be generated from a single c
         :start-at: #  3.a
         :end-before: #  end 3.a
 
-.. code-block:: terminal
+.. code-block:: text
 
     Issue 2: Variable 'Na_conductance' in component 'sodiumChannelEquations' has a units reference 'mS_per_cm2' which is neither standard nor defined in the parent model.
         reference: 2.8.1.2
@@ -361,7 +355,7 @@ In some situations more than one :code:`Issue` will be generated from a single c
         :start-at: #  3.b
         :end-before: #  end 3.b
 
-.. code-block:: terminal
+.. code-block:: text
 
     Issue 5: CellML identifiers must contain one or more basic Latin alphabetic characters.
         reference: 1.3.1.1
@@ -413,7 +407,7 @@ We can retrieve the affected item directly from the issue in one of two ways:
 
 The error below indicates that a child :code:`Unit` references something which can't be found.
 
-.. code-block:: terminal
+.. code-block:: text
 
     Issue 7: Units reference 'i_dont_exist' in units 'mV' is not a valid reference to a local units or a standard unit type.
         reference: 2.6.1
@@ -433,11 +427,11 @@ You have a few different options for how to fix this one.
  
 .. container:: useful
 
-    :api:`Units class<Units>`
+    :api:`Units class <Units>`
 
-    - unitAttributes
-    - removeUnit
-    - addUnit
+    - :api:`unitAttributes <Units?fName=unitAttributes>`
+    - :api:`removeUnit <Units?fName=removeUnit>`
+    - :api:`addUnit <Units?fName=addUnit>`
 
 .. container:: dothis
 
@@ -468,7 +462,7 @@ You have a few different options for how to fix this one.
 
 The final validator issue refers to the fact that we need to explicitly specify how other components can access each of the variables in this component.
 
-.. code-block:: terminal
+.. code-block:: text
 
     Issue 9: Variable 't' in component 'sodiumChannelEquations' has no interface type set. The interface type required is 'public_and_private'.
         reference: 3.10.8
@@ -506,17 +500,17 @@ The final validator issue refers to the fact that we need to explicitly specify 
 
 .. container:: useful
 
-    :api:`Model class<Model>`
+    :api:`Model class <Model>`
 
-    - component("componentName", true) will search for the component's name in the whole of the encapsulation hierarchy.
+    - :api:`component <Model?fName=component>` ("componentName", true) will search for the component's name in the whole of the encapsulation hierarchy.
 
-    :api:`Component class<Component>`
+    :api:`Component class <Component>`
 
-    - addComponent
+    - :api:`addComponent <Component?fName=addComponent>`
 
     Tutorial functions
 
-    - printEncapsulation will output just the names of the components, nested in their encapsulation hierarchy.
+    - :code:`printEncapsulation` will output just the names of the components, nested in their encapsulation hierarchy.
 
 .. container:: dothis
 
@@ -550,7 +544,7 @@ The final validator issue refers to the fact that we need to explicitly specify 
         :start-at: #  3.g
         :end-before: #  end 3
 
-.. code-block:: terminal
+.. code-block:: text
 
     Model 'SodiumChannelModel' has 2 components
     - Component 'controller' has 0 child components
@@ -581,10 +575,10 @@ For this tutorial, the files are in the same directory as the code, so simply us
 
 .. container:: useful
     
-    :api:`Importer class<Importer>`
+    :api:`Importer class <Importer>`
     
-    - create
-    - resolveImports
+    - :api:`create <Importer?fName=create>`
+    - :api:`resolveImports <Importer?fName=create>`
 
 .. container:: dothis
 
@@ -617,7 +611,7 @@ For this tutorial, the files are in the same directory as the code, so simply us
         :start-at: #  4.a
         :end-before: #  end 4.b
 
-.. code-block:: terminal
+.. code-block:: text
 
     Recorded 2 issues:
 
@@ -630,9 +624,9 @@ This needs to be an iterative process because as more files become available to 
 
 .. container:: useful
 
-    :api:`Component class<Component>`
+    :api:`Component class <Component>`
 
-    - setImportReference
+    - :api:`setImportReference  <Component?fName=setImportReference>`
 
 .. container:: dothis
 
@@ -662,7 +656,7 @@ This needs to be an iterative process because as more files become available to 
         :start-at: #  4.c
         :end-before: #  end 4.c
 
-.. code-block:: terminal
+.. code-block:: text
 
     Issue [1] is a WARNING:
         description: Cyclic dependencies were found when attempting to resolve components in model 'CircularReferences'. The dependency loop is:
@@ -718,11 +712,11 @@ These dependencies are stored in the importer's library, and have not yet been v
 
 .. container:: useful
 
-    :api:`Importer class<Importer>`
+    :api:`Importer class <Importer>`
 
-    - libraryCount returns the number of stored models;
-    - library returns the model at the given index or given key string;
-    - key returns a key string at the given index;
+    - :api:`libraryCount <Importer?fName=libraryCount>` returns the number of stored models;
+    - :api:`library <Importer?fName=library>` returns the model at the given index or given key string;
+    - :api:`key <Importer?fName=key>` returns a key string at the given index;
 
 .. container:: dothis
 
@@ -750,7 +744,7 @@ These dependencies are stored in the importer's library, and have not yet been v
         :start-at: #  5.a
         :end-before: #  end 5.a
 
-.. code-block:: terminal
+.. code-block:: text
 
     Imported model at key: CircularControllerReference.cellml
     Recorded 0 issues!
@@ -770,15 +764,15 @@ As soon as the model's imports have been resolved, all these will point to insta
 
 .. container:: useful 
 
-    :api:`Model class<Model>`
+    :api:`Model class <Model>`
 
-    - importSourceCount
-    - importSource
+    - :api:`importSourceCount <Model?fName=importSourceCount>`
+    - :api:`importSource <Model?fName=importSource>`
 
-    :api:`ImportSource class<ImportSource>`
+    :api:`ImportSource class <ImportSource>`
 
-    - model
-    - url
+    - :api:`model <ImportSource?fName=model>`
+    - :api:`url <ImportSource?fName=url>`
 
 .. container:: dothis
 
@@ -809,7 +803,7 @@ As soon as the model's imports have been resolved, all these will point to insta
         :end-before: #  end 5
 
 
-.. code-block:: terminal
+.. code-block:: text
 
     Import source [0]:
         url = GateModel.cellml
@@ -831,10 +825,10 @@ If the flat model meets the analyser's checks, then the importing version will t
 
 .. container:: useful
 
-    :api:`Analyser class<Analyser>`
+    :api:`Analyser class <Analyser>`
 
-    - analyseModel
-    - flattenModel
+    - :api:`analyseModel <Analyser?fName=analyseModel>`
+    - :api:`flattenModel <Analyser?fName=flattenModel>`
 
 .. container:: dothis
 
@@ -845,7 +839,7 @@ If the flat model meets the analyser's checks, then the importing version will t
     **6.b** Retrieve and print the issues from the analysis to the screen.
     We expect to see messages related to un-computed variables, since anything which is imported is missing from this model.
 
-.. code-block:: terminal
+.. code-block:: text
 
     Recorded 19 issues:
     Issue [0] is an ERROR:
@@ -891,7 +885,7 @@ If the flat model meets the analyser's checks, then the importing version will t
         :start-at: #  6.a
         :end-before: #  end 6.d
 
-.. code-block:: terminal
+.. code-block:: text
 
     Issue [0] is an ERROR:
         description: Variable 't' in component 'importedGateM' and variable 't' in component
@@ -904,9 +898,9 @@ In this example, the real problem is that these two variables are talking about 
 
 .. container:: useful
 
-    :api:`Variable class<Variable>`
+    :api:`Variable class <Variable>`
 
-    - addEquivalence
+    - :api:`addEquivalence <Variable?fName=addEquivalence>`
 
 .. container:: dothis
 
@@ -939,7 +933,7 @@ In this example, the real problem is that these two variables are talking about 
         :start-at: #  6.e
         :end-before: #  end 6.f
 
-.. code-block:: terminal
+.. code-block:: text
 
     Recorded 13 issues:
     Issue [0] is an ERROR:
@@ -995,8 +989,8 @@ Because the "is not computed" errors are cascading by nature, frequently fixing 
 
 .. container:: useful
 
-    - C++: printEquivalentVariableSet with the variable argument
-    - Python: print_equivalent_variable_set with the variable argument
+    - C++: :code:`printEquivalentVariableSet` with the variable argument
+    - Python: :code:`print_equivalent_variable_set` with the variable argument
 
 Hints for this tutorial: 
 

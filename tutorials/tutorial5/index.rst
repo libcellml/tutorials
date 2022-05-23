@@ -16,34 +16,27 @@ Tutorial 5: Annotation tools
 
 Requirements
 ------------
-Either :download:`download the entire folder<tutorial5.zip>`, or:
 
-.. container:: shortlist   
+.. container:: directorylist   
 
-    **C++**
+    **C++ resources**
 
     - :download:`CMakeLists.txt<CMakeLists.txt>` The CMake file for building this tutorial;
     - :download:`tutorial5.cpp<tutorial5.cpp>` Either the skeleton code, or ..
     - :download:`tutorial5_complete.cpp<tutorial5_complete.cpp>` the completed tutorial code; and
     - :download:`utilities.h<../utilities/utilities.h>` and :download:`utilities.cpp<../utilities/utilities.cpp>` Utility functions for use in the tutorials.
 
-.. container:: shortlist
-
-    **Python**
+    **Python resources**
 
     - :download:`tutorial5.py<tutorial5.py>` Either the skeleton code, or ..
     - :download:`tutorial5_complete.py<tutorial5_complete.py>` the completed tutorial code; and
     - :download:`utilities.py<../utilities/utilities.py>`  Utility functions for use in the tutorials.
 
-.. container:: shortlist
-
-    **Resources**
+    **CellML resources**
 
     - :download:`MysteryModel.cellml<MysteryModel.cellml>` file to read; and
     - :download:`AnotherMysteryModel.cellml<AnotherMysteryModel.cellml>` its import dependency.
 
-.. contents:: Contents
-    :local:
 
 Background
 ----------
@@ -100,18 +93,18 @@ Step 2: Retrieve an item with a unique id
 
 .. container:: useful
 
-    :api:`Annotator class<Annotator>`
+    :api:`Annotator class <Annotator>`
 
-    - create
-    - setModel
-    - item
-    - issueCount
-    - issue
+    - :api:`create <Annotator?fName=create>`
+    - :api:`setModel <Annotator?fName=setModel>`
+    - :api:`item <Annotator?fName=item>`
+    - :api:`issueCount <Annotator?fName=issueCount>`
+    - :api:`issue <Annotator?fName=issue>`
 
     Tutorial functions
 
-    - C++: getCellmlElementTypeFromEnum will return a string version of the CellmlElementType enumeration
-    - Python: get_cellml_element_type_from_enum
+    - C++: :code:`getCellmlElementTypeFromEnum` will return a string version of the :code:`CellmlElementType` enumeration
+    - Python: :code:`get_cellml_element_type_from_enum`
 
 .. container:: dothis
 
@@ -148,7 +141,7 @@ Step 2: Retrieve an item with a unique id
     **2.b** Retrieve the item with an id of "marco".
     Use the helper function to convert the enumeration of its type into a string, and print to the terminal.
     
-.. code-block:: terminal
+.. code-block:: text
 
     The item with ID 'marco' is a VARIABLE
 
@@ -187,18 +180,18 @@ Step 3: Retrieve items whose id are not unique
 
 .. container:: useful
 
-    :api:`Annotator class<Annotator>`
+    :api:`Annotator class <Annotator>`
 
-    - items
-    - isUnique
-    - assignId
+    - :api:`items <Annotator?fName=items>`
+    - :api:`isUnique <Annotator?fName=isUnique>`
+    - :api:`assignId <Annotator?fName=assignId>`
 
 .. container:: dothis
 
     **3.a** Now try the same procedure to find the item with id of "polo".
     Retrieve the item and print its type to the terminal.
     
-.. code-block:: terminal
+.. code-block:: text
 
     The type of item with ID "polo" is UNDEFINED
 
@@ -229,7 +222,7 @@ Step 3: Retrieve items whose id are not unique
         :start-at: #  3.a
         :end-before: #  end 3.b
 
-.. code-block:: terminal
+.. code-block:: text
 
     Recorded 1 issues:
     Issue [0] is a WARNING:
@@ -263,7 +256,7 @@ Step 3: Retrieve items whose id are not unique
         :start-at: #  3.c
         :end-before: #  end 3.c
     
-.. code-block:: terminal
+.. code-block:: text
 
     The items with an id of 'polo' have types of:
       - [0] UNITS
@@ -312,33 +305,34 @@ In circumstances where you know the type of the item with the id you're fetching
 
 .. container:: useful
 
-    :api:`Annotator class<Annotator>`
+    :api:`Annotator class <Annotator>`
 
-    - component
-    - componentRef
-    - connection
-    - encapsulation
-    - import
-    - mapVariables
-    - model
-    - reset
-    - resetValue
-    - testValue
-    - unit
-    - units
-    - variable
+    - :api:`component <Annotator?fName=component>`
+    - :api:`componentRef <Annotator?fName=componentRef>`
+    - :api:`connection <Annotator?fName=connection>`
+    - :api:`encapsulation <Annotator?fName=encapsulation>`
+    - :api:`import <Annotator?fName=import>`
+    - :api:`mapVariables <Annotator?fName=mapVariables>`
+    - :api:`model <Annotator?fName=model>`
+    - :api:`reset <Annotator?fName=reset>`
+    - :api:`resetValue <Annotator?fName=resetValue>`
+    - :api:`testValue <Annotator?fName=testValue>`
+    - :api:`unit <Annotator?fName=unit>`
+    - :api:`units <Annotator?fName=units>`
+    - :api:`variable <Annotator?fName=variable>`
 
-    :api:`Unit class<Unit>`
+    :api:`Unit class <Unit>`
 
-    - units
-    - index
+    - :api:`units <Unit?fName=units>`
+    - :api:`index <Unit?fName=index>`
 
 .. container:: dothis
 
     **3.f** Retrieve the :code:`Unit` with id "polo" directly.
     The :code:`Unit` class has two attributes:
-         - :code:`units()` returns the parent :code:`Units` item; and
-         - :code:`index()` returns the index of this unit within its parent.
+
+        - :code:`units()` returns the parent :code:`Units` item; and
+        - :code:`index()` returns the index of this unit within its parent.
 
 .. container:: toggle
 
@@ -368,11 +362,11 @@ Now that we've found Marco and fixed the duplicates of Polo, we'd like to know w
 
 .. container:: useful
 
-    :api:`Annotator class<Annotator>`
+    :api:`Annotator class <Annotator>`
 
-    - ids
-    - duplicateIds
-    - itemCount
+    - :api:`ids <Annotator?fName=ids>`
+    - :api:`duplicateIds <Annotator?fName=duplicateIds>`
+    - :api:`itemCount <Annotator?fName=itemCount>`
 
 .. container:: dothis
 
@@ -400,7 +394,7 @@ Now that we've found Marco and fixed the duplicates of Polo, we'd like to know w
         :start-at: #  4.a
         :end-before: #  end 4.a
 
-.. code-block:: terminal
+.. code-block:: text
 
     The id strings used in the model are:
         - "b4da55"
@@ -445,7 +439,7 @@ The hex strings printed are those which have been automatically generated by the
         :start-at: #  4.b
         :end-before: #  end 4
 
-.. code-block:: terminal
+.. code-block:: text
 
     Duplicated id strings are:
     - "someOtherDuplicatedId" occurs 3 times
@@ -457,27 +451,27 @@ The final step is to make sure that imported items can have their annotations tr
 
 .. container:: useful
 
-    :api:`Importer class<Importer>`
+    :api:`Importer class <Importer>`
 
-    - create
-    - resolveImports
+    - :api:`create <Importer?fName=create>`
+    - :api:`resolveImports <Importer?fName=resolveImports>`
 
-    :api:`ImportedEntity class<ImportedEntity>` (applies to both the :code:`Units` and the :code:`Component` class)
+    :api:`ImportedEntity class <ImportedEntity>` (applies to both the :code:`Units` and the :code:`Component` class)
 
-    - isImport
-    - importReference
-    - importSource
+    - :api:`isImport <ImportedEntity?fName=isImport>`
+    - :api:`importReference <ImportedEntity?fName=importReference>`
+    - :api:`importSource <ImportedEntity?fName=importSource>`
 
-    :api:`ImportSource class<ImportSource>`
+    :api:`ImportSource class <ImportSource>`
 
-    - model
-    - url
+    - :api:`model <ImportSource?fName=model>`
+    - :api:`url <ImportSource?fName=url>`
 
 .. container:: dothis
 
     **5.a** Retrieve an item with id of "whoAmIAndWhereDidIComeFrom" and print its item type to the terminal.
     
-.. code-block:: terminal
+.. code-block:: text
 
     The type of item with ID "whoAmIAndWhereDidIComeFrom" is UNITS
 
@@ -547,7 +541,7 @@ The final step is to make sure that imported items can have their annotations tr
         :start-at: #  5.e
         :end-before: #  end 5
 
-.. code-block:: terminal
+.. code-block:: text
 
     The units with id "whoAmIAndWhereDidIComeFrom" came from:
     - url: AnotherMysteryModel.cellml
@@ -584,7 +578,7 @@ Step 6: Bulk operations
         :start-at: #  6.a
         :end-before: #  6.b
 
-.. code-block:: terminal
+.. code-block:: text
 
     Before automatic assignment the components have ids:
         - "i_am_a_component"
@@ -606,17 +600,17 @@ Finally, we decide that it's too cold for swimming, and want to nuke all the ids
 
 .. container:: useful
 
-    :api:`Annotator class<Annotator>`
+    :api:`Annotator class <Annotator>`
 
-    - clearAllIds
-    - assignAllIds
+    - :api:`clearAllIds <Annotator?fName=clearAllIds>`
+    - :api:`assignAllIds <Annotator?fName=clearAllIds>`
 
 .. container:: dothis
 
     **6.b** Use the :code:`clearAllIds` function to completely remove all id strings from the model.
     Check that they have gone by repeating step 4.a to print any ids to the terminal.
 
-.. code-block:: terminal
+.. code-block:: text
 
     There are 0 ids in the model.
 
@@ -627,7 +621,7 @@ Go looking for Marco, but he's gone home already.
     **6.c** Retrieve the item with id "marco" and print its type to the terminal.
     Retrieve and print any issues in the annotator to the terminal.
 
-.. code-block:: terminal
+.. code-block:: text
 
     The type of item with ID "marco" is UNDEFINED
 

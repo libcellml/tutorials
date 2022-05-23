@@ -12,30 +12,26 @@ Hodgkin-Huxley 1: Creating a model using the API
     - Use the diagnostic Analyser class to identify errors in the model's mathematical construction; and
     - Serialise the model to CellML format for output.
 
-.. container:: shortlist
+.. container:: directorylist
 
-    **Requirements (C++)**
+    **C++ resources**
 
     - :download:`CMakeLists.txt<CMakeLists.txt>` The CMake file for building this tutorial;
     - :download:`createGateModel.cpp<createGateModel.cpp>` Either the skeleton code, or ..
     - :download:`createGateModel_completed.cpp<createGateModel_completed.cpp>` the completed tutorial code; and
     - :download:`utilities.cpp<../code/utilities.cpp>` and :download:`utilities.h<../code/utilities.h>` Helper functions.
 
-.. container:: shortlist
-
-    **Requirements (Python)**
+    **Python resources**
 
     - :download:`createGateModel.py<createGateModel.py>` Either the skeleton code, or ..
     - :download:`createGateModel_completed.py<createGateModel_completed.py>` the completed tutorial code.
 
-.. contents:: Contents
-    :local:
 
 Overview
 --------
 This is the first tutorial in a series designed to walk the user through some of libCellML's functionality available in the API.
 Its goal is to create from scratch a voltage-independent ion gate model.
-The theory of this kind of gate can be found on the :ref:`Ion Gate theory page<theory_iongates>`.
+The theory of this kind of gate can be found on the :ref:`Ion Gate theory page<ion_gates>`.
 
 One of the goals of the CellML format (which must be supported by libCellML) is the construction of models that are reusable.
 Throughout these tutorials we will create entities in such a way as to enable their reuse as easily as possible.  
@@ -44,9 +40,10 @@ The basic structure of this model highlights that too.
 .. container:: shortlist
 
     We will create a model with three components:
+
     - An *equations* component, which contains all of the working pieces and mathematics specific to the model;
     - A *parameters* component, which contains any hard-coded parameters or values specific to this model; and
-    - A wrapper component, which is the parent of the other two.
+    - A *wrapper* component, which is the parent of the other two.
 
 This arrangement means that it's simple to import this model into others, as well as to locate or over-ride parameter values or reuse equations.
 Each of the components created throughout this series of tutorials will follow this same structure.
@@ -56,17 +53,17 @@ Step 1: Set up the model
 
 .. container:: useful
 
-    :api:`Model class<Model>`
+    :api:`Model class <Model>`
 
-    - create
-    - setName
-    - addComponent
+    - :api:`create <Model?fName=create>`
+    - :api:`setName <Model?fName=setName>`
+    - :api:`addComponent <Model?fName=addComponent>`
 
-    :api:`Component class<Component>`
+    :api:`Component class <Component>`
 
-    - create
-    - setName
-    - addComponent
+    - :api:`create <Component?fName=create>`
+    - :api:`setName <Component?fName=setName>`
+    - :api:`addComponent <Component?fName=addComponent>`
 
 .. container:: dothis
 
@@ -125,7 +122,7 @@ All other components will then need to be added to this component, rather than t
         :start-at: #  1.a
         :end-before: # end 1
 
-.. code-block:: terminal
+.. code-block:: text
 
     MODEL: 'GateModel'
         UNITS: 0 custom units
@@ -183,11 +180,11 @@ If you're happy to write your own MathML2 string then please go ahead, but if yo
 
 .. container:: useful
 
-    :api:`Component class<Component>`
+    :api:`Component class <Component>`
 
-    - setMath
-    - appendMath
-    - math
+    - :api:`setMath <Component?fName=setMath>`
+    - :api:`appendMath <Component?fName=appendMath>`
+    - :api:`math <Component?fName=math>`
 
 .. container:: dothis
 
@@ -222,7 +219,7 @@ If you're happy to write your own MathML2 string then please go ahead, but if yo
         :start-at: #  2.c
         :end-before: # end 2
 
-.. code-block:: terminal
+.. code-block:: text
 
     MODEL: 'GateModel'
     UNITS: 0 custom units
@@ -261,20 +258,20 @@ Once the mathematics has been added to the component, and the component to the m
 
 .. container:: useful
 
-    :api:`Validator class<Validator>`
+    :api:`Validator class <Validator>`
 
-    - create
-    - validateModel
-    - issueCount
-    - issue
+    - :api:`create <Validator?fName=create>`
+    - :api:`validateModel <Validator?fName=validateModel>`
+    - :api:`issueCount <Validator?fName=issueCount>`
+    - :api:`issue <Validator?fName=issue>`
 
-    :api:`Issue class<Issue>`
+    :api:`Issue class <Issue>`
 
-    - description
-    - url
-    - referenceHeading
-    - level
-    - itemType
+    - :api:`description <Issue?fName=description>`
+    - :api:`url <Issue?fName=url>`
+    - :api:`referenceHeading <Issue?fName=referenceHeading>`
+    - :api:`level <Issue?fName=level>`
+    - :api:`itemType <Issue?fName=itemType>`
 
 .. container:: dothis
 
@@ -326,13 +323,13 @@ The simplest way is to print the descriptions to the terminal.
 
         **C++**
 
-        - getIssueLevelFromEnum; and
-        - getCellmlElementTypeFromEnum. 
+        - :code:`getIssueLevelFromEnum` ; and
+        - :code:`getCellmlElementTypeFromEnum` . 
 
         **Python**
 
-        - get_issue_level_from_enum; and
-        - get_cellml_element_type_from_enum.
+        - :code:`get_issue_level_from_enum` ; and
+        - :code:`get_cellml_element_type_from_enum` .
 
 .. container:: dothis
 
@@ -361,7 +358,7 @@ The simplest way is to print the descriptions to the terminal.
         :start-at: #  3.b
         :end-before: #  end 3
 
-.. code-block:: terminal
+.. code-block:: text
 
     The validator has found 6 issues.
     Issue [0] is an ERROR:
@@ -396,15 +393,15 @@ These must be created, named, and added to their parent component.
 
 .. container:: useful
 
-    :api:`Variable class<Variable>`
+    :api:`Variable class <Variable>`
 
-    - create
-    - setName
-    - setUnits
+    - :api:`create <Variable?fName=create>`
+    - :api:`setName <Variable?fName=setName>`
+    - :api:`setUnits <Variable?fName=setUnits>`
 
-    :api:`Component class<Component>`
+    :api:`Component class <Component>`
 
-    - addVariable
+    - :api:`addVariable <Component?fName=addVariable>`
 
 .. container:: dothis
 
@@ -437,8 +434,8 @@ These must be created, named, and added to their parent component.
 
     Helper functions for retrieving and printing any issues from any of the logger classes:
 
-    - printIssues (C++)
-    - print_issues (Python)
+    - :code:`printIssues` (C++)
+    - :code:`print_issues` (Python)
 
 .. container:: dothis
 
@@ -468,7 +465,7 @@ These must be created, named, and added to their parent component.
         :start-at: #  4.b
         :end-before: #  end 4
 
-.. code-block:: terminal
+.. code-block:: text
 
     Issue [0] is an ERROR:
         description: CellML identifiers must contain one or more basic Latin alphabetic characters.
@@ -495,21 +492,21 @@ In this example none of the units exist yet, so we need to create all of them.
 
 .. container:: useful
 
-    :api:`Units class<Units>`
+    :api:`Units class <Units>`
 
-    - create
-    - setName
-    - addUnit
-    - name
+    - :api:`create <Units?fName=create>`
+    - :api:`setName <Units?fName=setName>`
+    - :api:`addUnit <Units?fName=addUnit>`
+    - :api:`name <Units?fName=name>`
 
-    :api:`Model class<Model>`
+    :api:`Model class <Model>`
 
-    - addUnits
+    - :api:`addUnits <Model?fName=addUnits>`
 
-    :api:`Variable class<Variable>`
+    :api:`Variable class <Variable>`
 
-    - setUnits
-    - units
+    - :api:`setUnits <Variable?fName=setUnits>`
+    - :api:`units <Variable?fName=units>`
 
 .. container:: dothis
 
@@ -517,7 +514,7 @@ In this example none of the units exist yet, so we need to create all of them.
     These will represent units of milliseconds and per millisecond respectively.
     
 Some basic units have been defined and built into libCellML, others you can define by combining the built-in ones using scaling factors and exponents, or you can define your own from scratch if need be.
-Please read the :ref:`Understanding units<aside_units>` page for more detailed information, but for now let's look at a simple example that defines a :code:`Units` item representing millivolts.
+Please read the :ref:`Understanding units<understanding_units>` page for more detailed information, but for now let's look at a simple example that defines a :code:`Units` item representing millivolts.
 
 .. tabs::
 
@@ -611,7 +608,7 @@ Please read the :ref:`Understanding units<aside_units>` page for more detailed i
         :start-at: #  5.c
         :end-before: #  end 5
 
-.. code-block:: terminal
+.. code-block:: text
 
     MODEL: 'GateModel'
     UNITS: 2 custom units
@@ -633,12 +630,12 @@ Step 6: Analyse the mathematical construction of the model
 
 .. container:: useful
 
-    :api:`Analyser class<Analyser>`
+    :api:`Analyser class <Analyser>`
 
-    - create
-    - analyseModel
-    - issueCount
-    - issue
+    - :api:`create <Analyser?fName=create>`
+    - :api:`analyseModel <Analyser?fName=analyseModel>`
+    - :api:`issueCount <Analyser?fName=issueCount>`
+    - :api:`issue <Analyser?fName=issue>`
 
 .. container:: dothis
 
@@ -672,7 +669,7 @@ Step 6: Analyse the mathematical construction of the model
         :start-at: #  6.a
         :end-before: #  end 6.b
 
-.. code-block:: terminal
+.. code-block:: text
 
     Recorded 3 issues:
     Issue [0] is an ERROR:
@@ -705,18 +702,18 @@ This is the reason for the second internal component, the *parameters* component
 
 .. container:: useful
 
-    :api:`Variable class<Variable>`
+    :api:`Variable class <Variable>`
 
-    - setInitialValue
-    - addEquivalence
+    - :api:`setInitialValue <Variable?fName=setInitialValue>`
+    - :api:`addEquivalence <Variable?fName=addEquivalence>`
 
-    :api:`Component class<Component>`
+    :api:`Component class <Component>`
 
-    - variable
+    - :api:`variable <Component?fName=variable>`
 
-    :api:`Model class<Model>`
+    :api:`Model class <Model>`
 
-    - component
+    - :api:`component <Model?fName=component>`
 
 .. container:: dothis
 
@@ -749,7 +746,7 @@ This is the reason for the second internal component, the *parameters* component
 So far in this tutorial we've only been creating items, defining them, and adding to their parent items.
 Now for the first time we will need to retrieve a child item from its parent.
 This can be done in one of two ways: either by the child's index or by its name.
-There is more information about interacting with collections of items on the :ref:`Understanding collections of items<examples_understand_collections>` page.
+There is more information about interacting with collections of items on the :ref:`Understanding collections of items<understanding_collections>` page.
 
 Two particularly useful idioms are shown below.
 
@@ -804,7 +801,7 @@ Two particularly useful idioms are shown below.
         :start-at: #  6.e
         :end-before: #  6.f
 
-.. code-block:: terminal
+.. code-block:: text
 
     Recorded 6 issues:
     Issue [0] is an ERROR:
@@ -815,13 +812,13 @@ Two particularly useful idioms are shown below.
 
 .. container:: useful
 
-    :api:`Model class<Model>`
+    :api:`Model class <Model>`
 
-    - fixVariableInterfaces
+    - :api:`fixVariableInterfaces <Model?fName=fixVariableInterfaces>`
 
-    :api:`Variable class<Variable>`
+    :api:`Variable class <Variable>`
 
-    - setInterfaceType
+    - :api:`setInterfaceType <Variable?fName=setInterfaceType>`
 
 .. container:: dothis
 
@@ -864,7 +861,7 @@ Step 7: Sanity check
 
     **7.a** Print the model to the terminal using the helper function.
 
-.. code-block:: terminal
+.. code-block:: text
 
     MODEL: 'GateModel'
     UNITS: 2 custom units

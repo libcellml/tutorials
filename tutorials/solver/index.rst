@@ -4,18 +4,18 @@
 Simple solver for generated models
 ==================================
 
-The theory behind how a numerical solver or integration program works is outlined in the :ref:`Theory of ODE solvers<theory_ode_solutions>` page.
+The theory behind how a numerical solver or integration program works is outlined in the :ref:`Theory of ODE solvers<ode_solutions>` page.
 This section describes how to use the simple solvers provided to run models generated with either the C or Python profiles.
-
-.. contents:: Contents
-    :local:
-
 
 C profile solver
 ================
 In C++ you can use the code provided in the :code:`tutorials/solver` directory to build your generated code into a runnable simulation.
 To use the package just follow the instructions below.
-You will need to download:
+
+
+.. container:: directorylist
+
+  **C/C++ resources**
 
   - :download:`CMakeLists.txt <CMakeLists.txt>` The CMake file which controls the building of the solver.
     Note that this is a little different from usual, as outlined below.
@@ -25,7 +25,7 @@ You will need to download:
 
   **1.a** Assuming you've already generated code using the C profile, open a terminal window and navigate into the :code:`tutorials/solver` directory.
 
-.. code-block:: console
+.. code-block:: text
 
   cd your_base_path/tutorials/solver
 
@@ -38,18 +38,18 @@ Because the code you've generated needs to be built at the same time as the solv
   **NB** It's assumed that both of the header and source files have the same base filename (eg: baseFileName.c and baseFileName.h).
   The general CMake command is below.
 
-.. code-block:: console
+.. code-block:: text
 
   cmake -DINPUT=/path/to/your/files/baseFileName .
 
-.. container:: gotcha
+.. container:: nb
 
   Note that the fullstop in the cmake command sets both the source and binary directories to the solver directory.
   This is because even though your generated files are elsewhere, the solver code and CMakeLists.txt file are in *this* directory.
 
 If all has gone well you should see the output similar to:
 
-.. code-block:: console
+.. code-block:: text
 
     -- The C compiler identification is AppleClang 10.0.1.10010046
     -- The CXX compiler identification is AppleClang 10.0.1.10010046
@@ -80,7 +80,7 @@ If all has gone well you should see the output similar to:
   **1.c** Following the instructions in the output, next you need to build the
   executable by entering:
 
-  .. code-block:: console
+  .. code-block:: text
 
     make -j
 
@@ -90,7 +90,7 @@ If all has gone well you should see the output similar to:
   The executable will have been given the prefix :code:`solve_` and then your :code:`baseFileName`, and can be run using the command line flags :code:`-n` to indicate the number of steps to run, and :code:`-dt` to indicate the step size.
   For example:
 
-  .. code-block:: console
+  .. code-block:: text
 
     ./solve_baseFileName -n 20000 -dt 0.001
 
@@ -101,8 +101,11 @@ Python profile solver
 =====================
 
 The solver script is a very simple implementation of the Euler stepping method in Python.
-The theory on which it's based can be found on the :ref:`Theory of ODE solver<theory_ode_solutions>` page.
-You will need to download:
+The theory on which it's based can be found on the :ref:`Theory of ODE solver<ode_solutions>` page.
+
+.. container:: directorylist
+
+  **Python resources**
 
   - :download:`simplesolver.py<simplesolver.py>` The solver script.
 
@@ -113,7 +116,7 @@ The script can be run from the command line as below:
 
     **1.**  Navigate into the "solver" directory
 
-.. code-block:: console
+.. code-block:: text
 
     cd your_base_path/tutorials/solver
 
@@ -125,7 +128,7 @@ The script can be run from the command line as below:
         - :code:`-dt` the step size for the integration variable to take; and
         - :code:`-n` the total number of steps to take.
 
-.. code-block:: console
+.. code-block:: text
 
     python3 solveGeneratedModel.py -m path_to_your_file -n number_of_steps -dt step_size
 
@@ -133,12 +136,12 @@ You should see output to the terminal which echoes the settings and initial cond
 An example file for running is provided for you in the :code:`resources/tutorial3_PredatorPrey_generated.py` file, which can be run for 2000 steps and a step size of 0.01.
 Running this will give you the terminal output:
 
-.. code-block:: console
+.. code-block:: text
 
-    python3 solveGeneratedModel.py -m ../resources/tutorial3_PredatorPrey_generated.py -dt 0.01 -n 2000
+    python3 solveGeneratedModel.py -m /resources/tutorial3_PredatorPrey_generated.py -dt 0.01 -n 2000
 
     ====================================================================
-       SIMPLE SOLVER: ../resources/tutorial3_PredatorPrey_generated
+       SIMPLE SOLVER: /resources/tutorial3_PredatorPrey_generated
     --------------------------------------------------------------------
 
        VARIABLE OF INTEGRATION (units, stepsize)
@@ -158,7 +161,7 @@ Running this will give you the terminal output:
           d (per_fish_day, -0.6)
           c (per_day, -2.8)
 
-       SOLUTION written to ../resources/tutorial3_PredatorPrey_generated_solution.txt
+       SOLUTION written to /resources/tutorial3_PredatorPrey_generated_solution.txt
     ====================================================================
 
 The output is a tab delimited file with the ending :code:`_solution.txt` after the input file name (note that it's in the same directory as the running file too), which can be opened by the plotting program of your choice.

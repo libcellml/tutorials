@@ -15,22 +15,18 @@
 
 #include <libcellml>
 
-int main(int argc, char* argv[])
+int main()
 {
     std::cout << "-----------------------------------------------" << std::endl;
     std::cout << " TUTORIAL 1: READING AND WRITING CELLML FILES" << std::endl;
     std::cout << "-----------------------------------------------" << std::endl;
-
-    if (argc < 2) {
-        return 1;
-    }
-
     // ----------------------------------------------------------------------------
     //  STEP 1:   Create a CellML Model from the contents of a CellML file.
     //
     //  1.a   
     //      Open the file and read its contents into a buffer stream.
-    std::string inFileName = argv[1];
+
+    std::string inFileName = "tutorial1.cellml";
     std::ifstream inFile(inFileName);
     std::stringstream inFileContents;
     inFileContents << inFile.rdbuf();
@@ -61,7 +57,7 @@ int main(int argc, char* argv[])
     //      Return the number of components contained in the model, and print
     //      to the screen.
 
-    size_t numberOfComponents = model->componentCount();
+    int numberOfComponents = model->componentCount();
     std::cout << "The " << modelName << " model has " << numberOfComponents
               << " component(s):" << std::endl;
 
@@ -81,7 +77,7 @@ int main(int argc, char* argv[])
     //      Retrieve the number of variables in this component, and print
     //      to the screen.
 
-    size_t numberOfVariables = component->variableCount();
+    int numberOfVariables = component->variableCount();
     std::cout << "  The " << componentName << " component has "
               << numberOfVariables << " variable(s):" << std::endl;
 
@@ -130,5 +126,4 @@ int main(int argc, char* argv[])
 
     //  3.c 
     //      Go and have a cuppa, you're done!
-    return 0;
 }

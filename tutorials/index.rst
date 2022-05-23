@@ -4,33 +4,38 @@
 libCellML Tutorials
 ===================
 
-Please follow the :ref:`Installation instructions<installation_index>` first to get yourself a copy of libCellML.
+Please follow the :ref:`Installation instructions<installation>` first to get yourself a copy of libCellML.
 
-The first set is a simple starting point for users who are unfamiliar with CellML and/or modelling in general.
+Introductory tutorials
+----------------------
+
+The first set of tutorials provides a simple starting point for users who are unfamiliar with CellML and/or modelling in general.
 
 .. toctree::
     :maxdepth: 2
     :titlesonly:
+    :glob:
        
-    tutorial1/index
-    tutorial2/index
-    tutorial3/index
-    tutorial4/index
-    tutorial5/index
+    tutorial*/index
+    solver/index
+    
+Hodgkin-Huxley modelling tutorials
+----------------------------------
 
-
-The second set of tutorials below take the user progressively through different aspects of the libCellML functionality while building towards a model of Hodgkin and Huxley's squid axon activation.
+The second set of tutorials take the user progressively through different aspects of the libCellML functionality while building towards a model of Hodgkin and Huxley's squid axon activation.
 It is aimed at users who are already familiar with the concept of CellML and modelling.
 
+For more information on their theoretical background, please see the :ref:`Hodgkin-Huxley theory pages<theory_index>`.  
+
 .. toctree::
     :maxdepth: 2
     :titlesonly:
+    :glob:
 
-    hh_createGateModel/index
-    hh_createPotassiumChannelModel/index
-    hh_debugSodiumChannelModel/index
-    hh_generateMembraneModel/index
-    hh_solveGeneratedCode/index
-    
+    hh_tutorial*/index
 
 
+.. toctree::
+    :hidden:
+
+    ../theory/index.rst
