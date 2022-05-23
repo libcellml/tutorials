@@ -7,35 +7,41 @@ Welcome to the introductory tutorial for the use of the libCellML library.
 Using these tutorials in sequence will walk you through the functionality and build your knowledge step by step.
 If, however, you just need to jump in and figure out one specific idea, you can find a tutorial related to that subject using the :ref:`How-to pages<howto>`.
 
-.. container:: shortlist
+After completing this tutorial you will be able to:
 
-    After completing this tutorial you will be able to:
+- Read the contents of a CellML file;
+- Deserialise its contents using the :code:`Parser` to create a :code:`Model` structure;
+- Investigate the hierarchical contents of the :code:`Model`, including the :code:`Components`, :code:`Variables`, and MathML blocks; and
+- Serialise the model and write to another file using the :code:`Printer`.
 
-    - Read the contents of a CellML file;
-    - Deserialise its contents using the :code:`Parser` to create a :code:`Model` structure;
-    - Investigate the hierarchical contents of the :code:`Model`, including the :code:`Components`, :code:`Variables`, and MathML blocks; and
-    - Serialise the model and write to another file using the :code:`Printer`.
 
 Requirements
 ------------
+Either :download:`download the whole folder<tutorial1.zip>`, or:
 
-.. container:: directorylist
+.. container:: shortlist
 
-    **C++ resources**
+    **C++**
     
     - :download:`CMakeLists.txt<CMakeLists.txt>` The CMake file for building;
     - :download:`tutorial1.cpp<tutorial1.cpp>` The skeleton code or
     - :download:`tutorial1_complete.cpp<tutorial1_complete.cpp>` the completed code.
 
-    **Python resources**
+.. container:: shortlist
+
+    **Python**
 
     - :download:`tutorial1.py` The skeleton code or
     - :download:`tutorial1_complete.py` the completed code.
 
-    **CellML resources**
+.. container:: shortlist
+
+    **Resources**
 
     - :download:`tutorial1.cellml<tutorial1.cellml>` the input CellML file.
 
+.. contents:: Contents
+    :local:
 
 Step 0: Set-up
 --------------
@@ -50,20 +56,20 @@ If you'd rather see the completed code instead of working through the tasks your
 
             **0.a** Navigate into the :code:`tutorial1` folder and confirm that you're able to compile and run this template against the libCellML library.
 
-        .. code-block:: text
+        .. code-block:: console
 
             cmake -DINSTALL_PREFIX=../../install
             make -j
 
         Running the template:
 
-        .. code-block:: text
+        .. code-block:: console
 
             ./tutorial1
 
         ... should give the output:
 
-        .. code-block:: text
+        .. code-block:: console
 
             -----------------------------------------------
              TUTORIAL 1: READING AND WRITING CELLML FILES
@@ -78,14 +84,14 @@ If you'd rather see the completed code instead of working through the tasks your
             **0.a** Confirm that you're able to run the :code:`tutorial1.py` template against the libCellML library.
             Navigate into the directory and run the skeleton code file, :code:`tutorial1.py`.
 
-        .. code-block:: text
+        .. code-block:: console
 
             cd tutorial1
             python3 tutorial1.py
 
         This should give the output:
 
-        .. code-block:: text
+        .. code-block:: console
 
             -----------------------------------------------------
                 TUTORIAL 1: READING AND WRITING CellML2 FILES
@@ -100,10 +106,10 @@ The hard work of this transformation is done by the :code:`Parser` object which 
 
 .. container:: useful
 
-    :api:`Parser class <Parser>`
+    :api:`Parser class<Parser>`
 
-    - :api:`create <Parser?fName=create>`
-    - :api:`parseModel <Parser?fName=parseModel>`
+    - create
+    - parseModel
 
 .. container:: dothis
 
@@ -147,23 +153,23 @@ All retrieval functions - where you want to read something about any item - are 
 
 .. container:: useful
 
-    :api:`Model class <Model>`
+    :api:`Model class<Model>`
 
-    - :api:`name <Model?fName=name>`
-    - :api:`id <Model?fName=id>`
-    - :api:`componentCount <Model?fName=componentCount>`
-    - :api:`unitsCount <Model?fName=unitsCount>`
+    - name
+    - id
+    - componentCount
+    - unitsCount
 
-    :api:`Component class <Component>`
+    :api:`Component class<Component>`
 
-    - :api:`name <Component?fName=name>`
-    - :api:`id <Component?fName=id>`
-    - :api:`variableCount <Component?fName=variableCount>`
+    - name
+    - id
+    - variableCount
 
-    :api:`Variable class <Variable>`
+    :api:`Variable class<Variable>`
 
-    - :api:`name <Variable?fName=name>`
-    - :api:`id <Variable?fName=id>`
+    - name
+    - id
 
 For example, to find the name of the model we simply call its :code:`name()` function to return the string of its name.
 
@@ -171,7 +177,7 @@ For example, to find the name of the model we simply call its :code:`name()` fun
 
     **2.a** Find out the name and id of your model and print them to the terminal.
 
-.. code-block:: text
+.. code-block:: terminal
 
     The model name is: tutorial_1_model
     The model id is: tutorial_1_model_id_is_here
@@ -193,7 +199,7 @@ There are generic :code:`somethingCount()` functions which will return the numbe
 
     **2.b** Find out the number of :code:`Component` items in the model, and print it to the terminal.
 
-.. code-block:: text
+.. code-block:: terminal
 
     The tutorial_1_model model has 1 component(s)
 
@@ -219,7 +225,7 @@ Each :code:`Component` itself (or later, :code:`Units` or :code:`Variable`) is r
 
     **2.c** Retrieve the first component from the model, and print its name and id to the terminal.
 
-.. code-block:: text
+.. code-block:: terminal
 
     The tutorial_1_model model has 1 component(s):
         Component[0] has name: i_am_a_component
@@ -242,7 +248,7 @@ In this tutorial we'll only look at the variables and maths.
 
     **2.e** Create a loop through the variables, retrieve each, and print their names to the screen.
 
-.. code-block:: text
+.. code-block:: terminal
 
     The i_am_a_component component has 3 variable(s):
         Variable[0] has name: a
@@ -253,7 +259,7 @@ In this tutorial we'll only look at the variables and maths.
 
     **2.f** We will look more at what the MathML string actually *means* in later tutorials, but for now, retrieve the MathML string from your component using the :code:`math()` function, and print it to the screen.
 
-.. code-block:: text
+.. code-block:: terminal
 
     Component i_am_a_component has a MathML string of: 
         <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -297,10 +303,10 @@ This reverse operation is handled by the :code:`Printer`, which will transform a
 
 .. container:: useful
 
-    :api:`Printer class <Printer>`
+    :api:`Printer class<Printer>`
 
-    - :api:`create <Printer?fName=create>`
-    - :api:`printModel <Printer?fName=printModel>`
+    - create
+    - printModel
 
 .. tabs::
 
