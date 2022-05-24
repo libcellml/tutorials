@@ -75,7 +75,7 @@ int main()
         std::cout << "Issue " << i << ": " << issue->description() << std::endl;
         std::cout << "  reference: "<< issue->referenceHeading() << std::endl;
         std::cout << "  see: " << issue->url() << std::endl;
-        std::cout << "  stored item type: " << getCellmlElementTypeFromEnum(issue->cellmlElementType()) << std::endl;
+        std::cout << "  stored item type: " << getCellmlElementTypeFromEnum(issue->item()->type()) << std::endl;
         std::cout << std::endl;
     }
     //  end 2
@@ -155,7 +155,7 @@ int main()
     //      Check that the item to be returned from the issue is in fact an CellmlElementType::VARIABLE by calling the Issue::type()
     //      function.  Retrieve the variable missing units from the issue.  Set its units to be millivolts.
     auto issue4 = validator->issue(4);
-    assert(issue4->cellmlElementType() == libcellml::CellmlElementType::VARIABLE);
+    assert(issue4->item()->type() == libcellml::CellmlElementType::VARIABLE);
     issue4->variable()->setUnits(model->units("mV"));
 
     //  end 3.c
@@ -196,7 +196,7 @@ int main()
 
     // Method 2:
     auto issue5 = validator->issue(5);
-    assert(issue5->cellmlElementType() == libcellml::CellmlElementType::UNIT);
+    assert(issue5->item()->type() == libcellml::CellmlElementType::UNIT);
     auto issue5item = issue5->unit();
     issue5item->units()->removeUnit(issue5item->index());
     issue5item->units()->addUnit("volt", "milli");
@@ -220,7 +220,7 @@ int main()
     //      Retrieve the variable either using the issue pointer method, or using the name method, and set its 
     //      interface to be the required type.
     auto issue7 = validator->issue(7);
-    assert(issue7->cellmlElementType() == libcellml::CellmlElementType::VARIABLE);
+    assert(issue7->item()->type() == libcellml::CellmlElementType::VARIABLE);
     issue7->variable()->setInterfaceType("public_and_private");
 
     //  3.f 

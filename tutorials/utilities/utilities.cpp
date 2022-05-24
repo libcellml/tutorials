@@ -173,7 +173,7 @@ void printIssues(const libcellml::LoggerPtr &item) {
 
             // Each issue is associated with an item.  In order to properly deal with the item stored, its type is 
             // recorded too in an enumeration.
-            std::cout << "    stored item type: " << getCellmlElementTypeFromEnum(issue->cellmlElementType()) << std::endl;
+            std::cout << "    stored item type: " << cellmlElementTypeAsString(issue->item()->type()) << std::endl;
         }
         std::cout << std::endl << std::endl;
     }
@@ -193,30 +193,6 @@ std::string fileContents(const std::string &fileName)
     return buffer.str();
 }
 
-// START getCellmlElementTypeFromEnum
-std::map<libcellml::CellmlElementType, std::string> itemTypeToString = 
-    {{libcellml::CellmlElementType::COMPONENT, "COMPONENT"},
-    {libcellml::CellmlElementType::COMPONENT_REF, "COMPONENT_REF"},
-    {libcellml::CellmlElementType::CONNECTION, "CONNECTION"},
-    {libcellml::CellmlElementType::ENCAPSULATION, "ENCAPSULATION" },
-    {libcellml::CellmlElementType::IMPORT, "IMPORT"},
-    {libcellml::CellmlElementType::MAP_VARIABLES, "MAP_VARIABLES"},
-    {libcellml::CellmlElementType::MATH, "MATH"},
-    {libcellml::CellmlElementType::MODEL, "MODEL"},
-    {libcellml::CellmlElementType::RESET, "RESET"},
-    {libcellml::CellmlElementType::RESET_VALUE, "RESET_VALUE"},
-    {libcellml::CellmlElementType::TEST_VALUE, "TEST_VALUE"},
-    {libcellml::CellmlElementType::UNDEFINED, "UNDEFINED"},
-    {libcellml::CellmlElementType::UNIT, "UNIT"},
-    {libcellml::CellmlElementType::UNITS, "UNITS"}, 
-    {libcellml::CellmlElementType::VARIABLE, "VARIABLE"}};
-
-std::string getCellmlElementTypeFromEnum(libcellml::CellmlElementType t) {
-    return itemTypeToString.at(t);
-}
-// END getCellmlElementTypeFromEnum
-
-
 // START getIssueLevelFromEnum
 std::string getIssueLevelFromEnum(libcellml::Issue::Level myLevel)
 {
@@ -228,9 +204,6 @@ std::string getIssueLevelFromEnum(libcellml::Issue::Level myLevel)
         break;
     case libcellml::Issue::Level::WARNING:
         myTypeAsString = "a WARNING";
-        break;
-    case libcellml::Issue::Level::HINT:
-        myTypeAsString = "a HINT";
         break;
     case libcellml::Issue::Level::MESSAGE:
         myTypeAsString = "a MESSAGE";
@@ -330,22 +303,14 @@ void printEquivalentVariableSet(const libcellml::VariablePtr &variable)
 void doPrintImportDependencies(const libcellml::ModelPtr &model, std::string &spacer) {
     // Function to recursively iterate through the import dependencies in this model, and 
     // print their URL and what they require to the terminal.
-    if(model->hasUnresolvedImports() || (model->importSourceCount() == 0)) {
+    if(model->hasUnresolvedImports()) {
         return;
     }
     std::cout << spacer << "Model '" << model->name() << "' imports:" << std::endl;
-    for(size_t i = 0; i < model->importSourceCount(); ++i) {
-        // Each import source should have its own model pointer attached now.
-        auto importSource = model->importSource(i);
-        std::cout << spacer << "   From "<< importSource->url() << ":" << std::endl;
-        for(size_t u = 0; u < importSource->unitsCount(); ++u){
-            std::cout << spacer << "    - units "<<importSource->units(u)->name() << " <- "<<importSource->units(u)->importReference()<<std::endl;
-        }
-        for(size_t c = 0; c < importSource->componentCount(); ++c){
-            std::cout << spacer << "    - component "<<importSource->component(c)->name() << " <- "<<importSource->component(c)->importReference()<<std::endl;
-        }
-        std::string bigSpacer = spacer + "    ";
-        doPrintImportDependencies(importSource->model(), bigSpacer);
+
+    const std::vector<std::string> imports = model->importRequirements();
+    for (const auto i : imports) {
+        std::cout << "    - import: " << i << std::endl;
     }
 }
 

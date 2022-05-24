@@ -90,7 +90,7 @@ int main(int argc, char* argv[])
             std::cout << "  Validator issue[" << e << "]:" << std::endl;
             std::cout << "     Description: " << validatorIssue->description()
                       << std::endl;
-            std::cout << "     Type of item stored: " << getCellmlElementTypeFromEnum(validatorIssue->cellmlElementType()) << std::endl;
+            std::cout << "     Type of item stored: " << cellmlElementTypeAsString(validatorIssue->item()->type()) << std::endl;
             std::cout << "     URL: " << validatorIssue->url() << std::endl;
             if (issueSpecificationReference != "") {
                 std::cout << "    See section " << issueSpecificationReference
@@ -133,7 +133,7 @@ int main(int argc, char* argv[])
     //      Note that we can only do this because we know that the item type stored is a VARIABLE.
     //      Set its units to be "dimensionless".
     auto issue1 = validator->issue(1);
-    auto b = issue1->variable();
+    auto b = issue1->item()->variable();
     b->setUnits("dimensionless");
 
     //  This can be done in a chain too: validator->issue(1)->variable()->setUnits("dimensionless");
@@ -157,8 +157,8 @@ int main(int argc, char* argv[])
     //      Set its initial value to 20.
     auto issue2 = validator->issue(2);
     auto item = issue2->item();
-    assert(issue2->cellmlElementType() == libcellml::CellmlElementType::VARIABLE);
-    auto c = std::any_cast<libcellml::VariablePtr>(item);
+    assert(issue2->item()->type() == libcellml::CellmlElementType::VARIABLE);
+    auto c = item->variable();
     c->setInitialValue(20.0);
 
     //  end 3.c
@@ -178,7 +178,7 @@ int main(int argc, char* argv[])
     //      Change the name of the units required by variable 'd' to be those which are called 'i_am_a_units_item'.
     //      You will need to retrieve these units from the model in order to pass them to the variable.
     auto iAmAUnitsItem = model->units("i_am_a_units_item");
-    validator->issue(3)->variable()->setUnits(iAmAUnitsItem);
+    validator->issue(3)->item()->variable()->setUnits(iAmAUnitsItem);
 
     //  end 3.d
 

@@ -147,7 +147,7 @@ int main()
         std::cout << "Issue " << i << ": " << issue->description() << std::endl;
         std::cout << "  reference: "<< issue->referenceHeading() << std::endl;
         std::cout << "  see: " << issue->url() << std::endl;
-        std::cout << "  stored item type: " << getCellmlElementTypeFromEnum(issue->cellmlElementType()) << std::endl;
+        std::cout << "  stored item type: " << getCellmlElementTypeFromEnum(issue->item()->type()) << std::endl;
         std::cout << std::endl;
     }
 

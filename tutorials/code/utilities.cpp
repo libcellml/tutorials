@@ -147,7 +147,7 @@ void printIssues(const libcellml::LoggerPtr &item) {
             if(!issue->url().empty()){
                 std::cout << "    more information at: " <<issue->url() << std::endl;
             }
-            std::cout << "    stored item type: " << getCellmlElementTypeFromEnum(issue->cellmlElementType()) << std::endl;
+            std::cout << "    stored item type: " << getCellmlElementTypeFromEnum(issue->item()->type()) << std::endl;
         }
         std::cout << std::endl << std::endl;
     }

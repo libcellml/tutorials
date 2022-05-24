@@ -506,40 +506,27 @@ The functions and the types they return are shown below.
         URL: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=2.8.2.2
         See section 2.8.2.2 in the CellML specification.
 
-For this next issue we're going to show how to use the generic :code:`item()` function on an issue.
-This differs between C++ and Python so please refer to the appropriate tab for information.
+For this next issue we're going to show how to use the :code:`item()` function on an issue.
 
 .. tabs::
 
     .. tab:: C++
 
-        In C++ we need to know the types of everything we're dealing with, all the time.
-        A recent workaround is the provision of the :code:`std::any` type, which can be used to store an object of arbitrary type.
-        The caveat is that in order to use it, you need to cast it back into its original type using :code:`std::any_cast`.
-        The items in the :code:`Issue` class are stored as :code:`std::any` objects, and can either be retrieved and cast in one step using the functions listed above; or the :code:`std::any` pointer itself can be retrieved using the :code:`item()` function.
-
-        You will need to also call the :code:`cellmlElementType()` function to verify the correct type to cast the item to.
+        You will need to call the :code:`cellmlElementType()` function to verify the correct API to call for returning a valid object.
 
         .. code-block:: c++
 
             //  Retrieve an issue pointer from the validator.
             auto myFirstIssue = validator->issue(0);
 
-            // Retrieve the std::any item from the issue.
-            auto anyItem = myFirstIssue->item();
-
             // Check the type of the item stored.  If you don't know ahead of time this would be a
             // switch statement to check them all.
-            assert(myFirstIssue->cellmlElementType() == libcellml::CellmlElementType::VARIABLE);
+            assert(myFirstIssue->item()->type() == libcellml::CellmlElementType::VARIABLE);
 
-            // Cast into a VariablePtr for use as normal.
-            auto myVariable = std::any_cast<libcellml::VariablePtr>(anyItem);
+            // Use the element specific API to return a VariablePtr for use as normal.
+            auto myVariable = myFirstIssue->item()->variable();
 
     .. tab:: Python
-
-        Since Python doesn't care about types the same way that C++ does, the :code:`item()` function will return the correct item.  
-        No casting is needed!  
-        It can still be useful to know the type that's returned, as your options for how to deal with it may vary.
 
         .. code-block:: python
 
@@ -551,9 +538,10 @@ This differs between C++ and Python so please refer to the appropriate tab for i
 
             # Check the type of the item stored.  If you don't know ahead of time this would be a
             # switch statement to check them all.
-            assert(my_first_issue->cellmlElementType() == CellmlElementType.VARIABLE)
+            assert(my_first_issue->item()->type() == CellmlElementType.VARIABLE)
 
-            # The item is available for use as a variable already.
+            # Use the element specific API to return a VariablePtr for use as normal.
+            my_variable = my_first_issue.item().variable()
 
 .. container:: dothis
 
