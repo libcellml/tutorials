@@ -13,15 +13,15 @@ The tutorial_1_model model has 1 component(s):
     Variable[2] has name: c
   Component i_am_a_component has a MathML string of: 
   <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <apply>
-    <eq/>
-    <ci>a</ci>
-    <apply>
-      <plus/>
-      <ci>b</ci>
-      <ci>c</ci>
-    </apply>
-  </apply>
-</math>
+      <apply>
+        <eq/>
+        <ci>a</ci>
+        <apply>
+          <plus/>
+          <ci>b</ci>
+          <ci>c</ci>
+        </apply>
+      </apply>
+    </math>
 
 The tutorial_1_model has been printed to: tutorial1_printed.cellml

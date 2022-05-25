@@ -15,6 +15,7 @@
  *    - Serialise and print a Model structure to a CellML file.
  */
 
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -29,7 +30,7 @@ int main(int argc, char* argv[])
     std::cout << "   TUTORIAL 2: ERROR CHECKING AND VALIDATION   " << std::endl;
     std::cout << "-----------------------------------------------" << std::endl;
 
-    std::string inFileName = "tutorial2.cellml";
+    std::filesystem::path inFileName = "tutorial2.cellml";
     if (argc > 1) {
         inFileName = argv[1];
     }
@@ -46,7 +47,7 @@ int main(int argc, char* argv[])
     std::ifstream inFile(inFileName);
     std::stringstream inFileContents;
     inFileContents << inFile.rdbuf();
-    std::cout << "Opening the CellML file: '" << inFileName << "'" << std::endl;
+    std::cout << "Opening the CellML file: " << inFileName.filename() << std::endl;
 
     //  1.b
     //      Create a Parser instance, and submit your string for serialisation
