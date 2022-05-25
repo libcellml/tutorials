@@ -20,6 +20,7 @@
  *      through how the Annotator class can be used to locate the desired objects.
  */
 
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -28,16 +29,21 @@
 
 #include "utilities.h"
 
-int main()
+int main(int argc, char* argv[])
 {
 
     std::cout << "----------------------------------------------------------" << std::endl;
     std::cout << "   STEP 1: Parse a mystery model                          " << std::endl;
     std::cout << "----------------------------------------------------------" << std::endl;
 
+
+    std::filesystem::path inFileName = "MysteryModel.cellml";
+    if (argc > 1) {
+        inFileName = argv[1];
+    }
     //  1.a 
     //      Read the mystery file, MysteryModel.cellml.
-    std::ifstream inFile("MysteryModel.cellml");
+    std::ifstream inFile(inFileName);
     std::stringstream inFileContents;
     inFileContents << inFile.rdbuf();
 
@@ -73,10 +79,10 @@ int main()
     //     - second attribute is a std::any cast of the item itself.
     //  2.b
     //      Retrieve the item with an id of "marco".  Use the helper function
-    //      getCellmlElementTypeFromEnum to convert the enumeration of its type into a
+    //      cellmlElementTypeAsString to convert the enumeration of its type into a
     //      string for printing to the terminal.
-    libcellml::AnyItem marcoItem = annotator->item("marco");
-    std::cout << "The item with ID 'marco' is a " << getCellmlElementTypeFromEnum(marcoItem.first) << std::endl;
+    libcellml::AnyCellmlElementPtr marcoItem = annotator->item("marco");
+    std::cout << "The item with ID 'marco' is a " << cellmlElementTypeAsString(marcoItem->type()) << std::endl;
 
     //  2.c
     //      Check that the annotator has not reported any issues.
@@ -84,10 +90,9 @@ int main()
 
     //  2.d
     //      Now that we know the marco item's type using its first attribute (it should
-    //      be a libcellml::CellmlElementType::VARIABLE) we can cast it into a usable item
-    //      using std::any_cast.  Cast the second attribute of the macro item into a
-    //      libcellml::VariablePtr item.
-    auto marcoVariable = std::any_cast<libcellml::VariablePtr>(marcoItem.second);
+    //      be a libcellml::CellmlElementType::VARIABLE) we can call variable() to 
+    //      get the varaible from the marcoItem.
+    auto marcoVariable = marcoItem->variable();
 
     //  end 2
 
@@ -99,7 +104,7 @@ int main()
     //      Now try the same procedure to find the item with id of "polo".
     //      Retrieve the item and print its type to the terminal.
     auto poloItem = annotator->item("polo");
-    std::cout << "The type of item with ID 'polo' is " << getCellmlElementTypeFromEnum(poloItem.first) << std::endl;
+    std::cout << "The type of item with ID 'polo' is " << cellmlElementTypeAsString(poloItem->type()) << std::endl;
 
     //  3.b
     //      The item type returned is libcellml::CellmlElementType::UNDEFINED ... so we 
@@ -123,8 +128,8 @@ int main()
     auto poloItems = annotator->items("polo");
     std::cout << "The items with an id of 'polo' have types of:" << std::endl;
     size_t index = 0;
-    for (auto &item : poloItems) {
-        std::cout << "  - [" << index << "] " << getCellmlElementTypeFromEnum(item.first) << std::endl;
+    for (const auto &item : poloItems) {
+        std::cout << "  - [" << index << "] " << cellmlElementTypeAsString(item->type()) << std::endl;
         ++index; 
     }
 
@@ -148,10 +153,10 @@ int main()
     //      Assign an automatic id to all of the items with id "polo", except for the one whose
     //      type is UNIT.
     poloItem = poloItems.at(2);
-    assert(poloItem.first == libcellml::CellmlElementType::UNIT);
+    assert(poloItem->type() == libcellml::CellmlElementType::UNIT);
     poloItems.erase(poloItems.begin() + 2);
 
-    for (auto &item : poloItems) {
+    for (const auto &item : poloItems) {
         annotator->assignId(item);
     }
 
@@ -164,13 +169,13 @@ int main()
 
     //  Now we know that there is only one item in the model with id "polo", and we also know
     //  that it has type UNIT.  This means that we can retrieve a Unit item directly from the
-    //  annotator rather than needing to cast it using the std::any_cast.  Instead of calling
-    //  the annotator's item function, call the Annotator::unit function with the id "polo" to return the 
-    //  unit item directly.
+    //  annotator.  Instead of calling
+    //  the annotator's item function, call the Annotator::unitsItem function with the id "polo" to return the 
+    //  units item directly.
 
     //  3.f
-    //      Retrieve the Unit with id polo without casting.
-    auto poloUnit = annotator->unit("polo");
+    //      Retrieve the UnitsItem with id polo without casting.
+    auto poloUnitsItem = annotator->unitsItem("polo");
 
     //  end 3.f
     //  The Unit is another std::pair with: **TODO**
@@ -178,7 +183,7 @@ int main()
     //      - second attribute is the index of this Unit within the parent.
     
     std::cout << "----------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 4: See who else is lurking in this pool            " << std::endl;
+    std::cout << "   STEP 4: See who else is lurking in this pool           " << std::endl;
     std::cout << "----------------------------------------------------------"<< std::endl;
 
     //  Now that we've found Marco and fixed the duplicates of Polo, we'd like to know
@@ -202,7 +207,7 @@ int main()
     std::cout << "Duplicated id strings are:" << std::endl;
     auto duplicatedIds = annotator->duplicateIds();
     for(auto &id :duplicatedIds) {
-        std::cout << "  - '" << id << "' occurs " << annotator->itemCount(id) << "times." << std::endl;
+        std::cout << "  - '" << id << "' occurs " << annotator->itemCount(id) << " times." << std::endl;
     }
 
     //  end 4
@@ -218,21 +223,21 @@ int main()
     //      Retrieve an item with id of "whoAmIAndWhereDidIComeFrom" and print its item type
     //      to the terminal.
     auto whoAmIAndWhereDidIComeFrom = annotator->item("whoAmIAndWhereDidIComeFrom");
-    std::cout << "The type of item with ID 'whoAmIAndWhereDidIComeFrom' is " << getCellmlElementTypeFromEnum(whoAmIAndWhereDidIComeFrom.first) << std::endl;
+    std::cout << "The type of item with ID 'whoAmIAndWhereDidIComeFrom' is " << cellmlElementTypeAsString(whoAmIAndWhereDidIComeFrom->type()) << std::endl;
     
     //  5.b
-    //      Cast it into a CellML item of the appropriate type.
-    auto units = std::any_cast<libcellml::UnitsPtr>(whoAmIAndWhereDidIComeFrom.second);
+    //      Call the appropriate API to get the CellML item.
+    auto units = whoAmIAndWhereDidIComeFrom->units();
 
     //  5.c
-    //      Use the Component::isImport() function to verify that it is imported.
+    //      Use the Units::isImport() function to verify that it is imported.
     assert(units->isImport());
 
     //  5.d
     //      Create an Importer instance and use it to resolve this model's imports.
     //      Check that it has not raised any issues.
     auto importer = libcellml::Importer::create();
-    importer->resolveImports(model, "");
+    importer->resolveImports(model, inFileName.remove_filename());
     printIssues(importer);
 
     //  5.e
@@ -287,7 +292,7 @@ int main()
     //      Try and retrieve an item with id "marco" and check that a null pointer is returned.
     //      Retrieve and print any issues to the terminal.
     marcoItem = annotator->item("marco");
-    std::cout << "The type of item with ID 'marco' is " << getCellmlElementTypeFromEnum(marcoItem.first) << std::endl;
+    std::cout << "The type of item with ID 'marco' is " << cellmlElementTypeAsString(marcoItem->type()) << std::endl;
     printIssues(annotator);
 
     //  6.d
@@ -303,4 +308,5 @@ int main()
     std::cout << "There are " << duplicatedIds.size() << " duplicated ids left in the model." << std::endl;
 
     //  end 6
+    return 0;
 }
