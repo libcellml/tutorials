@@ -92,10 +92,9 @@ int main()
     //  We can use these issues as we need to.  The simplest way is to print the descriptions
     //  to the terminal.
 
-    //  Two helper functions have been provided for this tutorial that will help printing 
-    //  enumerated values to the terminal.  These are:
-    //      - getIssueLevelFromEnum; and
-    //      - getCellmlElementTypeFromEnum. 
+    //  One helper functions has been provided for this tutorial that will help printing 
+    //  enumerated values to the terminal.  It is:
+    //      - getIssueLevelFromEnum. 
 
     //  3.b 
     //      Retrieve the number of issues encountered using the validator->issueCount() function,

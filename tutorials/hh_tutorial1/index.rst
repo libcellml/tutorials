@@ -316,20 +316,18 @@ The simplest way is to print the descriptions to the terminal.
 
 .. container:: useful
 
-    Two helper functions have been provided for this tutorial that will help printing the string equivalent of enumerated values to the terminal.
+    One helper function has been provided for this tutorial that will help printing the string equivalent of enumerated values to the terminal.
     These are:
 
     .. container:: shortlist
 
         **C++**
 
-        - :code:`getIssueLevelFromEnum` ; and
-        - :code:`getCellmlElementTypeFromEnum` . 
+        - :code:`getIssueLevelFromEnum`. 
 
         **Python**
 
-        - :code:`get_issue_level_from_enum` ; and
-        - :code:`get_cellml_element_type_from_enum` .
+        - :code:`get_issue_level_from_enum`.
 
 .. container:: dothis
 

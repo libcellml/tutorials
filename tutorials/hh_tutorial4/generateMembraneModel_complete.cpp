@@ -12,6 +12,7 @@
  *      - Writing to files. 
  */
 
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -20,12 +21,19 @@
 
 #include "utilities.h"
 
-int main()
+int main(int argc, char* argv[])
 {
     std::cout << "----------------------------------------------------------" << std::endl;
     std::cout << "   STEP 1: Parse the existing membrane model              " << std::endl;
     std::cout << "----------------------------------------------------------" << std::endl;
 
+
+    std::filesystem::path inFileName = "MembraneModel.cellml";
+    if (argc > 1) {
+        inFileName = argv[1];
+    }
+
+    std::cout << "in file name:" << inFileName << std::endl;
     // STEP 1: Parse an existing model from a CellML file.
     //         The Parser class is used to deserialise a CellML string into a Model instance.
     //         This means that you're responsible for finding, opening and reading the *.cellml 
@@ -33,7 +41,7 @@ int main()
 
     //  1.a 
     //      Read a CellML file into a std::string.
-    std::ifstream inFile("MembraneModel.cellml");
+    std::ifstream inFile(inFileName);
     std::stringstream inFileContents;
     inFileContents << inFile.rdbuf();
 
@@ -47,7 +55,7 @@ int main()
 
     //  1.d 
     //      Print the parsed model to the terminal for viewing.
-    printModel(model, false);
+    printModel(model);
 
     //  end 1
 
@@ -58,7 +66,7 @@ int main()
     //  2.a
     //      Create an Importer instance and use it to resolve the imports in your model.
     auto importer = libcellml::Importer::create();
-    importer->resolveImports(model, "");
+    importer->resolveImports(model, inFileName.remove_filename());
 
     //  2.b
     //      Check that the importer has not raised any issues.

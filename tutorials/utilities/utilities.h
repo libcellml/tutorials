@@ -20,7 +20,6 @@ void printImportDependencies(const libcellml::ModelPtr &model);
 
 std::string fileContents(const std::string &fileName);
 
-std::string getCellmlElementTypeFromEnum(libcellml::CellmlElementType t);
 std::string getIssueLevelFromEnum(libcellml::Issue::Level myLevel);
 
 void solveWithEuler(double stepSize, int stepCount, std::string outFileName);

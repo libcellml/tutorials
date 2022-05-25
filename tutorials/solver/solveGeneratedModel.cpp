@@ -26,16 +26,31 @@ std::map<std::string, std::string> processArguments(int argc, char **argv);
 
 int main(int argc, char **argv)
 {
+    // STEP 0
+    // Retrieve the command line arguments.
     std::map<std::string, std::string> args = processArguments(argc, argv);
+    double stepSize = std::stod(args["dt"]);
+    int stepCount = std::stoi(args["n"]);
+    std::string input = args["input"];
 
     std::cout << "-------------------------------------------------------------" << std::endl;
     std::cout << "   SIMPLE SOLVER  " << std::endl;
     std::cout << "-------------------------------------------------------------" << std::endl;
-    std::cout << "       model = " << args["input"] << std::endl;
-    std::cout << "       timestep = " << args["dt"] << std::endl;
-    std::cout << "       number of steps = " << args["n"] << std::endl
+    std::cout << "       model = " << input << std::endl;
+    std::cout << "       timestep = " << stepSize << std::endl;
+    std::cout << "       number of steps = " << stepCount << std::endl
               << std::endl;
 
+    // STEP 1
+    // Inside the generated code are structures with information about the 
+    // model and its dimensions.  These are:
+    //   - VOI_INFO: a dict with the name, units, and component of the variable of integration,
+    //   - STATE_INFO: a list of dicts for the state variables,
+    //   - VARIABLE_INFO: a list of dicts for the non-state variables. 
+
+    std::cout << "   VARIABLE OF INTEGRATION (units) " << std::endl;
+    std::cout << "      " << VOI_INFO.name << " (" << VOI_INFO.units << ")" <<std::endl 
+              << std::endl;
     std::cout << "   STATE VARIABLES (units) " << std::endl;
     std::cout << "-------------------------------------------------------------" << std::endl;
     for (size_t i = 0; i < STATE_COUNT; ++i) {
@@ -43,18 +58,24 @@ int main(int argc, char **argv)
     }
     std::cout << std::endl;
 
+    // STEP 2
+    // Call module functions to construct and initialise the variable arrays.
+    // Note that both the rates and the states arrays have the same dimensions,
+    // so it's possible to call the createStatesArray() function for both.
     double time = 0.0;
-    double stepSize = std::stod(args["dt"]);
-    int stepCount = std::stoi(args["n"]);
-    auto myVariables = createVariablesArray();
     auto myStateVariables = createStatesArray();
     auto myRates = createStatesArray();
+    auto myVariables = createVariablesArray();
 
-    initializeStatesAndConstants(myStateVariables, myVariables);
+    // STEP 3
+    // Make use of the access functions provided to initialise the variable arrays.
+    initialiseStatesAndConstants(myStateVariables, myVariables);
     computeComputedConstants(myVariables);
     computeRates(time, myStateVariables, myRates, myVariables);
     computeVariables(time, myStateVariables, myRates, myVariables);
 
+    // STEP 4
+    // Prepare a file for writing during the solution process.
     std::cout << "   INITIAL CONDITIONS" << std::endl;
     std::cout << "-------------------------------------------------------------" << std::endl;
     for (size_t i = 0; i < STATE_COUNT; ++i) {
@@ -90,6 +111,8 @@ int main(int argc, char **argv)
     }
     outFile << std::endl;
 
+    // STEP 5
+    // Numerically integrate the state variables using the Euler method to step through the solution.
 
     // Solution columns in output file
     for (size_t step = 1; step < stepCount; ++step) {
@@ -100,7 +123,11 @@ int main(int argc, char **argv)
             myStateVariables[s] = myStateVariables[s] + myRates[s] * stepSize;
             outFile << "\t" << myStateVariables[s];
         }
-        computeVariables(time, myStateVariables, myRates, myVariables); // update states before updating variables?
+        // The variables in the "myVariables" array are those which do not affect the calculation
+        // of rates or state variables.  They only need to be computed when outputting the 
+        // results of a timestep: if you're not saving every timestep, then you can skip this
+        // until you are.
+        computeVariables(time, myStateVariables, myRates, myVariables); 
         for (size_t s = 0; s < VARIABLE_COUNT; ++s) {
             outFile << "\t" << myVariables[s];
         }
@@ -108,9 +135,13 @@ int main(int argc, char **argv)
     }
     outFile.close();
 
+    // Housekeeping.
+
     deleteArray(myStateVariables);
     deleteArray(myVariables);
     deleteArray(myRates);
+
+    // END
 
     std::cout << "   OUTPUT" << std::endl;
     std::cout << "-------------------------------------------------------------" << std::endl;
@@ -119,6 +150,7 @@ int main(int argc, char **argv)
     std::cout << "-------------------------------------------------------------" << std::endl;
 }
 
+// COMMAND LINE FUNCTION
 std::map<std::string, std::string> processArguments(int argc, char **argv)
 {
     if (argc == 1) {
@@ -145,3 +177,4 @@ std::map<std::string, std::string> processArguments(int argc, char **argv)
     }
     return argMap;
 }
+// END COMMAND LINE FUNCTION

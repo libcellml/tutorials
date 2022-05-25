@@ -62,7 +62,7 @@ int main()
 
     //  2.b
     //      Retrieve the item with an id of "marco".  Use the helper function
-    //      getCellmlElementTypeFromEnum to convert the enumeration of its type into a
+    //      cellmlElementTypeAsString to convert the enumeration of its type into a
     //      string for printing to the terminal.
    
     //  2.c

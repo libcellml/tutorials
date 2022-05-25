@@ -147,7 +147,7 @@ void printIssues(const libcellml::LoggerPtr &item) {
             if(!issue->url().empty()){
                 std::cout << "    more information at: " <<issue->url() << std::endl;
             }
-            std::cout << "    stored item type: " << getCellmlElementTypeFromEnum(issue->item()->type()) << std::endl;
+            std::cout << "    stored item type: " << cellmlElementTypeAsString(issue->item()->type()) << std::endl;
         }
         std::cout << std::endl << std::endl;
     }
@@ -164,27 +164,6 @@ std::string fileContents(const std::string &fileName)
     buffer << file.rdbuf();
 
     return buffer.str();
-}
-
-std::map<libcellml::CellmlElementType, std::string> itemTypeToString = 
-    {{libcellml::CellmlElementType::COMPONENT, "COMPONENT"},
-    {libcellml::CellmlElementType::COMPONENT_REF, "COMPONENT_REF"},
-    {libcellml::CellmlElementType::CONNECTION, "CONNECTION"},
-    {libcellml::CellmlElementType::ENCAPSULATION, "ENCAPSULATION" },
-    {libcellml::CellmlElementType::IMPORT, "IMPORT"},
-    {libcellml::CellmlElementType::MAP_VARIABLES, "MAP_VARIABLES"},
-    {libcellml::CellmlElementType::MATH, "MATH"},
-    {libcellml::CellmlElementType::MODEL, "MODEL"},
-    {libcellml::CellmlElementType::RESET, "RESET"},
-    {libcellml::CellmlElementType::RESET_VALUE, "RESET_VALUE"},
-    {libcellml::CellmlElementType::TEST_VALUE, "TEST_VALUE"},
-    {libcellml::CellmlElementType::UNDEFINED, "UNDEFINED"},
-    {libcellml::CellmlElementType::UNIT, "UNIT"},
-    {libcellml::CellmlElementType::UNITS, "UNITS"}, 
-    {libcellml::CellmlElementType::VARIABLE, "VARIABLE"}};
-
-std::string getCellmlElementTypeFromEnum(libcellml::CellmlElementType t) {
-    return itemTypeToString.at(t);
 }
 
 std::string getIssueLevelFromEnum(libcellml::Issue::Level myLevel)

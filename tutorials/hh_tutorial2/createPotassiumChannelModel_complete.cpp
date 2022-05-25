@@ -13,18 +13,24 @@
  *      - Serialise the model to CellML format for output.
  */
 
-#include <iostream>
+#include <filesystem>
 #include <fstream>
+#include <iostream>
 
 #include <libcellml>
 
 #include "utilities.h"
 
-int main()
+int main(int argc, char* argv[])
 {
     //  Setup useful things.
     std::string mathHeader = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" xmlns:cellml=\"http://www.cellml.org/cellml/2.0#\">\n";
     std::string mathFooter = "</math>";
+
+    std::filesystem::path inModelPath = "";
+    if (argc > 1) {
+        inModelPath = argv[1];
+    }
 
     // Overall the model structure will be:
     // model: PotassiumChannelModel
@@ -622,7 +628,7 @@ int main()
     //  10.b
     //      Pass the model and the path to the GateModel.cellml file into the Importer::resolveImports
     //      function.
-    importer->resolveImports(model, "");
+    importer->resolveImports(model, inModelPath);
 
     //  10.c  
     //      Check the Importer for issues and print any found to the terminal - we do not expect any at this stage.
@@ -640,7 +646,7 @@ int main()
     //       string from the Importer::key(index) function.  At this stage we expect only one model in the library.
     std::cout << "The importer has " << importer->libraryCount() << " models in the library." << std::endl;
     for(size_t i = 0; i < importer->libraryCount(); ++i) {
-        std::cout << " library("<<i<<") = " << importer->key(i) << std::endl;
+        std::cout << " library(" << i << ") = " << importer->key(i) << std::endl;
     }
     std::cout << std::endl;
 
@@ -651,21 +657,21 @@ int main()
     //      library or from the import source's model (or one of each, to prove to yourself that it works
     //      either way!).
     auto dummyGate = importedGate->importSource()->model()->component(importedGate->importReference())->clone();
-    auto dummyController = importer->library("PotassiumChannelController.cellml")->component(controller->importReference())->clone();
+    auto dummyController = importer->library(inModelPath / "PotassiumChannelController.cellml")->component(controller->importReference())->clone();
     
     //      GOTCHA: Note that when an item is added to a new parent, it is automatically removed from 
     //         its original parent.  Iterating through a set of children is best done in descending
     //         index order or using a while loop so that child items are not skipped as the indices change.
     //  10.f
     //      Iterate through the variables in each dummy component, and add a clone of each variable 
-    //      to the destination component. 
+    //      to the destination component.     
     while(dummyGate->variableCount()) {
         importedGate->addVariable(dummyGate->variable(0));
     }
     while(dummyController->variableCount()) {
         controller->addVariable(dummyController->variable(0));
     }
-
+    
     //      More connections are needed.  These should include:
     //          - (nGate equations component : imported gate component)
     //          - n : X
@@ -678,6 +684,7 @@ int main()
     //      in the imported gate component.
     //      Repeat for the controller component and the potassium channel component.
     //      Fix the variable interfaces and validate the model, expecting there to be no errors.
+    
     libcellml::Variable::addEquivalence(nGateEquations->variable("n"), importedGate->variable("X"));
     libcellml::Variable::addEquivalence(nGateEquations->variable("alpha_n"), importedGate->variable("alpha_X"));
     libcellml::Variable::addEquivalence(nGateEquations->variable("beta_n"), importedGate->variable("beta_X"));
@@ -696,13 +703,14 @@ int main()
 
     validator->validateModel(model);
     printIssues(validator);
-
+    
     //  end 10.h
 
     // The Analyser class can only operate on a flat (ie: import-free) model. In order
     // to do the final check before serialising our model for output, we will use the Importer
     // to create a flattened version of the model to submit for analysis.
 
+    
     //  10.i 
     //      Create a flattened version of the final model using the Importer::flattenModel(model)
     //      function.  Run this through the analyser and expect there to be no issues reported.

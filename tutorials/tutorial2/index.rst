@@ -258,12 +258,10 @@ Again following the same retrieval idiom as in Tutorial 1 for items in sets, we 
 
     Utility functions (C++)
 
-    - getCellmlElementTypeFromEnum
     - getIssueLevelFromEnum
 
     Utility functions (Python)
 
-    - get_cellml_element_type_from_enum
     - get_issue_level_from_enum
 
 Inside an :code:`Issue` structure are three fields which are really useful.
