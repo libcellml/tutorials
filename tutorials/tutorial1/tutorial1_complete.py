@@ -9,6 +9,7 @@
      - Serialise the model and write to another file.
 
 """
+import sys
 
 from libcellml import Parser, Printer
 
@@ -18,18 +19,22 @@ if __name__ == "__main__":
     print("    TUTORIAL 1: READING AND WRITING CellML2 FILES    ")
     print("-----------------------------------------------------")
 
+    model_file = "tutorial1.cellml"
+    if len(sys.argv) > 1:
+        model_file = sys.argv[1]
     # ----------------------------------------------------------------------------
     #  STEP 1:   Create a CellML Model from the contents of a CellML file
     #
     #  1.a
     #     Open the tutorial1.cellml file for reading
-    read_file = open("tutorial1.cellml", "r")
+    with open(model_file) as f:
+        content = f.read()
 
     #  1.b   
     #     Create a libCellML Parser, and use it to parse the file
     #     string contents and convert it into a CellML Model structure
     parser = Parser()
-    model = parser.parseModel(read_file.read())
+    model = parser.parseModel(content)
 
     #  end 1
     # ---------------------------------------------------------------------------

@@ -15,9 +15,9 @@
     - Serialise and print a Model structure to a CellML file.
 '''
 
-from libcellml import CellmlElementType, Issue, Parser, Printer, Validator
+from libcellml import CellmlElementType, Issue, Parser, Printer, Validator, cellmlElementTypeAsString
 
-from utilities import print_model, get_cellml_element_type_from_enum
+from utilities import print_model
 
 if __name__ == '__main__':
 

@@ -14,10 +14,11 @@
       component(s) contain(s) variable(s) and maths) and
     - Serialise and print a Model structure to a CellML file.
 '''
+import sys
 
-from libcellml import CellmlElementType, Issue, Parser, Printer, Validator
+from libcellml import CellmlElementType, Issue, Parser, Printer, Validator, cellmlElementTypeAsString
 
-from utilities import print_model, get_cellml_element_type_from_enum
+from utilities import print_model
 
 if __name__ == '__main__':
 
@@ -32,15 +33,19 @@ if __name__ == '__main__':
     print('   STEP 1: Parse a file into a model           ')
     print('-----------------------------------------------')
 
+    model_file = "tutorial2.cellml"
+    if len(sys.argv) > 1:
+        model_file = sys.argv[1]
     #  1.a
     #      Read the contents of the tutorial2.cellml file into a string.
-    read_file = open('tutorial2.cellml', 'r')
+    with open(model_file) as f:
+        content = f.read()
 
     #  1.b
     #      Create a Parser instance, and submit your string for serialisation
     #      into a new model.
     parser = Parser()
-    model = parser.parseModel(read_file.read())
+    model = parser.parseModel(content)
     
     #  1.c
     #      Use the print_model utility function to display the contents of the 
@@ -73,7 +78,7 @@ if __name__ == '__main__':
         reference = issue.referenceHeading()
         print('  Validator issue[{}]:'.format(e))
         print('     Description: {}'.format(issue.description()))
-        print('     Type of item stored: {}'.format(get_cellml_element_type_from_enum(issue.cellmlElementType())))
+        print('     Type of item stored: {}'.format(cellmlElementTypeAsString(issue.item().type())))
         print('     URL: {}'.format(issue.url()))
         if reference != '':
             print('    See section {} in the CellML specification.'.format(reference))
@@ -112,7 +117,7 @@ if __name__ == '__main__':
     #      Note that we can only do this because we know that the item type stored is a VARIABLE.
     #      Set its units to be 'dimensionless'.
     issue1 = validator.issue(1)
-    b = issue1.variable()
+    b = issue1.item().variable()
     b.setUnits('dimensionless')
 
     #  This can be done in a chain too: validator.issue(1).variable().setUnits('dimensionless')
@@ -135,8 +140,7 @@ if __name__ == '__main__':
     #      into a VariablePtr using std.any_cast so that you can use it as normal.
     #      Set its initial value to 20.
     issue2 = validator.issue(2)
-    c = issue2.item()[1] # TODO clarify this after issue #759 is clarified.
-    assert(issue2.cellmlElementType() == CellmlElementType.VARIABLE)
+    c = issue2.item().variable()
     c.setInitialValue(20.0)
 
     #  end 3.c
@@ -156,7 +160,7 @@ if __name__ == '__main__':
     #      Change the name of the units required by variable 'd' to be those which are called 'i_am_a_units_item'.
     #      You will need to retrieve these units from the model in order to pass them to the variable.
     iAmAUnitsItem = model.units('i_am_a_units_item')
-    validator.issue(3).variable().setUnits(iAmAUnitsItem)
+    validator.issue(3).item().variable().setUnits(iAmAUnitsItem)
 
     #  end 3.d
 

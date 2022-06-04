@@ -309,14 +309,12 @@ if __name__ == "__main__":
     #     interfaceCode (the header file) and the implementationCode (source file)
     #     from the generator and write them to their respective files.
     implementation_code_C = generator.implementationCode()
-    write_file = open("PredatorPrey.c", "w")
-    write_file.write(implementation_code_C)
-    write_file.close()
+    with open("PredatorPrey.c", "w") as f:
+        f.write(implementation_code_C)
 
     interface_code = generator.interfaceCode()
-    write_file = open("PredatorPrey.h", "w")
-    write_file.write(interface_code)
-    write_file.close()
+    with open("PredatorPrey.h", "w") as f:
+        f.write(interface_code)
 
     #  5.d
     #     Create a GeneratorProfile item using the libcellml.GeneratorProfile.Profile.PYTHON
@@ -328,8 +326,8 @@ if __name__ == "__main__":
     #  5.e
     #     Retrieve the Python implementation code (there is no header file) and write to a *.py file.
     implementation_code_python = generator.implementationCode()
-    write_file = open("PredatorPrey.py", "w")
-    write_file.write(implementation_code_python)
+    with open("PredatorPrey.py", "w") as f:
+        f.write(implementation_code_python)
 
     #  end 5
 

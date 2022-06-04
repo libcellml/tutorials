@@ -17,11 +17,12 @@
         strings - 'marco' and 'polo' - and a mystery CellML model file.  We will work
         through how the Annotator class can be used to locate the desired objects.
 """
+import os
+import sys
 
+from libcellml import Annotator, CellmlElementType, Component, Importer, Model, Parser, Units, Variable, cellmlElementTypeAsString
 
-from libcellml import Annotator, CellmlElementType, Component, Importer, Model, Parser, Units, Variable
-
-from utilities import print_issues, print_model, get_cellml_element_type_from_enum, get_issue_level_from_enum
+from utilities import print_issues, print_model, get_issue_level_from_enum
 
 if __name__ == '__main__':
 
@@ -29,18 +30,22 @@ if __name__ == '__main__':
     print('   STEP 1: Parse a mystery model                          ')
     print('----------------------------------------------------------')
 
-    #  1.a 
+    model_file = "MysteryModel.cellml"
+    if len(sys.argv) > 1:
+        model_file = sys.argv[1]
+    #  1.a
     #      Read the mystery file, MysteryModel.cellml.
-    read_file = open("MysteryModel.cellml")
+    with open(model_file) as f:
+        content = f.read()
 
-    #  1.b 
+    #  1.b
     #      Create a Parser item.
     parser = Parser()
 
-    #  1.c 
+    #  1.c
     #      Use the parser to deserialise the contents of the string you've read
     #      and return the model.
-    model = parser.parseModel(read_file.read())
+    model = parser.parseModel(content)
 
     #  1.d 
     #      Check that the parser has not raised any issues.
@@ -65,12 +70,12 @@ if __name__ == '__main__':
     #     - second attribute is a std.any cast of the item itself.
     #  2.b
     #      Retrieve the item with an id of 'marco'.  Use the helper function
-    #      get_cellml_element_type_from_enum to convert the enumeration of its type into a
+    #      cellmlElementTypeAsString to convert the enumeration of its type into a
     #      string for printing to the terminal.
     marco_item = annotator.item('marco')
-    print('The item with ID "marco" is a {}'.format(get_cellml_element_type_from_enum(marco_item[0])))
-
-    # The item with ID 'marco' is a VARIABLE
+    print('The item with ID "marco" is a {}'.format(cellmlElementTypeAsString(marco_item.type())))
+    
+    # The item with ID 'marco' is a variable
 
     #  2.c
     #      Check that the annotator has not reported any issues.
@@ -80,7 +85,7 @@ if __name__ == '__main__':
     #      Now that we know the marco item's type using its first attribute (it should
     #      be a CellmlElementType.VARIABLE) we can name its second attribute so we know
     #      what it is.
-    marco_variable = marco_item[1]
+    marco_variable = marco_item.variable()
 
     #  end 2
 
@@ -92,7 +97,7 @@ if __name__ == '__main__':
     #      Now try the same procedure to find the item with id of 'polo'.
     #      Retrieve the item and print its type to the terminal.
     polo_item = annotator.item('polo')
-    print('The type of item with ID "polo" is {}'.format(get_cellml_element_type_from_enum(polo_item[0])))
+    print('The type of item with ID "polo" is {}'.format(cellmlElementTypeAsString(polo_item.type())))
 
     #  3.b
     #      The item type returned is CellmlElementType.UNDEFINED ... so we 
@@ -116,7 +121,7 @@ if __name__ == '__main__':
     print('The items with an id of "polo" have types of:')
     index = 0
     for item in polo_items:
-        print('  - [{}] {}'.format(index, get_cellml_element_type_from_enum(item[0])))
+        print('  - [{}] {}'.format(index, cellmlElementTypeAsString(item.type())))
         index += 1
 
     #  end 3.c
@@ -157,13 +162,13 @@ if __name__ == '__main__':
     #  unit item directly.
 
     #  3.f
-    #      Retrieve the Unit with id polo without casting.
-    polo_unit = annotator.unit('polo')
+    #      Retrieve the Units item with id polo without casting.
+    polo_unit = annotator.unitsItem('polo')
 
     #  end 3.f
-    #  The Unit is another std.pair with: **TODO**
-    #      - first attribute is the Units parent item and
-    #      - second attribute is the index of this Unit within the parent.
+    #  The Unit item is an object it has methods. **TODO**
+    #      - units() to retreive the units the unit belongs to, and
+    #      - index() to retreive the index of this Unit within the parent.
     
     print('----------------------------------------------------------')
     print('   STEP 4: See who else is lurking in this pool           ')
@@ -204,11 +209,11 @@ if __name__ == '__main__':
     #      Retrieve an item with id of 'whoAmIAndWhereDidIComeFrom' and print its item type
     #      to the terminal.
     who_am_i = annotator.item('whoAmIAndWhereDidIComeFrom')
-    print('The type of item with ID "whoAmIAndWhereDidIComeFrom" is {}'.format(get_cellml_element_type_from_enum(who_am_i[0])))
+    print('The type of item with ID "whoAmIAndWhereDidIComeFrom" is {}'.format(cellmlElementTypeAsString(who_am_i.type())))
     
     #  5.b
     #      Cast it into a CellML item of the appropriate type.
-    units = who_am_i[1]
+    units = who_am_i.units()
 
     #  5.c
     #      Use the Component.isImport() function to verify that it is imported.
@@ -218,7 +223,7 @@ if __name__ == '__main__':
     #      Create an Importer instance and use it to resolve this model's imports.
     #      Check that it has not raised any issues.
     importer = Importer()
-    importer.resolveImports(model, '')
+    importer.resolveImports(model, os.path.dirname(model_file))
     print_issues(importer)
 
     #  5.e
@@ -271,7 +276,7 @@ if __name__ == '__main__':
     #      Try and retrieve an item with id 'marco' and check that a null pointer is returned.
     #      Retrieve and print any issues to the terminal.
     marco_item = annotator.item('marco')
-    print('The type of item with ID "marco" is {}'.format(get_cellml_element_type_from_enum(marco_item[0])))
+    print('The type of item with ID "marco" is {}'.format(cellmlElementTypeAsString(marco_item.type())))
     print_issues(annotator)
 
     #  6.d

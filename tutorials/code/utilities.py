@@ -1,6 +1,6 @@
 import string
 
-from libcellml import Issue, CellmlElementType
+from libcellml import Issue, CellmlElementType, cellmlElementTypeAsString
 
 def print_model(model, include_maths=False):
     print("The model name is: '{}'".format(model.name()))
@@ -116,7 +116,7 @@ def print_issues(item):
             if url != "":
                 print("    More information is available at {url}".format(
                     url=url))
-            print("    Stored item type: {}".format(get_cellml_element_type_from_enum(i.cellmlElementType())))
+            print("    Stored item type: {}".format(cellmlElementTypeAsString(i.item().type())))
     else:
         print("\nThe {t} has not found any issues!".format(
             t=type(item).__name__)
@@ -196,58 +196,6 @@ def get_issue_level_from_enum(my_level):
 
     elif my_level == Issue.Level.MESSAGE:
         my_type_as_string = "MESSAGE"
-
-    return my_type_as_string
-
-
-def get_cellml_element_type_from_enum(my_cause):
-
-    my_type_as_string = "dunno"
-
-    if my_cause == CellmlElementType.COMPONENT:
-        my_type_as_string = "COMPONENT"
-
-    elif my_cause == CellmlElementType.COMPONENT_REF:
-        my_type_as_string = "COMPONENT_REf"
-
-    elif my_cause == CellmlElementType.CONNECTION:
-        my_type_as_string = "CONNECTION"
-
-    elif my_cause == CellmlElementType.ENCAPSULATION:
-        my_type_as_string = "ENCAPSULATION"
-
-    elif my_cause == CellmlElementType.IMPORT:
-        my_type_as_string = "IMPORT"
-
-    elif my_cause == CellmlElementType.MATH:
-        my_type_as_string = "MATH"
-
-    elif my_cause == CellmlElementType.MAP_VARIABLES:
-        my_type_as_string = "MAP_VARIABLES"
-
-    elif my_cause == CellmlElementType.MODEL:
-        my_type_as_string = "MODEL"
-
-    elif my_cause == CellmlElementType.RESET:
-        my_type_as_string = "RESET"
-
-    elif my_cause == CellmlElementType.RESET_VALUE:
-        my_type_as_string = "RESET_VALUE"
-
-    elif my_cause == CellmlElementType.TEST_VALUE:
-        my_type_as_string = "TEST_VALUE"
-
-    elif my_cause == CellmlElementType.UNDEFINED:
-        my_type_as_string = "UNDEFINED"
-
-    elif my_cause == CellmlElementType.UNIT:
-        my_type_as_string = "UNIT"
-
-    elif my_cause == CellmlElementType.UNITS:
-        my_type_as_string = "UNITS"
-
-    elif my_cause == CellmlElementType.VARIABLE:
-        my_type_as_string = "VARIABLE"
 
     return my_type_as_string
 

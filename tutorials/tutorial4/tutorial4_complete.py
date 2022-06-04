@@ -10,10 +10,11 @@
       - using the Generator functionality to output files in C or Python (Tutorial 3)
 
 """
-from libcellml import versionString
-
+import os
 import sys
-import importlib
+import importlib.util
+
+from libcellml import versionString
 
 if __name__ == "__main__":
     print("-----------------------------------------------------")
@@ -24,16 +25,15 @@ if __name__ == "__main__":
     print('   Step 1: Link to the generated code                      ')
     print('-----------------------------------------------------------')
 
+    here = os.path.abspath(os.path.dirname(__file__))
     #  1.a
     #       Use the importlib functionality to open the generated code file.
-    spec = importlib.util.spec_from_file_location('PredatorPrey', 'PredatorPrey.py')
-    module = importlib.util.module_from_spec(spec)
+    spec = importlib.util.spec_from_file_location('PredatorPrey', os.path.join(here, 'PredatorPrey.py'))
+    model = importlib.util.module_from_spec(spec)
 
     #  1.b
-    #       Load into a module.
-    sys.modules['PredatorPrey'] = module
-    spec.loader.exec_module(module)
-    model = module
+    #       Load module.
+    spec.loader.exec_module(model)
 
     #  end 1
 

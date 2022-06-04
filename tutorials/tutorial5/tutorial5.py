@@ -18,9 +18,9 @@
         through how the Annotator class can be used to locate the desired objects.
 """
 
-from libcellml import Annotator, CellmlElementType, Component, Importer, Model, Parser, Units, Variable
+from libcellml import Annotator, CellmlElementType, Component, Importer, Model, Parser, Units, Variable, cellmlElementTypeAsString
 
-from utilities import print_issues, print_model, get_cellml_element_type_from_enum, get_issue_level_from_enum
+from utilities import print_issues, print_model, get_issue_level_from_enum
 
 if __name__ == '__main__':
 
@@ -55,7 +55,7 @@ if __name__ == '__main__':
 
     #  2.b
     #      Retrieve the item with an id of 'marco'.  Use the helper function
-    #      get_cellml_element_type_from_enum to convert the enumeration of its type into a
+    #      cellmlElementTypeAsString to convert the enumeration of its type into a
     #      string for printing to the terminal.
 
     # The item with ID 'marco' is a VARIABLE

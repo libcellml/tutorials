@@ -10,9 +10,9 @@ By the time you have worked through this tutorial you will be able to:
      - Serialise the model to CellML format for output.
 '''
 
-from libcellml import Analyser, Component, Model, Printer, Units, Validator, Variable
+from libcellml import Analyser, Component, Model, Printer, Units, Validator, Variable, cellmlElementTypeAsString
 
-from utilities import print_issues, print_model, get_cellml_element_type_from_enum, get_issue_level_from_enum
+from utilities import print_issues, print_model, get_issue_level_from_enum
 
 if __name__ == '__main__':
 
@@ -89,10 +89,9 @@ if __name__ == '__main__':
     #  We can use these issues as we need to.  The simplest way is to print the descriptions
     #  to the terminal.
 
-    #  Two helper functions have been provided for this tutorial that will help printing 
-    #  enumerated values to the terminal.  These are:
-    #      - get_issue_level_from_enum, and
-    #      - get_cellml_element_type_from_enum. 
+    #  A helper function has been provided for this tutorial that will help printing 
+    #  enumerated values to the terminal.  It is:
+    #      - get_issue_level_from_enum
 
     #  3.b 
     #      Retrieve the number of issues encountered using the validator.issueCount() function,
