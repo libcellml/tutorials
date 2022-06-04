@@ -3,6 +3,11 @@ import string
 from libcellml import Issue, CellmlElementType, cellmlElementTypeAsString
 
 def print_model(model, include_maths=False):
+
+    if model is None:
+        print("The given model is None.")
+        return
+
     print("The model name is: '{}'".format(model.name()))
     if model.id() != "":
         print("The model id is: '{}'".format(model.id()))
@@ -16,8 +21,6 @@ def print_model(model, include_maths=False):
         component = model.component(c)
         spacer = "  "
         print_component_to_terminal(component, c, spacer, include_maths)
-
-    return
 
 
 def print_component_to_terminal(component, c, spacer, include_maths=False):

@@ -26,7 +26,7 @@ void printModel(libcellml::ModelPtr &model)
 void printModel(libcellml::ModelPtr &model, bool includeMaths)
 {
     if(model == nullptr) {
-        std::cout << "Model requested is a nullptr." << std::endl;
+        std::cout << "The given model is a nullptr." << std::endl;
         return;
     }
     std::string spacer = "    ";

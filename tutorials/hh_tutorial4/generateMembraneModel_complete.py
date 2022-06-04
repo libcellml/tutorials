@@ -11,6 +11,9 @@
       - Using the Analyser class to check for mathematical issues in the model. 
       - Writing to files. 
 """
+import os
+import sys
+
 from libcellml import Analyser, Generator, GeneratorProfile, Importer, Model, Parser, Validator
 
 from utilities import print_issues, print_model, get_issue_level_from_enum, print_encapsulation
@@ -21,6 +24,9 @@ if __name__ == '__main__':
     print('   STEP 1: Parse the existing membrane model              ')
     print('----------------------------------------------------------')
 
+    model_file = 'MembraneModel.cellml'
+    if len(sys.argv) > 1:
+        model_file = sys.argv[1]
     # STEP 1: Parse an existing model from a CellML file.
     #         The Parser class is used to deserialise a CellML string into a Model instance.
     #         This means that you're responsible for finding, opening and reading the.cellml 
@@ -28,7 +34,8 @@ if __name__ == '__main__':
 
     #  1.a 
     #       Read a CellML file into a std.string.
-    read_file = open('MembraneModel.cellml')
+    with open(model_file) as f:
+        content = f.read()
 
     #  1.b 
     #       Create a Parser item. 
@@ -36,7 +43,7 @@ if __name__ == '__main__':
 
     #  1.c 
     #       Use the parser to deserialise the contents of the string you've read and return the model.
-    model = parser.parseModel(read_file.read())
+    model = parser.parseModel(content)
 
     #  1.d 
     #       Print the parsed model to the terminal for viewing.
@@ -48,10 +55,11 @@ if __name__ == '__main__':
     print('   STEP 2: Resolve the imports and flatten                ')
     print('----------------------------------------------------------')
  
+    import_path = os.path.dirname(model_file)
     #  2.a
     #      Create an Importer instance and use it to resolve the imports in your model.
     importer = Importer()
-    importer.resolveImports(model, '')
+    importer.resolveImports(model, import_path)
 
     #  2.b
     #      Check that the importer has not raised any issues.
@@ -126,18 +134,16 @@ if __name__ == '__main__':
     #       would normally be stored in a.cpp or.py file.  
     #       Use the Generator.implementationCode() function to return the implementation 
     #       code as a string, and write it to a file with the appropriate extension.
-    write_file = open('HodgkinHuxleyModel.py', 'w')
-    write_file.write(generator.implementationCode())
-    write_file.close()
+    with open('HodgkinHuxleyModel.py', 'w') as f:
+        f.write(generator.implementationCode())
 
     #  4.g 
     #       (C profile only) Interface code is the header needed by the C profile to define data types.
     #       Use the Generator.interfaceCode() function to return interface code as a string
     #       and write it to a.h header file.  This needs to be the same filename as you 
     #       specified in step 4.e above.
-    # write_file = open('HodgkinHuxleyModel.h', 'w')
-    # write_file.write(generator.interfaceCode())
-    # write_file.close()
+    # with open('HodgkinHuxleyModel.h', 'w') as f:
+    #     f.write(generator.interfaceCode())
 
     #  end 4  
 

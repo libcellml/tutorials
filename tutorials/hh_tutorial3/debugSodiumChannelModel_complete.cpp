@@ -24,7 +24,7 @@ int main(int argc, char* argv[])
     std::cout << "   STEP 1: Parse the existing sodium channel model " << std::endl;
     std::cout << "----------------------------------------------------------" << std::endl;
 
-    std::filesystem::path inFileName = "sodiumChannelModel_broken.cellml";
+    std::filesystem::path inFileName = "SodiumChannelModel_broken.cellml";
     if (argc > 1) {
         inFileName = argv[1];
     }
@@ -312,10 +312,7 @@ int main(int argc, char* argv[])
     model->component("controller", true)->importSource()->setUrl("SodiumChannelController.cellml");
 
     //  4.e 
-    //      Clear the current issues from the importer using the removeAllIssues function.
     //      Resolve the imports again and check that there are no further issues.
-    std::cout << "Revisit this when/if removeAllIssues becomes public." << std::endl;
-    // importer->removeAllIssues();
     importer->resolveImports(model, inFileName.remove_filename());
     printIssues(importer);
 

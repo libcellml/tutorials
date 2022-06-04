@@ -12,6 +12,8 @@
         model's mathematical formulation and
       - Serialise the model to CellML format for output.
 """
+import os
+import sys
 
 from libcellml import Analyser, Component, Importer, ImportSource, Model, Printer, Units, Validator, Variable
 
@@ -23,6 +25,9 @@ if __name__ == '__main__':
     math_header = '<math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:cellml="http://www.cellml.org/cellml/2.0#">\n'
     math_footer = '</math>'
 
+    import_path = ''
+    if len(sys.argv) > 1:
+        import_path = sys.argv[1]
     # Overall the model structure will be:
     # model: PotassiumChannelModel
     #     component: controller <-- imported from PotassiumChannelController.cellml
@@ -617,7 +622,7 @@ if __name__ == '__main__':
     #  10.b
     #      Pass the model and the path to the GateModel.cellml file into the Importer.resolveImports
     #      function.
-    importer.resolveImports(model, '')
+    importer.resolveImports(model, import_path)
 
     #  10.c  
     #       Check the Importer for issues and print any found to the terminal - we do not expect any at this stage.
@@ -645,7 +650,7 @@ if __name__ == '__main__':
     #      library or from the import source's model (or one of each, to prove to yourself that it works
     #      either way!).
     dummy_gate = imported_gate.importSource().model().component(imported_gate.importReference()).clone()
-    dummy_controller = importer.library('PotassiumChannelController.cellml').component(controller.importReference()).clone()
+    dummy_controller = importer.library(os.path.join(import_path, 'PotassiumChannelController.cellml')).component(controller.importReference()).clone()
     
     #      GOTCHA: Note that when an item is added to a new parent, it is automatically removed from 
     #         its original parent.  Iterating through a set of children is best done in descending

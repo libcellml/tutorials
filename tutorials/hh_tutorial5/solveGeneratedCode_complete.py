@@ -10,9 +10,9 @@
       - Using the Generator functionality to output files in C or Python (see ) and
       - The basic idea of numerical integration using Euler's method (see ).
 '''
-
+import os
 import sys
-import importlib
+import importlib.util
 
 if __name__ == '__main__':
 
@@ -20,16 +20,15 @@ if __name__ == '__main__':
     print('   Step 1: Link to the generated code                      ')
     print('-----------------------------------------------------------')
 
+    here = os.path.abspath(os.path.dirname(__file__))
     #  1.a
     #       Use the importlib functionality to open the generated code file.
-    spec = importlib.util.spec_from_file_location('HodgkinHuxleyModel', 'HodgkinHuxleyModel.py')
-    module = importlib.util.module_from_spec(spec)
+    spec = importlib.util.spec_from_file_location('HodgkinHuxleyModel', os.path.join(here, 'HodgkinHuxleyModel.py'))
+    model = importlib.util.module_from_spec(spec)
 
     #  1.b
     #       Load into a module.
-    sys.modules['HodgkinHuxleyModel'] = module
-    spec.loader.exec_module(module)
-    model = module
+    spec.loader.exec_module(model)
 
     #  end 1
 
