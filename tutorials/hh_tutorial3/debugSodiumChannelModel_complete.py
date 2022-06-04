@@ -148,9 +148,9 @@ if __name__ == '__main__':
     #  3.c
     #      Check that the item to be returned from the issue is in fact an CellmlElementType.VARIABLE by calling the Issue.type()
     #      function.  Retrieve the variable missing units from the issue.  Set its units to be millivolts.
-    issue6 = validator.issue(6)
-    print('Issue 6 is a {}'.format(cellmlElementTypeAsString(issue6.item().type())))
-    issue6.item().variable().setUnits(model.units('mV'))
+    issue4 = validator.issue(4)
+    print('Issue 4 is a {}'.format(cellmlElementTypeAsString(issue4.item().type())))
+    issue4.item().variable().setUnits(model.units('mV'))
 
     #  end 3.c
 
@@ -189,7 +189,7 @@ if __name__ == '__main__':
 
     # Method 2:
     issue5 = validator.issue(5)
-    print('Issue 7 is a {}'.format(cellmlElementTypeAsString(issue5.item().type())))
+    print('Issue 5 is a {}'.format(cellmlElementTypeAsString(issue5.item().type())))
     issue5_units = issue5.item().unitsItem().units()
     issue5_units.removeUnit(issue5.item().unitsItem().index())
     issue5_units.addUnit('volt', 'milli')
@@ -266,7 +266,7 @@ if __name__ == '__main__':
     print_issues(importer)
 
     #  end 4.b
-    #  Importer error[0]:
+    #  Importer error[1]:
     #     Description: Import of component 'importedGateH' from 'GateModel.cellml' requires 
     #     component named 'i_dont_exist' which cannot be found.
 
@@ -276,7 +276,7 @@ if __name__ == '__main__':
     #  4.c 
     #      Fix the issues reported by the importer.  This needs to be an iterative process as
     #      more files become available to the importer.
-    issue0 = importer.issue(0)
+    issue0 = importer.issue(1)
     issue0.item().component().setImportReference('gateEquations')
 
     #  end 4.c
@@ -285,7 +285,7 @@ if __name__ == '__main__':
     #      fact that the Importer class opens and instantates all required dependencies, and that
     #      some of those dependencies may have problems of their own.  
 
-    #  Issue [1] is a WARNING:
+    #  Issue [0] is an ERROR:
     #     description: Cyclic dependencies were found when attempting to resolve components in model 'CircularReferences'. The dependency loop is:
     #      - component 'importedGateH' is imported from 'i_dont_exist' in 'GateModel.cellml'
     #      - component 'importedGateM' is imported from 'gateEquations' in 'GateModel.cellml'

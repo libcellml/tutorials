@@ -274,7 +274,7 @@ int main(int argc, char* argv[])
     printIssues(importer);
 
     //  end 4.b
-    //  Importer error[0]:
+    //  Importer error[1]:
     //     Description: Import of component 'importedGateH' from 'GateModel.cellml' requires 
     //     component named 'i_dont_exist' which cannot be found.
     //
@@ -284,7 +284,7 @@ int main(int argc, char* argv[])
     //  4.c 
     //      Fix the issues reported by the importer.  This needs to be an iterative process as
     //      more files become available to the importer.
-    auto issue0 = importer->issue(0);
+    auto issue0 = importer->issue(1);
     issue0->item()->component()->setImportReference("gateEquations");
 
     //  end 4.c
@@ -293,7 +293,7 @@ int main(int argc, char* argv[])
     //      fact that the Importer class opens and instantates all required dependencies, and that
     //      some of those dependencies may have problems of their own.  
     //
-    //  Issue [1] is a WARNING:
+    //  Issue [0] is an ERROR:
     //     description: Cyclic dependencies were found when attempting to resolve components in model 'CircularReferences'. The dependency loop is:
     //      - component 'importedGateH' is imported from 'i_dont_exist' in 'GateModel.cellml';
     //      - component 'importedGateM' is imported from 'gateEquations' in 'GateModel.cellml';
