@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model xmlns="http://www.cellml.org/cellml/2.0#" name="SodiumChannelModel">
+  <import xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="SodiumChannelController.cellml">
+    <component component_ref="controller" name="controller"/>
+  </import>
   <import xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="GateModel.cellml">
     <component component_ref="gateEquations" name="importedGateM"/>
     <component component_ref="gateEquations" name="importedGateH"/>
-  </import>
-  <import xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="SodiumChannelController.cellml">
-    <component component_ref="controller" name="controller"/>
   </import>
   <units name="mV">
     <unit prefix="milli" units="volt"/>
