@@ -149,7 +149,6 @@ if __name__ == '__main__':
     #      Check that the item to be returned from the issue is in fact an CellmlElementType.VARIABLE by calling the Issue.type()
     #      function.  Retrieve the variable missing units from the issue.  Set its units to be millivolts.
     issue4 = validator.issue(4)
-    print('Issue 4 is a {}'.format(cellmlElementTypeAsString(issue4.item().type())))
     issue4.item().variable().setUnits(model.units('mV'))
 
     #  end 3.c
@@ -174,13 +173,12 @@ if __name__ == '__main__':
     #  3.d
     #      Choose your preferred method and use it to retrieve the problem unit attributes and print them all to
     #      to the terminal.  Then fix the issue.
-    prefix = ''
-    id = ''
-    exponent = 0.0
-    multiplier = 0.0
+    # prefix = ''
+    # id = ''
+    # exponent = 0.0
+    # multiplier = 0.0
     mV = model.units('mV')
-    # prefix, exponent, multiplier, id = mV.unitAttributes('i_dont_exist')
-    print(mV.unitAttributes('i_dont_exist'))
+    prefix, exponent, multiplier, id = mV.unitAttributes('i_dont_exist')
     print('The units \'mV\' child has attributes: base units = \'i_dont_exist\', prefix = \'{p}\', exponent = \'{e}\', and multiplier = \'{m}\'.'.format(p=prefix, e=exponent, m=multiplier))
 
     # Method 1:
@@ -189,7 +187,6 @@ if __name__ == '__main__':
 
     # Method 2:
     issue5 = validator.issue(5)
-    print('Issue 5 is a {}'.format(cellmlElementTypeAsString(issue5.item().type())))
     issue5_units = issue5.item().unitsItem().units()
     issue5_units.removeUnit(issue5.item().unitsItem().index())
     issue5_units.addUnit('volt', 'milli')
