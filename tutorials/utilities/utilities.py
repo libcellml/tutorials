@@ -89,9 +89,9 @@ def print_component_to_terminal(component, c, spacer, include_maths=False):
 
 # START level_as_string
 level_as_string = {
-    Issue.Level.ERROR: "Error",
-    Issue.Level.WARNING: "Warning",
-    Issue.Level.MESSAGE: "Message"
+    Issue.Level.ERROR: "an ERROR",
+    Issue.Level.WARNING: "a WARNING",
+    Issue.Level.MESSAGE: "a MESSAGE"
 }
 # END level_as_string
 
