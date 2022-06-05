@@ -12,9 +12,9 @@ MODEL: 'SodiumChannelModel'
         [0]: 'controller' <--- imported from: 'controller' in 'CircularControllerReference.cellml'
             VARIABLES: 2 variables
                 [0]: t
-                      └──> sodiumChannel:t [ms]
+                      └──>  sodiumChannel:t [ms]
                 [1]: V
-                      └──> sodiumChannel:V
+                      └──>  sodiumChannel:V
         [1]: 'mGateEquations!'
             VARIABLES: 5 variables
                 [0]: alpha_m [per_ms]
@@ -31,87 +31,87 @@ MODEL: 'SodiumChannelModel'
         [3]: 'sodiumChannel'
             VARIABLES: 3 variables
                 [0]: t [ms]
-                      └──> controller:t, sodiumChannelEquations:t [ms]
+                      └──>  controller:t,  sodiumChannelEquations:t [ms]
                 [1]: V
-                      └──> controller:V, sodiumChannelEquations:V [mV]
+                      └──>  controller:V,  sodiumChannelEquations:V [mV]
                 [2]: i_Na [microA_per_cm2]
-                      └──> sodiumChannelEquations:i_Na [microA_per_cm2]
+                      └──>  sodiumChannelEquations:i_Na [microA_per_cm2]
             COMPONENT sodiumChannel has 2 child components:
-                [0]: sodiumChannelEquations
+                [0]: 'sodiumChannelEquations'
                     VARIABLES: 8 variables
                         [0]: Na_conductance [mS_per_cm2]
                         [1]: g_Na [mS_per_cm2]
-                              └──> sodiumChannelParameters:g_Na [mS_per_cm2]
+                              └──>  sodiumChannelParameters:g_Na [mS_per_cm2]
                         [2]: h [dimensionless]
-                              └──> hGate:h [dimensionless]
+                              └──>  hGate:h [dimensionless]
                         [3]: m [dimensionless]
-                              └──> mGate:m [dimensionless]
+                              └──>  mGate:m [dimensionless]
                         [4]: i_Na [microA_per_cm2]
-                              └──> sodiumChannel:i_Na [microA_per_cm2]
+                              └──>  sodiumChannel:i_Na [microA_per_cm2]
                         [5]: V [mV]
-                              └──> sodiumChannel:V, hGate:V [mV], mGate:V [mV]
+                              └──>  sodiumChannel:V,  hGate:V [mV],  mGate:V [mV]
                         [6]: E_Na [mV]
-                              └──> sodiumChannelParameters:E_Na [mV]
+                              └──>  sodiumChannelParameters:E_Na [mV]
                         [7]: t [ms]
-                              └──> sodiumChannel:t [ms], hGate:t [ms], mGate:t [ms]
+                              └──>  sodiumChannel:t [ms],  hGate:t [ms],  mGate:t [ms]
                     COMPONENT sodiumChannelEquations has 2 child components:
-                        [0]: mGate
+                        [0]: 'mGate'
                             VARIABLES: 3 variables
                                 [0]: t [ms]
-                                      └──> sodiumChannelEquations:t [ms]
+                                      └──>  sodiumChannelEquations:t [ms]
                                 [1]: m [dimensionless]
-                                      └──> sodiumChannelEquations:m [dimensionless]
+                                      └──>  sodiumChannelEquations:m [dimensionless]
                                 [2]: V [mV]
-                                      └──> sodiumChannelEquations:V [mV]
+                                      └──>  sodiumChannelEquations:V [mV]
                             COMPONENT mGate has 1 child components:
-                                [0]: mGateParameters
+                                [0]: 'mGateParameters'
                                     VARIABLES: 2 variables
                                         [0]: m [dimensionless], initial = 0.05
                                         [1]: i_am_redundant [steradian]
-                        [1]: hGate
+                        [1]: 'hGate'
                             VARIABLES: 3 variables
                                 [0]: t [ms]
-                                      └──> sodiumChannelEquations:t [ms], hGateEquations:t [ms]
+                                      └──>  sodiumChannelEquations:t [ms],  hGateEquations:t [ms]
                                 [1]: h [dimensionless]
-                                      └──> sodiumChannelEquations:h [dimensionless], hGateEquations:h [dimensionless]
+                                      └──>  sodiumChannelEquations:h [dimensionless],  hGateEquations:h [dimensionless]
                                 [2]: V [mV]
-                                      └──> sodiumChannelEquations:V [mV], hGateEquations:V [mV]
+                                      └──>  sodiumChannelEquations:V [mV],  hGateEquations:V [mV]
                             COMPONENT hGate has 2 child components:
-                                [0]: hGateParameters
+                                [0]: 'hGateParameters'
                                     VARIABLES: 1 variables
                                         [0]: h [dimensionless], initial = 0.6
-                                [1]: hGateEquations
+                                [1]: 'hGateEquations'
                                     VARIABLES: 5 variables
                                         [0]: alpha_h [per_ms]
-                                              └──> importedGateH:alpha_X
+                                              └──>  importedGateH:alpha_X
                                         [1]: beta_h [per_ms]
-                                              └──> importedGateH:beta_X
+                                              └──>  importedGateH:beta_X
                                         [2]: V [mV]
-                                              └──> hGate:V [mV]
+                                              └──>  hGate:V [mV]
                                         [3]: h [dimensionless]
-                                              └──> hGate:h [dimensionless], importedGateH:X
+                                              └──>  hGate:h [dimensionless],  importedGateH:X
                                         [4]: t [ms]
-                                              └──> hGate:t [ms], importedGateH:t
+                                              └──>  hGate:t [ms],  importedGateH:t
                                     COMPONENT hGateEquations has 1 child components:
-                                        [0]: importedGateH <--- imported from: 'i_dont_exist' in 'GateModel.cellml'
+                                        [0]: 'importedGateH' <--- imported from: 'i_dont_exist' in 'GateModel.cellml'
                                             VARIABLES: 4 variables
                                                 [0]: alpha_X
-                                                      └──> hGateEquations:alpha_h [per_ms]
+                                                      └──>  hGateEquations:alpha_h [per_ms]
                                                 [1]: beta_X
-                                                      └──> hGateEquations:beta_h [per_ms]
+                                                      └──>  hGateEquations:beta_h [per_ms]
                                                 [2]: X
-                                                      └──> hGateEquations:h [dimensionless]
+                                                      └──>  hGateEquations:h [dimensionless]
                                                 [3]: t
-                                                      └──> hGateEquations:t [ms]
-                [1]: sodiumChannelParameters
+                                                      └──>  hGateEquations:t [ms]
+                [1]: 'sodiumChannelParameters'
                     VARIABLES: 2 variables
                         [0]: g_Na [mS_per_cm2], initial = 120
-                              └──> sodiumChannelEquations:g_Na [mS_per_cm2]
+                              └──>  sodiumChannelEquations:g_Na [mS_per_cm2]
                         [1]: E_Na [mV]
-                              └──> sodiumChannelEquations:E_Na [mV]
-----------------------------------------------------------
-   STEP 2: Validate the parsed model 
-----------------------------------------------------------
+                              └──>  sodiumChannelEquations:E_Na [mV]
+-----------------------------------
+ STEP 2: Validate the parsed model
+-----------------------------------
 The validator found 7 issues.
 Issue 0: Component 'mGateEquations!' does not have a valid name attribute. CellML identifiers must not contain any characters other than [a-zA-Z0-9_].
   reference: 2.7.1
@@ -148,13 +148,16 @@ Issue 6: Variable 't' in component 'sodiumChannelEquations' has no interface typ
   see: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
   stored item type: variable
 
-----------------------------------------------------------
-   STEP 3: Repair the parsed model 
-----------------------------------------------------------
-The units 'mV' child has attributes: base units = 'i_dont_exist', prefix = 'milli', exponent = 1, and multiplier = 1
-Recorded 0 issues!
+---------------------------------
+ STEP 3: Repair the parsed model
+---------------------------------
+Issue 4 is a variable
+['i_dont_exist', 'milli', 1.0, 1.0, '']
+The units 'mV' child has attributes: base units = 'i_dont_exist', prefix = '', exponent = '0.0', and multiplier = '0.0'.
+Issue 5 is a unit
 
- MODEL: 'SodiumChannelModel'
+The Validator has not found any issues!
+MODEL: 'SodiumChannelModel'
     UNITS: 6 custom units
         [0]: mV
         [1]: ms
@@ -163,108 +166,108 @@ Recorded 0 issues!
         [4]: microA_per_cm2
         [5]: mS_per_cm2
     COMPONENTS: 4 components
-        [0]: controller <--- imported from: 'controller' in 'CircularControllerReference.cellml'
+        [0]: 'controller' <--- imported from: 'controller' in 'CircularControllerReference.cellml'
             VARIABLES: 2 variables
                 [0]: t
-                      └──> sodiumChannel:t [ms]
+                      └──>  sodiumChannel:t [ms]
                 [1]: V
-                      └──> sodiumChannel:V [mV]
-        [1]: mGateEquations
+                      └──>  sodiumChannel:V [mV]
+        [1]: 'mGateEquations'
             VARIABLES: 5 variables
                 [0]: alpha_m [per_ms]
                 [1]: V [mV]
                 [2]: beta_m [per_ms]
                 [3]: m [dimensionless]
                 [4]: t [ms]
-        [2]: importedGateM <--- imported from: 'gateEquations' in 'GateModel.cellml'
+        [2]: 'importedGateM' <--- imported from: 'gateEquations' in 'GateModel.cellml'
             VARIABLES: 4 variables
                 [0]: alpha_X
                 [1]: beta_X
                 [2]: X
                 [3]: t
-        [3]: sodiumChannel
+        [3]: 'sodiumChannel'
             VARIABLES: 3 variables
                 [0]: t [ms]
-                      └──> controller:t, sodiumChannelEquations:t [ms]
+                      └──>  controller:t,  sodiumChannelEquations:t [ms]
                 [1]: V [mV]
-                      └──> controller:V, sodiumChannelEquations:V [mV]
+                      └──>  controller:V,  sodiumChannelEquations:V [mV]
                 [2]: i_Na [microA_per_cm2]
-                      └──> sodiumChannelEquations:i_Na [microA_per_cm2]
+                      └──>  sodiumChannelEquations:i_Na [microA_per_cm2]
             COMPONENT sodiumChannel has 2 child components:
-                [0]: sodiumChannelEquations
+                [0]: 'sodiumChannelEquations'
                     VARIABLES: 8 variables
                         [0]: Na_conductance [mS_per_cm2]
                         [1]: g_Na [mS_per_cm2]
-                              └──> sodiumChannelParameters:g_Na [mS_per_cm2]
+                              └──>  sodiumChannelParameters:g_Na [mS_per_cm2]
                         [2]: h [dimensionless]
-                              └──> hGate:h [dimensionless]
+                              └──>  hGate:h [dimensionless]
                         [3]: m [dimensionless]
-                              └──> mGate:m [dimensionless]
+                              └──>  mGate:m [dimensionless]
                         [4]: i_Na [microA_per_cm2]
-                              └──> sodiumChannel:i_Na [microA_per_cm2]
+                              └──>  sodiumChannel:i_Na [microA_per_cm2]
                         [5]: V [mV]
-                              └──> sodiumChannel:V [mV], hGate:V [mV], mGate:V [mV]
+                              └──>  sodiumChannel:V [mV],  hGate:V [mV],  mGate:V [mV]
                         [6]: E_Na [mV]
-                              └──> sodiumChannelParameters:E_Na [mV]
+                              └──>  sodiumChannelParameters:E_Na [mV]
                         [7]: t [ms]
-                              └──> sodiumChannel:t [ms], hGate:t [ms], mGate:t [ms]
+                              └──>  sodiumChannel:t [ms],  hGate:t [ms],  mGate:t [ms]
                     COMPONENT sodiumChannelEquations has 2 child components:
-                        [0]: mGate
+                        [0]: 'mGate'
                             VARIABLES: 3 variables
                                 [0]: t [ms]
-                                      └──> sodiumChannelEquations:t [ms]
+                                      └──>  sodiumChannelEquations:t [ms]
                                 [1]: m [dimensionless]
-                                      └──> sodiumChannelEquations:m [dimensionless]
+                                      └──>  sodiumChannelEquations:m [dimensionless]
                                 [2]: V [mV]
-                                      └──> sodiumChannelEquations:V [mV]
+                                      └──>  sodiumChannelEquations:V [mV]
                             COMPONENT mGate has 1 child components:
-                                [0]: mGateParameters
+                                [0]: 'mGateParameters'
                                     VARIABLES: 2 variables
                                         [0]: m [dimensionless], initial = 0.05
                                         [1]: i_am_redundant [steradian]
-                        [1]: hGate
+                        [1]: 'hGate'
                             VARIABLES: 3 variables
                                 [0]: t [ms]
-                                      └──> sodiumChannelEquations:t [ms], hGateEquations:t [ms]
+                                      └──>  sodiumChannelEquations:t [ms],  hGateEquations:t [ms]
                                 [1]: h [dimensionless]
-                                      └──> sodiumChannelEquations:h [dimensionless], hGateEquations:h [dimensionless]
+                                      └──>  sodiumChannelEquations:h [dimensionless],  hGateEquations:h [dimensionless]
                                 [2]: V [mV]
-                                      └──> sodiumChannelEquations:V [mV], hGateEquations:V [mV]
+                                      └──>  sodiumChannelEquations:V [mV],  hGateEquations:V [mV]
                             COMPONENT hGate has 2 child components:
-                                [0]: hGateParameters
+                                [0]: 'hGateParameters'
                                     VARIABLES: 1 variables
                                         [0]: h [dimensionless], initial = 0.6
-                                [1]: hGateEquations
+                                [1]: 'hGateEquations'
                                     VARIABLES: 5 variables
                                         [0]: alpha_h [per_ms]
-                                              └──> importedGateH:alpha_X
+                                              └──>  importedGateH:alpha_X
                                         [1]: beta_h [per_ms]
-                                              └──> importedGateH:beta_X
+                                              └──>  importedGateH:beta_X
                                         [2]: V [mV]
-                                              └──> hGate:V [mV]
+                                              └──>  hGate:V [mV]
                                         [3]: h [dimensionless]
-                                              └──> hGate:h [dimensionless], importedGateH:X
+                                              └──>  hGate:h [dimensionless],  importedGateH:X
                                         [4]: t [ms]
-                                              └──> hGate:t [ms], importedGateH:t
+                                              └──>  hGate:t [ms],  importedGateH:t
                                     COMPONENT hGateEquations has 1 child components:
-                                        [0]: importedGateH <--- imported from: 'i_dont_exist' in 'GateModel.cellml'
+                                        [0]: 'importedGateH' <--- imported from: 'i_dont_exist' in 'GateModel.cellml'
                                             VARIABLES: 4 variables
                                                 [0]: alpha_X
-                                                      └──> hGateEquations:alpha_h [per_ms]
+                                                      └──>  hGateEquations:alpha_h [per_ms]
                                                 [1]: beta_X
-                                                      └──> hGateEquations:beta_h [per_ms]
+                                                      └──>  hGateEquations:beta_h [per_ms]
                                                 [2]: X
-                                                      └──> hGateEquations:h [dimensionless]
+                                                      └──>  hGateEquations:h [dimensionless]
                                                 [3]: t
-                                                      └──> hGateEquations:t [ms]
-                [1]: sodiumChannelParameters
+                                                      └──>  hGateEquations:t [ms]
+                [1]: 'sodiumChannelParameters'
                     VARIABLES: 2 variables
                         [0]: g_Na [mS_per_cm2], initial = 120
-                              └──> sodiumChannelEquations:g_Na [mS_per_cm2]
+                              └──>  sodiumChannelEquations:g_Na [mS_per_cm2]
                         [1]: E_Na [mV]
-                              └──> sodiumChannelEquations:E_Na [mV]
-Recorded 0 issues!
+                              └──>  sodiumChannelEquations:E_Na [mV]
 
+The Validator has not found any issues!
 Model 'SodiumChannelModel' has 2 components
   - Component 'controller' has 0 child components
   - Component 'sodiumChannel' has 2 child components
@@ -278,68 +281,65 @@ Model 'SodiumChannelModel' has 2 components
               - Component 'hGateEquations' has 1 child components
                   - Component 'importedGateH' has 0 child components
       - Component 'sodiumChannelParameters' has 0 child components
-----------------------------------------------------------
-   STEP 4: Resolve the imports 
-----------------------------------------------------------
-Recorded 2 issues:
-Issue 0 is an ERROR:
-    description: Cyclic dependencies were found when attempting to resolve a component in the model 'SodiumChannelModel'. The dependency loop is:
+-----------------------------
+ STEP 4: Resolve the imports
+-----------------------------
+
+The Importer has found 2 issues:
+  Error[0]:
+    Description: Cyclic dependencies were found when attempting to resolve a component in the model 'SodiumChannelModel'. The dependency loop is:
  - component 'controller' specifies an import from ':this:' to '/Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/CircularControllerReference.cellml'
  - component 'controller' specifies an import from '/Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/CircularControllerReference.cellml' to '/Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/CircularControllerReference2.cellml' and
  - component 'controller2' specifies an import from '/Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/CircularControllerReference2.cellml' to '/Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/CircularControllerReference.cellml'.
-    see section 2.2.3 in the CellML specification.
-    more information at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB02.html?issue=IMPORT_EQUIVALENT
-    stored item type: component
-Issue 1 is an ERROR:
-    description: Import of component 'importedGateH' from '/Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/GateModel.cellml' requires component named 'i_dont_exist' which cannot be found.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=IMPORTER_MISSING_COMPONENT
-    stored item type: component
+    See section 2.2.3 in the CellML specification.
+    More information is available at https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB02.html?issue=IMPORT_EQUIVALENT
+    Stored item type: component
+  Error[1]:
+    Description: Import of component 'importedGateH' from '/Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/GateModel.cellml' requires component named 'i_dont_exist' which cannot be found.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=IMPORTER_MISSING_COMPONENT
+    Stored item type: component
 
-
-Recorded 0 issues!
-
-----------------------------------------------------------
-   STEP 5: Validate the imported dependencies 
-----------------------------------------------------------
+The Importer has not found any issues!
+--------------------------------------------
+ STEP 5: Validate the imported dependencies
+--------------------------------------------
 Imported model at key: /Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/CircularControllerReference.cellml
-Recorded 1 issues:
-Issue 0 is an ERROR:
-    description: Cyclic dependencies were found when attempting to resolve a component in the model 'CircularReferences'. The dependency loop is:
+
+The Validator has found 1 issues:
+  Error[0]:
+    Description: Cyclic dependencies were found when attempting to resolve a component in the model 'CircularReferences'. The dependency loop is:
  - component 'controller' specifies an import from ':this:' to 'CircularControllerReference2.cellml' and
  - component 'controller2' specifies an import from 'CircularControllerReference2.cellml' to 'CircularControllerReference.cellml'.
-    see section 2.4.2 in the CellML specification.
-    more information at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB04.html?issue=IMPORT_COMPONENT_COMPONENT_REF
-    stored item type: import
-
-
+    See section 2.4.2 in the CellML specification.
+    More information is available at https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB04.html?issue=IMPORT_COMPONENT_COMPONENT_REF
+    Stored item type: import
 Imported model at key: /Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/CircularControllerReference2.cellml
-Recorded 1 issues:
-Issue 0 is an ERROR:
-    description: Cyclic dependencies were found when attempting to resolve a component in the model 'CircularReferences2'. The dependency loop is:
+
+The Validator has found 1 issues:
+  Error[0]:
+    Description: Cyclic dependencies were found when attempting to resolve a component in the model 'CircularReferences2'. The dependency loop is:
  - component 'controller2' specifies an import from ':this:' to 'CircularControllerReference.cellml' and
  - component 'controller' specifies an import from 'CircularControllerReference.cellml' to 'CircularControllerReference2.cellml'.
-    see section 2.4.2 in the CellML specification.
-    more information at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB04.html?issue=IMPORT_COMPONENT_COMPONENT_REF
-    stored item type: import
-
-
+    See section 2.4.2 in the CellML specification.
+    More information is available at https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB04.html?issue=IMPORT_COMPONENT_COMPONENT_REF
+    Stored item type: import
 Imported model at key: /Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/GateModel.cellml
-Recorded 0 issues!
 
+The Validator has not found any issues!
 Imported model at key: /Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/SodiumChannelController.cellml
-Recorded 0 issues!
 
-----------------------------------------------------------
-   STEP 6: Analyse the model(s) 
-----------------------------------------------------------
-Recorded 1 issues:
-Issue 0 is an ERROR:
-    description: The model has units which are not linked together.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_UNLINKED_UNITS
-    stored item type: undefined
+The Validator has not found any issues!
+------------------------------
+ STEP 6: Analyse the model(s)
+------------------------------
 
+The Analyser has found 1 issues:
+  Error[0]:
+    Description: The model has units which are not linked together.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_UNLINKED_UNITS
+    Stored item type: undefined
 
- MODEL: 'SodiumChannelModel'
+MODEL: 'SodiumChannelModel'
     UNITS: 6 custom units
         [0]: mV
         [1]: ms
@@ -348,53 +348,53 @@ Issue 0 is an ERROR:
         [4]: microA_per_cm2
         [5]: mS_per_cm2
     COMPONENTS: 2 components
-        [0]: controller
+        [0]: 'controller'
             VARIABLES: 2 variables
                 [0]: t [ms]
-                      └──> sodiumChannel:t [ms]
+                      └──>  sodiumChannel:t [ms]
                 [1]: V [mV]
-                      └──> sodiumChannel:V [mV]
-        [1]: sodiumChannel
+                      └──>  sodiumChannel:V [mV]
+        [1]: 'sodiumChannel'
             VARIABLES: 3 variables
                 [0]: t [ms]
-                      └──> sodiumChannelEquations:t [ms], controller:t [ms]
+                      └──>  sodiumChannelEquations:t [ms],  controller:t [ms]
                 [1]: V [mV]
-                      └──> sodiumChannelEquations:V [mV], controller:V [mV]
+                      └──>  sodiumChannelEquations:V [mV],  controller:V [mV]
                 [2]: i_Na [microA_per_cm2]
-                      └──> sodiumChannelEquations:i_Na [microA_per_cm2]
+                      └──>  sodiumChannelEquations:i_Na [microA_per_cm2]
             COMPONENT sodiumChannel has 2 child components:
-                [0]: sodiumChannelEquations
+                [0]: 'sodiumChannelEquations'
                     VARIABLES: 8 variables
                         [0]: Na_conductance [mS_per_cm2]
                         [1]: g_Na [mS_per_cm2]
-                              └──> sodiumChannelParameters:g_Na [mS_per_cm2]
+                              └──>  sodiumChannelParameters:g_Na [mS_per_cm2]
                         [2]: h [dimensionless]
-                              └──> hGate:h [dimensionless]
+                              └──>  hGate:h [dimensionless]
                         [3]: m [dimensionless]
-                              └──> mGate:m [dimensionless]
+                              └──>  mGate:m [dimensionless]
                         [4]: i_Na [microA_per_cm2]
-                              └──> sodiumChannel:i_Na [microA_per_cm2]
+                              └──>  sodiumChannel:i_Na [microA_per_cm2]
                         [5]: V [mV]
-                              └──> mGate:V [mV], hGate:V [mV], sodiumChannel:V [mV]
+                              └──>  mGate:V [mV],  hGate:V [mV],  sodiumChannel:V [mV]
                         [6]: E_Na [mV]
-                              └──> sodiumChannelParameters:E_Na [mV]
+                              └──>  sodiumChannelParameters:E_Na [mV]
                         [7]: t [ms]
-                              └──> sodiumChannel:t [ms], mGate:t [ms], hGate:t [ms]
+                              └──>  sodiumChannel:t [ms],  mGate:t [ms],  hGate:t [ms]
                     COMPONENT sodiumChannelEquations has 2 child components:
-                        [0]: mGate
+                        [0]: 'mGate'
                             VARIABLES: 3 variables
                                 [0]: t [ms]
-                                      └──> sodiumChannelEquations:t [ms]
+                                      └──>  sodiumChannelEquations:t [ms]
                                 [1]: m [dimensionless]
-                                      └──> sodiumChannelEquations:m [dimensionless]
+                                      └──>  sodiumChannelEquations:m [dimensionless]
                                 [2]: V [mV]
-                                      └──> sodiumChannelEquations:V [mV]
+                                      └──>  sodiumChannelEquations:V [mV]
                             COMPONENT mGate has 2 child components:
-                                [0]: mGateParameters
+                                [0]: 'mGateParameters'
                                     VARIABLES: 2 variables
                                         [0]: m [dimensionless], initial = 0.05
                                         [1]: i_am_redundant [steradian]
-                                [1]: mGateEquations
+                                [1]: 'mGateEquations'
                                     VARIABLES: 5 variables
                                         [0]: alpha_m [per_ms]
                                         [1]: V [mV]
@@ -402,161 +402,158 @@ Issue 0 is an ERROR:
                                         [3]: m [dimensionless]
                                         [4]: t [ms]
                                     COMPONENT mGateEquations has 1 child components:
-                                        [0]: importedGateM
+                                        [0]: 'importedGateM'
                                             VARIABLES: 4 variables
                                                 [0]: t [ms]
                                                 [1]: alpha_X [per_ms]
                                                 [2]: beta_X [per_ms]
                                                 [3]: X [dimensionless]
-                        [1]: hGate
+                        [1]: 'hGate'
                             VARIABLES: 3 variables
                                 [0]: t [ms]
-                                      └──> sodiumChannelEquations:t [ms], hGateEquations:t [ms]
+                                      └──>  sodiumChannelEquations:t [ms],  hGateEquations:t [ms]
                                 [1]: h [dimensionless]
-                                      └──> sodiumChannelEquations:h [dimensionless], hGateEquations:h [dimensionless]
+                                      └──>  sodiumChannelEquations:h [dimensionless],  hGateEquations:h [dimensionless]
                                 [2]: V [mV]
-                                      └──> hGateEquations:V [mV], sodiumChannelEquations:V [mV]
+                                      └──>  hGateEquations:V [mV],  sodiumChannelEquations:V [mV]
                             COMPONENT hGate has 2 child components:
-                                [0]: hGateParameters
+                                [0]: 'hGateParameters'
                                     VARIABLES: 1 variables
                                         [0]: h [dimensionless], initial = 0.6
-                                [1]: hGateEquations
+                                [1]: 'hGateEquations'
                                     VARIABLES: 5 variables
                                         [0]: alpha_h [per_ms]
-                                              └──> importedGateH:alpha_X [per_ms]
+                                              └──>  importedGateH:alpha_X [per_ms]
                                         [1]: beta_h [per_ms]
-                                              └──> importedGateH:beta_X [per_ms]
+                                              └──>  importedGateH:beta_X [per_ms]
                                         [2]: V [mV]
-                                              └──> hGate:V [mV]
+                                              └──>  hGate:V [mV]
                                         [3]: h [dimensionless]
-                                              └──> hGate:h [dimensionless], importedGateH:X [dimensionless]
+                                              └──>  hGate:h [dimensionless],  importedGateH:X [dimensionless]
                                         [4]: t [ms]
-                                              └──> hGate:t [ms], importedGateH:t [ms]
+                                              └──>  hGate:t [ms],  importedGateH:t [ms]
                                     COMPONENT hGateEquations has 1 child components:
-                                        [0]: importedGateH
+                                        [0]: 'importedGateH'
                                             VARIABLES: 4 variables
                                                 [0]: t [ms]
-                                                      └──> hGateEquations:t [ms]
+                                                      └──>  hGateEquations:t [ms]
                                                 [1]: alpha_X [per_ms]
-                                                      └──> hGateEquations:alpha_h [per_ms]
+                                                      └──>  hGateEquations:alpha_h [per_ms]
                                                 [2]: beta_X [per_ms]
-                                                      └──> hGateEquations:beta_h [per_ms]
+                                                      └──>  hGateEquations:beta_h [per_ms]
                                                 [3]: X [dimensionless]
-                                                      └──> hGateEquations:h [dimensionless]
-                [1]: sodiumChannelParameters
+                                                      └──>  hGateEquations:h [dimensionless]
+                [1]: 'sodiumChannelParameters'
                     VARIABLES: 2 variables
                         [0]: g_Na [mS_per_cm2], initial = 120
-                              └──> sodiumChannelEquations:g_Na [mS_per_cm2]
+                              └──>  sodiumChannelEquations:g_Na [mS_per_cm2]
                         [1]: E_Na [mV]
-                              └──> sodiumChannelEquations:E_Na [mV]
-Recorded 1 issues:
-Issue 0 is an ERROR:
-    description: Variable 't' in component 'importedGateM' and variable 't' in component 'importedGateH' cannot both be the variable of integration.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VOI_SEVERAL
-    stored item type: variable
+                              └──>  sodiumChannelEquations:E_Na [mV]
 
+The Analyser has found 1 issues:
+  Error[0]:
+    Description: Variable 't' in component 'importedGateM' and variable 't' in component 'importedGateH' cannot both be the variable of integration.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VOI_SEVERAL
+    Stored item type: variable
 
-Recorded 13 issues:
-Issue 0 is an ERROR:
-    description: Variable 'X' in component 'importedGateM' is used in an ODE, but it is not initialised.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_STATE_NOT_INITIALISED
-    stored item type: variable
-Issue 1 is an ERROR:
-    description: Variable 'alpha_X' in component 'importedGateM' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-Issue 2 is an ERROR:
-    description: Variable 'beta_X' in component 'importedGateM' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-Issue 3 is an ERROR:
-    description: Variable 'V' in component 'mGateEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-Issue 4 is an ERROR:
-    description: Variable 'alpha_m' in component 'mGateEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-Issue 5 is an ERROR:
-    description: Variable 'beta_m' in component 'mGateEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-Issue 6 is an ERROR:
-    description: Variable 'm' in component 'mGateEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-Issue 7 is an ERROR:
-    description: Variable 'i_am_redundant' in component 'mGateParameters' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-Issue 8 is an ERROR:
-    description: Variable 'i_Na' in component 'sodiumChannel' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-Issue 9 is an ERROR:
-    description: Variable 'E_Na' in component 'sodiumChannelEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-Issue 10 is an ERROR:
-    description: Variable 'Na_conductance' in component 'sodiumChannelEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-Issue 11 is an ERROR:
-    description: Variable 'X' in component 'importedGateH' is used in an ODE, but it is not initialised.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_STATE_NOT_INITIALISED
-    stored item type: variable
-Issue 12 is an ERROR:
-    description: Variable 'm' in component 'sodiumChannelEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+The Analyser has found 13 issues:
+  Error[0]:
+    Description: Variable 'X' in component 'importedGateM' is used in an ODE, but it is not initialised.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_STATE_NOT_INITIALISED
+    Stored item type: variable
+  Error[1]:
+    Description: Variable 'alpha_X' in component 'importedGateM' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+  Error[2]:
+    Description: Variable 'beta_X' in component 'importedGateM' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+  Error[3]:
+    Description: Variable 'V' in component 'mGateEquations' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+  Error[4]:
+    Description: Variable 'alpha_m' in component 'mGateEquations' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+  Error[5]:
+    Description: Variable 'beta_m' in component 'mGateEquations' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+  Error[6]:
+    Description: Variable 'm' in component 'mGateEquations' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+  Error[7]:
+    Description: Variable 'i_am_redundant' in component 'mGateParameters' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+  Error[8]:
+    Description: Variable 'i_Na' in component 'sodiumChannel' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+  Error[9]:
+    Description: Variable 'E_Na' in component 'sodiumChannelEquations' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+  Error[10]:
+    Description: Variable 'Na_conductance' in component 'sodiumChannelEquations' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+  Error[11]:
+    Description: Variable 'X' in component 'importedGateH' is used in an ODE, but it is not initialised.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_STATE_NOT_INITIALISED
+    Stored item type: variable
+  Error[12]:
+    Description: Variable 'm' in component 'sodiumChannelEquations' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 
+The Analyser has found 10 issues:
+  Error[0]:
+    Description: Variable 'alpha_X' in component 'importedGateM' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+  Error[1]:
+    Description: Variable 'beta_X' in component 'importedGateM' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+  Error[2]:
+    Description: Variable 'V' in component 'mGateEquations' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+  Error[3]:
+    Description: Variable 'alpha_m' in component 'mGateEquations' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+  Error[4]:
+    Description: Variable 'beta_m' in component 'mGateEquations' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+  Error[5]:
+    Description: Variable 'i_am_redundant' in component 'mGateParameters' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+  Error[6]:
+    Description: Variable 'i_Na' in component 'sodiumChannel' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+  Error[7]:
+    Description: Variable 'E_Na' in component 'sodiumChannelEquations' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+  Error[8]:
+    Description: Variable 'Na_conductance' in component 'sodiumChannelEquations' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+  Error[9]:
+    Description: Variable 'm' in component 'sodiumChannelEquations' is unused.
+    More information is available at https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 
-Recorded 10 issues:
-Issue 0 is an ERROR:
-    description: Variable 'alpha_X' in component 'importedGateM' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-Issue 1 is an ERROR:
-    description: Variable 'beta_X' in component 'importedGateM' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-Issue 2 is an ERROR:
-    description: Variable 'V' in component 'mGateEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-Issue 3 is an ERROR:
-    description: Variable 'alpha_m' in component 'mGateEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-Issue 4 is an ERROR:
-    description: Variable 'beta_m' in component 'mGateEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-Issue 5 is an ERROR:
-    description: Variable 'i_am_redundant' in component 'mGateParameters' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-Issue 6 is an ERROR:
-    description: Variable 'i_Na' in component 'sodiumChannel' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-Issue 7 is an ERROR:
-    description: Variable 'E_Na' in component 'sodiumChannelEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-Issue 8 is an ERROR:
-    description: Variable 'Na_conductance' in component 'sodiumChannelEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-Issue 9 is an ERROR:
-    description: Variable 'm' in component 'sodiumChannelEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
-
-
-Recorded 0 issues!
-
-----------------------------------------------------------
-   STEP 7: Serialise and print the repaired model         
-----------------------------------------------------------
-The repaired sodium channel model has been written to SodiumChannelModel.cellml.
+The Analyser has not found any issues!
+------------------------------------------------
+ STEP 7: Serialise and print the repaired model
+------------------------------------------------
+The repaired sodium channel model has been written to: SodiumChannelModel.cellml.
