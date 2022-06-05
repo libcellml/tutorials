@@ -175,7 +175,7 @@ void printIssues(const libcellml::LoggerPtr &item) {
             // recorded too in an enumeration.
             std::cout << "    Stored item type: " << cellmlElementTypeAsString(issue->item()->type()) << std::endl;
         }
-        std::cout << std::endl << std::endl;
+        std::cout << std::endl;
     }
     else {
         std::cout << "!" << std::endl << std::endl;
