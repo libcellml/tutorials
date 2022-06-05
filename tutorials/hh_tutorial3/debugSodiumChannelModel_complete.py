@@ -178,6 +178,9 @@ if __name__ == '__main__':
     # exponent = 0.0
     # multiplier = 0.0
     mV = model.units('mV')
+    out = mV.unitAttributes('i_dont_exist')
+    print("=============")
+    print(out)
     prefix, exponent, multiplier, id = mV.unitAttributes('i_dont_exist')
     print('The units \'mV\' child has attributes: base units = \'i_dont_exist\', prefix = \'{p}\', exponent = \'{e}\', and multiplier = \'{m}\'.'.format(p=prefix, e=exponent, m=multiplier))
 
