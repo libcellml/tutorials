@@ -17,9 +17,9 @@
 
 int main(int argc, char* argv[])
 {
-    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "----------------------------------------------" << std::endl;
     std::cout << " TUTORIAL 1: READING AND WRITING CELLML FILES" << std::endl;
-    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "----------------------------------------------" << std::endl;
 
     std::string inFileName = "tutorial1.cellml";
     if (argc > 1) {
@@ -62,7 +62,7 @@ int main(int argc, char* argv[])
     //      to the screen.
 
     size_t numberOfComponents = model->componentCount();
-    std::cout << "The " << modelName << " model has " << numberOfComponents
+    std::cout << "The '" << modelName << "' model has " << numberOfComponents
               << " component(s):" << std::endl;
 
     assert(numberOfComponents > 0);
@@ -82,7 +82,7 @@ int main(int argc, char* argv[])
     //      to the screen.
 
     size_t numberOfVariables = component->variableCount();
-    std::cout << "  The " << componentName << " component has "
+    std::cout << "  The '" << componentName << "' component has "
               << numberOfVariables << " variable(s):" << std::endl;
 
     //  2.e
@@ -102,8 +102,8 @@ int main(int argc, char* argv[])
     //      single string, which could contain any number of MathML blocks.
 
     std::string mathsString = component->math();
-    std::cout << "  Component " << componentName
-              << " has a MathML string of: " << std::endl;
+    std::cout << "  Component '" << componentName
+              << "' has a MathML string of: " << std::endl;
     std::cout << "  " << mathsString << std::endl;
 
     //  end 2
@@ -125,7 +125,7 @@ int main(int argc, char* argv[])
     outFile << serialisedModelString;
     outFile.close();
 
-    std::cout << "The " << modelName << " has been printed to: " << outFileName
+    std::cout << "The '" << modelName << "' has been printed to: " << outFileName
               << std::endl;
 
     //  3.c 

@@ -15,13 +15,15 @@ from libcellml import Parser, Printer
 
 if __name__ == "__main__":
 
-    print("-----------------------------------------------------")
-    print("    TUTORIAL 1: READING AND WRITING CellML2 FILES    ")
-    print("-----------------------------------------------------")
+    print("----------------------------------------------")
+    print(" TUTORIAL 1: READING AND WRITING CELLML FILES")
+    print("----------------------------------------------")
 
     model_file = "tutorial1.cellml"
     if len(sys.argv) > 1:
         model_file = sys.argv[1]
+    
+    print("Opening the CellML file")
     # ----------------------------------------------------------------------------
     #  STEP 1:   Create a CellML Model from the contents of a CellML file
     #
@@ -61,8 +63,8 @@ if __name__ == "__main__":
     component = model.component(0)
     component_name = component.name()
     component_id = component.id()
-    print("  Component[0] has name: ", component_name)
-    print("  Component[0] has id: ", component_id)
+    print("  Component[0] has name:", component_name)
+    print("  Component[0] has id:", component_id)
 
     #  2.d
     #     Retrieve the number of variables in the component, and print to the screen.
@@ -80,8 +82,8 @@ if __name__ == "__main__":
     #     Investigate the maths which connects the variables in this component.  Note that
     #     maths in libCellML is stored as a single MathML2 string.
     maths_string = component.math()
-    print("  Component '{c}' has a MathML string of: ".format(c=component_name))
-    print("		"+maths_string)
+    print("  Component '{c}' has a MathML string of:".format(c=component_name))
+    print("  " + maths_string)
 
     #  end 2
 
@@ -97,7 +99,7 @@ if __name__ == "__main__":
     #     Write the serialised string to a file.
     write_file = open("tutorial1_printed.cellml", "w")
     write_file.write(serialised_model)
-    print("The {} has been printed to tutorial1_printed.cellml".format(model_name))
+    print("The '{}' has been printed to tutorial1_printed.cellml".format(model_name))
 
     #  3.c
     #     Go and have a cuppa, you're done!
