@@ -105,9 +105,6 @@ def print_issues(item):
     print(f"Recorded {number_of_issues} issues", end="")
 
     if number_of_issues != 0:
-            t=type(item).__name__,
-            n=number_of_issues)
-        )
         print(":")
         for e in range(0, number_of_issues):
 
