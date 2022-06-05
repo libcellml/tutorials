@@ -25,7 +25,7 @@ def print_model(model, include_maths=False):
 
         print()
     
-    print(spacer + "COMPONENTS: {n} components:".format(n=model.componentCount()))
+    print(spacer + "COMPONENTS: {n} components".format(n=model.componentCount()))
     for c in range(0, model.componentCount()):
         component = model.component(c)
         print_component_to_terminal(component, c, spacer + spacer, include_maths)
