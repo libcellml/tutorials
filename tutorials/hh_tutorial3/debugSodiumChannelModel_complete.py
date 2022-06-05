@@ -18,9 +18,9 @@ from utilities import print_issues, print_model, get_issue_level_from_enum, prin
 if __name__ == '__main__':
 
 
-    print('----------------------------------------------------------')
-    print('   STEP 1: Parse the existing sodium channel model        ')
-    print('----------------------------------------------------------')
+    print('-------------------------------------------------')
+    print(' STEP 1: Parse the existing sodium channel model')
+    print('-------------------------------------------------')
 
     model_file = "SodiumChannelModel_broken.cellml"
     if len(sys.argv) > 1:
@@ -48,9 +48,9 @@ if __name__ == '__main__':
 
     #  end 1
 
-    print('----------------------------------------------------------')
-    print('   STEP 2: Validate the parsed model                      ')
-    print('----------------------------------------------------------')
+    print('-----------------------------------')
+    print(' STEP 2: Validate the parsed model')
+    print('-----------------------------------')
 
     #  2.a 
     #      Create a Validator item and validate the model.
@@ -80,9 +80,9 @@ if __name__ == '__main__':
 
     #  end 2
 
-    print('----------------------------------------------------------')
-    print('   STEP 3: Repair the parsed model                        ')
-    print('----------------------------------------------------------')
+    print('---------------------------------')
+    print(' STEP 3: Repair the parsed model')
+    print('---------------------------------')
 
     #      The messages returned from the validator (and other classes) should (!) have enough information 
     #      to enable you to know what the problem is.  In the case of the validator class, the URL listed
@@ -239,9 +239,9 @@ if __name__ == '__main__':
 
     #  end 3
 
-    print('----------------------------------------------------------')
-    print('   STEP 4: Resolve the imports ')
-    print('----------------------------------------------------------')
+    print('-----------------------------')
+    print(' STEP 4: Resolve the imports')
+    print('-----------------------------')
 
     import_path = os.path.dirname(model_file)
     #      It's important to remember that the imports are merely instructions for how
@@ -310,9 +310,9 @@ if __name__ == '__main__':
 
     #  end 4
 
-    print('----------------------------------------------------------')
-    print('   STEP 5: Validate the imported dependencies ')
-    print('----------------------------------------------------------')
+    print('--------------------------------------------')
+    print(' STEP 5: Validate the imported dependencies')
+    print('--------------------------------------------')
 
     #      At this stage we've validated the local model, and we've used the Importer class
     #      to retrieve all of its import dependencies.  These dependencies are stored in
@@ -357,9 +357,9 @@ if __name__ == '__main__':
 
     #  end 5
 
-    print('----------------------------------------------------------')
-    print('   STEP 6: Analyse the model(s) ')
-    print('----------------------------------------------------------')
+    print('------------------------------')
+    print(' STEP 6: Analyse the model(s)')
+    print('------------------------------')
 
     #      As with the validator, the Analyser class is a diagnostic class which will check
     #      whether the mathematical representation is ready for simulation.  This involves
@@ -494,9 +494,9 @@ if __name__ == '__main__':
 
     #  end 6
 
-    print('----------------------------------------------------------')
-    print('   STEP 7: Serialise and print the repaired model         ')
-    print('----------------------------------------------------------')
+    print('------------------------------------------------')
+    print(' STEP 7: Serialise and print the repaired model')
+    print('------------------------------------------------')
 
     #  7.a 
     #      Create a Printer instance and use it to print the CellML-formatted version of
@@ -512,5 +512,5 @@ if __name__ == '__main__':
 
     #  end
 
-    print('The repaired sodium channel model has been written to SodiumChannelModel.cellml.')
+    print('The repaired sodium channel model has been written to: SodiumChannelModel.cellml.')
 

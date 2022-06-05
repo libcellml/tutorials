@@ -20,9 +20,9 @@
 
 int main(int argc, char* argv[])
 {
-    std::cout << "----------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 1: Parse the existing sodium channel model " << std::endl;
-    std::cout << "----------------------------------------------------------" << std::endl;
+    std::cout << "-------------------------------------------------" << std::endl;
+    std::cout << " STEP 1: Parse the existing sodium channel model" << std::endl;
+    std::cout << "-------------------------------------------------" << std::endl;
 
     std::filesystem::path inFileName = "SodiumChannelModel_broken.cellml";
     if (argc > 1) {
@@ -53,9 +53,9 @@ int main(int argc, char* argv[])
 
     //  end 1
 
-    std::cout << "----------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 2: Validate the parsed model " << std::endl;
-    std::cout << "----------------------------------------------------------" << std::endl;
+    std::cout << "-----------------------------------" << std::endl;
+    std::cout << " STEP 2: Validate the parsed model" << std::endl;
+    std::cout << "-----------------------------------" << std::endl;
 
     //  2.a 
     //      Create a Validator item and validate the model.
@@ -85,9 +85,9 @@ int main(int argc, char* argv[])
     }
     //  end 2
 
-    std::cout << "----------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 3: Repair the parsed model " << std::endl;
-    std::cout << "----------------------------------------------------------" << std::endl;
+    std::cout << "---------------------------------" << std::endl;
+    std::cout << " STEP 3: Repair the parsed model" << std::endl;
+    std::cout << "---------------------------------" << std::endl;
 
     //      The messages returned from the validator (and other classes) should (!) have enough information 
     //      to enable you to know what the problem is.  In the case of the validator class, the URL listed
@@ -248,9 +248,9 @@ int main(int argc, char* argv[])
 
     //  end 3
 
-    std::cout << "----------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 4: Resolve the imports " << std::endl;
-    std::cout << "----------------------------------------------------------" << std::endl;
+    std::cout << "-----------------------------" << std::endl;
+    std::cout << " STEP 4: Resolve the imports" << std::endl;
+    std::cout << "-----------------------------" << std::endl;
 
     //      It's important to remember that the imports are merely instructions for how
     //      components or units items should be located: only their syntax is checked by the
@@ -318,9 +318,9 @@ int main(int argc, char* argv[])
 
     //  end 4
 
-    std::cout << "----------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 5: Validate the imported dependencies " << std::endl;
-    std::cout << "----------------------------------------------------------" << std::endl;
+    std::cout << "--------------------------------------------" << std::endl;
+    std::cout << " STEP 5: Validate the imported dependencies" << std::endl;
+    std::cout << "--------------------------------------------" << std::endl;
 
     //      At this stage we've validated the local model, and we've used the Importer class
     //      to retrieve all of its import dependencies.  These dependencies are stored in
@@ -366,9 +366,9 @@ int main(int argc, char* argv[])
 
     //  end 5
 
-    std::cout << "----------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 6: Analyse the model(s) " << std::endl;
-    std::cout << "----------------------------------------------------------" << std::endl;
+    std::cout << "------------------------------" << std::endl;
+    std::cout << " STEP 6: Analyse the model(s)" << std::endl;
+    std::cout << "------------------------------" << std::endl;
 
     //      As with the validator, the Analyser class is a diagnostic class which will check
     //      whether the mathematical representation is ready for simulation.  This involves
@@ -502,9 +502,9 @@ int main(int argc, char* argv[])
 
     //  end 6
 
-    std::cout << "----------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 7: Serialise and print the repaired model         " << std::endl;
-    std::cout << "----------------------------------------------------------" << std::endl;
+    std::cout << "------------------------------------------------" << std::endl;
+    std::cout << " STEP 7: Serialise and print the repaired model" << std::endl;
+    std::cout << "------------------------------------------------" << std::endl;
 
     //  7.a 
     //      Create a Printer instance and use it to print the CellML-formatted version of
@@ -521,5 +521,5 @@ int main(int argc, char* argv[])
 
     //  end
 
-    std::cout << "The repaired sodium channel model has been written to SodiumChannelModel.cellml." << std::endl;
+    std::cout << "The repaired sodium channel model has been written to: SodiumChannelModel.cellml." << std::endl;
 }

@@ -1,7 +1,7 @@
-----------------------------------------------------------
-   STEP 1: Parse the existing sodium channel model 
-----------------------------------------------------------
- MODEL: 'SodiumChannelModel'
+-------------------------------------------------
+ STEP 1: Parse the existing sodium channel model
+-------------------------------------------------
+MODEL: 'SodiumChannelModel'
     UNITS: 5 custom units
         [0]: mV
         [1]: ms
@@ -9,26 +9,26 @@
         [3]: per_mV_ms
         [4]: microA_per_cm2
     COMPONENTS: 4 components
-        [0]: controller <--- imported from: 'controller' in 'CircularControllerReference.cellml'
+        [0]: 'controller' <--- imported from: 'controller' in 'CircularControllerReference.cellml'
             VARIABLES: 2 variables
                 [0]: t
                       └──> sodiumChannel:t [ms]
                 [1]: V
                       └──> sodiumChannel:V
-        [1]: mGateEquations!
+        [1]: 'mGateEquations!'
             VARIABLES: 5 variables
                 [0]: alpha_m [per_ms]
                 [1]: V [mV]
                 [2]: beta_m [per_ms]
                 [3]: m [dimensionless]
                 [4]: t [ms]
-        [2]: importedGateM <--- imported from: 'gateEquations' in 'GateModel.cellml'
+        [2]: 'importedGateM' <--- imported from: 'gateEquations' in 'GateModel.cellml'
             VARIABLES: 4 variables
                 [0]: alpha_X
                 [1]: beta_X
                 [2]: X
                 [3]: t
-        [3]: sodiumChannel
+        [3]: 'sodiumChannel'
             VARIABLES: 3 variables
                 [0]: t [ms]
                       └──> controller:t, sodiumChannelEquations:t [ms]
