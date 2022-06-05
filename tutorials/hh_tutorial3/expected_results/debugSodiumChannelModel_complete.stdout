@@ -295,7 +295,6 @@ Issue 1 is an ERROR:
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=IMPORTER_MISSING_COMPONENT
     Stored item type: component
 
-
 Recorded 0 issues!
 
 --------------------------------------------
@@ -311,7 +310,6 @@ Issue 0 is an ERROR:
     More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB04.html?issue=IMPORT_COMPONENT_COMPONENT_REF
     Stored item type: import
 
-
 Imported model at key: /Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/CircularControllerReference2.cellml
 Recorded 1 issues:
 Issue 0 is an ERROR:
@@ -321,7 +319,6 @@ Issue 0 is an ERROR:
     See section 2.4.2 in the CellML specification.
     More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB04.html?issue=IMPORT_COMPONENT_COMPONENT_REF
     Stored item type: import
-
 
 Imported model at key: /Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/GateModel.cellml
 Recorded 0 issues!
@@ -337,7 +334,6 @@ Issue 0 is an ERROR:
     Description: The model has units which are not linked together.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_UNLINKED_UNITS
     Stored item type: undefined
-
 
 MODEL: 'SodiumChannelModel'
     UNITS: 6 custom units
@@ -455,7 +451,6 @@ Issue 0 is an ERROR:
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VOI_SEVERAL
     Stored item type: variable
 
-
 Recorded 13 issues:
 Issue 0 is an ERROR:
     Description: Variable 'X' in component 'importedGateM' is used in an ODE, but it is not initialised.
@@ -510,7 +505,6 @@ Issue 12 is an ERROR:
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 
-
 Recorded 10 issues:
 Issue 0 is an ERROR:
     Description: Variable 'alpha_X' in component 'importedGateM' is unused.
@@ -552,7 +546,6 @@ Issue 9 is an ERROR:
     Description: Variable 'm' in component 'sodiumChannelEquations' is unused.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
-
 
 Recorded 0 issues!
 
