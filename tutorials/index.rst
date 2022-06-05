@@ -17,8 +17,8 @@ The first set of tutorials provides a simple starting point for users who are un
     :glob:
        
     tutorial*/index
-    solver/index
-    
+
+For information on solving a CellML model with a simple numerical solver, please see the :ref:`solving a generated model page<solver>`.   
 Hodgkin-Huxley modelling tutorials
 ----------------------------------
 
