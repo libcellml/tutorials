@@ -102,13 +102,13 @@ def print_issues(item):
     # return issues of all levels.  To retrieve the total number of a specific level
     # of issues, use the errorCount(), warningCount(), hintCount(), or messageCount() functions. 
     number_of_issues = item.issueCount()
+    print(f"Recorded {number_of_issues} issues", end="")
 
     if number_of_issues != 0:
-        print("\nThe {t} has found {n} issues:".format(
             t=type(item).__name__,
             n=number_of_issues)
         )
-
+        print(":")
         for e in range(0, number_of_issues):
 
             # Retrieve the issue at index i.  Note that this is agnostic as to the level of issue.
@@ -118,9 +118,7 @@ def print_issues(item):
 
             # The level of an issue is retrieved using the level() function as an enum value. 
             level = i.level()
-            print("  {l}[{e}]:".format(
-                l=level_as_string[level],
-                e=e))
+            print(f"Issue {e} is {level_as_string[level]}:")
 
             # Each issue has a descriptive text field, accessible through the description() function.
             print("    Description: {d}".format(
@@ -136,7 +134,7 @@ def print_issues(item):
             # An optional URL is given for some issues which directs the user to more detailed information.
             url = i.url()
             if url != "":
-                print("    More information is available at {url}".format(
+                print("    More information is available at: {url}".format(
                     url=url))
 
             # Each issue is associated with an item.  In order to properly deal with the item stored, its type is 
@@ -144,9 +142,8 @@ def print_issues(item):
             print("    Stored item type: {}".format(cellmlElementTypeAsString(i.item().type())))
 
     else:
-        print("\nThe {t} has not found any issues!".format(
-            t=type(item).__name__)
-        )
+        print("!")
+        print()
 # END print_issues
 
 def print_component_only_to_terminal(component, spacer):

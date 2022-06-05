@@ -160,20 +160,20 @@ void printIssues(const libcellml::LoggerPtr &item) {
             std::cout << "Issue " << i << " is " << getIssueLevelFromEnum(issue->level()) << ":" << std::endl;
 
             // Each issue has a descriptive text field, accessible through the description() function.
-            std::cout << "    description: " << issue->description() << std::endl;
+            std::cout << "    Description: " << issue->description() << std::endl;
             if (errorReference != "") {
-                std::cout << "    see section " << errorReference
+                std::cout << "    See section " << errorReference
                           << " in the CellML specification." << std::endl;
             }
 
             // An optional URL is given for some issues which directs the user to more detailed information.
             if(!issue->url().empty()){
-                std::cout << "    more information at: " <<issue->url() << std::endl;
+                std::cout << "    More information is available at: " <<issue->url() << std::endl;
             }
 
             // Each issue is associated with an item.  In order to properly deal with the item stored, its type is 
             // recorded too in an enumeration.
-            std::cout << "    stored item type: " << cellmlElementTypeAsString(issue->item()->type()) << std::endl;
+            std::cout << "    Stored item type: " << cellmlElementTypeAsString(issue->item()->type()) << std::endl;
         }
         std::cout << std::endl << std::endl;
     }
