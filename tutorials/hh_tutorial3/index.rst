@@ -20,13 +20,13 @@ Hodgkin-Huxley 3: Debugging a model
 
     - :download:`CMakeLists.txt<CMakeLists.txt>` The CMake file for building this tutorial;
     - :download:`debugSodiumChannelModel.cpp<debugSodiumChannelModel.cpp>` Either the skeleton code, or ..
-    - :download:`debugSodiumChannelModel_completed.cpp<debugSodiumChannelModel_completed.cpp>` the completed tutorial code; and
+    - :download:`debugSodiumChannelModel_complete.cpp<debugSodiumChannelModel_complete.cpp>` the completed tutorial code; and
     - :download:`utilities.cpp<../code/utilities.cpp>` and :download:`utilities.h<../code/utilities.h>` Helper functions.
 
     **Python resources**
 
     - :download:`debugSodiumChannelModel.py<debugSodiumChannelModel.py>` Either the skeleton code, or ..
-    - :download:`debugSodiumChannelModel_completed.py<debugSodiumChannelModel_completed.py>` the completed tutorial code; and
+    - :download:`debugSodiumChannelModel_complete.py<debugSodiumChannelModel_complete.py>` the completed tutorial code; and
 
     **CellML resources**
 
@@ -69,7 +69,7 @@ The parser will then read that string and return a model.
 
         Show C++ snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.cpp
+    .. literalinclude:: debugSodiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  1.a
         :end-before: //  end 1
@@ -80,7 +80,7 @@ The parser will then read that string and return a model.
 
         Show Python snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.py
+    .. literalinclude:: debugSodiumChannelModel_complete.py
         :language: python
         :start-at: #  1.a
         :end-before: #  end 1
@@ -210,7 +210,7 @@ Create a :code:`Validator` item and use it to validate the model you've just rea
 
         Show C++ snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.cpp
+    .. literalinclude:: debugSodiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  2.a
         :end-before: //  end 2.a
@@ -221,7 +221,7 @@ Create a :code:`Validator` item and use it to validate the model you've just rea
 
         Show Python snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.py
+    .. literalinclude:: debugSodiumChannelModel_complete.py
         :language: python
         :start-at: #  2.a
         :end-before: #  end 2.a
@@ -256,7 +256,7 @@ Create a :code:`Validator` item and use it to validate the model you've just rea
 
         Show C++ snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.cpp
+    .. literalinclude:: debugSodiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  2.b
         :end-before: //  end 2
@@ -267,7 +267,7 @@ Create a :code:`Validator` item and use it to validate the model you've just rea
 
         Show Python snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.py
+    .. literalinclude:: debugSodiumChannelModel_complete.py
         :language: python
         :start-at: #  2.b
         :end-before: #  end 2
@@ -300,7 +300,7 @@ In some situations more than one :code:`Issue` will be generated from a single c
 
         Show C++ snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.cpp
+    .. literalinclude:: debugSodiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  3.a
         :end-before: //  end 3.a
@@ -311,7 +311,7 @@ In some situations more than one :code:`Issue` will be generated from a single c
 
         Show Python snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.py
+    .. literalinclude:: debugSodiumChannelModel_complete.py
         :language: python
         :start-at: #  3.a
         :end-before: #  end 3.a
@@ -339,7 +339,7 @@ In some situations more than one :code:`Issue` will be generated from a single c
 
         Show C++ snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.cpp
+    .. literalinclude:: debugSodiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  3.b
         :end-before: //  end 3.b
@@ -350,7 +350,7 @@ In some situations more than one :code:`Issue` will be generated from a single c
 
         Show Python snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.py
+    .. literalinclude:: debugSodiumChannelModel_complete.py
         :language: python
         :start-at: #  3.b
         :end-before: #  end 3.b
@@ -389,7 +389,7 @@ We can retrieve the affected item directly from the issue in one of two ways:
 
         Show C++ snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.cpp
+    .. literalinclude:: debugSodiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  3.c
         :end-before: //  end 3.c
@@ -400,7 +400,7 @@ We can retrieve the affected item directly from the issue in one of two ways:
 
         Show Python snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.py
+    .. literalinclude:: debugSodiumChannelModel_complete.py
         :language: python
         :start-at: #  3.c
         :end-before: #  end 3.c
@@ -444,7 +444,7 @@ You have a few different options for how to fix this one.
 
         Show C++ snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.cpp
+    .. literalinclude:: debugSodiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  3.d
         :end-before: //  end 3.d
@@ -455,7 +455,7 @@ You have a few different options for how to fix this one.
 
         Show Python snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.py
+    .. literalinclude:: debugSodiumChannelModel_complete.py
         :language: python
         :start-at: #  3.d
         :end-before: #  end 3.d
@@ -478,7 +478,7 @@ The final validator issue refers to the fact that we need to explicitly specify 
 
         Show C++ snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.cpp
+    .. literalinclude:: debugSodiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  3.e
         :end-before: //  3.f
@@ -489,7 +489,7 @@ The final validator issue refers to the fact that we need to explicitly specify 
 
         Show Python snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.py
+    .. literalinclude:: debugSodiumChannelModel_complete.py
         :language: python
         :start-at: #  3.e
         :end-before: #  3.f
@@ -528,7 +528,7 @@ The final validator issue refers to the fact that we need to explicitly specify 
 
         Show C++ snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.cpp
+    .. literalinclude:: debugSodiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  3.g
         :end-before: //  end 3
@@ -539,7 +539,7 @@ The final validator issue refers to the fact that we need to explicitly specify 
 
         Show Python snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.py
+    .. literalinclude:: debugSodiumChannelModel_complete.py
         :language: python
         :start-at: #  3.g
         :end-before: #  end 3
@@ -595,7 +595,7 @@ For this tutorial, the files are in the same directory as the code, so simply us
 
         Show C++ snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.cpp
+    .. literalinclude:: debugSodiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  4.a
         :end-before: //  end 4.b
@@ -606,7 +606,7 @@ For this tutorial, the files are in the same directory as the code, so simply us
 
         Show Python snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.py
+    .. literalinclude:: debugSodiumChannelModel_complete.py
         :language: python
         :start-at: #  4.a
         :end-before: #  end 4.b
@@ -640,7 +640,7 @@ This needs to be an iterative process because as more files become available to 
 
         Show C++ snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.cpp
+    .. literalinclude:: debugSodiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  4.c
         :end-before: //  end 4.c
@@ -651,7 +651,7 @@ This needs to be an iterative process because as more files become available to 
 
         Show Python snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.py
+    .. literalinclude:: debugSodiumChannelModel_complete.py
         :language: python
         :start-at: #  4.c
         :end-before: #  end 4.c
@@ -689,7 +689,7 @@ It's included here to highlight the fact that the :code:`Importer` class opens a
 
         Show C++ snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.cpp
+    .. literalinclude:: debugSodiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  4.d
         :end-before: //  end 4
@@ -700,7 +700,7 @@ It's included here to highlight the fact that the :code:`Importer` class opens a
 
         Show Python snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.py
+    .. literalinclude:: debugSodiumChannelModel_complete.py
         :language: python
         :start-at: #  4.d
         :end-before: #  end 4
@@ -728,7 +728,7 @@ These dependencies are stored in the importer's library, and have not yet been v
 
         Show C++ snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.cpp
+    .. literalinclude:: debugSodiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  5.a
         :end-before: //  end 5.a
@@ -739,7 +739,7 @@ These dependencies are stored in the importer's library, and have not yet been v
 
         Show Python snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.py
+    .. literalinclude:: debugSodiumChannelModel_complete.py
         :language: python
         :start-at: #  5.a
         :end-before: #  end 5.a
@@ -786,7 +786,7 @@ As soon as the model's imports have been resolved, all these will point to insta
 
         Show C++ snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.cpp
+    .. literalinclude:: debugSodiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  5.b
         :end-before: //  end 5
@@ -797,7 +797,7 @@ As soon as the model's imports have been resolved, all these will point to insta
 
         Show Python snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.py
+    .. literalinclude:: debugSodiumChannelModel_complete.py
         :language: python
         :start-at: #  5.b
         :end-before: #  end 5
@@ -869,7 +869,7 @@ If the flat model meets the analyser's checks, then the importing version will t
 
         Show C++ snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.cpp
+    .. literalinclude:: debugSodiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  6.a
         :end-before: //  end 6.d
@@ -880,7 +880,7 @@ If the flat model meets the analyser's checks, then the importing version will t
 
         Show Python snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.py
+    .. literalinclude:: debugSodiumChannelModel_complete.py
         :language: python
         :start-at: #  6.a
         :end-before: #  end 6.d
@@ -917,7 +917,7 @@ In this example, the real problem is that these two variables are talking about 
 
         Show C++ snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.cpp
+    .. literalinclude:: debugSodiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  6.e
         :end-before: //  end 6.f
@@ -928,7 +928,7 @@ In this example, the real problem is that these two variables are talking about 
 
         Show Python snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.py
+    .. literalinclude:: debugSodiumChannelModel_complete.py
         :language: python
         :start-at: #  6.e
         :end-before: #  end 6.f
@@ -960,7 +960,7 @@ Looking at the model printout we can see that this is because the integrated var
 
         Show C++ snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.cpp
+    .. literalinclude:: debugSodiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  6.g
         :end-before: //  end 6.g
@@ -971,7 +971,7 @@ Looking at the model printout we can see that this is because the integrated var
 
         Show Python snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.py
+    .. literalinclude:: debugSodiumChannelModel_complete.py
         :language: python
         :start-at: #  6.g
         :end-before: #  end 6.g
@@ -1011,7 +1011,7 @@ Hints for this tutorial:
 
         Show C++ snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.cpp
+    .. literalinclude:: debugSodiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  6.h
         :end-before: //  end 6
@@ -1022,7 +1022,7 @@ Hints for this tutorial:
 
         Show Python snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.py
+    .. literalinclude:: debugSodiumChannelModel_complete.py
         :language: python
         :start-at: #  6.h
         :end-before: #  end 6
@@ -1045,7 +1045,7 @@ Step 7: Serialise and print the repaired model
 
         Show C++ snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.cpp
+    .. literalinclude:: debugSodiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  7.a
         :end-before: //  end
@@ -1056,7 +1056,7 @@ Step 7: Serialise and print the repaired model
 
         Show Python snippet
 
-    .. literalinclude:: debugSodiumChannelModel_completed.py
+    .. literalinclude:: debugSodiumChannelModel_complete.py
         :language: python
         :start-at: #  7.a
         :end-before: #  end

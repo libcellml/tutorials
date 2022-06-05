@@ -40,7 +40,7 @@ Requirements
 Step 0: Set-up
 --------------
 For each of the tutorials, there is template code provided for you to get started.
-If you'd rather see the completed code instead of working through the tasks yourself, simply rename the completed files so that they match the skeleton file names (that is, remove the :code:`_completed` from their names).
+If you'd rather see the completed code instead of working through the tasks yourself, simply rename the completed files so that they match the skeleton file names (that is, remove the :code:`_complete` from their names).
 
 .. tabs::
 

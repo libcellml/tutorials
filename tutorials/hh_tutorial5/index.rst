@@ -22,14 +22,14 @@ Hodgkin-Huxley 5: Interact with generated code
 
     - :download:`CMakeLists.txt<CMakeLists.txt>` The CMake file for building this tutorial;
     - :download:`solveGeneratedCode.cpp<solveGeneratedCode.cpp>` Either the skeleton code, or ..
-    - :download:`solveGeneratedCode_completed.cpp<solveGeneratedCode_completed.cpp>` the completed tutorial code;
+    - :download:`solveGeneratedCode_complete.cpp<solveGeneratedCode_complete.cpp>` the completed tutorial code;
     - :download:`HodgkinHuxleyModel.cpp<HodgkinHuxleyModel.cpp>` Generated implementation code from Tutorial 4; and
     - :download:`HodgkinHuxleyModel.h<HodgkinHuxleyModel.h>` Generated interface code from Tutorial 4.
 
     **Python resources**
 
     - :download:`solveGeneratedCode.py<solveGeneratedCode.py>` Either the skeleton code, or ..
-    - :download:`solveGeneratedCode_completed.py<solveGeneratedCode_completed.py>` the completed tutorial code;
+    - :download:`solveGeneratedCode_complete.py<solveGeneratedCode_complete.py>` the completed tutorial code;
     - :download:`HodgkinHuxleyModel.py<HodgkinHuxleyModel.py>` Generated implementation code from Tutorial 4.
 
 
@@ -67,7 +67,7 @@ There are necessarily big differences between C++ and Python for this tutorial!
 
                 Show C++ snippet
 
-            .. literalinclude:: solveGeneratedCode_completed.cpp
+            .. literalinclude:: solveGeneratedCode_complete.cpp
                 :language: c++
                 :start-at: //  1.a
                 :end-before: //  end 1
@@ -88,7 +88,7 @@ There are necessarily big differences between C++ and Python for this tutorial!
 
                 Show Python snippet
 
-            .. literalinclude:: solveGeneratedCode_completed.py
+            .. literalinclude:: solveGeneratedCode_complete.py
                 :language: python
                 :start-at: #  1.a
                 :end-before: #  end 1
@@ -125,7 +125,7 @@ They are stored in an array of :code:`VariableInfoWithType` structs called :code
 
         Show C++ snippet
 
-    .. literalinclude:: solveGeneratedCode_completed.cpp
+    .. literalinclude:: solveGeneratedCode_complete.cpp
         :language: c++
         :start-at: //  2.a
         :end-before: //  end 2.a
@@ -136,7 +136,7 @@ They are stored in an array of :code:`VariableInfoWithType` structs called :code
 
         Show Python snippet
 
-    .. literalinclude:: solveGeneratedCode_completed.py
+    .. literalinclude:: solveGeneratedCode_complete.py
         :language: python
         :start-at: #  2.a
         :end-before: #  end 2.a
@@ -163,7 +163,7 @@ is :code:`STATE_COUNT` long.
 
         Show C++ snippet
 
-    .. literalinclude:: solveGeneratedCode_completed.cpp
+    .. literalinclude:: solveGeneratedCode_complete.cpp
         :language: c++
         :start-at: //  2.b
         :end-before: //  2.c 
@@ -174,7 +174,7 @@ is :code:`STATE_COUNT` long.
 
         Show Python snippet
 
-    .. literalinclude:: solveGeneratedCode_completed.py
+    .. literalinclude:: solveGeneratedCode_complete.py
         :language: python
         :start-at: #  2.b
         :end-before: #  2.c
@@ -190,7 +190,7 @@ is :code:`STATE_COUNT` long.
 
         Show C++ snippet
 
-    .. literalinclude:: solveGeneratedCode_completed.cpp
+    .. literalinclude:: solveGeneratedCode_complete.cpp
         :language: c++
         :start-at: //  2.c
         :end-before: //  end 2
@@ -201,7 +201,7 @@ is :code:`STATE_COUNT` long.
 
         Show Python snippet
 
-    .. literalinclude:: solveGeneratedCode_completed.py
+    .. literalinclude:: solveGeneratedCode_complete.py
         :language: python
         :start-at: #  2.c
         :end-before: #  end 2
@@ -255,7 +255,7 @@ Step 3: Access the functions in the generated files
 
         Show C++ snippet
 
-    .. literalinclude:: solveGeneratedCode_completed.cpp
+    .. literalinclude:: solveGeneratedCode_complete.cpp
         :language: c++
         :start-at: //  3.a
         :end-before: //  3.b 
@@ -266,7 +266,7 @@ Step 3: Access the functions in the generated files
 
         Show Python snippet
 
-    .. literalinclude:: solveGeneratedCode_completed.py
+    .. literalinclude:: solveGeneratedCode_complete.py
         :language: python
         :start-at: #  3.a
         :end-before: #  3.b
@@ -281,7 +281,7 @@ Step 3: Access the functions in the generated files
 
         Show C++ snippet
 
-    .. literalinclude:: solveGeneratedCode_completed.cpp
+    .. literalinclude:: solveGeneratedCode_complete.cpp
         :language: c++
         :start-at: //  3.b
         :end-before: //  3.c 
@@ -292,7 +292,7 @@ Step 3: Access the functions in the generated files
 
         Show Python snippet
 
-    .. literalinclude:: solveGeneratedCode_completed.py
+    .. literalinclude:: solveGeneratedCode_complete.py
         :language: python
         :start-at: #  3.b
         :end-before: #  3.c
@@ -307,7 +307,7 @@ Step 3: Access the functions in the generated files
 
         Show C++ snippet
 
-    .. literalinclude:: solveGeneratedCode_completed.cpp
+    .. literalinclude:: solveGeneratedCode_complete.cpp
         :language: c++
         :start-at: //  3.c
         :end-before: //  end 3
@@ -318,7 +318,7 @@ Step 3: Access the functions in the generated files
 
         Show Python snippet
 
-    .. literalinclude:: solveGeneratedCode_completed.py
+    .. literalinclude:: solveGeneratedCode_complete.py
         :language: python
         :start-at: #  3.c
         :end-before: #  end 3
@@ -340,7 +340,7 @@ This part will make use of a simple routine to step through the solution iterati
 
         Show C++ snippet
 
-    .. literalinclude:: solveGeneratedCode_completed.cpp
+    .. literalinclude:: solveGeneratedCode_complete.cpp
         :language: c++
         :start-at: //  4.a
         :end-before: //  4.b 
@@ -351,7 +351,7 @@ This part will make use of a simple routine to step through the solution iterati
 
         Show Python snippet
 
-    .. literalinclude:: solveGeneratedCode_completed.py
+    .. literalinclude:: solveGeneratedCode_complete.py
         :language: python
         :start-at: #  4.a
         :end-before: #  4.b
@@ -379,7 +379,7 @@ The Euler update method is: :math:`x[n+1] = x[n] + x'[n].dx`
 
         Show C++ snippet
 
-    .. literalinclude:: solveGeneratedCode_completed.cpp
+    .. literalinclude:: solveGeneratedCode_complete.cpp
         :language: c++
         :start-at: //  4.b
         :end-before: //  end 4.b
@@ -390,7 +390,7 @@ The Euler update method is: :math:`x[n+1] = x[n] + x'[n].dx`
 
         Show Python snippet
 
-    .. literalinclude:: solveGeneratedCode_completed.py
+    .. literalinclude:: solveGeneratedCode_complete.py
         :language: python
         :start-at: #  4.b
         :end-before: #  end 4.b
@@ -405,7 +405,7 @@ The Euler update method is: :math:`x[n+1] = x[n] + x'[n].dx`
 
         Show C++ snippet
 
-    .. literalinclude:: solveGeneratedCode_completed.cpp
+    .. literalinclude:: solveGeneratedCode_complete.cpp
         :language: c++
         :start-at: //  4.c
         :end-before: //  end 4
@@ -416,7 +416,7 @@ The Euler update method is: :math:`x[n+1] = x[n] + x'[n].dx`
 
         Show Python snippet
 
-    .. literalinclude:: solveGeneratedCode_completed.py
+    .. literalinclude:: solveGeneratedCode_complete.py
         :language: python
         :start-at: #  4.c
         :end-before: #  end 4

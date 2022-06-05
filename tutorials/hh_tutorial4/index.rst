@@ -23,13 +23,13 @@ Hodgkin-Huxley 4: Generating code from a model
 
     - :download:`CMakeLists.txt<CMakeLists.txt>` The CMake file for building this tutorial;
     - :download:`generateMembraneModel.cpp<generateMembraneModel.cpp>` Either the skeleton code, or ..
-    - :download:`generateMembraneModel_completed.cpp<generateMembraneModel_completed.cpp>` the completed tutorial code; and
+    - :download:`generateMembraneModel_complete.cpp<generateMembraneModel_complete.cpp>` the completed tutorial code; and
     - :download:`utilities.cpp<../code/utilities.cpp>` and :download:`utilities.h<../code/utilities.h>` Helper functions.
 
     **Python resources**
 
     - :download:`generateMembraneModel.py<generateMembraneModel.py>` Either the skeleton code, or ..
-    - :download:`generateMembraneModel_completed.py<generateMembraneModel_completed.py>` the completed tutorial code;
+    - :download:`generateMembraneModel_complete.py<generateMembraneModel_complete.py>` the completed tutorial code;
     - :download:`utilities.py<../code/utilities.py>` Helper functions.
 
     **CellML resources**
@@ -59,7 +59,7 @@ Step 1: Parse the existing membrane model
 
         Show C++ snippet
 
-    .. literalinclude:: generateMembraneModel_completed.cpp
+    .. literalinclude:: generateMembraneModel_complete.cpp
         :language: c++
         :start-at: //  1.a
         :end-before: //  end 1
@@ -70,7 +70,7 @@ Step 1: Parse the existing membrane model
 
         Show Python snippet
 
-    .. literalinclude:: generateMembraneModel_completed.py
+    .. literalinclude:: generateMembraneModel_complete.py
         :language: python
         :start-at: #  1.a
         :end-before: #  end 1
@@ -175,7 +175,7 @@ We do not expect any issues to be reported by the importer.
 
         Show C++ snippet
 
-    .. literalinclude:: generateMembraneModel_completed.cpp
+    .. literalinclude:: generateMembraneModel_complete.cpp
         :language: c++
         :start-at: //  2.a
         :end-before: //  end 2
@@ -186,7 +186,7 @@ We do not expect any issues to be reported by the importer.
 
         Show Python snippet
 
-    .. literalinclude:: generateMembraneModel_completed.py
+    .. literalinclude:: generateMembraneModel_complete.py
         :language: python
         :start-at: #  2.a
         :end-before: #  end 2
@@ -209,7 +209,7 @@ You know what to do ... we do not expect any issues to be raised by either the v
 
         Show C++ snippet
 
-    .. literalinclude:: generateMembraneModel_completed.cpp
+    .. literalinclude:: generateMembraneModel_complete.cpp
         :language: c++
         :start-at: //  3.a
         :end-before: //  end 3
@@ -220,7 +220,7 @@ You know what to do ... we do not expect any issues to be raised by either the v
 
         Show Python snippet
 
-    .. literalinclude:: generateMembraneModel_completed.py
+    .. literalinclude:: generateMembraneModel_complete.py
         :language: python
         :start-at: #  3.a
         :end-before: #  end 3
@@ -260,12 +260,12 @@ Two profiles are already defined; for C++ and for Python.
 
         Show C++ snippet
 
-    .. literalinclude:: generateMembraneModel_completed.cpp
+    .. literalinclude:: generateMembraneModel_complete.cpp
         :language: c++
         :start-at: //  4.a
         :end-before: //  end 4.a
 
-    .. literalinclude:: generateMembraneModel_completed.cpp
+    .. literalinclude:: generateMembraneModel_complete.cpp
         :language: c++
         :start-at: //  4.b
         :end-before: //  end 4.c
@@ -276,12 +276,12 @@ Two profiles are already defined; for C++ and for Python.
 
         Show Python snippet
 
-    .. literalinclude:: generateMembraneModel_completed.py
+    .. literalinclude:: generateMembraneModel_complete.py
         :language: python
         :start-at: #  4.a
         :end-before: #  4.b
 
-    .. literalinclude:: generateMembraneModel_completed.py
+    .. literalinclude:: generateMembraneModel_complete.py
         :language: python
         :start-at: #  4.b
         :end-before: #  4.d
@@ -321,12 +321,12 @@ Instead of submitting a :code:`Model` item (as we do for all other classes), the
 
         Show C++ snippet
 
-    .. literalinclude:: generateMembraneModel_completed.cpp
+    .. literalinclude:: generateMembraneModel_complete.cpp
         :language: c++
         :start-at: //  4.d
         :end-before: //  end 4.d
 
-    .. literalinclude:: generateMembraneModel_completed.cpp
+    .. literalinclude:: generateMembraneModel_complete.cpp
         :language: c++
         :start-at: //  4.e
         :end-before: //  end 4.e
@@ -337,7 +337,7 @@ Instead of submitting a :code:`Model` item (as we do for all other classes), the
 
         Show Python snippet
 
-    .. literalinclude:: generateMembraneModel_completed.py
+    .. literalinclude:: generateMembraneModel_complete.py
         :language: python
         :start-at: #  4.d
         :end-before: #  4.e
@@ -360,7 +360,7 @@ Instead of submitting a :code:`Model` item (as we do for all other classes), the
 
         Show C++ snippet
 
-    .. literalinclude:: generateMembraneModel_completed.cpp
+    .. literalinclude:: generateMembraneModel_complete.cpp
         :language: c++
         :start-at: //  4.f
         :end-before: //  end 4
@@ -371,7 +371,7 @@ Instead of submitting a :code:`Model` item (as we do for all other classes), the
 
         Show Python snippet
 
-    .. literalinclude:: generateMembraneModel_completed.py
+    .. literalinclude:: generateMembraneModel_complete.py
         :language: python
         :start-at: #  4.f
         :end-before: #  end 4

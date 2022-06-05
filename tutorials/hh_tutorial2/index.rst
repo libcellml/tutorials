@@ -20,13 +20,13 @@ Hodgkin-Huxley 2: Creating a model which uses imports
 
     - :download:`CMakeLists.txt<CMakeLists.txt>` The CMake file for building this tutorial;
     - :download:`createPotassiumChannelModel.cpp<createPotassiumChannelModel.cpp>` Either the skeleton code, or ..
-    - :download:`createPotassiumChannelModel_completed.cpp<createPotassiumChannelModel_completed.cpp>` the completed tutorial code; and
+    - :download:`createPotassiumChannelModel_complete.cpp<createPotassiumChannelModel_complete.cpp>` the completed tutorial code; and
     - :download:`utilities.cpp<../code/utilities.cpp>` and :download:`utilities.h<../code/utilities.h>` Helper functions.
 
     **Python resources**
 
     - :download:`createPotassiumChannelModel.py<createPotassiumChannelModel.py>` Either the skeleton code, or ..
-    - :download:`createPotassiumChannelModel_completed.py<createPotassiumChannelModel_completed.py>` the completed tutorial code.
+    - :download:`createPotassiumChannelModel_complete.py<createPotassiumChannelModel_complete.py>` the completed tutorial code.
 
     **CellML resources**
 
@@ -80,7 +80,7 @@ The final structure of this model is shown in the diagram below.
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  1.a
         :end-before: //  end 1
@@ -91,7 +91,7 @@ The final structure of this model is shown in the diagram below.
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  1.a
         :end-before: #  end 1
@@ -119,7 +119,7 @@ Step 2: Create a potassium channel equations component
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  2.a
         :end-before: //  end 2.a
@@ -130,7 +130,7 @@ Step 2: Create a potassium channel equations component
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  2.a
         :end-before: #  end 2.a
@@ -147,7 +147,7 @@ Step 2: Create a potassium channel equations component
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  2.b
         :end-before: //  2.c
@@ -158,7 +158,7 @@ Step 2: Create a potassium channel equations component
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  2.b
         :end-before: #  2.c
@@ -184,7 +184,7 @@ Once the mathematics has been added to the component, and the component to the m
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  2.c
         :end-before: //  end 2.c
@@ -195,7 +195,7 @@ Once the mathematics has been added to the component, and the component to the m
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  2.c
         :end-before: #  end 2.c
@@ -226,7 +226,7 @@ The simplest way is to print the descriptions to the terminal.
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  2.d
         :end-before: //  2.e
@@ -237,7 +237,7 @@ The simplest way is to print the descriptions to the terminal.
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  2.d
         :end-before: #  2.e
@@ -283,7 +283,7 @@ The simplest way is to print the descriptions to the terminal.
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  2.e
         :end-before: //  2.f
@@ -294,7 +294,7 @@ The simplest way is to print the descriptions to the terminal.
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  2.e
         :end-before: #  2.f
@@ -329,7 +329,7 @@ The simplest way is to print the descriptions to the terminal.
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  2.f
         :end-before: //  2.g
@@ -340,7 +340,7 @@ The simplest way is to print the descriptions to the terminal.
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  2.f
         :end-before: #  2.g
@@ -356,7 +356,7 @@ The simplest way is to print the descriptions to the terminal.
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  2.g
         :end-before: //  end 2
@@ -367,7 +367,7 @@ The simplest way is to print the descriptions to the terminal.
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  2.g
         :end-before: #  end 2
@@ -391,7 +391,7 @@ The nGateParameters component allows us to specify those parameters specific to 
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  3.a
         :end-before: //  3.c
@@ -402,7 +402,7 @@ The nGateParameters component allows us to specify those parameters specific to 
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  3.a
         :end-before: #  3.c
@@ -418,7 +418,7 @@ The nGateParameters component allows us to specify those parameters specific to 
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  3.c
         :end-before: //  3.d
@@ -429,7 +429,7 @@ The nGateParameters component allows us to specify those parameters specific to 
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  3.c
         :end-before: #  3.d
@@ -463,7 +463,7 @@ The nGateParameters component allows us to specify those parameters specific to 
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  3.d
         :end-before: //  end 3.d
@@ -474,7 +474,7 @@ The nGateParameters component allows us to specify those parameters specific to 
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  3.d
         :end-before: #  end 3.d
@@ -518,7 +518,7 @@ The nGateParameters component allows us to specify those parameters specific to 
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  3.e
         :end-before: //  3.f
@@ -529,7 +529,7 @@ The nGateParameters component allows us to specify those parameters specific to 
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  3.e
         :end-before: #  3.f
@@ -545,7 +545,7 @@ The nGateParameters component allows us to specify those parameters specific to 
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  3.f
         :end-before: //  end 3
@@ -556,7 +556,7 @@ The nGateParameters component allows us to specify those parameters specific to 
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  3.f
         :end-before: #  end 3
@@ -631,7 +631,7 @@ Note that we are deliberately not importing the parameters component in the Gate
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  4.a
         :end-before: //  end 4
@@ -642,7 +642,7 @@ Note that we are deliberately not importing the parameters component in the Gate
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  4.a
         :end-before: #  end 4
@@ -670,7 +670,7 @@ We've also confirmed that the CellML representation of these equations is valid 
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  5.a
         :end-before: //  end 5
@@ -681,7 +681,7 @@ We've also confirmed that the CellML representation of these equations is valid 
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  5.a
         :end-before: #  end 5
@@ -735,7 +735,7 @@ Even though all of the messages we see are "variable not calculated" errors, we 
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  6.a
         :end-before: //  end 6
@@ -746,7 +746,7 @@ Even though all of the messages we see are "variable not calculated" errors, we 
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  6.a
         :end-before: #  end 6
@@ -768,7 +768,7 @@ First we'll define the variables which will have a constant value in the simulat
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  7.a
         :end-before: //  end 7.a
@@ -779,7 +779,7 @@ First we'll define the variables which will have a constant value in the simulat
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  7.a
         :end-before: #  end 7.a
@@ -808,7 +808,7 @@ You can either do this by creating the variables from scratch (as in Step 3.d) b
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  7.b
         :end-before: //  7.c
@@ -819,7 +819,7 @@ You can either do this by creating the variables from scratch (as in Step 3.d) b
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  7.b
         :end-before: #  7.c
@@ -857,7 +857,7 @@ You can either do this by creating the variables from scratch (as in Step 3.d) b
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  7.c
         :end-before: //  end 7.e
@@ -868,7 +868,7 @@ You can either do this by creating the variables from scratch (as in Step 3.d) b
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  7.c
         :end-before: #  end 7.e
@@ -899,7 +899,7 @@ If we were to analyse the model again now we would we still have the same set of
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  7.f
         :end-before: //  end 7
@@ -910,7 +910,7 @@ If we were to analyse the model again now we would we still have the same set of
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  7.f
         :end-before: #  end 7
@@ -994,7 +994,7 @@ We'll need to create intermediate variables in those components to allow connect
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  8.a
         :end-before: //  8.c
@@ -1005,7 +1005,7 @@ We'll need to create intermediate variables in those components to allow connect
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  8.a
         :end-before: #  8.c
@@ -1029,7 +1029,7 @@ We'll need to create intermediate variables in those components to allow connect
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  8.c
         :end-before: //  end 8
@@ -1040,7 +1040,7 @@ We'll need to create intermediate variables in those components to allow connect
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  8.c
         :end-before: #  end 8
@@ -1069,7 +1069,7 @@ This is calculated by solving the ODE in the nGate equations component, but need
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  9.a
         :end-before: //  end 9
@@ -1080,7 +1080,7 @@ This is calculated by solving the ODE in the nGate equations component, but need
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  9.a
         :end-before: #  end 9
@@ -1107,7 +1107,7 @@ We're going to do the latter now.
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  10.a
         :end-before: //  end 10.a
@@ -1118,7 +1118,7 @@ We're going to do the latter now.
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  10.a
         :end-before: #  end 10.a
@@ -1143,7 +1143,7 @@ The :code:`Importer` class has a logger (just like the :code:`Validator`), so ne
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  10.b
         :end-before: //  end 10.c
@@ -1154,7 +1154,7 @@ The :code:`Importer` class has a logger (just like the :code:`Validator`), so ne
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  10.b
         :end-before: #  end 10.c
@@ -1177,7 +1177,7 @@ The models which have the source components that we wanted to reuse from the Gat
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  10.d
         :end-before: //  10.e
@@ -1188,7 +1188,7 @@ The models which have the source components that we wanted to reuse from the Gat
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  10.d
         :end-before: #  10.e
@@ -1211,7 +1211,7 @@ The models which have the source components that we wanted to reuse from the Gat
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  10.e
         :end-before: //  10.f
@@ -1222,7 +1222,7 @@ The models which have the source components that we wanted to reuse from the Gat
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  10.e
         :end-before: #  10.f 
@@ -1242,7 +1242,7 @@ The models which have the source components that we wanted to reuse from the Gat
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  10.f
         :end-before: //  10.g
@@ -1253,7 +1253,7 @@ The models which have the source components that we wanted to reuse from the Gat
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  10.f
         :end-before: #  10.g
@@ -1278,7 +1278,7 @@ The models which have the source components that we wanted to reuse from the Gat
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  10.g
         :end-before: //  10.h
@@ -1289,7 +1289,7 @@ The models which have the source components that we wanted to reuse from the Gat
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  10.g
         :end-before: #  10.h
@@ -1306,7 +1306,7 @@ The models which have the source components that we wanted to reuse from the Gat
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  10.h
         :end-before: //  end 10.h
@@ -1317,7 +1317,7 @@ The models which have the source components that we wanted to reuse from the Gat
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  10.h
         :end-before: #  end 10.h
@@ -1335,7 +1335,7 @@ In order to do the final check before serialising our model for output, we will 
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  10.i
         :end-before: //  end 10.i
@@ -1346,7 +1346,7 @@ In order to do the final check before serialising our model for output, we will 
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  10.i
         :end-before: #  end 10.i
@@ -1370,7 +1370,7 @@ Step 11: Output the model
 
         Show C++ snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.cpp
+    .. literalinclude:: createPotassiumChannelModel_complete.cpp
         :language: c++
         :start-at: //  11.a
         :end-before: //  end
@@ -1381,7 +1381,7 @@ Step 11: Output the model
 
         Show Python snippet
 
-    .. literalinclude:: createPotassiumChannelModel_completed.py
+    .. literalinclude:: createPotassiumChannelModel_complete.py
         :language: python
         :start-at: #  11.a
         :end-before: #  end
