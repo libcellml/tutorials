@@ -26,7 +26,7 @@ void printModel(libcellml::ModelPtr &model)
 void printModel(libcellml::ModelPtr &model, bool includeMaths)
 {
     if(model == nullptr) {
-        std::cout << "The given model is a nullptr." << std::endl;
+        std::cout << "No model passed to this function." << std::endl;
         return;
     }
     std::string spacer = "    ";
@@ -66,7 +66,7 @@ void printComponentToTerminal(const libcellml::ComponentPtr &component, size_t c
 
     std::cout << spacer << "[" << c << "]: " << component->name();
     if (component->id() != "") {
-        std::cout << " id: " << component->id();
+        std::cout << ", id: " << component->id();
     }
     if(component->isImport()) {
             std::cout << " <--- imported from: '";

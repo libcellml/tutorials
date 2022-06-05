@@ -1,9 +1,9 @@
------------------------------------------------
-   TUTORIAL 2: ERROR CHECKING AND VALIDATION   
------------------------------------------------
------------------------------------------------
-   STEP 1: Parse a file into a model           
------------------------------------------------
+-------------------------------------------
+ TUTORIAL 2: ERROR CHECKING AND VALIDATION   
+-------------------------------------------
+-----------------------------------
+ STEP 1: Parse a file into a model
+-----------------------------------
 Opening the CellML file: "tutorial2.cellml"
  MODEL: 'tutorial_2_model', id: 'tutorial 2 id has spaces'
     UNITS: 1 custom units
@@ -28,9 +28,9 @@ Opening the CellML file: "tutorial2.cellml"
       </apply>
     </math>
 
------------------------------------------------
-   STEP 2: Validate the model                  
------------------------------------------------
+----------------------------
+ STEP 2: Validate the model                  
+----------------------------
 The validator has found 6 issues!
   Validator issue[0]:
      Description: Model 'tutorial_2_model' does not have a valid 'id' attribute, 'tutorial 2 id has spaces'.
@@ -62,12 +62,12 @@ The validator has found 6 issues!
      Type of item stored: math
      URL: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
     See section 2.12.3 in the CellML specification.
------------------------------------------------
-   STEP 3: Fix the issues reported             
------------------------------------------------
------------------------------------------------
-  STEP 4: Check and output the corrected model 
------------------------------------------------
+---------------------------------
+ STEP 3: Fix the issues reported             
+---------------------------------
+----------------------------------------------
+ STEP 4: Check and output the corrected model 
+----------------------------------------------
 The validator found 4 issues in the model.
  MODEL: 'tutorial_2_model', id: 'tutorial 2 id has spaces'
     UNITS: 1 custom units

@@ -26,9 +26,9 @@
 
 int main(int argc, char* argv[])
 {
-    std::cout << "-----------------------------------------------" << std::endl;
-    std::cout << "   TUTORIAL 2: ERROR CHECKING AND VALIDATION   " << std::endl;
-    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "-------------------------------------------" << std::endl;
+    std::cout << " TUTORIAL 2: ERROR CHECKING AND VALIDATION" << std::endl;
+    std::cout << "-------------------------------------------" << std::endl;
 
     std::filesystem::path inFileName = "tutorial2.cellml";
     if (argc > 1) {
@@ -38,9 +38,9 @@ int main(int argc, char* argv[])
     // ---------------------------------------------------------------------------
     //  STEP 1:   Create a CellML Model from the contents of a CellML file
     //
-    std::cout << "-----------------------------------------------" << std::endl;
-    std::cout << "   STEP 1: Parse a file into a model           " << std::endl;
-    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "-----------------------------------" << std::endl;
+    std::cout << " STEP 1: Parse a file into a model" << std::endl;
+    std::cout << "-----------------------------------" << std::endl;
 
     //  1.a
     //      Read the contents of the tutorial2.cellml file into a string.
@@ -62,9 +62,9 @@ int main(int argc, char* argv[])
 
     //  end 1
 
-    std::cout << "-----------------------------------------------" << std::endl;
-    std::cout << "   STEP 2: Validate the model                  " << std::endl;
-    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "----------------------------" << std::endl;
+    std::cout << " STEP 2: Validate the model" << std::endl;
+    std::cout << "----------------------------" << std::endl;
 
     //  2.a
     //      Create a Validator and pass the model into it.
@@ -102,9 +102,9 @@ int main(int argc, char* argv[])
 
     //  end 2
 
-    std::cout << "-----------------------------------------------" << std::endl;
-    std::cout << "   STEP 3: Fix the issues reported             " << std::endl;
-    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "---------------------------------" << std::endl;
+    std::cout << " STEP 3: Fix the issues reported" << std::endl;
+    std::cout << "---------------------------------" << std::endl;
 
     //  Validator issue[0]:
     //      Description: Variable '1st' in component 'i_am_a_component' does not have a valid name attribute. CellML identifiers must not begin with a European numeric character [0-9].
@@ -197,9 +197,9 @@ int main(int argc, char* argv[])
 
     //  end 3
 
-    std::cout << "-----------------------------------------------" << std::endl;
-    std::cout << "  STEP 4: Check and output the corrected model " << std::endl;
-    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "----------------------------------------------" << std::endl;
+    std::cout << " STEP 4: Check and output the corrected model " << std::endl;
+    std::cout << "----------------------------------------------" << std::endl;
 
     //  4.a
     //      Validate the corrected model again and check that there are no more issues.

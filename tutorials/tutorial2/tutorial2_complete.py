@@ -14,6 +14,7 @@
       component(s) contain(s) variable(s) and maths) and
     - Serialise and print a Model structure to a CellML file.
 '''
+import os
 import sys
 
 from libcellml import CellmlElementType, Issue, Parser, Printer, Validator, cellmlElementTypeAsString
@@ -22,22 +23,23 @@ from utilities import print_model
 
 if __name__ == '__main__':
 
-    print('-----------------------------------------------')
-    print('   TUTORIAL 2: ERROR CHECKING AND VALIDATION   ')
-    print('-----------------------------------------------')
+    print('-------------------------------------------')
+    print(' TUTORIAL 2: ERROR CHECKING AND VALIDATION')
+    print('-------------------------------------------')
 
     # ---------------------------------------------------------------------------
     #  STEP 1:   Create a CellML Model from the contents of a CellML file
     #
-    print('-----------------------------------------------')
-    print('   STEP 1: Parse a file into a model           ')
-    print('-----------------------------------------------')
+    print('-----------------------------------')
+    print(' STEP 1: Parse a file into a model')
+    print('-----------------------------------')
 
     model_file = "tutorial2.cellml"
     if len(sys.argv) > 1:
         model_file = sys.argv[1]
     #  1.a
     #      Read the contents of the tutorial2.cellml file into a string.
+    print("Opening the CellML file:", os.path.basename(model_file))
     with open(model_file) as f:
         content = f.read()
 
@@ -54,9 +56,9 @@ if __name__ == '__main__':
 
     #  end 1
 
-    print('-----------------------------------------------')
-    print('   STEP 2: Validate the model                  ')
-    print('-----------------------------------------------')
+    print('----------------------------')
+    print(' STEP 2: Validate the model')
+    print('----------------------------')
 
     #  2.a
     #      Create a Validator and pass the model into it.
@@ -66,7 +68,7 @@ if __name__ == '__main__':
     #  2.b   
     #      Check the number of issues returned from the validator.
     num_validation_issues = validator.issueCount()
-    print('The validator has found {} issues.'.format(num_validation_issues))
+    print('The validator has found {} issues!'.format(num_validation_issues))
 
     #  2.c  
     #      Retrieve the issues, and print their description, url, reference, and
@@ -85,9 +87,9 @@ if __name__ == '__main__':
 
     #  end 2
 
-    print('-----------------------------------------------')
-    print('   STEP 3: Fix the issues reported             ')
-    print('-----------------------------------------------')
+    print('---------------------------------')
+    print(' STEP 3: Fix the issues reported')
+    print('---------------------------------')
 
     #  Validator issue[0]:
     #      Description: Variable '1st' in component 'i_am_a_component' does not have a valid name attribute. CellML identifiers must not begin with a European numeric character [0-9].
@@ -178,9 +180,9 @@ if __name__ == '__main__':
 
     #  end 3
 
-    print('-----------------------------------------------')
-    print('  STEP 4: Check and output the corrected model ')
-    print('-----------------------------------------------')
+    print('----------------------------------------------')
+    print(' STEP 4: Check and output the corrected model')
+    print('----------------------------------------------')
 
     #  4.a
     #      Validate the corrected model again and check that there are no more issues.
@@ -196,12 +198,13 @@ if __name__ == '__main__':
     printer = Printer()
     serialised_model = printer.printModel(model)
 
-    write_file = open('tutorial2_printed.cellml', 'w')
-    write_file.write(serialised_model)
+    out_filename = 'tutorial2_printed.cellml'
+    with open(out_filename, 'w') as f:
+      f.write(serialised_model)
 
     #  end 4
 
-    print('The corrected model has been printed.')
+    print('The corrected model has been printed to:', out_filename)
 
     #  4.d
     #      Go and have a cuppa, you're done!

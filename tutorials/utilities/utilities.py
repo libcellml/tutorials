@@ -5,40 +5,49 @@ from libcellml import Issue, CellmlElementType, cellmlElementTypeAsString
 def print_model(model, include_maths=False):
 
     if model is None:
-        print("The given model is None.")
+        print("No model passed to this function.")
         return
 
-    print("The model name is: '{}'".format(model.name()))
+    spacer = "    "
+    print(f"MODEL: '{model.name()}'", end="")
     if model.id() != "":
-        print("The model id is: '{}'".format(model.id()))
+        print(f", id: '{model.id()}'", end="")
 
-    print("The model defines {} custom units:".format(model.unitsCount()))
+    print()
+
+    print(spacer + f"UNITS: {model.unitsCount()} custom units")
     for u in range(0, model.unitsCount()):
-        print("  Units[{u}] is '{n}'".format(u=u, n=model.units(u).name()))
+        print(spacer + spacer + f"[{u}]: {model.units(u).name()}", end="")
+        if model.units(u).isImport():
+            print(", imported from: '", end="")
+            print(model.units(u).importReference(), end="")
+            print(f"' in '{model.units(u).importSource().url()}'", end="")
 
-    print("The model has {n} components:".format(n=model.componentCount()))
+        print()
+    
+    print(spacer + "COMPONENTS: {n} components:".format(n=model.componentCount()))
     for c in range(0, model.componentCount()):
         component = model.component(c)
-        spacer = "  "
-        print_component_to_terminal(component, c, spacer, include_maths)
+        print_component_to_terminal(component, c, spacer + spacer, include_maths)
 
 
 def print_component_to_terminal(component, c, spacer, include_maths=False):
-    local = '    '
+    local = "    "
     # Print this component
-    print("{s}Component[{c}] has name: '{n}'".format(
-        s=spacer,
-        c=c,
-        n=component.name()))
+    print(f"{spacer}[{c}]: '{component.name()}'", end="")
     if component.id() != "":
-        print("{s}Component[{c}] has id: '{n}'".format(
-            s=spacer,
-            c=c,
-            n=component.id()))
+        print(f", id: '{component.id()}'")
+    if component.isImport():
+        print(" <--- imported from: '", end="")
+        print(component.importReference(), end="")
+        print(f"' in '{component.importSource().url()}'", end="")
 
+    print()
+
+    print(spacer + local + "VARIABLES: " + compoment.variableCount() + " variables")
     # Print variables in this component
     for v in range(0, component.variableCount()):
-        print(spacer + local + local, end='')
+        print(spacer + local + local, end="")
         print("[{}]: {}".format(v, component.variable(v).name()), end='')
         if component.variable(v).units() is not None:
             print(" [{}]".format(component.variable(v).units().name()), end='')
@@ -65,21 +74,18 @@ def print_component_to_terminal(component, c, spacer, include_maths=False):
                 
                 con = ", "
             print()
-    if include_maths:
-        print("The component contains maths:")
+    if include_maths and component.math():
+        print(spacer + "  Maths in the component is:")
         print(component.math())
 
     # Print the encapsulated components inside this one
     if component.componentCount() > 0:
-        print("{s}Component[{c}] has {n} child components".format(
-            s=spacer,
-            c=c,
-            n=component.componentCount()))
+        print(f"{spacer}{local}COMPONENT {component.name()} has {component.componentCount()} child components:")
 
         for c2 in range(0, component.componentCount()):
             child = component.component(c2)
-            one_more_spacer = spacer + "    "
-            print_component_to_terminal(child, c2, one_more_spacer)
+            one_more_spacer = spacer + local + local
+            print_component_to_terminal(child, c2, one_more_spacer, include_maths)
 
 # START level_as_string
 level_as_string = {
