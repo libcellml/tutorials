@@ -36,7 +36,7 @@ def print_component_to_terminal(component, c, spacer, include_maths=False):
     # Print this component
     print(f"{spacer}[{c}]: '{component.name()}'", end="")
     if component.id() != "":
-        print(f", id: '{component.id()}'")
+        print(f", id: '{component.id()}'", end="")
     if component.isImport():
         print(" <--- imported from: '", end="")
         print(component.importReference(), end="")
