@@ -31,7 +31,7 @@ void printModel(libcellml::ModelPtr &model, bool includeMaths)
     }
     std::string spacer = "    ";
 
-    std::cout << " MODEL: '" << model->name() << "'";
+    std::cout << "MODEL: '" << model->name() << "'";
     if (model->id() != "") {
         std::cout << ", id: '" << model->id() << "'";
     }

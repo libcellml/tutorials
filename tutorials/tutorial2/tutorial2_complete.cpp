@@ -198,7 +198,7 @@ int main(int argc, char* argv[])
     //  end 3
 
     std::cout << "----------------------------------------------" << std::endl;
-    std::cout << " STEP 4: Check and output the corrected model " << std::endl;
+    std::cout << " STEP 4: Check and output the corrected model" << std::endl;
     std::cout << "----------------------------------------------" << std::endl;
 
     //  4.a
