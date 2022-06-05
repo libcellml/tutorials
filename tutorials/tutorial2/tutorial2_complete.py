@@ -39,7 +39,7 @@ if __name__ == '__main__':
         model_file = sys.argv[1]
     #  1.a
     #      Read the contents of the tutorial2.cellml file into a string.
-    print("Opening the CellML file:", os.path.basename(model_file))
+    print(f"Opening the CellML file: \"{os.path.basename(model_file)}\"")
     with open(model_file) as f:
         content = f.read()
 
@@ -204,7 +204,7 @@ if __name__ == '__main__':
 
     #  end 4
 
-    print(f'The corrected {model.name()}model has been printed to:', out_filename)
+    print(f'The corrected '{model.name()}' model has been printed to:', out_filename)
 
     #  4.d
     #      Go and have a cuppa, you're done!

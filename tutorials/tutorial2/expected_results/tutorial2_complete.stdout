@@ -1,5 +1,5 @@
 -------------------------------------------
- TUTORIAL 2: ERROR CHECKING AND VALIDATION   
+ TUTORIAL 2: ERROR CHECKING AND VALIDATION
 -------------------------------------------
 -----------------------------------
  STEP 1: Parse a file into a model
@@ -9,7 +9,7 @@ MODEL: 'tutorial_2_model', id: 'tutorial 2 id has spaces'
     UNITS: 1 custom units
         [0]: i_am_a_units_item
     COMPONENTS: 1 components
-        [0]: 'i_am_a_component' id: 'my_component_id'
+        [0]: 'i_am_a_component', id: 'my_component_id'
             VARIABLES: 4 variables
                 [0]: 1st [dimensionless]
                 [1]: b
@@ -73,7 +73,7 @@ MODEL: 'tutorial_2_model', id: 'tutorial 2 id has spaces'
     UNITS: 1 custom units
         [0]: i_am_a_units_item
     COMPONENTS: 1 components
-        [0]: i_am_a_component id: my_component_id
+        [0]: 'i_am_a_component', id: 'my_component_id'
             VARIABLES: 4 variables
                 [0]: a [dimensionless]
                 [1]: b, initial = 20
