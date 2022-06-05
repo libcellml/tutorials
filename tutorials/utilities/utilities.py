@@ -68,7 +68,7 @@ def print_component_to_terminal(component, c, spacer, include_maths=False):
                     print("WHOOPS! Null parent component for equivalent variable!")
                     continue
                 
-                print("{} {}:{}".format(con,ev_parent.name(),ev.name()), end='')
+                print("{}{}:{}".format(con,ev_parent.name(),ev.name()), end='')
                 if ev.units() is not None:
                     print(" [{}]".format(ev.units().name()), end='')
                 
