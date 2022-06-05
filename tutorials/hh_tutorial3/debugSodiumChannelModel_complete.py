@@ -513,4 +513,5 @@ if __name__ == '__main__':
     #  end
 
     print('The repaired sodium channel model has been written to SodiumChannelModel.cellml.')
+    sys.exit(1)
 
