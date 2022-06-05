@@ -283,17 +283,17 @@ Model 'SodiumChannelModel' has 2 components
 -----------------------------
 Recorded 2 issues:
 Issue 0 is an ERROR:
-    description: Cyclic dependencies were found when attempting to resolve a component in the model 'SodiumChannelModel'. The dependency loop is:
+    Description: Cyclic dependencies were found when attempting to resolve a component in the model 'SodiumChannelModel'. The dependency loop is:
  - component 'controller' specifies an import from ':this:' to '/Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/CircularControllerReference.cellml'
  - component 'controller' specifies an import from '/Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/CircularControllerReference.cellml' to '/Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/CircularControllerReference2.cellml' and
  - component 'controller2' specifies an import from '/Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/CircularControllerReference2.cellml' to '/Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/CircularControllerReference.cellml'.
-    see section 2.2.3 in the CellML specification.
-    more information at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB02.html?issue=IMPORT_EQUIVALENT
-    stored item type: component
+    See section 2.2.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB02.html?issue=IMPORT_EQUIVALENT
+    Stored item type: component
 Issue 1 is an ERROR:
-    description: Import of component 'importedGateH' from '/Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/GateModel.cellml' requires component named 'i_dont_exist' which cannot be found.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=IMPORTER_MISSING_COMPONENT
-    stored item type: component
+    Description: Import of component 'importedGateH' from '/Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/GateModel.cellml' requires component named 'i_dont_exist' which cannot be found.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=IMPORTER_MISSING_COMPONENT
+    Stored item type: component
 
 
 Recorded 0 issues!
@@ -304,23 +304,23 @@ Recorded 0 issues!
 Imported model at key: /Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/CircularControllerReference.cellml
 Recorded 1 issues:
 Issue 0 is an ERROR:
-    description: Cyclic dependencies were found when attempting to resolve a component in the model 'CircularReferences'. The dependency loop is:
+    Description: Cyclic dependencies were found when attempting to resolve a component in the model 'CircularReferences'. The dependency loop is:
  - component 'controller' specifies an import from ':this:' to 'CircularControllerReference2.cellml' and
  - component 'controller2' specifies an import from 'CircularControllerReference2.cellml' to 'CircularControllerReference.cellml'.
-    see section 2.4.2 in the CellML specification.
-    more information at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB04.html?issue=IMPORT_COMPONENT_COMPONENT_REF
-    stored item type: import
+    See section 2.4.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB04.html?issue=IMPORT_COMPONENT_COMPONENT_REF
+    Stored item type: import
 
 
 Imported model at key: /Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/CircularControllerReference2.cellml
 Recorded 1 issues:
 Issue 0 is an ERROR:
-    description: Cyclic dependencies were found when attempting to resolve a component in the model 'CircularReferences2'. The dependency loop is:
+    Description: Cyclic dependencies were found when attempting to resolve a component in the model 'CircularReferences2'. The dependency loop is:
  - component 'controller2' specifies an import from ':this:' to 'CircularControllerReference.cellml' and
  - component 'controller' specifies an import from 'CircularControllerReference.cellml' to 'CircularControllerReference2.cellml'.
-    see section 2.4.2 in the CellML specification.
-    more information at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB04.html?issue=IMPORT_COMPONENT_COMPONENT_REF
-    stored item type: import
+    See section 2.4.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB04.html?issue=IMPORT_COMPONENT_COMPONENT_REF
+    Stored item type: import
 
 
 Imported model at key: /Users/hsor001/Projects/cellml/sandbox/build-end-to-end-testing/tests/libcellml_tutorials/tutorials/hh_tutorial3/GateModel.cellml
@@ -334,9 +334,9 @@ Recorded 0 issues!
 ------------------------------
 Recorded 1 issues:
 Issue 0 is an ERROR:
-    description: The model has units which are not linked together.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_UNLINKED_UNITS
-    stored item type: undefined
+    Description: The model has units which are not linked together.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_UNLINKED_UNITS
+    Stored item type: undefined
 
 
 MODEL: 'SodiumChannelModel'
@@ -451,107 +451,107 @@ MODEL: 'SodiumChannelModel'
                               └──> sodiumChannelEquations:E_Na [mV]
 Recorded 1 issues:
 Issue 0 is an ERROR:
-    description: Variable 't' in component 'importedGateM' and variable 't' in component 'importedGateH' cannot both be the variable of integration.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VOI_SEVERAL
-    stored item type: variable
+    Description: Variable 't' in component 'importedGateM' and variable 't' in component 'importedGateH' cannot both be the variable of integration.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VOI_SEVERAL
+    Stored item type: variable
 
 
 Recorded 13 issues:
 Issue 0 is an ERROR:
-    description: Variable 'X' in component 'importedGateM' is used in an ODE, but it is not initialised.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_STATE_NOT_INITIALISED
-    stored item type: variable
+    Description: Variable 'X' in component 'importedGateM' is used in an ODE, but it is not initialised.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_STATE_NOT_INITIALISED
+    Stored item type: variable
 Issue 1 is an ERROR:
-    description: Variable 'alpha_X' in component 'importedGateM' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'alpha_X' in component 'importedGateM' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 2 is an ERROR:
-    description: Variable 'beta_X' in component 'importedGateM' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'beta_X' in component 'importedGateM' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 3 is an ERROR:
-    description: Variable 'V' in component 'mGateEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'V' in component 'mGateEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 4 is an ERROR:
-    description: Variable 'alpha_m' in component 'mGateEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'alpha_m' in component 'mGateEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 5 is an ERROR:
-    description: Variable 'beta_m' in component 'mGateEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'beta_m' in component 'mGateEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 6 is an ERROR:
-    description: Variable 'm' in component 'mGateEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'm' in component 'mGateEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 7 is an ERROR:
-    description: Variable 'i_am_redundant' in component 'mGateParameters' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'i_am_redundant' in component 'mGateParameters' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 8 is an ERROR:
-    description: Variable 'i_Na' in component 'sodiumChannel' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'i_Na' in component 'sodiumChannel' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 9 is an ERROR:
-    description: Variable 'E_Na' in component 'sodiumChannelEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'E_Na' in component 'sodiumChannelEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 10 is an ERROR:
-    description: Variable 'Na_conductance' in component 'sodiumChannelEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'Na_conductance' in component 'sodiumChannelEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 11 is an ERROR:
-    description: Variable 'X' in component 'importedGateH' is used in an ODE, but it is not initialised.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_STATE_NOT_INITIALISED
-    stored item type: variable
+    Description: Variable 'X' in component 'importedGateH' is used in an ODE, but it is not initialised.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_STATE_NOT_INITIALISED
+    Stored item type: variable
 Issue 12 is an ERROR:
-    description: Variable 'm' in component 'sodiumChannelEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'm' in component 'sodiumChannelEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 
 
 Recorded 10 issues:
 Issue 0 is an ERROR:
-    description: Variable 'alpha_X' in component 'importedGateM' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'alpha_X' in component 'importedGateM' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 1 is an ERROR:
-    description: Variable 'beta_X' in component 'importedGateM' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'beta_X' in component 'importedGateM' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 2 is an ERROR:
-    description: Variable 'V' in component 'mGateEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'V' in component 'mGateEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 3 is an ERROR:
-    description: Variable 'alpha_m' in component 'mGateEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'alpha_m' in component 'mGateEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 4 is an ERROR:
-    description: Variable 'beta_m' in component 'mGateEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'beta_m' in component 'mGateEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 5 is an ERROR:
-    description: Variable 'i_am_redundant' in component 'mGateParameters' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'i_am_redundant' in component 'mGateParameters' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 6 is an ERROR:
-    description: Variable 'i_Na' in component 'sodiumChannel' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'i_Na' in component 'sodiumChannel' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 7 is an ERROR:
-    description: Variable 'E_Na' in component 'sodiumChannelEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'E_Na' in component 'sodiumChannelEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 8 is an ERROR:
-    description: Variable 'Na_conductance' in component 'sodiumChannelEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'Na_conductance' in component 'sodiumChannelEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 9 is an ERROR:
-    description: Variable 'm' in component 'sodiumChannelEquations' is unused.
-    more information at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    stored item type: variable
+    Description: Variable 'm' in component 'sodiumChannelEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 
 
 Recorded 0 issues!
