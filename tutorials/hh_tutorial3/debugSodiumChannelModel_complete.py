@@ -381,7 +381,6 @@ if __name__ == '__main__':
     #      missing from this model.
     print_issues(analyser)
 
-    print()
     #  6.c 
     #      Create a flattened version of the model print it to the screen.
     #      Notice that any comments indicating that a component was an import have been
