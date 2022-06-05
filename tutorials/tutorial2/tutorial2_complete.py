@@ -204,7 +204,7 @@ if __name__ == '__main__':
 
     #  end 4
 
-    print('The corrected model has been printed to:', out_filename)
+    print(f'The corrected {model.name()}model has been printed to:', out_filename)
 
     #  4.d
     #      Go and have a cuppa, you're done!

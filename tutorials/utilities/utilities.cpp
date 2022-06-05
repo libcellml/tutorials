@@ -64,9 +64,9 @@ void printComponentToTerminal(const libcellml::ComponentPtr &component, size_t c
 {
     std::string local = "    ";
 
-    std::cout << spacer << "[" << c << "]: " << component->name();
+    std::cout << spacer << "[" << c << "]: '" << component->name() << "'";
     if (component->id() != "") {
-        std::cout << ", id: " << component->id();
+        std::cout << ", id: '" << component->id() << "'";
     }
     if(component->isImport()) {
             std::cout << " <--- imported from: '";
