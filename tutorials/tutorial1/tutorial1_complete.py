@@ -99,7 +99,7 @@ if __name__ == "__main__":
     #     Write the serialised string to a file.
     write_file = open("tutorial1_printed.cellml", "w")
     write_file.write(serialised_model)
-    print("The '{}' has been printed to tutorial1_printed.cellml".format(model_name))
+    print("The '{}' has been printed to: tutorial1_printed.cellml".format(model_name))
 
     #  3.c
     #     Go and have a cuppa, you're done!

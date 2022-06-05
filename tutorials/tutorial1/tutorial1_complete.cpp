@@ -103,7 +103,7 @@ int main(int argc, char* argv[])
 
     std::string mathsString = component->math();
     std::cout << "  Component '" << componentName
-              << "' has a MathML string of: " << std::endl;
+              << "' has a MathML string of:" << std::endl;
     std::cout << "  " << mathsString << std::endl;
 
     //  end 2
