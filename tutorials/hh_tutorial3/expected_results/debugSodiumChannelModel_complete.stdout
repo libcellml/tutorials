@@ -151,7 +151,7 @@ Issue 6: Variable 't' in component 'sodiumChannelEquations' has no interface typ
 ---------------------------------
  STEP 3: Repair the parsed model
 ---------------------------------
-The units 'mV' child has attributes: base units = 'i_dont_exist', prefix = 'milli', exponent = 1, and multiplier = 1
+The units 'mV' child has attributes: base units = 'i_dont_exist', prefix = 'milli', exponent = '1.0', and multiplier = '1.0'
 Recorded 0 issues!
 
 MODEL: 'SodiumChannelModel'

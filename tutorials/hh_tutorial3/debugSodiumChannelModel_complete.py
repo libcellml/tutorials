@@ -179,7 +179,7 @@ if __name__ == '__main__':
     # multiplier = 0.0
     mV = model.units('mV')
     name, prefix, exponent, multiplier, id = mV.unitAttributes('i_dont_exist')
-    print('The units \'mV\' child has attributes: base units = \'{n}\', prefix = \'{p}\', exponent = \'{e:.1}\', and multiplier = \'{m:.1}\'.'.format(n=name, p=prefix, e=exponent, m=multiplier))
+    print('The units \'mV\' child has attributes: base units = \'{n}\', prefix = \'{p}\', exponent = \'{e}\', and multiplier = \'{m}\'.'.format(n=name, p=prefix, e=exponent, m=multiplier))
 
     # Method 1:
     # mV.removeUnit('i_dont_exist')
