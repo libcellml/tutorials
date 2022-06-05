@@ -44,7 +44,7 @@ def print_component_to_terminal(component, c, spacer, include_maths=False):
 
     print()
 
-    print(spacer + local + "VARIABLES: " + component.variableCount() + " variables")
+    print(spacer + local + f"VARIABLES: {component.variableCount()} variables")
     # Print variables in this component
     for v in range(0, component.variableCount()):
         print(spacer + local + local, end="")
