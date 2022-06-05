@@ -188,7 +188,7 @@ int main(int argc, char* argv[])
     double multiplier;
     auto mV = model->units("mV");
     mV->unitAttributes("i_dont_exist", prefix, exponent, multiplier, id);
-    std::cout << "The units 'mV' child has attributes: base units = 'i_dont_exist', prefix = '"<< prefix << "', exponent = "<<exponent<<", and multiplier = "<<multiplier <<std::endl;
+    std::cout << "The units 'mV' child has attributes: base units = 'i_dont_exist', prefix = '"<< prefix << "', exponent = '"<<exponent<<"', and multiplier = '"<<multiplier <<"'"<<std::endl;
 
     // Method 1:
     // mV->removeUnit("i_dont_exist");
