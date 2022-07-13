@@ -20,9 +20,9 @@ if __name__ == '__main__':
     math_header = '<math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:cellml="http://www.cellml.org/cellml/2.0#">\n'
     math_footer = '</math>'
 
-    print('----------------------------------------------------------')
-    print('   STEP 1: Setup the model                                ')
-    print('----------------------------------------------------------')
+    print('-----------------------------')
+    print('   STEP 1: Setup the model   ')
+    print('-----------------------------')
 
     #  1.a 
     #      The first step is to create a Model item which will later contain the component and 
@@ -137,15 +137,7 @@ if __name__ == '__main__':
     #      Retrieve the number of issues encountered using the validator.issueCount() function,
     #      then retrieve the issue items from the validator using their index and the validator.issue(index)
     #      function.  Print the information from each issue to the terminal.
-    print('The validator has found {} issues.'.format(validator.issueCount()))
-    for i in range(0, validator.issueCount()):
-        issue = validator.issue(i)
-        ref = issue.referenceHeading()
-        print('Issue [{}] is {}:'.format(i, get_issue_level_from_enum(issue.level())))
-        print('    description: {}'.format(issue.description()))
-        if ref != '':
-            print('    see section {} in the CellML specification.'.format(ref))
-        print('    stored item type: {}'.format(cellmlElementTypeAsString(issue.item().type())))
+    print_issues(validator)
 
     #  end 3
 
@@ -213,6 +205,11 @@ if __name__ == '__main__':
     #      Validate again, and expect no errors.
     validator.validateModel(model)
     print_issues(validator)
+
+    #  5.f
+    #      Print the model to the terminal and include the optional second argument of true
+    #      to include the MathML.
+    print_model(model, True)
 
     #  end 5
 
@@ -331,9 +328,9 @@ if __name__ == '__main__':
 
     #  end 7
     
-    print('----------------------------------------------------------')
-    print('   STEP 8: Serialise and output the model                 ')
-    print('----------------------------------------------------------')
+    print('--------------------------------------------')
+    print('   STEP 8: Serialise and output the model   ')
+    print('--------------------------------------------')
 
     #  8.a 
     #      Create a Printer instance and use it to serialise the model.  This creates a string

@@ -16,14 +16,15 @@ import importlib.util
 
 from libcellml import versionString
 
-if __name__ == "__main__":
-    print("-----------------------------------------------------")
-    print("     TUTORIAL 4: CODE GENERATION AND SIMULATION      ")
-    print("-----------------------------------------------------")
 
-    print('-----------------------------------------------------------')
-    print('   Step 1: Link to the generated code                      ')
-    print('-----------------------------------------------------------')
+if __name__ == "__main__":
+    print("------------------------------------------------")
+    print("   TUTORIAL 4: CODE GENERATION AND SIMULATION   ")
+    print("------------------------------------------------")
+
+    print('----------------------------------------')
+    print('   Step 1: Link to the generated code   ')
+    print('----------------------------------------')
 
     here = os.path.abspath(os.path.dirname(__file__))
     #  1.a
@@ -37,9 +38,9 @@ if __name__ == "__main__":
 
     #  end 1
 
-    print('-----------------------------------------------------------')
-    print('   Step 2: Access the variables in the generated files     ')
-    print('-----------------------------------------------------------')
+    print('---------------------------------------------------------')
+    print('   Step 2: Access the variables in the generated files   ')
+    print('---------------------------------------------------------')
 
     #  Probably the best way to understand the contents of the generated files is
     #  to open them and look!  The implementation file (*.cpp) has two types of items:
@@ -70,7 +71,7 @@ if __name__ == "__main__":
         print('  name = {}'.format(model.VARIABLE_INFO[v]['name']))
         print('  units = {}'.format(model.VARIABLE_INFO[v]['units']))
         print('  component = {}'.format(model.VARIABLE_INFO[v]['component']))
-        print('  type = {}'.format(model.VARIABLE_INFO[v]['type']))
+        print('  type = {}'.format(model.VARIABLE_INFO[v]['type'].value))
     print()
 
     #  end 2.a
@@ -104,9 +105,9 @@ if __name__ == "__main__":
 
     #  end 2
 
-    print('-----------------------------------------------------------')
-    print('   Step 3: Access the functions in the generated files     ')
-    print('-----------------------------------------------------------')
+    print('---------------------------------------------------------')
+    print('   Step 3: Access the functions in the generated files   ')
+    print('---------------------------------------------------------')
 
     #   The generated code contains seven functions:
     #      - createStatesArray() to allocate an array of length STATE_COUNT.  This can be
@@ -144,12 +145,7 @@ if __name__ == "__main__":
     model.initialise_states_and_constants(my_state_variables, my_variables)
     print('The initial conditions for state variables are:')
     for v in range(0, model.STATE_COUNT):
-        print('{} {} = {} ({})'.format(
-            model.STATE_INFO[v]['component'],
-            model.STATE_INFO[v]['name'],
-            my_state_variables[v],
-            model.STATE_INFO[v]['units']
-            ))
+        print(f"  {model.STATE_INFO[v]['component']} {model.STATE_INFO[v]['name']} = {my_state_variables[v]:.1f} ({model.STATE_INFO[v]['units']})")
     print()
 
     #  3.c 
@@ -167,9 +163,9 @@ if __name__ == "__main__":
 
     #  end 3
 
-    print('-----------------------------------------------------------')
-    print('   Step 4: Iterate through the solution                    ')
-    print('-----------------------------------------------------------')
+    print('------------------------------------------')
+    print('   Step 4: Iterate through the solution   ')
+    print('------------------------------------------')
 
     #  This part will make use of a simple routine to step through the solution
     #  iterations using the Euler method to update the state variables.
@@ -236,7 +232,13 @@ if __name__ == "__main__":
             print('.', end='', flush=True)
 
     write_file.close()
-   
+    print()
+    print('Finished!')
+
    #  end 4
 
-    print('\n\nThe results have been written to \'solution.txt\'')
+    print('--------------------------')
+    print('   Step 5: Housekeeping   ')
+    print('--------------------------')
+
+    print('The results have been written to \'solution.txt\'')

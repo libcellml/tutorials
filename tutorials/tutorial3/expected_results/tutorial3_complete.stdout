@@ -1,0 +1,201 @@
+-------------------------------------------------------------
+ TUTORIAL 3: MODEL CREATION AND CODE GENERATION WITH THE API 
+-------------------------------------------------------------
+-------------------------------------------------------------
+   Step 1: Create model instance and maths                   
+-------------------------------------------------------------
+Recorded 17 issues:
+Issue 0 is an ERROR:
+    Description: MathML ci element has the child text 'c' which does not correspond with any variable names present in component 'predator_prey_component'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+Issue 1 is an ERROR:
+    Description: MathML ci element has the child text 'a' which does not correspond with any variable names present in component 'predator_prey_component'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+Issue 2 is an ERROR:
+    Description: Math cn element with the value '2.0' does not have a valid cellml:units attribute. CellML identifiers must contain one or more basic Latin alphabetic characters.
+    See section 2.12.4 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB13.html?issue=MATH_CN_UNITS
+    Stored item type: math
+Issue 3 is an ERROR:
+    Description: MathML ci element has the child text 'time' which does not correspond with any variable names present in component 'predator_prey_component'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+Issue 4 is an ERROR:
+    Description: MathML ci element has the child text 'y_s' which does not correspond with any variable names present in component 'predator_prey_component'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+Issue 5 is an ERROR:
+    Description: MathML ci element has the child text 'a' which does not correspond with any variable names present in component 'predator_prey_component'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+Issue 6 is an ERROR:
+    Description: MathML ci element has the child text 'y_s' which does not correspond with any variable names present in component 'predator_prey_component'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+Issue 7 is an ERROR:
+    Description: MathML ci element has the child text 'b' which does not correspond with any variable names present in component 'predator_prey_component'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+Issue 8 is an ERROR:
+    Description: MathML ci element has the child text 'y_s' which does not correspond with any variable names present in component 'predator_prey_component'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+Issue 9 is an ERROR:
+    Description: MathML ci element has the child text 'y_f' which does not correspond with any variable names present in component 'predator_prey_component'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+Issue 10 is an ERROR:
+    Description: MathML ci element has the child text 'time' which does not correspond with any variable names present in component 'predator_prey_component'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+Issue 11 is an ERROR:
+    Description: MathML ci element has the child text 'y_f' which does not correspond with any variable names present in component 'predator_prey_component'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+Issue 12 is an ERROR:
+    Description: MathML ci element has the child text 'c' which does not correspond with any variable names present in component 'predator_prey_component'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+Issue 13 is an ERROR:
+    Description: MathML ci element has the child text 'y_f' which does not correspond with any variable names present in component 'predator_prey_component'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+Issue 14 is an ERROR:
+    Description: MathML ci element has the child text 'd' which does not correspond with any variable names present in component 'predator_prey_component'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+Issue 15 is an ERROR:
+    Description: MathML ci element has the child text 'y_s' which does not correspond with any variable names present in component 'predator_prey_component'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+Issue 16 is an ERROR:
+    Description: MathML ci element has the child text 'y_f' which does not correspond with any variable names present in component 'predator_prey_component'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+
+-------------------------------------------------------------
+   Step 2: Create the variables                              
+-------------------------------------------------------------
+Recorded 8 issues:
+Issue 0 is an ERROR:
+    Description: Variable 'y_s' in component 'predator_prey_component' does not have any units specified.
+    See section 2.8.1.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    Stored item type: variable
+Issue 1 is an ERROR:
+    Description: Variable 'y_f' in component 'predator_prey_component' does not have any units specified.
+    See section 2.8.1.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    Stored item type: variable
+Issue 2 is an ERROR:
+    Description: Variable 'time' in component 'predator_prey_component' does not have any units specified.
+    See section 2.8.1.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    Stored item type: variable
+Issue 3 is an ERROR:
+    Description: Variable 'a' in component 'predator_prey_component' does not have any units specified.
+    See section 2.8.1.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    Stored item type: variable
+Issue 4 is an ERROR:
+    Description: Variable 'b' in component 'predator_prey_component' does not have any units specified.
+    See section 2.8.1.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    Stored item type: variable
+Issue 5 is an ERROR:
+    Description: Variable 'c' in component 'predator_prey_component' does not have any units specified.
+    See section 2.8.1.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    Stored item type: variable
+Issue 6 is an ERROR:
+    Description: Variable 'd' in component 'predator_prey_component' does not have any units specified.
+    See section 2.8.1.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    Stored item type: variable
+Issue 7 is an ERROR:
+    Description: Math cn element with the value '2.0' does not have a valid cellml:units attribute. CellML identifiers must contain one or more basic Latin alphabetic characters.
+    See section 2.12.4 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB13.html?issue=MATH_CN_UNITS
+    Stored item type: math
+
+-------------------------------------------------------------
+   Step 3: Create user-defined units                         
+-------------------------------------------------------------
+Recorded 1 issues:
+Issue 0 is an ERROR:
+    Description: Math cn element with the value '2.0' does not have a valid cellml:units attribute. CellML identifiers must contain one or more basic Latin alphabetic characters.
+    See section 2.12.4 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB13.html?issue=MATH_CN_UNITS
+    Stored item type: math
+
+Recorded 0 issues!
+
+-------------------------------------------------------------
+   Step 4: Analyse the mathematics                           
+-------------------------------------------------------------
+Recorded 8 issues:
+Issue 0 is a WARNING:
+    Description: The units in 'a*y_s+b*y_s*y_f' in equation 'y_s = a*y_s+b*y_s*y_f' in component 'predator_prey_component' are not equivalent. 'a*y_s' is in 'number_of_sharks x per_month' (i.e. '10^-6.41363 x number_of_sharks x second^-1') while 'b*y_s*y_f' is in 'number_of_sharks x per_shark_month x thousands_of_fish' (i.e. '10^-6.41363 x second^-1 x thousands_of_fish').
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_UNITS
+    Stored item type: undefined
+Issue 1 is a WARNING:
+    Description: The units in 'c*y_f+d*y_s*y_f' in equation 'y_f = c*y_f+d*y_s*y_f' in component 'predator_prey_component' are not equivalent. 'c*y_f' is in 'per_month x thousands_of_fish' (i.e. '10^-6.41363 x second^-1 x thousands_of_fish') while 'd*y_s*y_f' is in 'number_of_sharks x per_1000fish_month x thousands_of_fish' (i.e. '10^-6.41363 x number_of_sharks x second^-1').
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_UNITS
+    Stored item type: undefined
+Issue 2 is an ERROR:
+    Description: Variable 'a' in component 'predator_prey_component' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+Issue 3 is an ERROR:
+    Description: Variable 'b' in component 'predator_prey_component' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+Issue 4 is an ERROR:
+    Description: Variable 'c' in component 'predator_prey_component' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+Issue 5 is an ERROR:
+    Description: Variable 'd' in component 'predator_prey_component' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+Issue 6 is an ERROR:
+    Description: Variable 'y_f' in component 'predator_prey_component' is used in an ODE, but it is not initialised.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_STATE_NOT_INITIALISED
+    Stored item type: variable
+Issue 7 is an ERROR:
+    Description: Variable 'y_s' in component 'predator_prey_component' is used in an ODE, but it is not initialised.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_STATE_NOT_INITIALISED
+    Stored item type: variable
+
+Recorded 2 issues:
+Issue 0 is a WARNING:
+    Description: The units in 'a*y_s+b*y_s*y_f' in equation 'y_s = a*y_s+b*y_s*y_f' in component 'predator_prey_component' are not equivalent. 'a*y_s' is in 'number_of_sharks x per_month' (i.e. '10^-6.41363 x number_of_sharks x second^-1') while 'b*y_s*y_f' is in 'number_of_sharks x per_shark_month x thousands_of_fish' (i.e. '10^-6.41363 x second^-1 x thousands_of_fish').
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_UNITS
+    Stored item type: undefined
+Issue 1 is a WARNING:
+    Description: The units in 'c*y_f+d*y_s*y_f' in equation 'y_f = c*y_f+d*y_s*y_f' in component 'predator_prey_component' are not equivalent. 'c*y_f' is in 'per_month x thousands_of_fish' (i.e. '10^-6.41363 x second^-1 x thousands_of_fish') while 'd*y_s*y_f' is in 'number_of_sharks x per_1000fish_month x thousands_of_fish' (i.e. '10^-6.41363 x number_of_sharks x second^-1').
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_UNITS
+    Stored item type: undefined
+
+-------------------------------------------------------------
+   Step 5: Generate code and write to files                  
+-------------------------------------------------------------
+The generated files have been written to PredatorPrey.[c,h,py].

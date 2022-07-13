@@ -1,0 +1,565 @@
+------------------------------------
+   STEP 1: Define the model setup   
+------------------------------------
+--------------------------------------------------------------
+   STEP 2: Define the potassium channel equations component   
+--------------------------------------------------------------
+The validator has found 5 issues.
+MathML ci element has the child text 'i_K' which does not correspond with any variable names present in component 'potassiumChannelEquations'.
+MathML ci element has the child text 'n' which does not correspond with any variable names present in component 'potassiumChannelEquations'.
+MathML ci element has the child text 'g_K' which does not correspond with any variable names present in component 'potassiumChannelEquations'.
+MathML ci element has the child text 'V' which does not correspond with any variable names present in component 'potassiumChannelEquations'.
+MathML ci element has the child text 'E_K' which does not correspond with any variable names present in component 'potassiumChannelEquations'.
+
+Recorded 6 issues:
+Issue 0 is an ERROR:
+    Description: Variable 'E_K' in component 'potassiumChannelEquations' does not have any units specified.
+    See section 2.8.1.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    Stored item type: variable
+Issue 1 is an ERROR:
+    Description: Variable 'i_K' in component 'potassiumChannelEquations' does not have any units specified.
+    See section 2.8.1.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    Stored item type: variable
+Issue 2 is an ERROR:
+    Description: Variable 'g_K' in component 'potassiumChannelEquations' does not have any units specified.
+    See section 2.8.1.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    Stored item type: variable
+Issue 3 is an ERROR:
+    Description: Variable 'V' in component 'potassiumChannelEquations' does not have any units specified.
+    See section 2.8.1.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    Stored item type: variable
+Issue 4 is an ERROR:
+    Description: Variable 't' in component 'potassiumChannelEquations' does not have any units specified.
+    See section 2.8.1.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    Stored item type: variable
+Issue 5 is an ERROR:
+    Description: Variable 'n' in component 'potassiumChannelEquations' does not have any units specified.
+    See section 2.8.1.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    Stored item type: variable
+
+Recorded 0 issues!
+
+------------------------------------------------------------
+   STEP 3: Create the nGate and nGateEquations components   
+------------------------------------------------------------
+Recorded 7 issues:
+Issue 0 is an ERROR:
+    Description: MathML ci element has the child text 'alpha_n' which does not correspond with any variable names present in component 'nGateEquations'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+Issue 1 is an ERROR:
+    Description: Math has a cn element with a cellml:units attribute 'per_mV_ms' that is not a valid reference to units in the model 'PotassiumChannelModel' or a standard unit.
+    See section 2.12.4 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB13.html?issue=MATH_CN_UNITS
+    Stored item type: math
+Issue 2 is an ERROR:
+    Description: MathML ci element has the child text 'V' which does not correspond with any variable names present in component 'nGateEquations'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+Issue 3 is an ERROR:
+    Description: MathML ci element has the child text 'V' which does not correspond with any variable names present in component 'nGateEquations'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+Issue 4 is an ERROR:
+    Description: MathML ci element has the child text 'beta_n' which does not correspond with any variable names present in component 'nGateEquations'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+Issue 5 is an ERROR:
+    Description: Math has a cn element with a cellml:units attribute 'per_ms' that is not a valid reference to units in the model 'PotassiumChannelModel' or a standard unit.
+    See section 2.12.4 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB13.html?issue=MATH_CN_UNITS
+    Stored item type: math
+Issue 6 is an ERROR:
+    Description: MathML ci element has the child text 'V' which does not correspond with any variable names present in component 'nGateEquations'.
+    See section 2.12.3 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    Stored item type: math
+
+Recorded 7 issues:
+Issue 0 is an ERROR:
+    Description: Variable 't' in component 'nGateEquations' does not have any units specified.
+    See section 2.8.1.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    Stored item type: variable
+Issue 1 is an ERROR:
+    Description: Variable 'V' in component 'nGateEquations' does not have any units specified.
+    See section 2.8.1.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    Stored item type: variable
+Issue 2 is an ERROR:
+    Description: Variable 'alpha_n' in component 'nGateEquations' does not have any units specified.
+    See section 2.8.1.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    Stored item type: variable
+Issue 3 is an ERROR:
+    Description: Variable 'beta_n' in component 'nGateEquations' does not have any units specified.
+    See section 2.8.1.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    Stored item type: variable
+Issue 4 is an ERROR:
+    Description: Variable 'n' in component 'nGateEquations' does not have any units specified.
+    See section 2.8.1.2 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    Stored item type: variable
+Issue 5 is an ERROR:
+    Description: Math has a cn element with a cellml:units attribute 'per_mV_ms' that is not a valid reference to units in the model 'PotassiumChannelModel' or a standard unit.
+    See section 2.12.4 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB13.html?issue=MATH_CN_UNITS
+    Stored item type: math
+Issue 6 is an ERROR:
+    Description: Math has a cn element with a cellml:units attribute 'per_ms' that is not a valid reference to units in the model 'PotassiumChannelModel' or a standard unit.
+    See section 2.12.4 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB13.html?issue=MATH_CN_UNITS
+    Stored item type: math
+
+Recorded 0 issues!
+
+------------------------------------------------------------
+   STEP 4: Specify imports for the generic gate component   
+------------------------------------------------------------
+Recorded 0 issues!
+
+----------------------------------------------------------
+   STEP 5: Specify imports for the controller component   
+----------------------------------------------------------
+Recorded 0 issues!
+
+-------------------------------
+   STEP 6: Analyse the model   
+-------------------------------
+Recorded 11 issues:
+Issue 0 is an ERROR:
+    Description: Variable 'V' in component 'nGateEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+Issue 1 is an ERROR:
+    Description: Variable 'alpha_n' in component 'nGateEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+Issue 2 is an ERROR:
+    Description: Variable 'beta_n' in component 'nGateEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+Issue 3 is an ERROR:
+    Description: Variable 'n' in component 'nGateEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+Issue 4 is an ERROR:
+    Description: Variable 't' in component 'nGateEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+Issue 5 is an ERROR:
+    Description: Variable 'E_K' in component 'potassiumChannelEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+Issue 6 is an ERROR:
+    Description: Variable 'V' in component 'potassiumChannelEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+Issue 7 is an ERROR:
+    Description: Variable 'g_K' in component 'potassiumChannelEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+Issue 8 is an ERROR:
+    Description: Variable 'i_K' in component 'potassiumChannelEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+Issue 9 is an ERROR:
+    Description: Variable 'n' in component 'potassiumChannelEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+Issue 10 is an ERROR:
+    Description: Variable 't' in component 'potassiumChannelEquations' is unused.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+
+----------------------------------
+   STEP 7: Define the constants   
+----------------------------------
+MODEL: 'PotassiumChannelModel'
+    UNITS: 7 custom units
+        [0]: ms
+        [1]: mV
+        [2]: mM
+        [3]: microA_per_cm2
+        [4]: milliS_per_cm2
+        [5]: per_ms
+        [6]: per_mV_ms
+    COMPONENTS: 2 components
+        [0]: 'potassiumChannel'
+            VARIABLES: 0 variables
+            COMPONENT potassiumChannel has 1 child components:
+                [0]: 'potassiumChannelEquations'
+                    VARIABLES: 6 variables
+                        [0]: E_K [mV]
+                        [1]: i_K [microA_per_cm2]
+                        [2]: g_K [milliS_per_cm2]
+                        [3]: V [mV]
+                        [4]: t [ms]
+                        [5]: n [dimensionless]
+                  Maths in the component is:
+<math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:cellml="http://www.cellml.org/cellml/2.0#">
+  <apply><eq/>
+    <ci>i_K</ci>
+    <apply><times/>
+       <apply><power/>
+           <ci>n</ci>
+           <cn cellml:units="dimensionless">4</cn>
+       </apply>
+       <ci>g_K</ci>
+       <apply><minus/>
+           <ci>V</ci>
+           <ci>E_K</ci>
+       </apply>
+    </apply>
+  </apply>
+</math>
+                    COMPONENT potassiumChannelEquations has 1 child components:
+                        [0]: 'nGate'
+                            VARIABLES: 0 variables
+                            COMPONENT nGate has 1 child components:
+                                [0]: 'nGateEquations'
+                                    VARIABLES: 5 variables
+                                        [0]: t [ms]
+                                        [1]: V [mV]
+                                        [2]: alpha_n [per_ms]
+                                        [3]: beta_n [per_ms]
+                                        [4]: n [dimensionless]
+                                  Maths in the component is:
+<math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:cellml="http://www.cellml.org/cellml/2.0#">
+<apply><eq/>
+    <ci>alpha_n</ci>
+    <apply><divide/>
+        <apply><times/>
+            <cn cellml:units="per_mV_ms">-0.01</cn>
+            <apply><plus/>
+                <ci>V</ci>
+                <cn cellml:units="mV">65</cn>
+            </apply>
+        </apply>
+        <apply><minus/>
+            <apply><exp/>
+                <apply><divide/>
+                    <apply><plus/>
+                        <ci>V</ci>
+                        <cn cellml:units="mV">65</cn>
+                    </apply>
+                    <cn cellml:units="mV">-10</cn>
+                </apply>
+            </apply>
+            <cn cellml:units="dimensionless">1</cn>
+        </apply>
+    </apply>
+</apply>
+  <apply><eq/>
+    <ci>beta_n</ci>
+    <apply><times/>
+      <cn cellml:units="per_ms">0.125</cn>
+      <apply><exp/>
+        <apply><divide/>
+          <apply><plus/>
+            <ci>V</ci>
+            <cn cellml:units="mV">75</cn>
+          </apply>
+          <cn cellml:units="mV">-80</cn>
+        </apply>
+      </apply>
+    </apply>
+  </apply>
+</math>
+                                    COMPONENT nGateEquations has 1 child components:
+                                        [0]: 'importedGate' <--- imported from: 'gateEquations' in 'GateModel.cellml'
+                                            VARIABLES: 0 variables
+        [1]: 'controller' <--- imported from: 'controller' in 'PotassiumChannelController.cellml'
+            VARIABLES: 0 variables
+Recorded 6 issues:
+Issue 0 is an ERROR:
+    Description: Variable 'E_K' in component 'potassiumChannelEquations' has no interface type set. The interface type required is 'public'.
+    See section 3.10.8 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
+    Stored item type: variable
+Issue 1 is an ERROR:
+    Description: Variable 'g_K' in component 'potassiumChannelEquations' has no interface type set. The interface type required is 'public'.
+    See section 3.10.8 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
+    Stored item type: variable
+Issue 2 is an ERROR:
+    Description: Variable 'n' in component 'nGate' has no interface type set. The interface type required is 'private'.
+    See section 3.10.8 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
+    Stored item type: variable
+Issue 3 is an ERROR:
+    Description: Variable 'n' in component 'nGateEquations' has no interface type set. The interface type required is 'public'.
+    See section 3.10.8 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
+    Stored item type: variable
+Issue 4 is an ERROR:
+    Description: Variable 'E_K' in component 'potassiumChannelParameters' has no interface type set. The interface type required is 'public'.
+    See section 3.10.8 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
+    Stored item type: variable
+Issue 5 is an ERROR:
+    Description: Variable 'g_K' in component 'potassiumChannelParameters' has no interface type set. The interface type required is 'public'.
+    See section 3.10.8 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
+    Stored item type: variable
+
+Recorded 0 issues!
+
+Recorded 1 issues:
+Issue 0 is an ERROR:
+    Description: The model has units which are not linked together.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_UNLINKED_UNITS
+    Stored item type: undefined
+
+-----------------------------------------
+   STEP 8: Connect the input variables   
+-----------------------------------------
+MODEL: 'PotassiumChannelModel'
+    UNITS: 7 custom units
+        [0]: ms
+        [1]: mV
+        [2]: mM
+        [3]: microA_per_cm2
+        [4]: milliS_per_cm2
+        [5]: per_ms
+        [6]: per_mV_ms
+    COMPONENTS: 2 components
+        [0]: 'potassiumChannel'
+            VARIABLES: 0 variables
+            COMPONENT potassiumChannel has 2 child components:
+                [0]: 'potassiumChannelEquations'
+                    VARIABLES: 6 variables
+                        [0]: E_K [mV]
+                              └──> potassiumChannelParameters:E_K [mV]
+                        [1]: i_K [microA_per_cm2]
+                        [2]: g_K [milliS_per_cm2]
+                              └──> potassiumChannelParameters:g_K [milliS_per_cm2]
+                        [3]: V [mV]
+                        [4]: t [ms]
+                        [5]: n [dimensionless]
+                    COMPONENT potassiumChannelEquations has 1 child components:
+                        [0]: 'nGate'
+                            VARIABLES: 1 variables
+                                [0]: n [dimensionless]
+                                      └──> nGateEquations:n [dimensionless]
+                            COMPONENT nGate has 2 child components:
+                                [0]: 'nGateEquations'
+                                    VARIABLES: 5 variables
+                                        [0]: t [ms]
+                                        [1]: V [mV]
+                                        [2]: alpha_n [per_ms]
+                                        [3]: beta_n [per_ms]
+                                        [4]: n [dimensionless]
+                                              └──> nGate:n [dimensionless]
+                                    COMPONENT nGateEquations has 1 child components:
+                                        [0]: 'importedGate' <--- imported from: 'gateEquations' in 'GateModel.cellml'
+                                            VARIABLES: 0 variables
+                                [1]: 'nGateParameters'
+                                    VARIABLES: 1 variables
+                                        [0]: n [dimensionless], initial = 0.325
+                [1]: 'potassiumChannelParameters'
+                    VARIABLES: 2 variables
+                        [0]: E_K [mV], initial = -87
+                              └──> potassiumChannelEquations:E_K [mV]
+                        [1]: g_K [milliS_per_cm2], initial = 36
+                              └──> potassiumChannelEquations:g_K [milliS_per_cm2]
+        [1]: 'controller' <--- imported from: 'controller' in 'PotassiumChannelController.cellml'
+            VARIABLES: 0 variables
+Recorded 0 issues!
+
+Recorded 1 issues:
+Issue 0 is an ERROR:
+    Description: The model has units which are not linked together.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_UNLINKED_UNITS
+    Stored item type: undefined
+
+----------------------------------------------
+   STEP 9: Connect the calculated variables   
+----------------------------------------------
+Recorded 0 issues!
+
+Recorded 1 issues:
+Issue 0 is an ERROR:
+    Description: The model has units which are not linked together.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_UNLINKED_UNITS
+    Stored item type: undefined
+
+---------------------------------------------
+   STEP 10: Connect to imported components   
+---------------------------------------------
+MODEL: 'PotassiumChannelModel'
+    UNITS: 7 custom units
+        [0]: ms
+        [1]: mV
+        [2]: mM
+        [3]: microA_per_cm2
+        [4]: milliS_per_cm2
+        [5]: per_ms
+        [6]: per_mV_ms
+    COMPONENTS: 2 components
+        [0]: 'potassiumChannel'
+            VARIABLES: 2 variables
+                [0]: t [ms]
+                      └──> potassiumChannelEquations:t [ms]
+                [1]: V [mV]
+                      └──> potassiumChannelEquations:V [mV]
+            COMPONENT potassiumChannel has 2 child components:
+                [0]: 'potassiumChannelEquations'
+                    VARIABLES: 6 variables
+                        [0]: E_K [mV]
+                              └──> potassiumChannelParameters:E_K [mV]
+                        [1]: i_K [microA_per_cm2]
+                        [2]: g_K [milliS_per_cm2]
+                              └──> potassiumChannelParameters:g_K [milliS_per_cm2]
+                        [3]: V [mV]
+                              └──> nGate:V [mV], potassiumChannel:V [mV], potassiumChannelParameters:V [mV]
+                        [4]: t [ms]
+                              └──> nGate:t [ms], potassiumChannel:t [ms]
+                        [5]: n [dimensionless]
+                              └──> nGate:n [dimensionless]
+                    COMPONENT potassiumChannelEquations has 1 child components:
+                        [0]: 'nGate'
+                            VARIABLES: 3 variables
+                                [0]: n [dimensionless]
+                                      └──> nGateEquations:n [dimensionless], potassiumChannelEquations:n [dimensionless]
+                                [1]: t [ms]
+                                      └──> nGateEquations:t [ms], potassiumChannelEquations:t [ms]
+                                [2]: V [mV]
+                                      └──> nGateEquations:V [mV], potassiumChannelEquations:V [mV]
+                            COMPONENT nGate has 2 child components:
+                                [0]: 'nGateEquations'
+                                    VARIABLES: 5 variables
+                                        [0]: t [ms]
+                                              └──> nGate:t [ms]
+                                        [1]: V [mV]
+                                              └──> nGate:V [mV]
+                                        [2]: alpha_n [per_ms]
+                                        [3]: beta_n [per_ms]
+                                        [4]: n [dimensionless]
+                                              └──> nGate:n [dimensionless], nGateParameters:n [dimensionless]
+                                    COMPONENT nGateEquations has 1 child components:
+                                        [0]: 'importedGate' <--- imported from: 'gateEquations' in 'GateModel.cellml'
+                                            VARIABLES: 0 variables
+                                [1]: 'nGateParameters'
+                                    VARIABLES: 1 variables
+                                        [0]: n [dimensionless], initial = 0.325
+                                              └──> nGateEquations:n [dimensionless]
+                [1]: 'potassiumChannelParameters'
+                    VARIABLES: 3 variables
+                        [0]: E_K [mV], initial = -87
+                              └──> potassiumChannelEquations:E_K [mV]
+                        [1]: g_K [milliS_per_cm2], initial = 36
+                              └──> potassiumChannelEquations:g_K [milliS_per_cm2]
+                        [2]: V [mV]
+                              └──> potassiumChannelEquations:V [mV]
+        [1]: 'controller' <--- imported from: 'controller' in 'PotassiumChannelController.cellml'
+            VARIABLES: 0 variables
+Recorded 0 issues!
+
+The importer has 2 models in the library.
+ library(0) = /Users/hsor001/Projects/cellml/sandbox/userdocs//tutorials/hh_tutorial2/GateModel.cellml
+ library(1) = /Users/hsor001/Projects/cellml/sandbox/userdocs//tutorials/hh_tutorial2/PotassiumChannelController.cellml
+
+Recorded 0 issues!
+
+Recorded 0 issues!
+
+-------------------------------
+   STEP 11: Output the model   
+-------------------------------
+MODEL: 'PotassiumChannelModel'
+    UNITS: 7 custom units
+        [0]: ms
+        [1]: mV
+        [2]: mM
+        [3]: microA_per_cm2
+        [4]: milliS_per_cm2
+        [5]: per_ms
+        [6]: per_mV_ms
+    COMPONENTS: 2 components
+        [0]: 'potassiumChannel'
+            VARIABLES: 3 variables
+                [0]: t [ms]
+                      └──> potassiumChannelEquations:t [ms], controller:t [ms]
+                [1]: V [mV]
+                      └──> potassiumChannelEquations:V [mV], controller:V [mV]
+                [2]: i_K [microA_per_cm2]
+                      └──> potassiumChannelEquations:i_K [microA_per_cm2]
+            COMPONENT potassiumChannel has 2 child components:
+                [0]: 'potassiumChannelEquations'
+                    VARIABLES: 6 variables
+                        [0]: E_K [mV]
+                              └──> potassiumChannelParameters:E_K [mV]
+                        [1]: i_K [microA_per_cm2]
+                              └──> potassiumChannel:i_K [microA_per_cm2]
+                        [2]: g_K [milliS_per_cm2]
+                              └──> potassiumChannelParameters:g_K [milliS_per_cm2]
+                        [3]: V [mV]
+                              └──> nGate:V [mV], potassiumChannel:V [mV], potassiumChannelParameters:V [mV]
+                        [4]: t [ms]
+                              └──> nGate:t [ms], potassiumChannel:t [ms]
+                        [5]: n [dimensionless]
+                              └──> nGate:n [dimensionless]
+                    COMPONENT potassiumChannelEquations has 1 child components:
+                        [0]: 'nGate'
+                            VARIABLES: 3 variables
+                                [0]: n [dimensionless]
+                                      └──> nGateEquations:n [dimensionless], potassiumChannelEquations:n [dimensionless]
+                                [1]: t [ms]
+                                      └──> nGateEquations:t [ms], potassiumChannelEquations:t [ms]
+                                [2]: V [mV]
+                                      └──> nGateEquations:V [mV], potassiumChannelEquations:V [mV]
+                            COMPONENT nGate has 2 child components:
+                                [0]: 'nGateEquations'
+                                    VARIABLES: 5 variables
+                                        [0]: t [ms]
+                                              └──> nGate:t [ms], importedGate:t [ms]
+                                        [1]: V [mV]
+                                              └──> nGate:V [mV]
+                                        [2]: alpha_n [per_ms]
+                                              └──> importedGate:alpha_X [per_ms]
+                                        [3]: beta_n [per_ms]
+                                              └──> importedGate:beta_X [per_ms]
+                                        [4]: n [dimensionless]
+                                              └──> nGate:n [dimensionless], nGateParameters:n [dimensionless], importedGate:X [dimensionless]
+                                    COMPONENT nGateEquations has 1 child components:
+                                        [0]: 'importedGate' <--- imported from: 'gateEquations' in 'GateModel.cellml'
+                                            VARIABLES: 4 variables
+                                                [0]: t [ms]
+                                                      └──> nGateEquations:t [ms]
+                                                [1]: alpha_X [per_ms]
+                                                      └──> nGateEquations:alpha_n [per_ms]
+                                                [2]: beta_X [per_ms]
+                                                      └──> nGateEquations:beta_n [per_ms]
+                                                [3]: X [dimensionless]
+                                                      └──> nGateEquations:n [dimensionless]
+                                [1]: 'nGateParameters'
+                                    VARIABLES: 1 variables
+                                        [0]: n [dimensionless], initial = 0.325
+                                              └──> nGateEquations:n [dimensionless]
+                [1]: 'potassiumChannelParameters'
+                    VARIABLES: 3 variables
+                        [0]: E_K [mV], initial = -87
+                              └──> potassiumChannelEquations:E_K [mV]
+                        [1]: g_K [milliS_per_cm2], initial = 36
+                              └──> potassiumChannelEquations:g_K [milliS_per_cm2]
+                        [2]: V [mV]
+                              └──> potassiumChannelEquations:V [mV]
+        [1]: 'controller' <--- imported from: 'controller' in 'PotassiumChannelController.cellml'
+            VARIABLES: 2 variables
+                [0]: t [ms]
+                      └──> potassiumChannel:t [ms]
+                [1]: V [mV]
+                      └──> potassiumChannel:V [mV]
+The created model has been written to PotassiumChannelModel.cellml

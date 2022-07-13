@@ -66,7 +66,7 @@ def create_states_array():
 
 
 def create_variables_array():
-    return [nan]*VARIABLE_COUNT
+    return [4.0]*VARIABLE_COUNT
 
 
 def initialise_states_and_constants(states, variables):

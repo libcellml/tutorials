@@ -33,7 +33,6 @@ int main(int argc, char* argv[])
         inFileName = argv[1];
     }
 
-    std::cout << "in file name:" << inFileName << std::endl;
     // STEP 1: Parse an existing model from a CellML file.
     //         The Parser class is used to deserialise a CellML string into a Model instance.
     //         This means that you're responsible for finding, opening and reading the *.cellml 
@@ -161,6 +160,5 @@ int main(int argc, char* argv[])
 
     //  end 4
 
-    std::cout << "The generated model code has been written to HodgkinHuxleyModel.[cpp,h]"
-              << std::endl;   
+    std::cout << "The generated model code has been written to HodgkinHuxleyModel.*" << std::endl;   
 }

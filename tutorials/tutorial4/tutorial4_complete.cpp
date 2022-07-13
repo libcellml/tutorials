@@ -22,13 +22,13 @@
 
 int main()
 {
-    std::cout << "-----------------------------------------------" << std::endl;
-    std::cout << "   TUTORIAL 4: INTERACT WITH GENERATED CODE" << std::endl;
-    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "------------------------------------------------" << std::endl;
+    std::cout << "   TUTORIAL 4: CODE GENERATION AND SIMULATION   " << std::endl;
+    std::cout << "------------------------------------------------" << std::endl;
 
-    std::cout << "-----------------------------------------------" << std::endl;
-    std::cout << "   Step 1: Connect to the generated code       " << std::endl;
-    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "----------------------------------------" << std::endl;
+    std::cout << "   Step 1: Link to the generated code   " << std::endl;
+    std::cout << "----------------------------------------" << std::endl;
 
     //  1.a 
     //      Enter the path to the generated header/interface *.h file in the #include block above.
@@ -36,27 +36,11 @@ int main()
     //  1.b 
     //      If necessary, change the extension of the implementation *.c file to be *.cpp.
 
-    //  1.c 
-    //      Add the name and path of the implementation *.cpp file in the CMakeLists.txt file.
-
-    //  1.d 
-    //      Open the implementation file *.cpp file and change the default #include "model.h"
-    //      to be the name of your interface *.h file.
-
-    //  1.e 
-    //      Retrieve the version numbers from the libCellML library and the generated code you've just included.
-    std::cout << "The generated code used libCellML version " << LIBCELLML_VERSION << std::endl;
-    std::cout << "The library version of libCellML is " << libcellml::versionString() << std::endl;
-
-    //  1.f 
-    //      Call cmake to create the Makefile.  Call make -j to build the executable.
-    //      Run the code so far to print the versions to the terminal.
-
     //  end 1
 
-    std::cout << "-----------------------------------------------" << std::endl;
-    std::cout << "   Step 2: Investigate the items stored        " << std::endl;
-    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "---------------------------------------------------------" << std::endl;
+    std::cout << "   Step 2: Access the variables in the generated files   " << std::endl;
+    std::cout << "---------------------------------------------------------" << std::endl;
 
     //      Probably the best way to understand the contents of the generated files is
     //      to open them and look!  The implementation file (*.cpp) has two types of items:
@@ -83,7 +67,7 @@ int main()
 
     std::cout << "VARIABLE_COUNT = " << VARIABLE_COUNT << std::endl;
     for (size_t v = 0; v < VARIABLE_COUNT; ++v) {
-        std::cout << "Variable " << v << ": " << std::endl;
+        std::cout << "Variable " << v << ":" << std::endl;
         std::cout << "  name = " << VARIABLE_INFO[v].name << std::endl;
         std::cout << "  units = " << VARIABLE_INFO[v].units << std::endl;
         std::cout << "  component = " << VARIABLE_INFO[v].component << std::endl;
@@ -105,7 +89,7 @@ int main()
     std::cout << std::endl;
     std::cout << "STATE_COUNT = " << STATE_COUNT << std::endl;
     for (size_t s = 0; s < STATE_COUNT; ++s) {
-        std::cout << "State variable " << s << ": " << std::endl;
+        std::cout << "State variable " << s << ":" << std::endl;
         std::cout << "  name = " << STATE_INFO[s].name << std::endl;
         std::cout << "  units = " << STATE_INFO[s].units << std::endl;
         std::cout << "  component = " << STATE_INFO[s].component << std::endl;
@@ -123,9 +107,9 @@ int main()
 
     //  end 2
 
-    std::cout << "-----------------------------------------------------------" << std::endl;
-    std::cout << "   Step 3: Access the functions in the generated files     " << std::endl;
-    std::cout << "-----------------------------------------------------------" << std::endl;
+    std::cout << "---------------------------------------------------------" << std::endl;
+    std::cout << "   Step 3: Access the functions in the generated files   " << std::endl;
+    std::cout << "---------------------------------------------------------" << std::endl;
 
     //   The generated code contains seven functions:
     //      - createStatesArray() to allocate an array of length STATE_COUNT.  This can be
@@ -164,7 +148,7 @@ int main()
 
     std::cout << "The initial conditions for state variables are:" << std::endl;
     for (size_t v = 0; v < STATE_COUNT; ++v) {
-        std::cout << "  " << STATE_INFO[v].component << " " << STATE_INFO[v].name << "  = " << myStateVariables[v] << " (" << STATE_INFO[v].units << ")"<< std::endl;
+        std::cout << std::fixed << std::setprecision(1) << "  " << STATE_INFO[v].component << " " << STATE_INFO[v].name << " = " << myStateVariables[v] << " (" << STATE_INFO[v].units << ")"<< std::endl;
     }
     std::cout << std::endl;
 
@@ -180,9 +164,9 @@ int main()
 
     //  end 3
 
-    std::cout << "-----------------------------------------------------------" << std::endl;
-    std::cout << "   Step 4: Iterate through the solution                    " << std::endl;
-    std::cout << "-----------------------------------------------------------" << std::endl;
+    std::cout << "------------------------------------------" << std::endl;
+    std::cout << "   Step 4: Iterate through the solution   " << std::endl;
+    std::cout << "------------------------------------------" << std::endl;
 
     //  This part will make use of a simple routine to step through the solution
     //  iterations using the Euler method to update the state variables.
@@ -257,9 +241,9 @@ int main()
 
     //  end 4
 
-    std::cout << "-----------------------------------------------------------" << std::endl;
-    std::cout << "   Step 5: Housekeeping                                    " << std::endl;
-    std::cout << "-----------------------------------------------------------" << std::endl;
+    std::cout << "--------------------------" << std::endl;
+    std::cout << "   Step 5: Housekeeping   " << std::endl;
+    std::cout << "--------------------------" << std::endl;
 
     //  5.a 
     //      Housekeeping - delete the allocated arrays.

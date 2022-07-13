@@ -14,6 +14,8 @@ import os
 import sys
 import importlib.util
 
+from libcellml.analyservariable import analyserVariableTypeAsString
+
 if __name__ == '__main__':
 
     print('-----------------------------------------------------------')
@@ -61,11 +63,12 @@ if __name__ == '__main__':
     print('VARIABLE_COUNT = {}'.format(model.VARIABLE_COUNT))
 
     for v in range (0, model.VARIABLE_COUNT):
+        variable_info = model.VARIABLE_INFO[v]
         print('Variable {}:'.format(v))
-        print('  name = {}'.format(model.VARIABLE_INFO[v]['name']))
-        print('  units = {}'.format(model.VARIABLE_INFO[v]['units']))
-        print('  component = {}'.format(model.VARIABLE_INFO[v]['component']))
-        print('  type = {}'.format(model.VARIABLE_INFO[v]['type']))
+        print('  name = {}'.format(variable_info['name']))
+        print('  units = {}'.format(variable_info['units']))
+        print('  component = {}'.format(variable_info['component']))
+        print('  type = {}'.format(variable_info['type'].value))
     print()
 
     #  end 2.a
@@ -138,7 +141,7 @@ if __name__ == '__main__':
     model.initialise_states_and_constants(my_state_variables, my_variables)
     print('The initial conditions for state variables are:')
     for v in range(0, model.STATE_COUNT):
-        print('{} {} = {} ({})'.format(
+        print('  {} {} = {} ({})'.format(
             model.STATE_INFO[v]['component'],
             model.STATE_INFO[v]['name'],
             my_state_variables[v],
@@ -151,6 +154,7 @@ if __name__ == '__main__':
     print('The initial values including all computed constants are:')
     model.compute_computed_constants(my_variables)
     model.compute_variables(time, my_state_variables, my_rates, my_variables)
+    model.compute_rates(time, my_state_variables, my_rates, my_variables)
     for v in range(0, model.VARIABLE_COUNT):
         print('  {} = {} ({})'.format(
             model.VARIABLE_INFO[v]['name'],
@@ -233,6 +237,10 @@ if __name__ == '__main__':
    #  end 4
 
     print()
-    print()
+    print('Finished!')
 
-    print('The results have been written to \'HodgkinHuxleyModelSolution.txt\'')
+    print('--------------------------')
+    print('   Step 5: Housekeeping   ')
+    print('--------------------------')
+
+    print('The solution has been written to \'HodgkinHuxleyModelSolution.txt\'')

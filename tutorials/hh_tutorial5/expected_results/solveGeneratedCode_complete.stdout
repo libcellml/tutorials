@@ -1,0 +1,165 @@
+-----------------------------------------------------------
+   Step 1: Link to the generated code                      
+-----------------------------------------------------------
+-----------------------------------------------------------
+   Step 2: Access the variables in the generated files     
+-----------------------------------------------------------
+VARIABLE_COUNT = 19
+Variable 0:
+  name = E_L
+  units = mV
+  component = leakageParameters
+  type = 0
+Variable 1:
+  name = g_L
+  units = mS_per_cm2
+  component = leakageParameters
+  type = 0
+Variable 2:
+  name = Cm
+  units = microF_per_cm2
+  component = membraneParameters
+  type = 0
+Variable 3:
+  name = E_K
+  units = mV
+  component = potassiumChannelParameters
+  type = 0
+Variable 4:
+  name = g_K
+  units = milliS_per_cm2
+  component = potassiumChannelParameters
+  type = 0
+Variable 5:
+  name = E_Na
+  units = mV
+  component = sodiumChannelParameters
+  type = 0
+Variable 6:
+  name = g_Na
+  units = mS_per_cm2
+  component = sodiumChannelParameters
+  type = 0
+Variable 7:
+  name = i_stim
+  units = microA_per_cm2
+  component = controller
+  type = 2
+Variable 8:
+  name = Na_conductance
+  units = mS_per_cm2
+  component = sodiumChannelEquations
+  type = 2
+Variable 9:
+  name = i_Na
+  units = microA_per_cm2
+  component = sodiumChannelEquations
+  type = 2
+Variable 10:
+  name = alpha_m
+  units = per_ms
+  component = mGateEquations
+  type = 2
+Variable 11:
+  name = beta_m
+  units = per_ms
+  component = mGateEquations
+  type = 2
+Variable 12:
+  name = alpha_h
+  units = per_ms
+  component = hGateEquations
+  type = 2
+Variable 13:
+  name = beta_h
+  units = per_ms
+  component = hGateEquations
+  type = 2
+Variable 14:
+  name = i_K
+  units = microA_per_cm2
+  component = potassiumChannelEquations
+  type = 2
+Variable 15:
+  name = alpha_n
+  units = per_ms
+  component = nGateEquations
+  type = 2
+Variable 16:
+  name = beta_n
+  units = per_ms
+  component = nGateEquations
+  type = 2
+Variable 17:
+  name = i_L
+  units = microA_per_cm2
+  component = leakageEquations
+  type = 2
+Variable 18:
+  name = i_tot
+  units = microA_per_cm2
+  component = membraneEquations
+  type = 2
+
+STATE_COUNT = 4
+State variable 0:
+  name = X
+  units = dimensionless
+  component = importedGateM
+State variable 1:
+  name = X
+  units = dimensionless
+  component = importedGateH
+State variable 2:
+  name = X
+  units = dimensionless
+  component = importedGate
+State variable 3:
+  name = V
+  units = mV
+  component = membraneEquations
+
+VOI_INFO
+  name = t
+  units = ms
+  component = controller
+
+-----------------------------------------------------------
+   Step 3: Access the functions in the generated files     
+-----------------------------------------------------------
+The initial conditions for state variables are:
+  importedGateM X = 0.05 (dimensionless)
+  importedGateH X = 0.6 (dimensionless)
+  importedGate X = 0.325 (dimensionless)
+  membraneEquations V = -75.0 (mV)
+
+The initial values including all computed constants are:
+  E_L = -64.387 (mV)
+  g_L = 0.3 (mS_per_cm2)
+  Cm = 1.0 (microF_per_cm2)
+  E_K = -87.0 (mV)
+  g_K = 36.0 (milliS_per_cm2)
+  E_Na = 40.0 (mV)
+  g_Na = 120.0 (mS_per_cm2)
+  i_stim = 0 (microA_per_cm2)
+  Na_conductance = 0 (mS_per_cm2)
+  i_Na = 0 (microA_per_cm2)
+  alpha_m = 0 (per_ms)
+  beta_m = 0 (per_ms)
+  alpha_h = 0 (per_ms)
+  beta_h = 0 (per_ms)
+  i_K = 0 (microA_per_cm2)
+  alpha_n = 0 (per_ms)
+  beta_n = 0 (per_ms)
+  i_L = 0 (microA_per_cm2)
+  i_tot = 0 (microA_per_cm2)
+
+-----------------------------------------------------------
+   Step 4: Iterate through the solution                    
+-----------------------------------------------------------
+...........................................................
+Finished!
+--------------------------
+   Step 5: Housekeeping   
+--------------------------
+The solution has been written to 'HodgkinHuxleyModelSolution.txt'

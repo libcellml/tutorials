@@ -131,7 +131,7 @@ if __name__ == '__main__':
     #  4.f 
     #       Implementation code is the bulk of the model, and contains all the equations, 
     #       variables, units etc.  This is needed for both of the available profiles, and 
-    #       would normally be stored in a.cpp or.py file.  
+    #       would normally be stored in a *.cpp or *.py file.  
     #       Use the Generator.implementationCode() function to return the implementation 
     #       code as a string, and write it to a file with the appropriate extension.
     with open('HodgkinHuxleyModel.py', 'w') as f:
@@ -140,14 +140,11 @@ if __name__ == '__main__':
     #  4.g 
     #       (C profile only) Interface code is the header needed by the C profile to define data types.
     #       Use the Generator.interfaceCode() function to return interface code as a string
-    #       and write it to a.h header file.  This needs to be the same filename as you 
+    #       and write it to a *.h header file.  This needs to be the same filename as you 
     #       specified in step 4.e above.
     # with open('HodgkinHuxleyModel.h', 'w') as f:
     #     f.write(generator.interfaceCode())
 
     #  end 4  
 
-    print('The generated model code has been written to HodgkinHuxleyModel.py') 
-
-    
-
+    print('The generated model code has been written to HodgkinHuxleyModel.*') 

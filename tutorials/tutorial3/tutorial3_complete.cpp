@@ -26,11 +26,11 @@
 int main()
 {
     std::cout << "-------------------------------------------------------------" << std::endl;
-    std::cout << " TUTORIAL 3: MODEL CREATION AND CODE GENERATION WITH THE API" << std::endl;
+    std::cout << " TUTORIAL 3: MODEL CREATION AND CODE GENERATION WITH THE API " << std::endl;
     std::cout << "-------------------------------------------------------------" << std::endl;
 
     std::cout << "-------------------------------------------------------------" << std::endl;
-    std::cout << "   Step 1: Create a component                                " << std::endl;
+    std::cout << "   Step 1: Create model instance and maths                   " << std::endl;
     std::cout << "-------------------------------------------------------------" << std::endl;
 
     //  1.a
@@ -38,25 +38,11 @@ int main()
     auto model = libcellml::Model::create("tutorial_3_model");
     model->setId("tutorial_3_model_id");
 
-    //  Check that it worked.
-    std::cout << "Model has name: '" << model->name() << "'" << std::endl;
-    std::cout << "Model has id: '" << model->id() << "'" << std::endl;
-
     //  1.b   
     //      Create a Component instance to use as an integrator, set its attributes and
     //      add it to the model.
     auto component = libcellml::Component::create("predator_prey_component");
     model->addComponent(component);
-
-    //  Check that it worked.
-    std::cout << "Model has " << model->componentCount()
-              << " components:" << std::endl;
-    for (size_t c = 0; c < model->componentCount(); ++c) {
-        std::cout << "  Component [" << c << "] has name: '"
-                  << model->component(c)->name() << "'" << std::endl;
-        std::cout << "  Component [" << c << "] has id: '"
-                  << model->component(c)->id() << "'" << std::endl;
-    }
 
     //  1.c
     //      Create the MathML2 strings representing the governing equations.
@@ -149,13 +135,13 @@ int main()
 
     //  2.b 
     //      Add the variables into the component.
+    component->addVariable(sharks);
+    component->addVariable(fish);
+    component->addVariable(time);
     component->addVariable(a);
     component->addVariable(b);
     component->addVariable(c);
     component->addVariable(d);
-    component->addVariable(sharks);
-    component->addVariable(fish);
-    component->addVariable(time);
 
     //  2.c 
     //      Call the validator again to check.
@@ -165,7 +151,7 @@ int main()
     //  end 2
 
     std::cout << "-------------------------------------------------------------" << std::endl;
-    std::cout << "   Step 3: Create the units                                  " << std::endl;
+    std::cout << "   Step 3: Create user-defined units                         " << std::endl;
     std::cout << "-------------------------------------------------------------" << std::endl;
 
     //  3.a 
@@ -202,12 +188,12 @@ int main()
     //  3.e 
     //      Add the units to their variables using the setUnits function.
     time->setUnits(month);
+    sharks->setUnits(number_of_sharks);
+    fish->setUnits(thousands_of_fish);
     a->setUnits(per_month);
     b->setUnits(b_units);
     c->setUnits(per_month);
     d->setUnits(d_units);
-    sharks->setUnits(number_of_sharks);
-    fish->setUnits(thousands_of_fish);
 
     //  3.f 
     //      Call the validator to check the model.  We expect one error regarding the missing units in the MathML.
@@ -242,7 +228,7 @@ int main()
     //  end 3
 
     std::cout << "-------------------------------------------------------------" << std::endl;
-    std::cout << "   Step 4: Analyse the model                                 " << std::endl;
+    std::cout << "   Step 4: Analyse the mathematics                           " << std::endl;
     std::cout << "-------------------------------------------------------------" << std::endl;
 
     //  4.a 

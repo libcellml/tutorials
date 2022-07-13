@@ -38,9 +38,9 @@ if __name__ == '__main__':
     #                 component: n_gate_parameters <-- created here so that the parameters are specific to the n_gate_equations.
     #         component: k_channel_parameters
 
-    print('------------------------------------------------------------')
-    print('   STEP 1: Define the model setup                           ')
-    print('------------------------------------------------------------')
+    print('------------------------------------')
+    print('   STEP 1: Define the model setup   ')
+    print('------------------------------------')
 
     #  1.a 
     #      Create a Model and name it appropriately.
@@ -56,9 +56,9 @@ if __name__ == '__main__':
 
     #  end 1
 
-    print('------------------------------------------------------------')
-    print('   STEP 2: Define the potassium channel equations component ')
-    print('------------------------------------------------------------')
+    print('--------------------------------------------------------------')
+    print('   STEP 2: Define the potassium channel equations component   ')
+    print('--------------------------------------------------------------')
 
     #  2.a 
     #      Create a Component instance for the equations and name it 'potassiumChannelEquations'.  
@@ -75,21 +75,21 @@ if __name__ == '__main__':
 
     #  2.b 
     #      Define the maths inside the potassiumChannelEquations component.
-    equation_iK = \
-        '  <apply><eq/>\n'\
-        '    <ci>i_K</ci>\n'\
-        '    <apply><times/>\n'\
-        '       <apply><power/>\n'\
-        '           <ci>n</ci>\n'\
-        '           <cn cellml:units="dimensionless">4</cn>\n'\
-        '       </apply>\n'\
-        '       <ci>g_K</ci>\n'\
-        '       <apply><minus/>\n'\
-        '           <ci>V</ci>\n'\
-        '           <ci>E_K</ci>\n'\
-        '       </apply>\n'\
-        '    </apply>\n'\
-        '  </apply>\n'
+    equation_iK = """  <apply><eq/>
+    <ci>i_K</ci>
+    <apply><times/>
+       <apply><power/>
+           <ci>n</ci>
+           <cn cellml:units="dimensionless">4</cn>
+       </apply>
+       <ci>g_K</ci>
+       <apply><minus/>
+           <ci>V</ci>
+           <ci>E_K</ci>
+       </apply>
+    </apply>
+  </apply>
+"""
 
     k_channel_equations.setMath(math_header)
     k_channel_equations.appendMath(equation_iK)
@@ -186,7 +186,7 @@ if __name__ == '__main__':
     #  end 2
 
     print('------------------------------------------------------------')
-    print('   STEP 3: Create the n_gate and n_gate_equations components   ')
+    print('   STEP 3: Create the nGate and nGateEquations components   ')
     print('------------------------------------------------------------')
 
     #  STEP 3: Create the n_gate and its child components:
@@ -209,31 +209,31 @@ if __name__ == '__main__':
     #  3.c 
     #      Add the mathematics to the n_gate_equations component and validate the model.
     #      Expect errors relating to missing variables.
-    equation_alpha_n = \
-        '  <apply><eq/>\n'\
-        '    <ci>alpha_n</ci>\n'\
-        '    <apply><divide/>\n'\
-        '      <apply><times/>\n'\
-        '        <cn cellml:units="per_mV_ms">-0.01</cn>\n'\
-        '        <apply><plus/>\n'\
-        '          <ci>V</ci>\n'\
-        '          <cn cellml:units="mV">65</cn>\n'\
-        '        </apply>\n'\
-        '      </apply>\n'\
-        '      <apply><minus/>\n'\
-        '        <apply><exp/>\n'\
-        '          <apply><divide/>\n'\
-        '            <apply><plus/>\n'\
-        '              <ci>V</ci>\n'\
-        '              <cn cellml:units="mV">65</cn>\n'\
-        '            </apply>\n'\
-        '            <cn cellml:units="mV">-10</cn>\n'\
-        '          </apply>\n'\
-        '        </apply>\n'\
-        '        <cn cellml:units="dimensionless">1</cn>\n'\
-        '      </apply>\n'\
-        '    </apply>\n'\
-        '  </apply>\n'
+    equation_alpha_n = """<apply><eq/>
+    <ci>alpha_n</ci>
+    <apply><divide/>
+        <apply><times/>
+            <cn cellml:units="per_mV_ms">-0.01</cn>
+            <apply><plus/>
+                <ci>V</ci>
+                <cn cellml:units="mV">65</cn>
+            </apply>
+        </apply>
+        <apply><minus/>
+            <apply><exp/>
+                <apply><divide/>
+                    <apply><plus/>
+                        <ci>V</ci>
+                        <cn cellml:units="mV">65</cn>
+                    </apply>
+                    <cn cellml:units="mV">-10</cn>
+                </apply>
+            </apply>
+            <cn cellml:units="dimensionless">1</cn>
+        </apply>
+    </apply>
+</apply>
+"""
 
     equation_beta_n = \
         '  <apply><eq/>\n'\
@@ -357,9 +357,9 @@ if __name__ == '__main__':
 
     #  end 4
 
-    print('------------------------------------------------------------')
-    print('   STEP 5: Specify imports for the controller component     ')
-    print('------------------------------------------------------------')
+    print('----------------------------------------------------------')
+    print('   STEP 5: Specify imports for the controller component   ')
+    print('----------------------------------------------------------')
 
     #  STEP 5: Repeat Step 4 to import a controller component.  This should be 
     #          at the top of the encapsulation hierarchy, and should import the component
@@ -387,9 +387,9 @@ if __name__ == '__main__':
     #  From here on, our goal is to make sure that the CellML representation of these equations
     #  is valid (using the Validator) and solvable (using the Analyser).
     
-    print('------------------------------------------------------------')
-    print('   STEP 6: Analyse the model                                ')
-    print('------------------------------------------------------------')
+    print('-------------------------------')
+    print('   STEP 6: Analyse the model   ')
+    print('-------------------------------')
 
     # STEP 6: We will introduce the Analyser class here so that its use as a debugging 
     #         tool can be demonstrated.  Of course, we know ahead of time that there
@@ -422,9 +422,9 @@ if __name__ == '__main__':
     #  - those variables which need to be connected to where their calculation happens and
     #  - those variables which aren't present in any equation.
 
-    print('------------------------------------------------------------')
-    print('   STEP 7: Define the constants                             ')
-    print('------------------------------------------------------------')
+    print('----------------------------------')
+    print('   STEP 7: Define the constants   ')
+    print('----------------------------------')
 
     #      Use the print_model() function to show your current model contents. This should
     #      show that we have currently got variables only in the n_gate_equations and potassiumChannelEquations
@@ -506,9 +506,9 @@ if __name__ == '__main__':
 
     #  end 7
 
-    print('------------------------------------------------------------')
-    print('   STEP 8: Connect the input variables                      ')
-    print('------------------------------------------------------------')
+    print('-----------------------------------------')
+    print('   STEP 8: Connect the input variables   ')
+    print('-----------------------------------------')
 
     # STEP 8: Looking at the variables listed we can see that some of our 'external' or 'input'
     #  variables are listed more than once.  These are the voltage, V, and time, t.  Time
@@ -560,9 +560,9 @@ if __name__ == '__main__':
 
     #  end 8
 
-    print('------------------------------------------------------------')
-    print('   STEP 9: Connect the calculated variables                 ')
-    print('------------------------------------------------------------')
+    print('----------------------------------------------')
+    print('   STEP 9: Connect the calculated variables   ')
+    print('----------------------------------------------')
 
     # STEP 9: Now we need to make sure that all of the calculated variables can move through
     #         the model properly.  In this example, the only calculated variable is n, the gate
@@ -589,9 +589,9 @@ if __name__ == '__main__':
 
     #  end 9
 
-    print('------------------------------------------------------------')
-    print('   STEP 10: Connect to imported components                  ')
-    print('------------------------------------------------------------')
+    print('---------------------------------------------')
+    print('   STEP 10: Connect to imported components   ')
+    print('---------------------------------------------')
 
     #  STEP 10:
     #  At this point, we have made all the connections we can between existing variables and components.
@@ -712,19 +712,19 @@ if __name__ == '__main__':
     #  Note that at this point an analysis of the unflattened model will still show errors,
     #  but that's totally fine.
 
-    print('------------------------------------------------------------')
-    print('   STEP 11: Output the model                                ')
-    print('------------------------------------------------------------')
+    print('-------------------------------')
+    print('   STEP 11: Output the model   ')
+    print('-------------------------------')
 
     #  11.a 
     #      Create a Printer instance and use it to serialise the model.  This creates a string
     #      containing the CellML-formatted version of the model.  Write this to a file called
     #      'PotassiumChannelModel.cellml'.
     printer = Printer()
-    write_file = open('PotassiumChannelModel.cellml', 'w')
-    write_file.write(printer.printModel(model))
-    write_file.close()
+    with open('PotassiumChannelModel.cellml', 'w') as f:
+        f.write(printer.printModel(model))
 
     #  end
 
+    print_model(model)
     print('The created model has been written to PotassiumChannelModel.cellml')

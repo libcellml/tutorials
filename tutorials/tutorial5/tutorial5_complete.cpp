@@ -1,5 +1,5 @@
 /**
- *  TUTORIAL 6: Annotating a mystery model
+ *  TUTORIAL 5: Annotating a mystery model
  *
  * 	This tutorial is a guide to playing Marco Polo using libCellML.
  *
@@ -32,9 +32,13 @@
 int main(int argc, char* argv[])
 {
 
-    std::cout << "----------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 1: Parse a mystery model                          " << std::endl;
-    std::cout << "----------------------------------------------------------" << std::endl;
+    std::cout << "--------------------------------------------" << std::endl;
+    std::cout << "   TUTORIAL 5: ANNOTATING A MYSTERY MODEL   " << std::endl;
+    std::cout << "--------------------------------------------" << std::endl;
+
+    std::cout << "-----------------------------------" << std::endl;
+    std::cout << "   STEP 1: Parse a mystery model   " << std::endl;
+    std::cout << "-----------------------------------" << std::endl;
 
 
     std::filesystem::path inFileName = "MysteryModel.cellml";
@@ -62,9 +66,9 @@ int main(int argc, char* argv[])
 
     //  end 1
 
-    std::cout << "----------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 2: Find 'marco'		                            " << std::endl;
-    std::cout << "----------------------------------------------------------"<< std::endl;
+    std::cout << "--------------------------" << std::endl;
+    std::cout << "   STEP 2: Find 'marco'   " << std::endl;
+    std::cout << "--------------------------"<< std::endl;
 
     //  2.a
     //      Create an Annotator item and use the setModel function to pass in the parsed
@@ -96,9 +100,9 @@ int main(int argc, char* argv[])
 
     //  end 2
 
-    std::cout << "----------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 3: Find 'polo'		                            " << std::endl;
-    std::cout << "----------------------------------------------------------"<< std::endl;
+    std::cout << "-------------------------" << std::endl;
+    std::cout << "   STEP 3: Find 'polo'   " << std::endl;
+    std::cout << "-------------------------"<< std::endl;
 
     //  3.a
     //      Now try the same procedure to find the item with id of "polo".
@@ -182,9 +186,9 @@ int main(int argc, char* argv[])
     //      - first attribute is the libcellml::Units parent item; and
     //      - second attribute is the index of this Unit within the parent.
     
-    std::cout << "----------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 4: See who else is lurking in this pool           " << std::endl;
-    std::cout << "----------------------------------------------------------"<< std::endl;
+    std::cout << "--------------------------------------------------" << std::endl;
+    std::cout << "   STEP 4: See who else is lurking in this pool   " << std::endl;
+    std::cout << "--------------------------------------------------"<< std::endl;
 
     //  Now that we've found Marco and fixed the duplicates of Polo, we'd like to know
     //  what other ids are being used in this model.
@@ -212,9 +216,9 @@ int main(int argc, char* argv[])
 
     //  end 4
 
-    std::cout << "----------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 5: See who else is lurking around the corner      " << std::endl;
-    std::cout << "----------------------------------------------------------"<< std::endl;
+    std::cout << "-------------------------------------------------------" << std::endl;
+    std::cout << "   STEP 5: See who else is lurking around the corner   " << std::endl;
+    std::cout << "-------------------------------------------------------"<< std::endl;
 
     //      The final step is to make sure that imported items can have their annotations
     //      tracked back to their sources too.  
@@ -256,9 +260,9 @@ int main(int argc, char* argv[])
     
     //  end 5
 
-    std::cout << "----------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 6: Give up and go home                            " << std::endl;
-    std::cout << "----------------------------------------------------------"<< std::endl;
+    std::cout << "---------------------------------" << std::endl;
+    std::cout << "   STEP 6: Give up and go home   " << std::endl;
+    std::cout << "---------------------------------"<< std::endl;
 
     //  6.a
     //      Loop through all of the model's components and print their id to the terminal.
@@ -266,14 +270,14 @@ int main(int argc, char* argv[])
     //      to give all of the items of that type a new unique id.  Print the ids again and
     //      notice that the blanks have been filled with automatically generated strings, 
     //      but existing ids are unchanged. 
-    std::cout << "Before automatic assigning the components have ids:" << std::endl;
+    std::cout << "Before automatic assignment the components have ids:" << std::endl;
     for(size_t i = 0; i < model->componentCount(); ++i) {
         std::cout << "  - '" << model->component(i)->id() << "'" << std::endl;
     }
 
     annotator->assignIds(libcellml::CellmlElementType::COMPONENT);
 
-    std::cout << "After automatic assigning components have ids:" << std::endl;
+    std::cout << "After automatic assignment the components have ids:" << std::endl;
     for(size_t i = 0; i < model->componentCount(); ++i) {
         std::cout << "  - '" << model->component(i)->id() << "'" <<std::endl;
     }

@@ -42,9 +42,9 @@ int main(int argc, char* argv[])
     //                 component: nGateParameters <-- created here so that the parameters are specific to the nGateEquations.
     //         component: kChannelParameters
 
-    std::cout << "------------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 1: Define the model setup " << std::endl;
-    std::cout << "------------------------------------------------------------" << std::endl;
+    std::cout << "------------------------------------" << std::endl;
+    std::cout << "   STEP 1: Define the model setup   " << std::endl;
+    std::cout << "------------------------------------" << std::endl;
 
     //  1.a 
     //      Create a Model and name it appropriately.
@@ -60,9 +60,9 @@ int main(int argc, char* argv[])
 
     //  end 1
 
-    std::cout << "------------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 2: Define the potassium channel equations component " << std::endl;
-    std::cout << "------------------------------------------------------------" << std::endl;
+    std::cout << "--------------------------------------------------------------" << std::endl;
+    std::cout << "   STEP 2: Define the potassium channel equations component   " << std::endl;
+    std::cout << "--------------------------------------------------------------" << std::endl;
 
     //  2.a 
     //      Create a Component instance for the equations and name it "potassiumChannelEquations".  
@@ -191,7 +191,7 @@ int main(int argc, char* argv[])
     //  end 2
 
     std::cout << "------------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 3: Create the nGate and nGateEquations components  " << std::endl;
+    std::cout << "   STEP 3: Create the nGate and nGateEquations components   " << std::endl;
     std::cout << "------------------------------------------------------------" << std::endl;
 
     //  STEP 3: Create the nGate and its child components:
@@ -247,10 +247,10 @@ int main(int argc, char* argv[])
         "      <cn cellml:units=\"per_ms\">0.125</cn>\n"
         "      <apply><exp/>\n"
         "        <apply><divide/>\n"
-        "          <apply><plus/>"
+        "          <apply><plus/>\n"
         "            <ci>V</ci>\n"
         "            <cn cellml:units=\"mV\">75</cn>\n"
-        "          </apply>"
+        "          </apply>\n"
         "          <cn cellml:units=\"mV\">-80</cn>\n"
         "        </apply>\n" 
         "      </apply>\n" 
@@ -311,7 +311,7 @@ int main(int argc, char* argv[])
     //  end 3
 
     std::cout << "------------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 4: Specify imports for the generic gate component " << std::endl;
+    std::cout << "   STEP 4: Specify imports for the generic gate component   " << std::endl;
     std::cout << "------------------------------------------------------------" << std::endl;
 
     // STEP 4: Import the generic gate's equations component.
@@ -362,9 +362,9 @@ int main(int argc, char* argv[])
 
     //  end 4
 
-    std::cout << "------------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 5: Specify imports for the controller component " << std::endl;
-    std::cout << "------------------------------------------------------------" << std::endl;
+    std::cout << "----------------------------------------------------------" << std::endl;
+    std::cout << "   STEP 5: Specify imports for the controller component   " << std::endl;
+    std::cout << "----------------------------------------------------------" << std::endl;
 
     //  STEP 5: Repeat Step 4 to import a controller component.  This should be 
     //          at the top of the encapsulation hierarchy, and should import the component
@@ -392,9 +392,9 @@ int main(int argc, char* argv[])
     //  From here on, our goal is to make sure that the CellML representation of these equations
     //  is valid (using the Validator) and solvable (using the Analyser).
     
-    std::cout << "------------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 6: Analyse the model " << std::endl;
-    std::cout << "------------------------------------------------------------" << std::endl;
+    std::cout << "-------------------------------" << std::endl;
+    std::cout << "   STEP 6: Analyse the model   " << std::endl;
+    std::cout << "-------------------------------" << std::endl;
 
     // STEP 6: We will introduce the Analyser class here so that its use as a debugging 
     //         tool can be demonstrated.  Of course, we know ahead of time that there
@@ -427,9 +427,9 @@ int main(int argc, char* argv[])
     //  - those variables which need to be connected to where their calculation happens; and
     //  - those variables which aren't present in any equation.
 
-    std::cout << "------------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 7: Define the constants " << std::endl;
-    std::cout << "------------------------------------------------------------" << std::endl;
+    std::cout << "----------------------------------" << std::endl;
+    std::cout << "   STEP 7: Define the constants   " << std::endl;
+    std::cout << "----------------------------------" << std::endl;
 
     //      Use the printModel() function to show your current model contents. This should
     //      show that we have currently got variables only in the nGateEquations and potassiumChannelEquations
@@ -511,9 +511,9 @@ int main(int argc, char* argv[])
 
     //  end 7
 
-    std::cout << "------------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 8: Connect the 'input' variables                    " << std::endl;
-    std::cout << "------------------------------------------------------------" << std::endl;
+    std::cout << "-----------------------------------------" << std::endl;
+    std::cout << "   STEP 8: Connect the input variables   " << std::endl;
+    std::cout << "-----------------------------------------" << std::endl;
 
     // STEP 8: Looking at the variables listed we can see that some of our "external" or "input"
     //  variables are listed more than once.  These are the voltage, V, and time, t.  Time
@@ -565,9 +565,9 @@ int main(int argc, char* argv[])
 
     //  end 8
 
-    std::cout << "------------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 9: Connect the 'calculated' variables               " << std::endl;
-    std::cout << "------------------------------------------------------------" << std::endl;
+    std::cout << "----------------------------------------------" << std::endl;
+    std::cout << "   STEP 9: Connect the calculated variables   " << std::endl;
+    std::cout << "----------------------------------------------" << std::endl;
 
     // STEP 9: Now we need to make sure that all of the calculated variables can move through
     //         the model properly.  In this example, the only calculated variable is n, the gate
@@ -595,9 +595,9 @@ int main(int argc, char* argv[])
 
     //  end 9
 
-    std::cout << "------------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 10: Connect to imported components                  " << std::endl;
-    std::cout << "------------------------------------------------------------" << std::endl;
+    std::cout << "---------------------------------------------" << std::endl;
+    std::cout << "   STEP 10: Connect to imported components   " << std::endl;
+    std::cout << "---------------------------------------------" << std::endl;
 
     //  STEP 10:
     //  At this point, we have made all the connections we can between existing variables and components.
@@ -722,9 +722,9 @@ int main(int argc, char* argv[])
     //  Note that at this point an analysis of the unflattened model will still show errors,
     //  but that's totally fine.
 
-    std::cout << "------------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 11: Output the model                                " << std::endl;
-    std::cout << "------------------------------------------------------------" << std::endl;
+    std::cout << "-------------------------------" << std::endl;
+    std::cout << "   STEP 11: Output the model   " << std::endl;
+    std::cout << "-------------------------------" << std::endl;
 
     //  11.a 
     //      Create a Printer instance and use it to serialise the model.  This creates a string

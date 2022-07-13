@@ -11,6 +11,7 @@
  *    - The basic idea of numerical integration using Euler's method (see ).
  */
 
+#include <cmath>
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -75,7 +76,7 @@ int main()
 
     std::cout << "VARIABLE_COUNT = " << VARIABLE_COUNT << std::endl;
     for (size_t v = 0; v < VARIABLE_COUNT; ++v) {
-        std::cout << "Variable " << v << ": " << std::endl;
+        std::cout << "Variable " << v << ":" << std::endl;
         std::cout << "  name = " << VARIABLE_INFO[v].name << std::endl;
         std::cout << "  units = " << VARIABLE_INFO[v].units << std::endl;
         std::cout << "  component = " << VARIABLE_INFO[v].component << std::endl;
@@ -97,7 +98,7 @@ int main()
     std::cout << std::endl;
     std::cout << "STATE_COUNT = " << STATE_COUNT << std::endl;
     for (size_t s = 0; s < STATE_COUNT; ++s) {
-        std::cout << "State variable " << s << ": " << std::endl;
+        std::cout << "State variable " << s << ":" << std::endl;
         std::cout << "  name = " << STATE_INFO[s].name << std::endl;
         std::cout << "  units = " << STATE_INFO[s].units << std::endl;
         std::cout << "  component = " << STATE_INFO[s].component << std::endl;
@@ -156,7 +157,7 @@ int main()
 
     std::cout << "The initial conditions for state variables are:" << std::endl;
     for (size_t v = 0; v < STATE_COUNT; ++v) {
-        std::cout << "  " << STATE_INFO[v].component << " " << STATE_INFO[v].name << "  = " << myStateVariables[v] << " (" << STATE_INFO[v].units << ")"<< std::endl;
+        std::cout << "  " << STATE_INFO[v].component << " " << STATE_INFO[v].name << " = " << myStateVariables[v] << " (" << STATE_INFO[v].units << ")"<< std::endl;
     }
     std::cout << std::endl;
 
@@ -166,7 +167,8 @@ int main()
     computeVariables(time, myStateVariables, myRates, myVariables);
     std::cout << "The initial values including all computed constants are:" << std::endl;
     for (size_t v = 0; v < VARIABLE_COUNT; ++v) {
-        std::cout << "  " << VARIABLE_INFO[v].name << " = " << myVariables[v] << " (" << VARIABLE_INFO[v].units << ")"<<std::endl;
+        std::cout << "is nan: " << std::isnan(myVariables[v]) << std::endl;
+        std::cout << std::fixed << std::setprecision(1) << "  " << VARIABLE_INFO[v].name << " = " << myVariables[v] << " (" << VARIABLE_INFO[v].units << ")" <<std::endl;
     }
     std::cout << std::endl;
 
@@ -248,9 +250,9 @@ int main()
 
     //  end 4
 
-    std::cout << "-----------------------------------------------------------" << std::endl;
-    std::cout << "   Step 5: Housekeeping                                    " << std::endl;
-    std::cout << "-----------------------------------------------------------" << std::endl;
+    std::cout << "--------------------------" << std::endl;
+    std::cout << "   Step 5: Housekeeping   " << std::endl;
+    std::cout << "--------------------------" << std::endl;
 
     //  5.a 
     //  Housekeeping - delete the allocated arrays.
@@ -260,5 +262,5 @@ int main()
 
     //  end 5
 
-    std::cout << "The results have been written to 'HodgkinHuxleyModelSolution.txt'" << std::endl;
+    std::cout << "The solution has been written to 'HodgkinHuxleyModelSolution.txt'" << std::endl;
 }

@@ -1,0 +1,68 @@
+------------------------------------------------
+   TUTORIAL 4: CODE GENERATION AND SIMULATION   
+------------------------------------------------
+----------------------------------------
+   Step 1: Link to the generated code   
+----------------------------------------
+---------------------------------------------------------
+   Step 2: Access the variables in the generated files   
+---------------------------------------------------------
+VARIABLE_COUNT = 4
+Variable 0:
+  name = a
+  units = per_month
+  component = predator_prey_component
+  type = 0
+Variable 1:
+  name = b
+  units = per_shark_month
+  component = predator_prey_component
+  type = 0
+Variable 2:
+  name = d
+  units = per_1000fish_month
+  component = predator_prey_component
+  type = 0
+Variable 3:
+  name = c
+  units = per_month
+  component = predator_prey_component
+  type = 1
+
+STATE_COUNT = 2
+State variable 0:
+  name = y_s
+  units = number_of_sharks
+  component = predator_prey_component
+State variable 1:
+  name = y_f
+  units = thousands_of_fish
+  component = predator_prey_component
+
+VOI_INFO
+  name = time
+  units = month
+  component = predator_prey_component
+
+---------------------------------------------------------
+   Step 3: Access the functions in the generated files   
+---------------------------------------------------------
+The initial conditions for state variables are:
+  predator_prey_component y_s = 1.0 (number_of_sharks)
+  predator_prey_component y_f = 2.0 (thousands_of_fish)
+
+The initial values including all computed constants are:
+  a = -0.8 (per_month)
+  b = 0.3 (per_shark_month)
+  d = -0.6 (per_1000fish_month)
+  c = 1.2 (per_month)
+
+------------------------------------------
+   Step 4: Iterate through the solution   
+------------------------------------------
+...........................................................
+Finished!
+--------------------------
+   Step 5: Housekeeping   
+--------------------------
+The results have been written to 'solution.txt'

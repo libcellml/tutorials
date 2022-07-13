@@ -23,9 +23,9 @@ int main()
     std::string mathHeader = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" xmlns:cellml=\"http://www.cellml.org/cellml/2.0#\">\n";
     std::string mathFooter = "</math>";
 
-    std::cout << "----------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 1: Setup the model  " << std::endl;
-    std::cout << "----------------------------------------------------------" << std::endl;
+    std::cout << "-----------------------------" << std::endl;
+    std::cout << "   STEP 1: Setup the model   " << std::endl;
+    std::cout << "-----------------------------" << std::endl;
 
     //  1.a 
     //      The first step is to create a Model item which will later contain the component and 
@@ -140,15 +140,7 @@ int main()
     //      Retrieve the number of issues encountered using the validator->issueCount() function,
     //      then retrieve the issue items from the validator using their index and the validator->issue(index)
     //      function.  Print the information from each issue to the terminal.
-    std::cout << "The validator has found " << validator->issueCount() << " issues." << std::endl;
-    for(size_t i = 0; i < validator->issueCount(); ++i) {
-        auto issue = validator->issue(i);
-        std::cout << "Issue " << i << ": " << issue->description() << std::endl;
-        std::cout << "  reference: "<< issue->referenceHeading() << std::endl;
-        std::cout << "  see: " << issue->url() << std::endl;
-        std::cout << "  stored item type: " << cellmlElementTypeAsString(issue->item()->type()) << std::endl;
-        std::cout << std::endl;
-    }
+    printIssues(validator);
 
     //  end 3
 
@@ -339,9 +331,9 @@ int main()
 
     //  end 7
     
-    std::cout << "----------------------------------------------------------" << std::endl;
-    std::cout << "   STEP 8: Serialise and output the model" << std::endl;
-    std::cout << "----------------------------------------------------------" << std::endl;
+    std::cout << "--------------------------------------------" << std::endl;
+    std::cout << "   STEP 8: Serialise and output the model   " << std::endl;
+    std::cout << "--------------------------------------------" << std::endl;
 
     //  8.a 
     //      Create a Printer instance and use it to serialise the model.  This creates a string

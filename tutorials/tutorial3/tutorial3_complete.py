@@ -37,11 +37,8 @@ if __name__ == "__main__":
     #      Create a component to use as an integrator, set its attributes and
     #      add it to the model.
     component = Component()
-    component.setName("component")
+    component.setName("predator_prey_component")
     model.addComponent(component)
-
-    #  Checking that it worked
-    print_model(model)
 
     #  1.c
     #      Create the MathML2 string representing the governing equations.  
@@ -161,11 +158,11 @@ if __name__ == "__main__":
     #  3.a  
     #      Define the relationship between our custom units and the built-in
     #      units. There is a list of built-in units and their definitions
-    #      available in section 19.2 of the CellML2 specification.
+    #      available in section 19.2 of the CellML 2.0 specification.
     #      First we create the "month" units, which will be equivalent to
     #      60*60*24*30 = 2,592,000 seconds.
     month = Units("month")
-    month.addUnit("second", 1, 2592000)  # Setting a month to be 2592000 seconds.
+    month.addUnit("second", 0, 1, 2592000)  # Setting a month to be 2592000 seconds.
     model.addUnits(month)
 
     #  "second" is a built-in unit, used with a multiplier of 2592000.
@@ -200,7 +197,7 @@ if __name__ == "__main__":
     model.addUnits(b_units)
 
     d_units = Units()
-    d_units.setName("per_fish_month")
+    d_units.setName("per_1000fish_month")
     d_units.addUnit("per_month")
     d_units.addUnit("thousands_of_fish", -1)
     model.addUnits(d_units)
@@ -279,7 +276,7 @@ if __name__ == "__main__":
     #  end 4
 
     print("-------------------------------------------------------------")
-    print("   Step 5: Generate code and output                          ")
+    print("   Step 5: Generate code and write to files                  ")
     print("-------------------------------------------------------------")
 
     #  5.a  
@@ -331,4 +328,4 @@ if __name__ == "__main__":
 
     #  end 5
 
-    print("All the files have been printed.")
+    print("The generated files have been written to PredatorPrey.[c,h,py].")
