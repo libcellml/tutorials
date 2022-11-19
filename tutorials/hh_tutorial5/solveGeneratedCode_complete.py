@@ -14,7 +14,6 @@ import os
 import sys
 import importlib.util
 
-from libcellml.analyservariable import analyserVariableTypeAsString
 
 if __name__ == '__main__':
 
