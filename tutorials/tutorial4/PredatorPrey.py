@@ -1,20 +1,20 @@
-# The content of this file was generated using the Python profile of libCellML 0.2.0.
+# The content of this file was generated using the Python profile of libCellML 0.3.104.
 
 from enum import Enum
 from math import *
 
 
-__version__ = "0.1.0"
-LIBCELLML_VERSION = "0.2.0"
+__version__ = "0.3.1"
+LIBCELLML_VERSION = "0.3.104"
 
 STATE_COUNT = 2
 VARIABLE_COUNT = 4
 
 
 class VariableType(Enum):
-    CONSTANT = 1
-    COMPUTED_CONSTANT = 2
-    ALGEBRAIC = 3
+    CONSTANT = 0
+    COMPUTED_CONSTANT = 1
+    ALGEBRAIC = 2
 
 
 VOI_INFO = {"name": "time", "units": "month", "component": "predator_prey_component"}
