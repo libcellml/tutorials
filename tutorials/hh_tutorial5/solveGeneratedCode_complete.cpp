@@ -165,10 +165,10 @@ int main()
     //      Compute the constants, compute the variables, and print them to the screen for checking.
     computeComputedConstants(myVariables);
     computeVariables(time, myStateVariables, myRates, myVariables);
+    computeRates(time, myStateVariables, myRates, myVariables);
     std::cout << "The initial values including all computed constants are:" << std::endl;
     for (size_t v = 0; v < VARIABLE_COUNT; ++v) {
-        std::cout << "is nan: " << std::isnan(myVariables[v]) << std::endl;
-        std::cout << std::fixed << std::setprecision(1) << "  " << VARIABLE_INFO[v].name << " = " << myVariables[v] << " (" << VARIABLE_INFO[v].units << ")" <<std::endl;
+        std::cout << std::setprecision(16) << "  " << VARIABLE_INFO[v].name << " = " << myVariables[v] << " (" << VARIABLE_INFO[v].units << ")" <<std::endl;
     }
     std::cout << std::endl;
 

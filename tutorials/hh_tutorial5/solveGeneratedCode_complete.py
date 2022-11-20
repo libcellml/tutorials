@@ -155,11 +155,7 @@ if __name__ == '__main__':
     model.compute_variables(time, my_state_variables, my_rates, my_variables)
     model.compute_rates(time, my_state_variables, my_rates, my_variables)
     for v in range(0, model.VARIABLE_COUNT):
-        print('  {} = {} ({})'.format(
-            model.VARIABLE_INFO[v]['name'],
-            my_variables[v],
-            model.VARIABLE_INFO[v]['units']
-            ))
+        print(f'  {model.VARIABLE_INFO[v]["name"]} = {my_variables[v]:.16g} ({model.VARIABLE_INFO[v]["units"]})')
     print()
 
     #  end 3
@@ -182,7 +178,7 @@ if __name__ == '__main__':
     #  4.b Create a file for output and open it. You can use the information to name columns
     #      with the variables, component, and units so you can keep track later.
     write_file = open('HodgkinHuxleyModelSolution.txt', 'w')
-    row = 'iteration\t{}({})'.format(
+    row = 'iteration\t{} ({})'.format(
         model.VOI_INFO['name'], model.VOI_INFO['units'])
     for s in range(0, model.VARIABLE_COUNT):
         row += '\t{}:{} ({})'.format(model.VARIABLE_INFO[s]['component'], model.VARIABLE_INFO[s]['name'], model.VARIABLE_INFO[s]['units'])
@@ -217,13 +213,13 @@ if __name__ == '__main__':
         model.compute_variables(time, my_state_variables, my_rates, my_variables)
 
         # Write everything to the output file.
-        row = '{}\t{}'.format(step, time)
+        row = f'{step}\t{time}'
 
         for s in range(0, model.VARIABLE_COUNT):
-            row += '\t{}'.format(my_variables[s])
+            row += f'\t{my_variables[s]}'
 
         for s in range(0, model.STATE_COUNT):
-            row += '\t{}'.format(my_state_variables[s])
+            row += f'\t{my_state_variables[s]}'
 
         row += '\n'
         # Write to file.
