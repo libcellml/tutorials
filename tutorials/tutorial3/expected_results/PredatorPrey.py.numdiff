@@ -1,0 +1,1 @@
+set(NUMDIFF_ARGS "-R;^LIBCELLML_VERSION = \"[0-9]+\\.[0-9]+\\.[0-9]+\";-R;^# The content of this file was generated using the Python profile of libCellML [0-9]+\\.[0-9]+\\.[0-9]+\\.")
