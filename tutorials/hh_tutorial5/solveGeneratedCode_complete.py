@@ -184,12 +184,10 @@ if __name__ == '__main__':
     write_file = open('HodgkinHuxleyModelSolution.txt', 'w')
     row = 'iteration\t{}({})'.format(
         model.VOI_INFO['name'], model.VOI_INFO['units'])
-    for s in range(0, model.STATE_COUNT):
-        row += '\t{}({})'.format(model.STATE_INFO[s]
-                                 ['name'], model.STATE_INFO[s]['units'])
     for s in range(0, model.VARIABLE_COUNT):
-        row += '\t{}({})'.format(model.VARIABLE_INFO[s]
-                                 ['name'], model.VARIABLE_INFO[s]['units'])
+        row += '\t{}:{} ({})'.format(model.VARIABLE_INFO[s]['component'], model.VARIABLE_INFO[s]['name'], model.VARIABLE_INFO[s]['units'])
+    for s in range(0, model.STATE_COUNT):
+        row += '\t{}:{} ({})'.format(model.STATE_INFO[s]['component'], model.STATE_INFO[s]['name'], model.STATE_INFO[s]['units'])
     row += '\n'
     write_file.write(row)
 
@@ -211,17 +209,21 @@ if __name__ == '__main__':
         # Compute the rates at this step using the given function.
         model.compute_rates(time, my_state_variables, my_rates, my_variables)
 
-        row = '{}\t{}'.format(step, time)
-
         # Compute the states.
         for s in range(0, model.STATE_COUNT):
             my_state_variables[s] = my_state_variables[s] + my_rates[s] * step_size
-            row += '\t{}'.format(my_state_variables[s])
 
         # Compute the variables.
         model.compute_variables(time, my_state_variables, my_rates, my_variables)
+
+        # Write everything to the output file.
+        row = '{}\t{}'.format(step, time)
+
         for s in range(0, model.VARIABLE_COUNT):
             row += '\t{}'.format(my_variables[s])
+
+        for s in range(0, model.STATE_COUNT):
+            row += '\t{}'.format(my_state_variables[s])
 
         row += '\n'
         # Write to file.
