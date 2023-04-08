@@ -21,7 +21,7 @@ Hodgkin-Huxley 2: Creating a model which uses imports
     - :download:`CMakeLists.txt<CMakeLists.txt>` The CMake file for building this tutorial;
     - :download:`createPotassiumChannelModel.cpp<createPotassiumChannelModel.cpp>` Either the skeleton code, or ..
     - :download:`createPotassiumChannelModel_complete.cpp<createPotassiumChannelModel_complete.cpp>` the completed tutorial code; and
-    - :download:`utilities.cpp<../code/utilities.cpp>` and :download:`utilities.h<../code/utilities.h>` Helper functions.
+    - :download:`utilities.cpp<../utilities/utilities.cpp>` and :download:`utilities.h<../utilities/utilities.h>` Helper functions.
 
     **Python resources**
 

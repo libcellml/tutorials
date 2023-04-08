@@ -24,13 +24,13 @@ Hodgkin-Huxley 4: Generating code from a model
     - :download:`CMakeLists.txt<CMakeLists.txt>` The CMake file for building this tutorial;
     - :download:`generateMembraneModel.cpp<generateMembraneModel.cpp>` Either the skeleton code, or ..
     - :download:`generateMembraneModel_complete.cpp<generateMembraneModel_complete.cpp>` the completed tutorial code; and
-    - :download:`utilities.cpp<../code/utilities.cpp>` and :download:`utilities.h<../code/utilities.h>` Helper functions.
+    - :download:`utilities.cpp<../utilities/utilities.cpp>` and :download:`utilities.h<../utilities/utilities.h>` Helper functions.
 
     **Python resources**
 
     - :download:`generateMembraneModel.py<generateMembraneModel.py>` Either the skeleton code, or ..
     - :download:`generateMembraneModel_complete.py<generateMembraneModel_complete.py>` the completed tutorial code;
-    - :download:`utilities.py<../code/utilities.py>` Helper functions.
+    - :download:`utilities.py<../utilities/utilities.py>` Helper functions.
 
     **CellML resources**
 
