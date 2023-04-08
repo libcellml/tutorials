@@ -81,8 +81,8 @@ There are necessarily big differences between C++ and Python for this tutorial!
 
             .. literalinclude:: tutorial4_complete.cpp
                 :language: c++
-                :start-at: //  1.e
-                :end-before: //  1.f
+                :start-at: //  1.a
+                :end-before: //  end 1
 
     .. tab:: Python instructions
 

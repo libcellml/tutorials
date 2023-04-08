@@ -16,7 +16,7 @@ You'll be taking a CellML2.0 file which has some mistakes in it, using the valid
 
     This tutorial assumes that you can already:
 
-    - Read and deserialise a CellML model from a file (as in :ref:`Tutorial 1<tutorial1>`);
+    - Read and deserialise a CellML model from a file (as in :ref:`Tutorial 1 <tutorial1>`);
     - Retrieve the name and id of models, components, and variables;
     - Navigate through the hierarchy of the model and its subsidiary elements (components, variables, units and MathML blocks); and
     - Serialise and print a :code:`Model` structure to a CellML file.
