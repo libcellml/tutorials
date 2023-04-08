@@ -468,8 +468,8 @@ MODEL: 'PotassiumChannelModel'
 Recorded 0 issues!
 
 The importer has 2 models in the library.
- library(0) = @TEST_ROOT@/tutorials/hh_tutorial2/GateModel.cellml
- library(1) = @TEST_ROOT@/tutorials/hh_tutorial2/PotassiumChannelController.cellml
+ library(0) = @TEST_ROOT@/hh_tutorial2/GateModel.cellml
+ library(1) = @TEST_ROOT@/hh_tutorial2/PotassiumChannelController.cellml
 
 Recorded 0 issues!
 
