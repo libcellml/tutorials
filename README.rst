@@ -11,22 +11,22 @@ To see the prepared documentation in a local browser when editing the documentat
 
 1. Create a virtual environment::
 
- python -m venv venv-sphinx
+    python -m venv venv-sphinx
 
 2. Activate and install required packages::
 
- source venv-sphinx/bin/Activate
- cd tutorials
- pip install -r requirements.txt
+    source venv-sphinx/bin/Activate
+    cd tutorials
+    pip install -r requirements.txt
 
 3. Build documentation::
 
- sphinx-build . build
+    sphinx-build . build
 
 4. Serve documentation::
 
- python -m http.server
+    python -m http.server
 
 5. View locally built documentation by visiting::
 
- http://localhost:8000
+    http://localhost:8000
