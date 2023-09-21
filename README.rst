@@ -15,7 +15,7 @@ To see the prepared documentation in a local browser when editing the documentat
 
 2. Activate and install required packages::
 
-    source venv-sphinx/bin/Activate
+    source venv-sphinx/bin/activate
     cd tutorials
     pip install -r requirements.txt
 
@@ -25,6 +25,7 @@ To see the prepared documentation in a local browser when editing the documentat
 
 4. Serve documentation::
 
+    cd build
     python -m http.server
 
 5. View locally built documentation by visiting::
