@@ -32,13 +32,13 @@ Requirements
     - :download:`CMakeLists.txt` The CMake file for building this tutorial;
     - :download:`tutorial3.cpp` The skeleton code; or
     - :download:`tutorial3_complete.cpp` the completed tutorial code; and
-    - :download:`utilities.h<../utilities/utilities.h>` and :download:`utilities.cpp<../utilities/utilities.cpp>` Utility functions for use in the tutorials.
+    - :download:`utilities.h</resources/code/utilities/utilities.h>` and :download:`utilities.cpp</resources/code/utilities/utilities.cpp>` Utility functions for use in the tutorials.
 
     **Python resources**
     
     - :download:`tutorial3.py` Either the skeleton code; or
     - :download:`tutorial3_complete.py` the completed tutorial code; and
-    - :download:`utilities.py<../utilities/utilities.py>`  Utility functions for use in the tutorials.
+    - :download:`utilities.py</resources/code/utilities/utilities.py>`  Utility functions for use in the tutorials.
 
 
 Overview

@@ -32,13 +32,13 @@ Requirements
     - :download:`CMakeLists.txt<CMakeLists.txt>` The CMake file for building;
     - :download:`tutorial2.cpp<tutorial2.cpp>` The skeleton code or
     - :download:`tutorial2_complete.cpp<tutorial2_complete.cpp>` the completed code; and
-    - :download:`utilities.cpp<../utilities/utilities.cpp>` and :download:`utilities.h<../utilities/utilities.h>` Utility functions for use in the tutorials.
+    - :download:`utilities.cpp</resources/code/utilities/utilities.cpp>` and :download:`utilities.h</resources/code/utilities/utilities.h>` Utility functions for use in the tutorials.
 
     **Python resources**
 
     - :download:`tutorial2.py` The skeleton code or
     - :download:`tutorial2_complete.py` or the completed code; and
-    - :download:`utilities.py<../utilities/utilities.py>` Utility functions for use in the tutorials.
+    - :download:`utilities.py</resources/code/utilities/utilities.py>` Utility functions for use in the tutorials.
 
     **CellML resources**
 

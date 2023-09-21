@@ -79,13 +79,14 @@ extlinks = {
     'github': ('https://github.com/%s', ''),
     'github_desktop': ('https://desktop.github.com/%s', ''),
     'google_styleguide': ('https://google.github.io/styleguide/cppguide.html/%s', ''),
+    'howto': ('/documentation/howto/%s', ''),
     'href_locator': ('https://www.w3.org/TR/2001/REC-xlink-20010627/#link-locators/%s', ''),
     'homebrew': ('https://brew.sh/%s', ''),
     'intel_c_compiler': ('https://software.intel.com/en-us/c-compilers%s', ''),
     'libcellml_doc_page': ('https://libcellml.org/documentation/%s', ''),
     'libcellml_repo': ('https://github.com/cellml/libcellml.git%s', ''),
     'libxml2': ('http://www.xmlsoft.org/%s', ''),
-    'libxml2_download': ('https://github.com/OpenCMISS-Dependencies/libxml2/releases%s', ''),
+    'libxml2_download': ('https://github.com/CMLibs-Dependencies/libxml2/releases%s', ''),
     'mathml2help': ('https://www.w3.org/TR/MathML2/chapter4.html#id.4.2.1.3%s', ''),
     'mathml2spec': ('http://www.w3.org/TR/2003/REC-MathML2-20031021/%s', ''),
     'mathml2types': ('https://www.w3.org/TR/MathML2/chapter4.html#contm.typeattrib%s', ''),
@@ -133,6 +134,7 @@ release = 'latest'
 # directories to ignore when looking for source files.
 exclude_patterns = [
     'README.rst',
+    'common_use_cases/index.rst',
 ]
 
 # The reST default role (used for this markup: `text`) to use for all

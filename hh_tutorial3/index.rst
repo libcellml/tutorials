@@ -21,7 +21,7 @@ Hodgkin-Huxley 3: Debugging a model
     - :download:`CMakeLists.txt<CMakeLists.txt>` The CMake file for building this tutorial;
     - :download:`debugSodiumChannelModel.cpp<debugSodiumChannelModel.cpp>` Either the skeleton code, or ..
     - :download:`debugSodiumChannelModel_complete.cpp<debugSodiumChannelModel_complete.cpp>` the completed tutorial code; and
-    - :download:`utilities.cpp<../utilities/utilities.cpp>` and :download:`utilities.h<../utilities/utilities.h>` Helper functions.
+    - :download:`utilities.cpp</resources/code/utilities/utilities.cpp>` and :download:`utilities.h</resources/code/utilities/utilities.h>` Helper functions.
 
     **Python resources**
 
