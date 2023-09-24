@@ -51,3 +51,8 @@ For this set of tutorials it's presumed that you're already familiar with the st
     common_use_cases/package_dev
     common_use_cases/simulation_tool_dev
     common_use_cases/solver
+
+.. toctree::
+   :hidden:
+
+   common_use_cases/index
