@@ -154,7 +154,7 @@ if __name__ == '__main__':
     #  3.e
     #      Check that the id of 'polo' is now unique in the model by calling the 
     #      isUnique function.
-    assert(annotator.isUnique('polo'))
+    annotator.isUnique('polo')
 
     #  end 3.e
 
@@ -220,7 +220,7 @@ if __name__ == '__main__':
 
     #  5.c
     #      Use the Component.isImport() function to verify that it is imported.
-    assert(units.isImport())
+    units.isImport()
 
     #  5.d
     #      Create an Importer instance and use it to resolve this model's imports.

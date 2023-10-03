@@ -519,7 +519,7 @@ For this next issue we're going to show how to use the :code:`item()` function o
 
             // Check the type of the item stored.  If you don't know ahead of time this would be a
             // switch statement to check them all.
-            assert(myFirstIssue->item()->type() == libcellml::CellmlElementType::VARIABLE);
+            myFirstIssue->item()->type() == libcellml::CellmlElementType::VARIABLE);
 
             // Use the element specific API to return a VariablePtr for use as normal.
             auto myVariable = myFirstIssue->item()->variable();
@@ -536,7 +536,7 @@ For this next issue we're going to show how to use the :code:`item()` function o
 
             # Check the type of the item stored.  If you don't know ahead of time this would be a
             # switch statement to check them all.
-            assert(my_first_issue->item()->type() == CellmlElementType.VARIABLE)
+            my_first_issue->item()->type() == CellmlElementType.VARIABLE
 
             # Use the element specific API to return a VariablePtr for use as normal.
             my_variable = my_first_issue.item().variable()

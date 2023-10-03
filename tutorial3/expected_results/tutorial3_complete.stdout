@@ -153,27 +153,27 @@ Recorded 0 issues!
 -------------------------------------------------------------
 Recorded 8 issues:
 Issue 0 is a WARNING:
-    Description: The units in 'a*y_s+b*y_s*y_f' in equation 'y_s = a*y_s+b*y_s*y_f' in component 'predator_prey_component' are not equivalent. 'a*y_s' is in 'number_of_sharks x per_month' (i.e. '10^-6.41363 x number_of_sharks x second^-1') while 'b*y_s*y_f' is in 'number_of_sharks x per_shark_month x thousands_of_fish' (i.e. '10^-6.41363 x second^-1 x thousands_of_fish').
+    Description: The units in 'a*y_s+b*y_s*y_f' in equation 'dy_s/dtime = a*y_s+b*y_s*y_f' in component 'predator_prey_component' are not equivalent. 'a*y_s' is in 'number_of_sharks x per_month' (i.e. '10^-6.41363 x number_of_sharks x second^-1') while 'b*y_s*y_f' is in 'number_of_sharks x per_shark_month x thousands_of_fish' (i.e. '10^-6.41363 x second^-1 x thousands_of_fish').
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_UNITS
     Stored item type: undefined
 Issue 1 is a WARNING:
-    Description: The units in 'c*y_f+d*y_s*y_f' in equation 'y_f = c*y_f+d*y_s*y_f' in component 'predator_prey_component' are not equivalent. 'c*y_f' is in 'per_month x thousands_of_fish' (i.e. '10^-6.41363 x second^-1 x thousands_of_fish') while 'd*y_s*y_f' is in 'number_of_sharks x per_1000fish_month x thousands_of_fish' (i.e. '10^-6.41363 x number_of_sharks x second^-1').
+    Description: The units in 'c*y_f+d*y_s*y_f' in equation 'dy_f/dtime = c*y_f+d*y_s*y_f' in component 'predator_prey_component' are not equivalent. 'c*y_f' is in 'per_month x thousands_of_fish' (i.e. '10^-6.41363 x second^-1 x thousands_of_fish') while 'd*y_s*y_f' is in 'number_of_sharks x per_1000fish_month x thousands_of_fish' (i.e. '10^-6.41363 x number_of_sharks x second^-1').
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_UNITS
     Stored item type: undefined
 Issue 2 is an ERROR:
-    Description: Variable 'a' in component 'predator_prey_component' is unused.
+    Description: The type of variable 'c' in component 'predator_prey_component' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 Issue 3 is an ERROR:
-    Description: Variable 'b' in component 'predator_prey_component' is unused.
+    Description: The type of variable 'a' in component 'predator_prey_component' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 Issue 4 is an ERROR:
-    Description: Variable 'c' in component 'predator_prey_component' is unused.
-    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Description: Variable 'y_s' in component 'predator_prey_component' is used in an ODE, but it is not initialised.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_STATE_NOT_INITIALISED
     Stored item type: variable
 Issue 5 is an ERROR:
-    Description: Variable 'd' in component 'predator_prey_component' is unused.
+    Description: The type of variable 'b' in component 'predator_prey_component' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 Issue 6 is an ERROR:
@@ -181,17 +181,17 @@ Issue 6 is an ERROR:
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_STATE_NOT_INITIALISED
     Stored item type: variable
 Issue 7 is an ERROR:
-    Description: Variable 'y_s' in component 'predator_prey_component' is used in an ODE, but it is not initialised.
-    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_STATE_NOT_INITIALISED
+    Description: The type of variable 'd' in component 'predator_prey_component' is unknown.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 
 Recorded 2 issues:
 Issue 0 is a WARNING:
-    Description: The units in 'a*y_s+b*y_s*y_f' in equation 'y_s = a*y_s+b*y_s*y_f' in component 'predator_prey_component' are not equivalent. 'a*y_s' is in 'number_of_sharks x per_month' (i.e. '10^-6.41363 x number_of_sharks x second^-1') while 'b*y_s*y_f' is in 'number_of_sharks x per_shark_month x thousands_of_fish' (i.e. '10^-6.41363 x second^-1 x thousands_of_fish').
+    Description: The units in 'a*y_s+b*y_s*y_f' in equation 'dy_s/dtime = a*y_s+b*y_s*y_f' in component 'predator_prey_component' are not equivalent. 'a*y_s' is in 'number_of_sharks x per_month' (i.e. '10^-6.41363 x number_of_sharks x second^-1') while 'b*y_s*y_f' is in 'number_of_sharks x per_shark_month x thousands_of_fish' (i.e. '10^-6.41363 x second^-1 x thousands_of_fish').
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_UNITS
     Stored item type: undefined
 Issue 1 is a WARNING:
-    Description: The units in 'c*y_f+d*y_s*y_f' in equation 'y_f = c*y_f+d*y_s*y_f' in component 'predator_prey_component' are not equivalent. 'c*y_f' is in 'per_month x thousands_of_fish' (i.e. '10^-6.41363 x second^-1 x thousands_of_fish') while 'd*y_s*y_f' is in 'number_of_sharks x per_1000fish_month x thousands_of_fish' (i.e. '10^-6.41363 x number_of_sharks x second^-1').
+    Description: The units in 'c*y_f+d*y_s*y_f' in equation 'dy_f/dtime = c*y_f+d*y_s*y_f' in component 'predator_prey_component' are not equivalent. 'c*y_f' is in 'per_month x thousands_of_fish' (i.e. '10^-6.41363 x second^-1 x thousands_of_fish') while 'd*y_s*y_f' is in 'number_of_sharks x per_1000fish_month x thousands_of_fish' (i.e. '10^-6.41363 x number_of_sharks x second^-1').
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_UNITS
     Stored item type: undefined
 

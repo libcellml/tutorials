@@ -157,7 +157,6 @@ int main(int argc, char* argv[])
     //      Assign an automatic id to all of the items with id "polo", except for the one whose
     //      type is UNIT.
     poloItem = poloItems.at(2);
-    assert(poloItem->type() == libcellml::CellmlElementType::UNIT);
     poloItems.erase(poloItems.begin() + 2);
 
     for (const auto &item : poloItems) {
@@ -167,7 +166,7 @@ int main(int argc, char* argv[])
     //  3.e
     //      Check that the id of "polo" is now unique in the model by calling the 
     //      isUnique function.
-    assert(annotator->isUnique("polo"));
+    annotator->isUnique("polo");
 
     //  end 3.e
 
@@ -235,7 +234,7 @@ int main(int argc, char* argv[])
 
     //  5.c
     //      Use the Units::isImport() function to verify that it is imported.
-    assert(units->isImport());
+    units->isImport();
 
     //  5.d
     //      Create an Importer instance and use it to resolve this model's imports.

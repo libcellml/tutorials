@@ -4,7 +4,7 @@ from enum import Enum
 from math import *
 
 
-__version__ = "0.3.1"
+__version__ = "0.4.0"
 LIBCELLML_VERSION = "0.4.0"
 
 STATE_COUNT = 2
@@ -27,10 +27,10 @@ STATE_INFO = [
 ]
 
 VARIABLE_INFO = [
+    {"name": "c", "units": "per_month", "component": "predator_prey_component", "type": VariableType.COMPUTED_CONSTANT},
     {"name": "a", "units": "per_month", "component": "predator_prey_component", "type": VariableType.CONSTANT},
     {"name": "b", "units": "per_shark_month", "component": "predator_prey_component", "type": VariableType.CONSTANT},
-    {"name": "d", "units": "per_1000fish_month", "component": "predator_prey_component", "type": VariableType.CONSTANT},
-    {"name": "c", "units": "per_month", "component": "predator_prey_component", "type": VariableType.COMPUTED_CONSTANT}
+    {"name": "d", "units": "per_1000fish_month", "component": "predator_prey_component", "type": VariableType.CONSTANT}
 ]
 
 
@@ -42,21 +42,21 @@ def create_variables_array():
     return [nan]*VARIABLE_COUNT
 
 
-def initialise_variables(states, variables):
-    variables[0] = -0.8
-    variables[1] = 0.3
-    variables[2] = -0.6
+def initialise_variables(states, rates, variables):
+    variables[1] = -0.8
+    variables[2] = 0.3
+    variables[3] = -0.6
     states[0] = 1.0
     states[1] = 2.0
 
 
 def compute_computed_constants(variables):
-    variables[3] = variables[0]+2.0
+    variables[0] = variables[1]+2.0
 
 
 def compute_rates(voi, states, rates, variables):
-    rates[0] = variables[0]*states[0]+variables[1]*states[0]*states[1]
-    rates[1] = variables[3]*states[1]+variables[2]*states[0]*states[1]
+    rates[0] = variables[1]*states[0]+variables[2]*states[0]*states[1]
+    rates[1] = variables[0]*states[1]+variables[3]*states[0]*states[1]
 
 
 def compute_variables(voi, states, rates, variables):

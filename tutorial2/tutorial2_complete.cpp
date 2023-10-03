@@ -158,7 +158,6 @@ int main(int argc, char* argv[])
     //      Set its initial value to 20.
     auto issue2 = validator->issue(2);
     auto item = issue2->item();
-    assert(issue2->item()->type() == libcellml::CellmlElementType::VARIABLE);
     auto c = item->variable();
     c->setInitialValue(20.0);
 

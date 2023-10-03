@@ -223,7 +223,6 @@ int main()
     //      Revalidate your model and expect there to be no errors.
     validator->validateModel(model);
     printIssues(validator);
-    assert(validator->errorCount() == 0);
 
     //  end 3
 

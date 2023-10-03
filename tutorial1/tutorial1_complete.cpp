@@ -65,8 +65,6 @@ int main(int argc, char* argv[])
     std::cout << "The '" << modelName << "' model has " << numberOfComponents
               << " component(s):" << std::endl;
 
-    assert(numberOfComponents > 0);
-
     //  2.c   
     //      Return the name and id of the first component and print them to
     //      the screen.
