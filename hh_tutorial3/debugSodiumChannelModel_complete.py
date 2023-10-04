@@ -149,6 +149,8 @@ if __name__ == '__main__':
     #      Check that the item to be returned from the issue is in fact an CellmlElementType.VARIABLE by calling the Issue.type()
     #      function.  Retrieve the variable missing units from the issue.  Set its units to be millivolts.
     issue4 = validator.issue(4)
+    if issue4.item().type() == CellmlElementType.VARIABLE:
+        print("Issue item is a variable type.")
     issue4.item().variable().setUnits(model.units('mV'))
 
     #  end 3.c
