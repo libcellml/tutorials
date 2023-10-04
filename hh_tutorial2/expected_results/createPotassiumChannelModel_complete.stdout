@@ -139,47 +139,47 @@ Recorded 0 issues!
 -------------------------------
 Recorded 11 issues:
 Issue 0 is an ERROR:
-    Description: Variable 'V' in component 'nGateEquations' is unused.
+    Description: The type of variable 'i_K' in component 'potassiumChannelEquations' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 Issue 1 is an ERROR:
-    Description: Variable 'alpha_n' in component 'nGateEquations' is unused.
+    Description: The type of variable 'n' in component 'potassiumChannelEquations' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 Issue 2 is an ERROR:
-    Description: Variable 'beta_n' in component 'nGateEquations' is unused.
+    Description: The type of variable 'V' in component 'potassiumChannelEquations' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 Issue 3 is an ERROR:
-    Description: Variable 'n' in component 'nGateEquations' is unused.
+    Description: The type of variable 'E_K' in component 'potassiumChannelEquations' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 Issue 4 is an ERROR:
-    Description: Variable 't' in component 'nGateEquations' is unused.
+    Description: The type of variable 'g_K' in component 'potassiumChannelEquations' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 Issue 5 is an ERROR:
-    Description: Variable 'E_K' in component 'potassiumChannelEquations' is unused.
+    Description: The type of variable 't' in component 'potassiumChannelEquations' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 Issue 6 is an ERROR:
-    Description: Variable 'V' in component 'potassiumChannelEquations' is unused.
+    Description: The type of variable 'alpha_n' in component 'nGateEquations' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 Issue 7 is an ERROR:
-    Description: Variable 'g_K' in component 'potassiumChannelEquations' is unused.
+    Description: The type of variable 'V' in component 'nGateEquations' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 Issue 8 is an ERROR:
-    Description: Variable 'i_K' in component 'potassiumChannelEquations' is unused.
+    Description: The type of variable 'beta_n' in component 'nGateEquations' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 Issue 9 is an ERROR:
-    Description: Variable 'n' in component 'potassiumChannelEquations' is unused.
+    Description: The type of variable 't' in component 'nGateEquations' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 Issue 10 is an ERROR:
-    Description: Variable 't' in component 'potassiumChannelEquations' is unused.
+    Description: The type of variable 'n' in component 'nGateEquations' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 
