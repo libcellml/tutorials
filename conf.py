@@ -47,6 +47,8 @@ source_suffix = '.rst'
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
 
+LIBRARY_VERSION = os.environ.get('LIBRARY_VERSION', 'v0.0.0')
+
 # The master toctree document.
 master_doc = 'index'
 
@@ -59,7 +61,8 @@ autosectionlabel_prefix_document = True
 extlinks = {
     # NB for deployment outside of the libcellml.org domain, you will need to include the root of the href for the
     # :api: shortcut here.  This only works internally.
-    'api': ('/documentation/api/latest/classlibcellml_1_1%s', ''),    
+    'api': (f'/documentation/{LIBRARY_VERSION}/api/classlibcellml_1_1%s', ''),
+    'aside': (f'/documentation/{LIBRARY_VERSION}/aside/%s', ''),
     'buildbot': ('https://buildbot.net%s', ''),
     'ccache': ('https://ccache.dev/%s', ''),
     'cellml1to2': ('https://github.com/hsorby/cellml1to2%s', ''),
@@ -79,11 +82,12 @@ extlinks = {
     'github': ('https://github.com/%s', ''),
     'github_desktop': ('https://desktop.github.com/%s', ''),
     'google_styleguide': ('https://google.github.io/styleguide/cppguide.html/%s', ''),
-    'howto': ('/documentation/howto/%s', ''),
+    'howto': (f'/documentation/{LIBRARY_VERSION}/howto/%s', ''),
     'href_locator': ('https://www.w3.org/TR/2001/REC-xlink-20010627/#link-locators/%s', ''),
     'homebrew': ('https://brew.sh/%s', ''),
     'intel_c_compiler': ('https://software.intel.com/en-us/c-compilers%s', ''),
-    'libcellml_doc_page': ('https://libcellml.org/documentation/%s', ''),
+    'libcellml_doc_page': ('/documentation/%s', ''),
+    'libcellml_version_doc_page': (f'/documentation/{LIBRARY_VERSION}/%s', ''),
     'libcellml_repo': ('https://github.com/cellml/libcellml.git%s', ''),
     'libxml2': ('http://www.xmlsoft.org/%s', ''),
     'libxml2_download': ('https://github.com/CMLibs-Dependencies/libxml2/releases%s', ''),
@@ -99,6 +103,7 @@ extlinks = {
     'sphinx': ('http://sphinx-doc.org/%s', ''),
     'swig': ('http://www.swig.org/%s', ''),
     'unicode': ('http://www.fileformat.info/info/unicode/char/%s/index.htm', 'U+'),
+    'usecases': (f'/documentation/{LIBRARY_VERSION}/tutorials/common_use_cases/%s', ''),
     'visualstudio': ('https://visualstudio.microsoft.com/downloads/%s', ''),
     'xlink': ('http://www.w3.org/TR/2001/REC-xlink-20010627/%s', ''),
     'xml_help': ('https://www.w3.org/XML/%s', ''),

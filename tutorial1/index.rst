@@ -5,7 +5,7 @@ Tutorial 1: Reading and writing CellML files
 
 Welcome to the introductory tutorial for the use of the libCellML library.
 Using these tutorials in sequence will walk you through the functionality and build your knowledge step by step.
-If, however, you just need to jump in and figure out one specific idea, you can find a tutorial related to that subject using the :libcellml_doc_page:`How-to pages <howto>`.
+If, however, you just need to jump in and figure out one specific idea, you can find a tutorial related to that subject using the :libcellml_version_doc_page:`How-to pages <howto>`.
 
 .. container:: shortlist
 

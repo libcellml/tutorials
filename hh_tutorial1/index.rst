@@ -31,7 +31,7 @@ Overview
 --------
 This is the first tutorial in a series designed to walk the user through some of libCellML's functionality available in the API.
 Its goal is to create from scratch a voltage-independent ion gate model.
-The theory of this kind of gate can be found on the :libcellml_doc_page:`Ion Gate theory page<ion_gates>`.
+The theory of this kind of gate can be found on the :libcellml_doc_page:`Ion Gate theory page<theory/ion_gates>`.
 
 One of the goals of the CellML format (which must be supported by libCellML) is the construction of models that are reusable.
 Throughout these tutorials we will create entities in such a way as to enable their reuse as easily as possible.  
@@ -512,7 +512,7 @@ In this example none of the units exist yet, so we need to create all of them.
     These will represent units of milliseconds and per millisecond respectively.
     
 Some basic units have been defined and built into libCellML, others you can define by combining the built-in ones using scaling factors and exponents, or you can define your own from scratch if need be.
-Please read the :libcellml_doc_page:`Understanding units<understanding_units>` page for more detailed information, but for now let's look at a simple example that defines a :code:`Units` item representing millivolts.
+Please read the :aside:`Understanding units<understanding_units>` page for more detailed information, but for now let's look at a simple example that defines a :code:`Units` item representing millivolts.
 
 .. tabs::
 
@@ -744,7 +744,7 @@ This is the reason for the second internal component, the *parameters* component
 So far in this tutorial we've only been creating items, defining them, and adding to their parent items.
 Now for the first time we will need to retrieve a child item from its parent.
 This can be done in one of two ways: either by the child's index or by its name.
-There is more information about interacting with collections of items on the :libcellml_doc_page:`Understanding collections of items<understanding_collections>` page.
+There is more information about interacting with collections of items on the :aside:`Understanding collections of items<understanding_collections>` page.
 
 Two particularly useful idioms are shown below.
 
