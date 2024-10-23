@@ -1,1 +1,1 @@
-set(NUMDIFF_ARGS "-R;const char LIBCELLML_VERSION[] = \"[0-9]+\\.[0-9]+\\.[0-9]+\";-R;/\\* The content of this file was generated using the C profile of libCellML [0-9]+\\.[0-9]+\\.[0-9]+\\. \\*/")
+set(NUMDIFF_ARGS "-R;const char VERSION[] = \"[0-9]+\\.[0-9]+\\.[0-9]+\";-R;const char LIBCELLML_VERSION[] = \"[0-9]+\\.[0-9]+\\.[0-9]+\";-R;/\\* The content of this file was generated using the C profile of libCellML [0-9]+\\.[0-9]+\\.[0-9]+\\. \\*/")
