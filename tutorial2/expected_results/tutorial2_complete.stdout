@@ -35,32 +35,32 @@ The validator has found 6 issues!
   Validator issue[0]:
      Description: Model 'tutorial_2_model' does not have a valid 'id' attribute, 'tutorial 2 id has spaces'.
      Type of item stored: model
-     URL: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specA02.html?issue=XML
-    See section 1.2.5 in the CellML specification.
+     URL: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specA02.html?issue=XML_ID_ATTRIBUTE
+    See section 1.2.5.1.1 in the CellML specification.
   Validator issue[1]:
      Description: Variable '1st' in component 'i_am_a_component' does not have a valid name attribute. CellML identifiers must not begin with a European numeric character [0-9].
      Type of item stored: variable
-     URL: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_NAME
-    See section 2.8.1.1 in the CellML specification.
+     URL: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_NAME_VALUE
+    See section 2.8.1.1.1 in the CellML specification.
   Validator issue[2]:
      Description: Variable 'b' in component 'i_am_a_component' does not have any units specified.
      Type of item stored: variable
-     URL: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
-    See section 2.8.1.2 in the CellML specification.
+     URL: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
+    See section 2.8.1.2.1 in the CellML specification.
   Validator issue[3]:
      Description: Variable 'c' in component 'i_am_a_component' has an invalid initial value 'this_variable_doesnt_exist'. Initial values must be a real number string or a variable reference.
      Type of item stored: variable
-     URL: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_INITIAL_VALUE
-    See section 2.8.2.2 in the CellML specification.
+     URL: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_INITIAL_VALUE_VALUE
+    See section 2.8.2.2.1 in the CellML specification.
   Validator issue[4]:
      Description: Variable 'd' in component 'i_am_a_component' has a units reference 'i_dont_exist' which is neither standard nor defined in the parent model.
      Type of item stored: variable
-     URL: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
-    See section 2.8.1.2 in the CellML specification.
+     URL: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
+    See section 2.8.1.2.1 in the CellML specification.
   Validator issue[5]:
      Description: MathML ci element has the child text 'a' which does not correspond with any variable names present in component 'i_am_a_component'.
      Type of item stored: math
-     URL: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+     URL: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REFERENCE
     See section 2.12.3 in the CellML specification.
 ---------------------------------
  STEP 3: Fix the issues reported
