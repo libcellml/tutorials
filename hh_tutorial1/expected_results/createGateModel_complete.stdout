@@ -46,32 +46,32 @@ Recorded 6 issues:
 Issue 0 is an ERROR:
     Description: MathML ci element has the child text 't' which does not correspond with any variable names present in component 'gateEquations'.
     See section 2.12.3 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REFERENCE
     Stored item type: math
 Issue 1 is an ERROR:
     Description: MathML ci element has the child text 'X' which does not correspond with any variable names present in component 'gateEquations'.
     See section 2.12.3 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REFERENCE
     Stored item type: math
 Issue 2 is an ERROR:
     Description: MathML ci element has the child text 'alpha_X' which does not correspond with any variable names present in component 'gateEquations'.
     See section 2.12.3 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REFERENCE
     Stored item type: math
 Issue 3 is an ERROR:
     Description: MathML ci element has the child text 'X' which does not correspond with any variable names present in component 'gateEquations'.
     See section 2.12.3 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REFERENCE
     Stored item type: math
 Issue 4 is an ERROR:
     Description: MathML ci element has the child text 'beta_X' which does not correspond with any variable names present in component 'gateEquations'.
     See section 2.12.3 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REFERENCE
     Stored item type: math
 Issue 5 is an ERROR:
     Description: MathML ci element has the child text 'X' which does not correspond with any variable names present in component 'gateEquations'.
     See section 2.12.3 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REFERENCE
     Stored item type: math
 
 ----------------------------------------------------------
@@ -80,23 +80,23 @@ Issue 5 is an ERROR:
 Recorded 4 issues:
 Issue 0 is an ERROR:
     Description: Variable 't' in component 'gateEquations' does not have any units specified.
-    See section 2.8.1.2 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    See section 2.8.1.2.1 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
     Stored item type: variable
 Issue 1 is an ERROR:
     Description: Variable 'alpha_X' in component 'gateEquations' does not have any units specified.
-    See section 2.8.1.2 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    See section 2.8.1.2.1 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
     Stored item type: variable
 Issue 2 is an ERROR:
     Description: Variable 'beta_X' in component 'gateEquations' does not have any units specified.
-    See section 2.8.1.2 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    See section 2.8.1.2.1 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
     Stored item type: variable
 Issue 3 is an ERROR:
     Description: Variable 'X' in component 'gateEquations' does not have any units specified.
-    See section 2.8.1.2 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    See section 2.8.1.2.1 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
     Stored item type: variable
 
 ----------------------------------------------------------
@@ -160,33 +160,33 @@ Issue 2 is an ERROR:
 Recorded 6 issues:
 Issue 0 is an ERROR:
     Description: Variable 'alpha_X' in component 'gateEquations' has no interface type set. The interface type required is 'public'.
-    See section 3.10.8 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
+    See section 2.16 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB16.html?issue=MAP_VARIABLES_ELEMENT
     Stored item type: variable
 Issue 1 is an ERROR:
     Description: Variable 'beta_X' in component 'gateEquations' has no interface type set. The interface type required is 'public'.
-    See section 3.10.8 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
+    See section 2.16 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB16.html?issue=MAP_VARIABLES_ELEMENT
     Stored item type: variable
 Issue 2 is an ERROR:
     Description: Variable 'X' in component 'gateEquations' has no interface type set. The interface type required is 'public'.
-    See section 3.10.8 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
+    See section 2.16 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB16.html?issue=MAP_VARIABLES_ELEMENT
     Stored item type: variable
 Issue 3 is an ERROR:
     Description: Variable 'X' in component 'gateParameters' has no interface type set. The interface type required is 'public'.
-    See section 3.10.8 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
+    See section 2.16 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB16.html?issue=MAP_VARIABLES_ELEMENT
     Stored item type: variable
 Issue 4 is an ERROR:
     Description: Variable 'alpha' in component 'gateParameters' has no interface type set. The interface type required is 'public'.
-    See section 3.10.8 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
+    See section 2.16 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB16.html?issue=MAP_VARIABLES_ELEMENT
     Stored item type: variable
 Issue 5 is an ERROR:
     Description: Variable 'beta' in component 'gateParameters' has no interface type set. The interface type required is 'public'.
-    See section 3.10.8 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
+    See section 2.16 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB16.html?issue=MAP_VARIABLES_ELEMENT
     Stored item type: variable
 
 Recorded 0 issues!
