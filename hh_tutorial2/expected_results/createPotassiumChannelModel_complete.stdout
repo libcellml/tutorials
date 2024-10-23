@@ -14,33 +14,33 @@ MathML ci element has the child text 'E_K' which does not correspond with any va
 Recorded 6 issues:
 Issue 0 is an ERROR:
     Description: Variable 'E_K' in component 'potassiumChannelEquations' does not have any units specified.
-    See section 2.8.1.2 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    See section 2.8.1.2.1 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
     Stored item type: variable
 Issue 1 is an ERROR:
     Description: Variable 'i_K' in component 'potassiumChannelEquations' does not have any units specified.
-    See section 2.8.1.2 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    See section 2.8.1.2.1 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
     Stored item type: variable
 Issue 2 is an ERROR:
     Description: Variable 'g_K' in component 'potassiumChannelEquations' does not have any units specified.
-    See section 2.8.1.2 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    See section 2.8.1.2.1 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
     Stored item type: variable
 Issue 3 is an ERROR:
     Description: Variable 'V' in component 'potassiumChannelEquations' does not have any units specified.
-    See section 2.8.1.2 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    See section 2.8.1.2.1 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
     Stored item type: variable
 Issue 4 is an ERROR:
     Description: Variable 't' in component 'potassiumChannelEquations' does not have any units specified.
-    See section 2.8.1.2 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    See section 2.8.1.2.1 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
     Stored item type: variable
 Issue 5 is an ERROR:
     Description: Variable 'n' in component 'potassiumChannelEquations' does not have any units specified.
-    See section 2.8.1.2 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    See section 2.8.1.2.1 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
     Stored item type: variable
 
 Recorded 0 issues!
@@ -52,74 +52,74 @@ Recorded 7 issues:
 Issue 0 is an ERROR:
     Description: MathML ci element has the child text 'alpha_n' which does not correspond with any variable names present in component 'nGateEquations'.
     See section 2.12.3 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REFERENCE
     Stored item type: math
 Issue 1 is an ERROR:
     Description: Math has a cn element with a cellml:units attribute 'per_mV_ms' that is not a valid reference to units in the model 'PotassiumChannelModel' or a standard unit.
-    See section 2.12.4 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB13.html?issue=MATH_CN_UNITS
+    See section 2.12.4.1 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CN_UNITS_ATTRIBUTE_REFERENCE
     Stored item type: math
 Issue 2 is an ERROR:
     Description: MathML ci element has the child text 'V' which does not correspond with any variable names present in component 'nGateEquations'.
     See section 2.12.3 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REFERENCE
     Stored item type: math
 Issue 3 is an ERROR:
     Description: MathML ci element has the child text 'V' which does not correspond with any variable names present in component 'nGateEquations'.
     See section 2.12.3 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REFERENCE
     Stored item type: math
 Issue 4 is an ERROR:
     Description: MathML ci element has the child text 'beta_n' which does not correspond with any variable names present in component 'nGateEquations'.
     See section 2.12.3 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REFERENCE
     Stored item type: math
 Issue 5 is an ERROR:
     Description: Math has a cn element with a cellml:units attribute 'per_ms' that is not a valid reference to units in the model 'PotassiumChannelModel' or a standard unit.
-    See section 2.12.4 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB13.html?issue=MATH_CN_UNITS
+    See section 2.12.4.1 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CN_UNITS_ATTRIBUTE_REFERENCE
     Stored item type: math
 Issue 6 is an ERROR:
     Description: MathML ci element has the child text 'V' which does not correspond with any variable names present in component 'nGateEquations'.
     See section 2.12.3 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REF
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CI_VARIABLE_REFERENCE
     Stored item type: math
 
 Recorded 7 issues:
 Issue 0 is an ERROR:
     Description: Variable 't' in component 'nGateEquations' does not have any units specified.
-    See section 2.8.1.2 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    See section 2.8.1.2.1 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
     Stored item type: variable
 Issue 1 is an ERROR:
     Description: Variable 'V' in component 'nGateEquations' does not have any units specified.
-    See section 2.8.1.2 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    See section 2.8.1.2.1 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
     Stored item type: variable
 Issue 2 is an ERROR:
     Description: Variable 'alpha_n' in component 'nGateEquations' does not have any units specified.
-    See section 2.8.1.2 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    See section 2.8.1.2.1 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
     Stored item type: variable
 Issue 3 is an ERROR:
     Description: Variable 'beta_n' in component 'nGateEquations' does not have any units specified.
-    See section 2.8.1.2 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    See section 2.8.1.2.1 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
     Stored item type: variable
 Issue 4 is an ERROR:
     Description: Variable 'n' in component 'nGateEquations' does not have any units specified.
-    See section 2.8.1.2 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+    See section 2.8.1.2.1 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
     Stored item type: variable
 Issue 5 is an ERROR:
     Description: Math has a cn element with a cellml:units attribute 'per_mV_ms' that is not a valid reference to units in the model 'PotassiumChannelModel' or a standard unit.
-    See section 2.12.4 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB13.html?issue=MATH_CN_UNITS
+    See section 2.12.4.1 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CN_UNITS_ATTRIBUTE_REFERENCE
     Stored item type: math
 Issue 6 is an ERROR:
     Description: Math has a cn element with a cellml:units attribute 'per_ms' that is not a valid reference to units in the model 'PotassiumChannelModel' or a standard unit.
-    See section 2.12.4 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB13.html?issue=MATH_CN_UNITS
+    See section 2.12.4.1 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB12.html?issue=MATH_CN_UNITS_ATTRIBUTE_REFERENCE
     Stored item type: math
 
 Recorded 0 issues!
@@ -285,33 +285,33 @@ MODEL: 'PotassiumChannelModel'
 Recorded 6 issues:
 Issue 0 is an ERROR:
     Description: Variable 'E_K' in component 'potassiumChannelEquations' has no interface type set. The interface type required is 'public'.
-    See section 3.10.8 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
+    See section 2.16 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB16.html?issue=MAP_VARIABLES_ELEMENT
     Stored item type: variable
 Issue 1 is an ERROR:
     Description: Variable 'g_K' in component 'potassiumChannelEquations' has no interface type set. The interface type required is 'public'.
-    See section 3.10.8 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
+    See section 2.16 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB16.html?issue=MAP_VARIABLES_ELEMENT
     Stored item type: variable
 Issue 2 is an ERROR:
     Description: Variable 'n' in component 'nGate' has no interface type set. The interface type required is 'private'.
-    See section 3.10.8 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
+    See section 2.16 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB16.html?issue=MAP_VARIABLES_ELEMENT
     Stored item type: variable
 Issue 3 is an ERROR:
     Description: Variable 'n' in component 'nGateEquations' has no interface type set. The interface type required is 'public'.
-    See section 3.10.8 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
+    See section 2.16 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB16.html?issue=MAP_VARIABLES_ELEMENT
     Stored item type: variable
 Issue 4 is an ERROR:
     Description: Variable 'E_K' in component 'potassiumChannelParameters' has no interface type set. The interface type required is 'public'.
-    See section 3.10.8 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
+    See section 2.16 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB16.html?issue=MAP_VARIABLES_ELEMENT
     Stored item type: variable
 Issue 5 is an ERROR:
     Description: Variable 'g_K' in component 'potassiumChannelParameters' has no interface type set. The interface type required is 'public'.
-    See section 3.10.8 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
+    See section 2.16 in the CellML specification.
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB16.html?issue=MAP_VARIABLES_ELEMENT
     Stored item type: variable
 
 Recorded 0 issues!
