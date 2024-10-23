@@ -114,38 +114,38 @@ MODEL: 'SodiumChannelModel'
 -----------------------------------
 The validator found 7 issues.
 Issue 0: Component 'mGateEquations!' does not have a valid name attribute. CellML identifiers must not contain any characters other than [a-zA-Z0-9_].
-  reference: 2.7.1
-  see: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB07.html?issue=COMPONENT_NAME
+  reference: 2.7.1.1
+  see: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB07.html?issue=COMPONENT_NAME_VALUE
   stored item type: component
 
 Issue 1: Variable 'Na_conductance' in component 'sodiumChannelEquations' has a units reference 'mS_per_cm2' which is neither standard nor defined in the parent model.
-  reference: 2.8.1.2
-  see: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+  reference: 2.8.1.2.1
+  see: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
   stored item type: variable
 
 Issue 2: Variable 'g_Na' in component 'sodiumChannelEquations' has a units reference 'mS_per_cm2' which is neither standard nor defined in the parent model.
-  reference: 2.8.1.2
-  see: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+  reference: 2.8.1.2.1
+  see: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
   stored item type: variable
 
 Issue 3: Variable 'g_Na' in component 'sodiumChannelParameters' has a units reference 'mS_per_cm2' which is neither standard nor defined in the parent model.
-  reference: 2.8.1.2
-  see: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+  reference: 2.8.1.2.1
+  see: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
   stored item type: variable
 
 Issue 4: Variable 'V' in component 'sodiumChannel' does not have any units specified.
-  reference: 2.8.1.2
-  see: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS
+  reference: 2.8.1.2.1
+  see: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB08.html?issue=VARIABLE_UNITS_VALUE
   stored item type: variable
 
 Issue 5: Units reference 'i_dont_exist' in units 'mV' is not a valid reference to a local units or a standard unit type.
-  reference: 2.6.1
-  see: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB06.html?issue=UNIT_UNITS_REF
+  reference: 2.6.1.1
+  see: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB06.html?issue=UNIT_UNITS_REFERENCE
   stored item type: unit
 
 Issue 6: Variable 't' in component 'sodiumChannelEquations' has no interface type set. The interface type required is 'public_and_private'.
-  reference: 3.10.8
-  see: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specC10.html?issue=MAP_VARIABLES_AVAILABLE_INTERFACE
+  reference: 2.16
+  see: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB16.html?issue=MAP_VARIABLES_ELEMENT
   stored item type: variable
 
 ---------------------------------
@@ -289,7 +289,7 @@ Issue 0 is an ERROR:
  - component 'controller' specifies an import from '@TEST_ROOT@/hh_tutorial3/CircularControllerReference.cellml' to '@TEST_ROOT@/hh_tutorial3/CircularControllerReference2.cellml' and
  - component 'controller2' specifies an import from '@TEST_ROOT@/hh_tutorial3/CircularControllerReference2.cellml' to '@TEST_ROOT@/hh_tutorial3/CircularControllerReference.cellml'.
     See section 2.2.3 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB02.html?issue=IMPORT_EQUIVALENT
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB02.html?issue=IMPORT_EQUIVALENT_INFOSET
     Stored item type: component
 Issue 1 is an ERROR:
     Description: Import of component 'importedGateH' from '@TEST_ROOT@/hh_tutorial3/GateModel.cellml' requires component named 'i_dont_exist' which cannot be found.
@@ -308,7 +308,7 @@ Issue 0 is an ERROR:
  - component 'controller' specifies an import from ':this:' to 'CircularControllerReference2.cellml' and
  - component 'controller2' specifies an import from 'CircularControllerReference2.cellml' to 'CircularControllerReference.cellml'.
     See section 2.4.2 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB04.html?issue=IMPORT_COMPONENT_COMPONENT_REF
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB04.html?issue=IMPORT_COMPONENT_COMPONENT_REFERENCE
     Stored item type: import
 
 Imported model at key: @TEST_ROOT@/hh_tutorial3/CircularControllerReference2.cellml
@@ -318,7 +318,7 @@ Issue 0 is an ERROR:
  - component 'controller2' specifies an import from ':this:' to 'CircularControllerReference.cellml' and
  - component 'controller' specifies an import from 'CircularControllerReference.cellml' to 'CircularControllerReference2.cellml'.
     See section 2.4.2 in the CellML specification.
-    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB04.html?issue=IMPORT_COMPONENT_COMPONENT_REF
+    More information is available at: https://cellml-specification.readthedocs.io/en/latest/reference/formal_and_informative/specB04.html?issue=IMPORT_COMPONENT_COMPONENT_REFERENCE
     Stored item type: import
 
 Imported model at key: @TEST_ROOT@/hh_tutorial3/GateModel.cellml
