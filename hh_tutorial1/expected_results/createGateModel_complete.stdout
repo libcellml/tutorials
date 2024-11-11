@@ -149,11 +149,11 @@ Issue 0 is an ERROR:
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_STATE_NOT_INITIALISED
     Stored item type: variable
 Issue 1 is an ERROR:
-    Description: The type of variable 'alpha_X' in component 'gateEquations' is unknown.
+    Description: The type of variable 'beta_X' in component 'gateEquations' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 Issue 2 is an ERROR:
-    Description: The type of variable 'beta_X' in component 'gateEquations' is unknown.
+    Description: The type of variable 'alpha_X' in component 'gateEquations' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 

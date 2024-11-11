@@ -139,23 +139,23 @@ Recorded 0 issues!
 -------------------------------
 Recorded 11 issues:
 Issue 0 is an ERROR:
-    Description: The type of variable 'i_K' in component 'potassiumChannelEquations' is unknown.
-    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    Stored item type: variable
-Issue 1 is an ERROR:
-    Description: The type of variable 'n' in component 'potassiumChannelEquations' is unknown.
-    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    Stored item type: variable
-Issue 2 is an ERROR:
-    Description: The type of variable 'V' in component 'potassiumChannelEquations' is unknown.
-    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    Stored item type: variable
-Issue 3 is an ERROR:
     Description: The type of variable 'E_K' in component 'potassiumChannelEquations' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
-Issue 4 is an ERROR:
+Issue 1 is an ERROR:
+    Description: The type of variable 'V' in component 'potassiumChannelEquations' is unknown.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+Issue 2 is an ERROR:
     Description: The type of variable 'g_K' in component 'potassiumChannelEquations' is unknown.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+Issue 3 is an ERROR:
+    Description: The type of variable 'n' in component 'potassiumChannelEquations' is unknown.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
+Issue 4 is an ERROR:
+    Description: The type of variable 'i_K' in component 'potassiumChannelEquations' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 Issue 5 is an ERROR:
@@ -163,11 +163,11 @@ Issue 5 is an ERROR:
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 Issue 6 is an ERROR:
-    Description: The type of variable 'alpha_n' in component 'nGateEquations' is unknown.
+    Description: The type of variable 'V' in component 'nGateEquations' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 Issue 7 is an ERROR:
-    Description: The type of variable 'V' in component 'nGateEquations' is unknown.
+    Description: The type of variable 'alpha_n' in component 'nGateEquations' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 Issue 8 is an ERROR:

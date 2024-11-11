@@ -161,24 +161,24 @@ Issue 1 is a WARNING:
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_UNITS
     Stored item type: undefined
 Issue 2 is an ERROR:
-    Description: The type of variable 'c' in component 'predator_prey_component' is unknown.
-    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
-    Stored item type: variable
-Issue 3 is an ERROR:
     Description: The type of variable 'a' in component 'predator_prey_component' is unknown.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
+Issue 3 is an ERROR:
+    Description: The type of variable 'c' in component 'predator_prey_component' is unknown.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Stored item type: variable
 Issue 4 is an ERROR:
-    Description: Variable 'y_s' in component 'predator_prey_component' is used in an ODE, but it is not initialised.
+    Description: Variable 'y_f' in component 'predator_prey_component' is used in an ODE, but it is not initialised.
     More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_STATE_NOT_INITIALISED
     Stored item type: variable
 Issue 5 is an ERROR:
-    Description: The type of variable 'b' in component 'predator_prey_component' is unknown.
-    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
+    Description: Variable 'y_s' in component 'predator_prey_component' is used in an ODE, but it is not initialised.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_STATE_NOT_INITIALISED
     Stored item type: variable
 Issue 6 is an ERROR:
-    Description: Variable 'y_f' in component 'predator_prey_component' is used in an ODE, but it is not initialised.
-    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_STATE_NOT_INITIALISED
+    Description: The type of variable 'b' in component 'predator_prey_component' is unknown.
+    More information is available at: https://libcellml.org/documentation/guides/latest/runtime_codes/index?issue=ANALYSER_VARIABLE_UNUSED
     Stored item type: variable
 Issue 7 is an ERROR:
     Description: The type of variable 'd' in component 'predator_prey_component' is unknown.
