@@ -285,7 +285,7 @@ if __name__ == "__main__":
     #     Retrieve the analysed model using the Analyser.model() function and pass it
     #     to the generator using the Generator.setModel function.
     generator = Generator()
-    generator.setModel(analyser.model())
+    analyserModel = analyser.analyserModel()
 
     #  The generator takes the CellML model and turns it into procedural code in another 
     #  language.  The default is C, but Python is available too.  This language choice is
@@ -299,17 +299,18 @@ if __name__ == "__main__":
     #  5.b
     #     Retrieve the C profile from the generator, and use its setInterfaceFileNameString function
     #     to pass in the same filename that you'll use in 5.c for the interface code.
-    generator.profile().setInterfaceFileNameString('PredatorPrey.h')
+    profile = GeneratorProfile()
+    profile.setInterfaceFileNameString('PredatorPrey.h')
 
     #  5.c
     #     First we'll use the default profile (C), so we need to output both the
     #     interfaceCode (the header file) and the implementationCode (source file)
     #     from the generator and write them to their respective files.
-    implementation_code_C = generator.implementationCode()
+    implementation_code_C = generator.implementationCode(analyserModel, profile)
     with open("PredatorPrey.c", "w") as f:
         f.write(implementation_code_C)
 
-    interface_code = generator.interfaceCode()
+    interface_code = generator.interfaceCode(analyserModel, profile)
     with open("PredatorPrey.h", "w") as f:
         f.write(interface_code)
 
@@ -318,11 +319,10 @@ if __name__ == "__main__":
     #     enum value in the constructor.  Pass this profile to the setProfile function in the
     #     generator.
     profile = GeneratorProfile(GeneratorProfile.Profile.PYTHON)
-    generator.setProfile(profile)
 
     #  5.e
     #     Retrieve the Python implementation code (there is no header file) and write to a *.py file.
-    implementation_code_python = generator.implementationCode()
+    implementation_code_python = generator.implementationCode(analyserModel, profile)
     with open("PredatorPrey.py", "w") as f:
         f.write(implementation_code_python)
 
