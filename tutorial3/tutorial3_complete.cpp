@@ -263,15 +263,18 @@ int main()
 
     //  5.a  
     //      Create a Generator instance.  Instead of giving it the Model item to process, 
-    //      the generator takes the output from the analyser.  
-    //      Retrieve the analysed model using the Analyser::model() function and pass it
-    //      to the generator using the Generator::setModel function.
+    //      the generator takes the output from the analyser.
+    //      Retrieve the analysed model using the Analyser::analyseModel() function and
+    //      pass this to the generator when retrieving the code to output.
     auto analyserModel = analyser->analyserModel();
     auto generator = libcellml::Generator::create();
 
     //  The generator takes the CellML model and turns it into procedural code in another 
     //  language.  The default is C, but Python is available too.  This language choice is
     //  called the "profile", and is stored in a GeneratorProfile item.
+    //  Create a GeneratorProfile item using the default constructor, which will give you
+    //  the C profile by default.
+    auto profileC = libcellml::GeneratorProfile::create();
 
     //  If you're using the C profile then you have the option at this stage 
     //  to specify the file name of the interface file you'll create in the
@@ -282,13 +285,14 @@ int main()
     //      You can do this by specifying the header file name in the GeneratorProfile item
     //      using the setInterfaceFileNameString("yourHeaderFileNameHere.h") function.
     //      This will need to be the same as the file which you write to in step 5.c below.
-    auto profileC = libcellml::GeneratorProfile::create();
     profileC->setInterfaceFileNameString("PredatorPrey.h");
 
     //  5.c 
     //      First we'll use the default profile (C), so we need to output both the
     //      interfaceCode (the header file) and the implementationCode (source file)
     //      from the generator and write them to their respective files.
+    //      We pass the analyserModel to the generator's code retrieval functions,
+    //      and the profile as the second argument.
     std::ofstream outFile("PredatorPrey.h");
     outFile << generator->interfaceCode(analyserModel, profileC);
     outFile.close();
@@ -299,8 +303,7 @@ int main()
 
     //  5.d
     //      Create a GeneratorProfile item using the libcellml::GeneratorProfile::Profile::PYTHON
-    //      enum value in the constructor.  Pass this profile to the setProfile function in the
-    //      generator.
+    //      enum value in the constructor.
     auto profilePython =
         libcellml::GeneratorProfile::create(libcellml::GeneratorProfile::Profile::PYTHON);
 

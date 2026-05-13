@@ -282,8 +282,7 @@ if __name__ == "__main__":
     #  5.a  
     #     Create a Generator instance.  Instead of giving it the Model item to process, 
     #     the generator takes the output from the analyser.  
-    #     Retrieve the analysed model using the Analyser.model() function and pass it
-    #     to the generator using the Generator.setModel function.
+    #     Retrieve the analysed model using the Analyser.analyserModel() function.
     generator = Generator()
     analyserModel = analyser.analyserModel()
 
@@ -297,7 +296,7 @@ if __name__ == "__main__":
     #  where to look when it tries to #include it.  
 
     #  5.b
-    #     Retrieve the C profile from the generator, and use its setInterfaceFileNameString function
+    #     Create a generator profile, and use its setInterfaceFileNameString function
     #     to pass in the same filename that you'll use in 5.c for the interface code.
     profile = GeneratorProfile()
     profile.setInterfaceFileNameString('PredatorPrey.h')
@@ -306,6 +305,9 @@ if __name__ == "__main__":
     #     First we'll use the default profile (C), so we need to output both the
     #     interfaceCode (the header file) and the implementationCode (source file)
     #     from the generator and write them to their respective files.
+    #     The interface code contains the function prototypes and variable definitions,
+    #     while the implementation code contains the equations and the guts of the model.
+    #     Both are needed for a complete C profile output.
     implementation_code_C = generator.implementationCode(analyserModel, profile)
     with open("PredatorPrey.c", "w") as f:
         f.write(implementation_code_C)
@@ -316,8 +318,7 @@ if __name__ == "__main__":
 
     #  5.d
     #     Create a GeneratorProfile item using the libcellml.GeneratorProfile.Profile.PYTHON
-    #     enum value in the constructor.  Pass this profile to the setProfile function in the
-    #     generator.
+    #     enum value in the constructor.
     profile = GeneratorProfile(GeneratorProfile.Profile.PYTHON)
 
     #  5.e

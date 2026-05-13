@@ -34,7 +34,6 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.extlinks',
     'sphinx.ext.autosectionlabel',
-    'hoverxref.extension',          # Enables tooltips and previews on hover
     'sphinx_tabs.tabs'              # Tabs (esp for code blocks)
 ]
 
@@ -42,7 +41,7 @@ extensions = [
 templates_path = ['static/templates']
 
 # The suffix of source filenames.
-source_suffix = '.rst'
+source_suffix = {'.rst': 'restructuredtext'}
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
@@ -187,11 +186,6 @@ html_theme = 'bizstyle'
 html_theme_options = {
     # 'navigation_depth': 2,  # Not a theme option for bizstyle.
 }
-
-# Automagically convert all :ref: blocks to show a tooltip using the hoverxref
-# extension.
-hoverxref_auto_ref = False
-hoverxref_roles = ['term', 'code', 'ref']
 
 # Add any paths that contain custom themes here, relative to this directory.
 # html_theme_path = ['@SPHINX_THEME_DIR@']
