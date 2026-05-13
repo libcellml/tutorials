@@ -233,14 +233,13 @@ Two profiles are already defined; for C++ and for Python.
 
 .. container:: useful
 
+        :api:`Generator class <Generator>`
+
+        - :api:`create <Generator?fName=create>`
+
 	:api:`GeneratorProfile class <GeneratorProfile>`
 
 	- :api:`create <GeneratorProfile?fName=create>`
-	
-	:api:`Generator class <Generator>`
-
-	- :api:`create <Generator?fName=create>`
-	- :api:`setProfile <Generator?fName=setProfile>`
 
 .. container:: dothis
 
@@ -252,7 +251,7 @@ Two profiles are already defined; for C++ and for Python.
 
 .. container:: dothis
 
-    **4.c** Use the generator's :code:`setProfile` function to pass in the profile item you just created.
+    **4.c** Retrieve the :code:`AnalyserModel` object from the :code:`libcellml::Analyser`.
 
 .. container:: toggle
 
@@ -268,6 +267,11 @@ Two profiles are already defined; for C++ and for Python.
     .. literalinclude:: generateMembraneModel_complete.cpp
         :language: c++
         :start-at: //  4.b
+        :end-before: //  end 4.b
+
+    .. literalinclude:: generateMembraneModel_complete.cpp
+        :language: c++
+        :start-at: //  4.c
         :end-before: //  end 4.c
 
 .. container:: toggle
@@ -284,19 +288,23 @@ Two profiles are already defined; for C++ and for Python.
     .. literalinclude:: generateMembraneModel_complete.py
         :language: python
         :start-at: #  4.b
+        :end-before: #  4.c
+
+    .. literalinclude:: generateMembraneModel_complete.py
+        :language: python
+        :start-at: #  4.c
         :end-before: #  4.d
 
-Instead of submitting a :code:`Model` item (as we do for all other classes), the :code:`Generator` class will work from something which has already been processed by the :code:`Analyser` class: an :code:`AnalyserModel` object.
+The :code:`Generator` class will work from something which has already been processed by the :code:`Analyser` class: an :code:`AnalyserModel` object.
     
 .. container:: useful
 
     :api:`Analyser class <Analyser>`
 
-    - :api:`model <Analyser?fName=model>`
+    - :api:`analyserModel <Analyser?fName=analyserModel>`
 
     :api:`Generator class <Generator>`
 
-    - :api:`setModel <Generator?fName=setModel>`
     - :api:`implementationCode <Generator?fName=implementationCode>`
     - :api:`interfaceCode <Generator?fName=interfaceCode>`
 
@@ -306,11 +314,7 @@ Instead of submitting a :code:`Model` item (as we do for all other classes), the
 
 .. container:: dothis
 
-    **4.d** Retrieve the analysed model using the Analyser::model() function, and submit to the generator using the Generator::setModel(analysedModel) function.
-
-.. container:: dothis
-
-    **4.e** (C only) If you're using the C profile then you have the option at this stage to specify the file name of the interface file you'll create in the next step.  
+    **4.d** (C only) If you're using the C profile then you have the option at this stage to specify the file name of the interface file you'll create in the next step.
     This means that the two files will be prepared to link to one another without manual editing later.
     You can do this by specifying the header file name in the :code:`GeneratorProfile` item using its :code:`setInterfaceFileNameString` function.
     This will need to be the same as the file which you write to in step 4.g below.
@@ -326,11 +330,6 @@ Instead of submitting a :code:`Model` item (as we do for all other classes), the
         :start-at: //  4.d
         :end-before: //  end 4.d
 
-    .. literalinclude:: generateMembraneModel_complete.cpp
-        :language: c++
-        :start-at: //  4.e
-        :end-before: //  end 4.e
-
 .. container:: toggle
 
     .. container:: header
@@ -344,13 +343,13 @@ Instead of submitting a :code:`Model` item (as we do for all other classes), the
 
 .. container:: dothis
 
-    **4.f** Implementation code is the bulk of the model, and contains all the equations, variables, units etc.
+    **4.e** Implementation code is the bulk of the model, and contains all the equations, variables, units etc.
     This is needed for both of the available profiles, and would normally be stored in a :code:`*.cpp` or :code:`*.py` file.  
     Use the :code:`implementationCode` function to return the implementation code as a string, and write it to a file with the appropriate extension.
 
 .. container:: dothis
 
-    **4.g** (C only) Interface code is the header needed by the C profile to define data types.
+    **4.f** (C only) Interface code is the header needed by the C profile to define data types.
     Use the :code:`interfaceCode` function to return interface code as a string and write it to a :code:`*.h` header file.
     This needs to be the same filename as you specified in step 4.e above.
 
@@ -362,7 +361,7 @@ Instead of submitting a :code:`Model` item (as we do for all other classes), the
 
     .. literalinclude:: generateMembraneModel_complete.cpp
         :language: c++
-        :start-at: //  4.f
+        :start-at: //  4.e
         :end-before: //  end 4
 
 .. container:: toggle
@@ -373,7 +372,7 @@ Instead of submitting a :code:`Model` item (as we do for all other classes), the
 
     .. literalinclude:: generateMembraneModel_complete.py
         :language: python
-        :start-at: #  4.f
+        :start-at: #  4.e
         :end-before: #  end 4
     
 

@@ -96,9 +96,9 @@ if __name__ == '__main__':
     print('----------------------------------------------------------')
 
     #  4.a 
-    #       Create a Generator instance.  
+    #       Create a Generator instance.
     generator = Generator()
-    analyserModel = analyser.analyserModel()
+
 
     #  4.b 
     #       The generator uses a GeneratorProfile item to set up a translation between the
@@ -108,6 +108,12 @@ if __name__ == '__main__':
     profile = GeneratorProfile(GeneratorProfile.Profile.PYTHON)
 
     #  4.c
+    #      The Generator class will work from something which has already been processed
+    #      by the Analyser class, an AnalyserModel object.
+    #      Retrieve the analysed model using the Analyser::analyserModel() function.
+    analyserModel = analyser.analyserModel()
+
+    #  4.d
     #       (C profile only) If you're using the C profile then you have the option at this stage 
     #       to specify the file name of the interface file you'll create in the
     #       next step.  This means that the two files will be prepared to link to
@@ -117,21 +123,21 @@ if __name__ == '__main__':
     #       to be the same as the file which you write to in step 4.e below.
     # profile.setInterfaceFileNameString('HodgkinHuxleyModel.h')
 
-    #  4.d
+    #  4.e
     #       Implementation code is the bulk of the model, and contains all the equations, 
     #       variables, units etc.  This is needed for both of the available profiles, and 
     #       would normally be stored in a *.cpp or *.py file.  
-    #       Pass the AnalyserMModel and the profile to the Generator.implementationCode()
+    #       Pass the AnalyserModel and the profile to the Generator.implementationCode()
     #       function to return the implementation code as a string, and write it to a
     #       file with the appropriate extension.
     with open('HodgkinHuxleyModel.py', 'w') as f:
         f.write(generator.implementationCode(analyserModel, profile))
 
-    #  4.e
+    #  4.f
     #       (C profile only) Interface code is the header needed by the C profile to define data types.
     #       Use the Generator.interfaceCode() function to return interface code as a string
     #       and write it to a *.h header file.  This needs to be the same filename as you 
-    #       specified in step 4.e above.
+    #       specified in step 4.d above.
     # with open('HodgkinHuxleyModel.h', 'w') as f:
     #     f.write(generator.interfaceCode(analyserModel, profile))
 
