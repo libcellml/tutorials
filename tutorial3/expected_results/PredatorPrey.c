@@ -5,24 +5,32 @@
 #include <math.h>
 #include <stdlib.h>
 
-const char VERSION[] = "0.5.0";
+const char VERSION[] = "0.8.0";
 const char LIBCELLML_VERSION[] = "0.6.3";
 
 const size_t STATE_COUNT = 2;
-const size_t VARIABLE_COUNT = 4;
+const size_t CONSTANT_COUNT = 3;
+const size_t COMPUTED_CONSTANT_COUNT = 1;
+const size_t ALGEBRAIC_VARIABLE_COUNT = 0;
 
-const VariableInfo VOI_INFO = {"time", "month", "predator_prey_component", VARIABLE_OF_INTEGRATION};
+const VariableInfo VOI_INFO = {"time", "month", "predator_prey_component"};
 
 const VariableInfo STATE_INFO[] = {
-    {"y_f", "thousands_of_fish", "predator_prey_component", STATE},
-    {"y_s", "number_of_sharks", "predator_prey_component", STATE}
+    {"y_f", "thousands_of_fish", "predator_prey_component"},
+    {"y_s", "number_of_sharks", "predator_prey_component"}
 };
 
-const VariableInfo VARIABLE_INFO[] = {
-    {"a", "per_month", "predator_prey_component", CONSTANT},
-    {"c", "per_month", "predator_prey_component", COMPUTED_CONSTANT},
-    {"b", "per_shark_month", "predator_prey_component", CONSTANT},
-    {"d", "per_1000fish_month", "predator_prey_component", CONSTANT}
+const VariableInfo CONSTANT_INFO[] = {
+    {"a", "per_month", "predator_prey_component"},
+    {"b", "per_shark_month", "predator_prey_component"},
+    {"d", "per_1000fish_month", "predator_prey_component"}
+};
+
+const VariableInfo COMPUTED_CONSTANT_INFO[] = {
+    {"c", "per_month", "predator_prey_component"}
+};
+
+const VariableInfo ALGEBRAIC_VARIABLE_INFO[] = {
 };
 
 double * createStatesArray()
@@ -36,11 +44,33 @@ double * createStatesArray()
     return res;
 }
 
-double * createVariablesArray()
+double * createConstantsArray()
 {
-    double *res = (double *) malloc(VARIABLE_COUNT*sizeof(double));
+    double *res = (double *) malloc(CONSTANT_COUNT*sizeof(double));
 
-    for (size_t i = 0; i < VARIABLE_COUNT; ++i) {
+    for (size_t i = 0; i < CONSTANT_COUNT; ++i) {
+        res[i] = NAN;
+    }
+
+    return res;
+}
+
+double * createComputedConstantsArray()
+{
+    double *res = (double *) malloc(COMPUTED_CONSTANT_COUNT*sizeof(double));
+
+    for (size_t i = 0; i < COMPUTED_CONSTANT_COUNT; ++i) {
+        res[i] = NAN;
+    }
+
+    return res;
+}
+
+double * createAlgebraicVariablesArray()
+{
+    double *res = (double *) malloc(ALGEBRAIC_VARIABLE_COUNT*sizeof(double));
+
+    for (size_t i = 0; i < ALGEBRAIC_VARIABLE_COUNT; ++i) {
         res[i] = NAN;
     }
 
@@ -52,26 +82,26 @@ void deleteArray(double *array)
     free(array);
 }
 
-void initialiseVariables(double *states, double *rates, double *variables)
+void initialiseArrays(double *states, double *rates, double *constants, double *computedConstants, double *algebraicVariables)
 {
-    variables[0] = -0.8;
-    variables[2] = 0.3;
-    variables[3] = -0.6;
     states[0] = 2.0;
     states[1] = 1.0;
+    constants[0] = -0.8;
+    constants[1] = 0.3;
+    constants[2] = -0.6;
 }
 
-void computeComputedConstants(double *variables)
+void computeComputedConstants(double voi, double *states, double *rates, double *constants, double *computedConstants, double *algebraicVariables)
 {
-    variables[1] = variables[0]+2.0;
+    computedConstants[0] = constants[0]+2.0;
 }
 
-void computeRates(double voi, double *states, double *rates, double *variables)
+void computeRates(double voi, double *states, double *rates, double *constants, double *computedConstants, double *algebraicVariables)
 {
-    rates[1] = variables[0]*states[1]+variables[2]*states[1]*states[0];
-    rates[0] = variables[1]*states[0]+variables[3]*states[1]*states[0];
+    rates[1] = constants[0]*states[1]+constants[1]*states[1]*states[0];
+    rates[0] = computedConstants[0]*states[0]+constants[2]*states[1]*states[0];
 }
 
-void computeVariables(double voi, double *states, double *rates, double *variables)
+void computeVariables(double voi, double *states, double *rates, double *constants, double *computedConstants, double *algebraicVariables)
 {
 }

@@ -266,8 +266,8 @@ int main()
     //      the generator takes the output from the analyser.  
     //      Retrieve the analysed model using the Analyser::model() function and pass it
     //      to the generator using the Generator::setModel function.
+    auto analyserModel = analyser->analyserModel();
     auto generator = libcellml::Generator::create();
-    generator->setModel(analyser->model());
 
     //  The generator takes the CellML model and turns it into procedural code in another 
     //  language.  The default is C, but Python is available too.  This language choice is
@@ -282,7 +282,7 @@ int main()
     //      You can do this by specifying the header file name in the GeneratorProfile item
     //      using the setInterfaceFileNameString("yourHeaderFileNameHere.h") function.
     //      This will need to be the same as the file which you write to in step 5.c below.
-    auto profileC = generator->profile();
+    auto profileC = libcellml::GeneratorProfile::create();
     profileC->setInterfaceFileNameString("PredatorPrey.h");
 
     //  5.c 
@@ -290,11 +290,11 @@ int main()
     //      interfaceCode (the header file) and the implementationCode (source file)
     //      from the generator and write them to their respective files.
     std::ofstream outFile("PredatorPrey.h");
-    outFile << generator->interfaceCode();
+    outFile << generator->interfaceCode(analyserModel, profileC);
     outFile.close();
 
     outFile.open("PredatorPrey.c");
-    outFile << generator->implementationCode();
+    outFile << generator->implementationCode(analyserModel, profileC);
     outFile.close();
 
     //  5.d
@@ -303,12 +303,11 @@ int main()
     //      generator.
     auto profilePython =
         libcellml::GeneratorProfile::create(libcellml::GeneratorProfile::Profile::PYTHON);
-    generator->setProfile(profilePython);
 
     //  5.e
     //      Retrieve the Python implementation code (there is no header file) and write to a *.py file.
     outFile.open("PredatorPrey.py");
-    outFile << generator->implementationCode();
+    outFile << generator->implementationCode(analyserModel, profilePython);
     outFile.close();
 
     //  end 5
