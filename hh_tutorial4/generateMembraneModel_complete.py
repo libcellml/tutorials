@@ -98,6 +98,7 @@ if __name__ == '__main__':
     #  4.a 
     #       Create a Generator instance.  
     generator = Generator()
+    analyserModel = analyser.analyserModel()
 
     #  4.b 
     #       The generator uses a GeneratorProfile item to set up a translation between the
@@ -108,7 +109,6 @@ if __name__ == '__main__':
 
     #  4.c 
     #       Use the generator's setProfile function to pass in the profile item you just created.
-    generator.setProfile(profile)
 
     #  4.d 
     #       Instead of submitting a Model item (as we do for all other classes), 
@@ -116,7 +116,6 @@ if __name__ == '__main__':
     #       by the Analyser class: an AnalyserModel object.  
     #       Retrieve the analysed model using the Analyser.model() function, and submit 
     #       to the generator using the Generator.setModel(analysedModel) function.
-    generator.setModel(analyser.model())
 
     #  4.e 
     #       (C profile only) If you're using the C profile then you have the option at this stage 
@@ -135,7 +134,7 @@ if __name__ == '__main__':
     #       Use the Generator.implementationCode() function to return the implementation 
     #       code as a string, and write it to a file with the appropriate extension.
     with open('HodgkinHuxleyModel.py', 'w') as f:
-        f.write(generator.implementationCode())
+        f.write(generator.implementationCode(analyserModel, profile))
 
     #  4.g 
     #       (C profile only) Interface code is the header needed by the C profile to define data types.
