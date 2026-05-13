@@ -113,46 +113,43 @@ int main(int argc, char* argv[])
     //      libcellml::GeneratorProfile::Profile enum for the language you want (C or PYTHON).
     auto profile = libcellml::GeneratorProfile::create(libcellml::GeneratorProfile::Profile::C);
 
-    //  4.c 
-    //      Use the generator's setProfile function to pass in the profile item you just created.
-
-    //  end 4.c 
-    //      Instead of submitting a Model item (as we do for all other classes), 
-    //      the Generator class will work from something which has already been processed 
+    //  end 4.b
+    //      The analyser is used to prepare the model for generation, and the generator then works from the
+    //      analysed model.  This is because the Analyser class performs a number of checks and transformations
+    //      on the model to make sure that it is in a suitable state for generation.
+    //  4.c
+    //      The Generator class will work from something which has already been processed
     //      by the Analyser class: an AnalyserModel object.
+    //      Retrieve the analysed model using the Analyser::analyserModel() function.
     auto analyserModel = analyser->analyserModel();
 
-    //  4.d
-    //      Retrieve the analysed model using the Analyser::model() function, and submit 
-    //      to the generator using the Generator::setModel(analysedModel) function.
-
-    //  end 4.d 
+    //  end 4.c
     //      (C only) If you're using the C profile then you have the option at this stage 
     //      to specify the file name of the interface file you'll create in the
     //      next step.  This means that the two files will be prepared to link to
     //      one another without manual editing later.  
-    //  4.e
+    //  4.d
     //      You can do this by specifying the header file name in the GeneratorProfile item
     //      using the setInterfaceFileNameString("yourHeaderFileNameHere.h") function.
     //      This will need to be the same as the file which you write to in step 4.g below.
     profile->setInterfaceFileNameString("HodgkinHuxleyModel.h");
 
-    //  end 4.e 
+    //  end 4.d
     //      Implementation code is the bulk of the model, and contains all the equations, 
     //      variables, units etc.  This is needed for both of the available profiles, and 
     //      would normally be stored in a *.cpp or *.py file.
-    //  4.f
+    //  4.e
     //      Use the Generator::implementationCode() function to return the implementation 
     //      code as a string, and write it to a file with the appropriate extension.
     std::ofstream outFile("HodgkinHuxleyModel.cpp");
     outFile << generator->implementationCode(analyserModel, profile);
     outFile.close();
 
-    //  4.g 
+    //  4.f
     //      (C only) Interface code is the header needed by the C profile to define data types.
     //      Use the Generator::interfaceCode() function to return interface code as a string
     //      and write it to a *.h header file.  This needs to be the same filename as you 
-    //      specified in step 4.e above.
+    //      specified in step 4.d above.
     outFile.open("HodgkinHuxleyModel.h");
     outFile << generator->interfaceCode(analyserModel, profile);
     outFile.close();
