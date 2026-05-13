@@ -115,17 +115,16 @@ int main(int argc, char* argv[])
 
     //  4.c 
     //      Use the generator's setProfile function to pass in the profile item you just created.
-    generator->setProfile(profile);
 
     //  end 4.c 
     //      Instead of submitting a Model item (as we do for all other classes), 
     //      the Generator class will work from something which has already been processed 
     //      by the Analyser class: an AnalyserModel object.
+    auto analyserModel = analyser->analyserModel();
 
     //  4.d
     //      Retrieve the analysed model using the Analyser::model() function, and submit 
     //      to the generator using the Generator::setModel(analysedModel) function.
-    generator->setModel(analyser->model());
 
     //  end 4.d 
     //      (C only) If you're using the C profile then you have the option at this stage 
@@ -146,7 +145,7 @@ int main(int argc, char* argv[])
     //      Use the Generator::implementationCode() function to return the implementation 
     //      code as a string, and write it to a file with the appropriate extension.
     std::ofstream outFile("HodgkinHuxleyModel.cpp");
-    outFile << generator->implementationCode();
+    outFile << generator->implementationCode(analyserModel, profile);
     outFile.close();
 
     //  4.g 
@@ -155,7 +154,7 @@ int main(int argc, char* argv[])
     //      and write it to a *.h header file.  This needs to be the same filename as you 
     //      specified in step 4.e above.
     outFile.open("HodgkinHuxleyModel.h");
-    outFile << generator->interfaceCode();
+    outFile << generator->interfaceCode(analyserModel, profile);
     outFile.close();
 
     //  end 4
