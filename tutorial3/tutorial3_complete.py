@@ -280,34 +280,37 @@ if __name__ == "__main__":
     print("-------------------------------------------------------------")
 
     #  5.a  
-    #     Create a Generator instance.  Instead of giving it the Model item to process, 
-    #     the generator takes the output from the analyser.  
-    #     Retrieve the analysed model using the Analyser.analyserModel() function.
+    #      Create a Generator instance.  Instead of giving it the Model item to process,
+    #      the generator takes the output from the analyser.
+    #      Retrieve the analysed model using the Analyser.analyserModel() function.
     generator = Generator()
+
+    # The generator takes the CellML model and turns it into procedural code in another
+    # language.  The default is C, but Python is available too.  This language choice is
+    # called the "profile", and is stored in a GeneratorProfile item.
+
+    # 5.b
+    #      Retrieve the analysed model using the Analyser::analyserModel() function.
     analyserModel = analyser.analyserModel()
 
-    #  The generator takes the CellML model and turns it into procedural code in another 
-    #  language.  The default is C, but Python is available too.  This language choice is
-    #  called the "profile", and is stored in a GeneratorProfile item.
+    # The default profile has a C flavour, and it already exists inside the Generator you've just created.
+    # We need to edit that profile a little, but only to tell it the file name where they interface
+    # (header file) code will be written.  This is so that the implementation code (source file) knows
+    # where to look when it tries to #include it.
 
-    #  The default profile has a C flavour, and it already exists inside the Generator you've just created.
-    #  We need to edit that profile a little, but only to tell it the file name where they interface
-    #  (header file) code will be written.  This is so that the implementation code (source file) knows
-    #  where to look when it tries to #include it.  
-
-    #  5.b
-    #     Create a generator profile, and use its setInterfaceFileNameString function
-    #     to pass in the same filename that you'll use in 5.c for the interface code.
+    #  5.c
+    #      Create a generator profile, and use its setInterfaceFileNameString function
+    #      to pass in the same filename that you'll use in 5.d for the interface code.
     profile = GeneratorProfile()
     profile.setInterfaceFileNameString('PredatorPrey.h')
 
-    #  5.c
-    #     First we'll use the default profile (C), so we need to output both the
-    #     interfaceCode (the header file) and the implementationCode (source file)
-    #     from the generator and write them to their respective files.
-    #     The interface code contains the function prototypes and variable definitions,
-    #     while the implementation code contains the equations and the guts of the model.
-    #     Both are needed for a complete C profile output.
+    #  5.d
+    #      First we'll use the default profile (C), so we need to output both the
+    #      interfaceCode (the header file) and the implementationCode (source file)
+    #      from the generator and write them to their respective files.
+    #      The interface code contains the function prototypes and variable definitions,
+    #      while the implementation code contains the equations and the guts of the model.
+    #      Both are needed for a complete C profile output.
     implementation_code_C = generator.implementationCode(analyserModel, profile)
     with open("PredatorPrey.c", "w") as f:
         f.write(implementation_code_C)
@@ -316,13 +319,13 @@ if __name__ == "__main__":
     with open("PredatorPrey.h", "w") as f:
         f.write(interface_code)
 
-    #  5.d
-    #     Create a GeneratorProfile item using the libcellml.GeneratorProfile.Profile.PYTHON
-    #     enum value in the constructor.
+    #  5.e
+    #      Create a GeneratorProfile item using the libcellml.GeneratorProfile.Profile.PYTHON
+    #      enum value in the constructor.
     profile = GeneratorProfile(GeneratorProfile.Profile.PYTHON)
 
-    #  5.e
-    #     Retrieve the Python implementation code (there is no header file) and write to a *.py file.
+    #  5.f
+    #      Retrieve the Python implementation code (there is no header file) and write to a *.py file.
     implementation_code_python = generator.implementationCode(analyserModel, profile)
     with open("PredatorPrey.py", "w") as f:
         f.write(implementation_code_python)
