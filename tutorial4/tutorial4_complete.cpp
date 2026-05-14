@@ -12,6 +12,7 @@
  */
 
 #include <fstream>
+#include <iomanip> // for std::setprecision on GNU/Linux
 #include <iostream>
 #include <sstream>
 
